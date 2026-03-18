@@ -1,0 +1,219 @@
+---
+permalink: um-certificates/configure-saml.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, configure, saml, 
+summary: '若要設定 Access Management 的驗證，可以使用儲存陣列中嵌入的 Security Assertion Markup Language (SAML) 功能。此配置會在 Identity Provider 和 Storage Provider 之間建立連線。' 
+---
+= 在 SANtricity Unified Manager 中設定 SAML
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定 Access Management 的驗證，可以使用儲存陣列中嵌入的 Security Assertion Markup Language (SAML) 功能。此配置會在 Identity Provider 和 Storage Provider 之間建立連線。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* 您必須知道儲存陣列中控制器的 IP 位址或網域名稱。
+* IdP 管理員已設定 IdP 系統。
+* IdP 管理員已確保 IdP 支援在身分驗證時傳回名稱 ID 的功能。
+* 管理員已確保 IdP 伺服器和控制器時鐘同步（透過 NTP 伺服器或調整控制器時鐘設定）。
+* 從 IdP 系統下載 IdP 中繼資料檔案，該檔案可在用於存取 Unified Manager 的本機系統上使用。
+
+
+.關於此任務
+身分提供者（IdP）是一個外部系統，用於向使用者請求憑證並確定該使用者是否已成功通過身份驗證。IdP 可以設定為提供多因素身份驗證，並使用任何使用者資料庫，例如 Active Directory。您的安全團隊負責維護 IdP。服務提供者（SP）是一個控制使用者身份驗證和存取的系統。當 Access Management 配置為使用 SAML 時，儲存陣列充當 Service Provider，向 Identity Provider 請求身份驗證。要建立 IdP 和儲存陣列之間的連接，您需要在這兩個實體之間共用中繼資料檔案。接下來，您需要將 IdP 使用者實體對應到儲存陣列角色。最後，在啟用 SAML 之前，您需要測試連線和 SSO 登入。
+
+[NOTE]
+====
+*SAML 和目錄服務*。如果在將目錄服務設定為驗證方法時啟用 SAML、則 SAML 將在 Unified Manager 中取代目錄服務。如果之後停用 SAML、目錄服務組態將恢復到先前的組態。
+
+====
+[CAUTION]
+====
+*編輯和停用。*SAML 啟用後，您_無法_透過使用者介面停用它，也無法編輯 IdP 設定。如果您需要停用或編輯 SAML 組態，請聯絡技術支援尋求協助。
+
+====
+設定 SAML 驗證是一個多步驟程序。
+
+
+
+== 步驟 1：上傳 IdP 中繼資料檔案
+
+為了向儲存陣列提供身分提供者 (IdP) 連線訊息，您需要將 IdP 元資料匯入 Unified Manager。IdP 系統需要此元資料才能將身份驗證請求重新導向到正確的 URL 並驗證收到的回應。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *SAML* 選項卡。
++
+此頁面顯示設定步驟概覽。
+
+. 點選 *Import Identity Provider (IdP) file* 連結。
++
+「匯入身分識別提供者檔案」對話方塊隨即開啟。
+
+. 點擊 *Browse* 選擇並上傳您複製到本機系統的 IdP 元資料檔案。
++
+選擇檔案後，將顯示 IdP Entity ID。
+
+. 點選 *Import* 。
+
+
+
+
+== 步驟 2：匯出服務供應商檔案
+
+若要在身分識別提供者（IdP）和儲存陣列之間建立信任關係，您需要將服務提供者元資料匯入 IdP 中。IdP 需要此元資料來與控制器建立信任關係並處理授權請求。該檔案包含控制器網域名稱或 IP 位址等資訊，以便 IdP 可以與服務提供者通訊。
+
+.步驟
+. 點擊 *Export Service Provider files* 連結。
++
+Export Service Provider Files 對話方塊開啟。
+
+. 在 *Controller A* 欄位中輸入控制器 IP 位址或 DNS 名稱，然後按一下 *Export* 將中繼資料檔案儲存到本機系統。
++
+點擊 *Export* 後、服務提供者中繼資料將下載到您的本機系統。請記下檔案的儲存位置。
+
+. 從本機系統中找到您匯出的 XML 格式服務提供者中繼資料檔案。
+. 從 IdP 伺服器匯入 Service Provider 中繼資料檔案以建立信任關係。您可以直接匯入檔案，也可以從檔案中手動輸入控制器資訊。
+
+
+
+
+== 步驟 3：對應角色
+
+若要為使用者提供對 Unified Manager 的授權和存取權限，您必須將 IdP 使用者屬性和群組成員資格對應到儲存陣列的預先定義角色。
+
+.開始之前
+* IdP 管理員已在 IdP 系統中設定使用者屬性和群組成員資格。
+* IdP 元資料檔案會匯入 Unified Manager 。
+* 將控制器的 Service Provider 元資料檔案匯入 IdP 系統中，以建立信任關係。
+
+
+.步驟
+. 點擊連結以取得 *mapping Unified Manager* 角色。
++
+角色映射對話方塊開啟。
+
+. 將 IdP 使用者屬性和群組指派給預先定義的角色。一個群組可以擁有多個已指派的角色。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+*對應*
+
+
+
+ a| 
+使用者屬性
+ a| 
+指定要對應的 SAML 群組的屬性（例如「member of」）。
+
+
+
+ a| 
+屬性值
+ a| 
+指定要對應的群組的屬性值。支援正規表達式。如果下列特殊正規表示式字元不是正規表示式模式的一部分，則必須使用反斜線（(`\`）進行轉義：\.[]{}()<>*+-=!?^$|
+
+
+
+ a| 
+角色
+ a| 
+按一下該欄位，然後選擇要對應到屬性的儲存陣列角色之一。您必須單獨選擇要包含的每個角色。Monitor 角色必須與其他角色一起使用才能登入 Unified Manager。Security Admin 角色也至少對一個群組是必需的。
+
+對應的角色包含以下權限：
+
+** *Storage admin* -- 對儲存物件（例如、磁碟區和磁碟集區）具有完全的讀取 / 寫入權限、但無權存取安全性組態。
+** *Security admin* -- 可以存取 Access Management 中的安全性設定、憑證管理、稽核日誌管理，以及啟用或停用舊版管理介面（SYMbol）的功能。
+** *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料、MEL 事件和控制器韌體升級。無權存取儲存物件或安全性配置。
+** *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+|===
+====
++
+[NOTE]
+====
+所有使用者（包括管理員）都必須擁有 Monitor 角色。如果使用者沒有 Monitor 角色，Unified Manager 將無法正常運作。
+
+====
+. 如果需要，請按一下 *Add another mapping* 以輸入更多群組到角色的對應。
++
+[NOTE]
+====
+啟用 SAML 後，可以修改角色對應。
+
+====
+. 完成映射後，點選 *Save* 。
+
+
+
+
+== 步驟 4：測試 SSO 登入
+
+為確保 IdP 系統和儲存陣列能夠通信，您可以選擇測試 SSO 登入。此測試也會在啟用 SAML 的最後一步中執行。
+
+.開始之前
+* IdP 元資料檔案會匯入 Unified Manager 。
+* 將控制器的 Service Provider 元資料檔案匯入 IdP 系統中，以建立信任關係。
+
+
+.步驟
+. 選擇 *Test SSO Login* 連結。
++
+此時會彈出一個對話框，要求輸入 SSO 憑證。
+
+. 輸入具有 Security Admin 權限和 Monitor 權限的使用者的登入認證資料。
++
+系統測試登入時會開啟對話方塊。
+
+. 尋找 Test Successful 訊息。如果測試成功完成，請繼續啟用 SAML 的下一步。
++
+如果測試未成功完成，將顯示包含更多資訊的錯誤訊息。請確保：
+
++
+** 該使用者屬於具有 Security Admin 和 Monitor 權限的使用者群組。
+** 您為 IdP 伺服器上傳的中繼資料正確無誤。
+** SP 中繼資料檔案中的控制器位址是正確的。
+
+
+
+
+
+
+== 步驟 5：啟用 SAML
+
+最後一步是完成使用者身份驗證的 SAML 設定。在此過程中，系統也會提示您測試 SSO 登入。SSO 登入測試流程已在上一個步驟中說明。
+
+.開始之前
+* IdP 元資料檔案會匯入 Unified Manager 。
+* 將控制器的 Service Provider 元資料檔案匯入 IdP 系統中，以建立信任關係。
+* 至少配置了一個 Monitor 角色映射和一個 Security Admin 角色映射。
+
+
+[CAUTION]
+====
+*編輯和停用。*SAML 啟用後，您_無法_透過使用者介面停用它，也無法編輯 IdP 設定。如果您需要停用或編輯 SAML 組態，請聯絡技術支援尋求協助。
+
+====
+.步驟
+. 從 *SAML* 標籤中，選取 *Enable SAML* 連結。
++
+「確認啟用 SAML」對話方塊隨即開啟。
+
+. 輸入 `enable`，然後按一下 *Enable* 。
+. 輸入使用者憑證以進行 SSO 登入測試。
+
+
+.結果
+系統啟用 SAML 後、會終止所有作用中的工作階段、並開始透過 SAML 驗證使用者。

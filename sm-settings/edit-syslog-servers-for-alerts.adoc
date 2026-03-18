@@ -1,0 +1,28 @@
+---
+permalink: sm-settings/edit-syslog-servers-for-alerts.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, syslog, servers, alerts, 
+summary: 您可以編輯用於接收 syslog 警示的伺服器位址。 
+---
+= 在 SANtricity System Manager 中編輯警示的 syslog 伺服器
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯用於接收 syslog 警示的伺服器位址。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *Syslog* 標籤。
+. 從表格中選擇一個 syslog 伺服器位址，然後按一下最右側的 *Edit*（鉛筆）圖示。
++
+該行變為可編輯欄位。
+
+. 編輯伺服器位址和 UDP 連接埠號，然後按一下 *儲存* （勾選標記）圖示。
+
+
+.結果
+更新後的伺服器位址會顯示在表格中。

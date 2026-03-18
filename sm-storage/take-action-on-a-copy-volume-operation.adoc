@@ -1,0 +1,68 @@
+---
+permalink: sm-storage/take-action-on-a-copy-volume-operation.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, copy, volume, 
+summary: 您可以查看正在進行的 Copy Volume 操作，並停止、變更優先順序、重新複製或清除 Copy Volume 操作。 
+---
+= 在 SANtricity System Manager 中對複製磁碟區操作執行操作
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看正在進行的 Copy Volume 操作，並停止、變更優先順序、重新複製或清除 Copy Volume 操作。
+
+.步驟
+. 選擇功能表：首頁 [View Operations in Progress]。
++
+顯示「正在進行的作業」對話方塊。
+
+. 找到要執行操作的 Copy Volume 操作，然後按一下 *Actions* 欄中的連結，執行以下操作之一。
++
+請閱讀對話方塊中提供的所有警告文字，尤其是在停止作業時。
+
++
+[cols="25h,~"]
+|===
+| 行動 | 說明 
+
+
+ a| 
+停止
+ a| 
+當 Copy Volume 操作處於「進行中」、「待處理」或「失敗」狀態時、您可以停止 Copy Volume 操作。
+
+當 Copy Volume 停止時，所有映射主機都對來源磁碟區擁有寫入權限。如果資料寫入來源磁碟區，目標磁碟區上的資料將與來源磁碟區上的資料不再相符。
+
+
+
+ a| 
+變更優先順序
+ a| 
+在 Copy Volume 操作處於「進行中」狀態時，您可以變更 Copy Volume 操作的優先級，以選擇 Copy Volume 操作完成的速度。
+
+
+
+ a| 
+重新複製
+ a| 
+當您停止「複製磁碟區」操作並希望重新啟動，或「複製磁碟區」操作失敗或中止時，您可以重新複製該磁碟區。「複製磁碟區」操作將從頭開始。
+
+重新複製操作會覆寫目標磁碟區上的現有資料，並且會使與目標磁碟區相關聯的所有 Snapshot 磁碟區（如果有）失效。
+
+
+
+ a| 
+清除
+ a| 
+當 Copy Volume 操作的狀態為「進行中」、「待處理」或「失敗」時，您可以將其刪除。
+
+[NOTE]
+====
+在選擇 *Clear* 之前，請務必確認您要執行此操作。不會跳出確認對話框。
+
+====
+|===
+

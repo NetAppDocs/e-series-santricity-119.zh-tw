@@ -1,0 +1,37 @@
+---
+permalink: sm-settings/view-local-user-roles.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, local, user, roles, 
+summary: 在「本機使用者角色」標籤中，您可以查看使用者設定檔到預設角色的對應關係。這些對應關係是儲存陣列中強制執行的 RBAC（基於角色的存取控制）的一部分。 
+---
+= 在 SANtricity System Manager 中檢視本機使用者角色
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在「本機使用者角色」標籤中，您可以查看使用者設定檔到預設角色的對應關係。這些對應關係是儲存陣列中強制執行的 RBAC（基於角色的存取控制）的一部分。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+
+.關於此任務
+使用者設定檔和映射關係無法更改。只能修改密碼。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Local User Roles* 標籤。
++
+使用者設定檔如下表所示：
+
++
+** *Root admin* （admin）－擁有系統所有功能存取權限的超級管理員。此使用者設定檔包含所有角色。
+** *Storage admin*（storage）-- 負責所有儲存配置的管理員。此使用者設定檔包含以下角色：Storage Admin、Support Admin 和 Monitor。
+** *Security admin*（安全）-- 負責安全組態的使用者，包括存取管理、憑證管理和安全啟用磁碟機功能。此使用者設定檔包含以下角色：Security Admin 和 Monitor。
+** *Support admin* （support） -- 負責硬體資源、故障資料和韌體升級的使用者。此使用者設定檔包含以下角色：Support Admin 和 Monitor。
+** *Monitor* （monitor）－具有系統唯讀權限的使用者。此使用者設定檔僅包含 Monitor 角色。
+
+
+

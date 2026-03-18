@@ -1,0 +1,58 @@
+---
+permalink: sm-storage/increase-capacity-of-a-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, increase, capacity, volume 
+summary: 您可以使用資源池或磁碟區群組中可用的可用容量來增加磁碟區的報告容量（向主機報告的容量）。 
+---
+= 增加 SANtricity System Manager 中某個磁碟區的容量
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用資源池或磁碟區群組中可用的可用容量來增加磁碟區的報告容量（向主機報告的容量）。
+
+.開始之前
+* 磁碟區相關聯的資源池或磁碟區群組中有足夠的可用容量。
+* 磁碟區為最佳狀態，且未處於任何修改狀態。
+* 精簡磁碟區尚未達到 256 TiB 的最大報告容量。
+* 該磁碟區中未使用熱備用磁碟機。（僅適用於磁碟區群組中的磁碟區。）
+
+
+
+NOTE: 一次最多只能將磁碟區容量擴充至 128 TiB。
+
+.關於此任務
+請考慮此儲存池或磁碟區群組中其他磁碟區未來可能存在的容量需求。確保預留足夠的可用容量，以便建立 Snapshot 映像、Snapshot 磁碟區或遠端鏡像。
+
+[NOTE]
+====
+僅某些作業系統支援增加磁碟區容量。如果在不受支援的主機作業系統上增加磁碟區容量，則擴充後的容量將無法使用，且無法還原原始磁碟區容量。
+
+====
+.步驟
+. 選擇選單：Storage [ Volumes ]。
+. 選擇要增加容量的磁碟區，然後選擇 *增加容量* 。
++
+此時會顯示「確認增加容量」對話方塊。
+
+. 選擇 *Yes* 繼續。
++
+此時會顯示「增加報告容量」對話方塊。
+
++
+此對話方塊顯示磁碟區的目前報告容量以及磁碟區的關聯資源池或磁碟區群組中的可用容量。
+
+. 使用 *Increase reported capacity by adding...* 方塊可將容量新增至目前可用報告容量。您可以變更容量值的顯示單位，選擇 mebibytes（MiB）、gibibytes（GiB）或 tebibytes（TiB）。
+. 點擊 *Increase* 。
+
+
+.結果
+* System Manager 會根據您的選擇增加磁碟區的容量。
+* 選擇選單：Home[View Operations in Progress]，即可查看目前正在對所選磁碟區執行的容量擴容作業的進度。此操作可能耗時較長，並可能影響系統效能。
+
+
+.完成後
+擴展卷容量後，您必須手動增加檔案系統大小以與之匹配。具體操作方法取決於您使用的檔案系統。有關詳細資訊，請參閱主機作業系統文件。

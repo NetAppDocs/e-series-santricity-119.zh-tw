@@ -1,0 +1,34 @@
+---
+permalink: sm-mirroring/test-communication-for-synchronous-mirroring.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, test, communication, synchronous, mirroring, 
+summary: 您可以測試本地儲存陣列和遠端儲存陣列之間的通訊，以診斷參與同步鏡像的鏡像配對可能存在的通訊問題。 
+---
+= 在 SANtricity System Manager 中測試同步鏡像的通訊
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以測試本地儲存陣列和遠端儲存陣列之間的通訊，以診斷參與同步鏡像的鏡像配對可能存在的通訊問題。
+
+.關於此任務
+執行兩種不同的測試：
+
+* *通訊* -- 驗證兩個儲存陣列之間是否存在通訊路徑。通訊測試驗證本機儲存陣列能否與遠端儲存陣列通訊，以及與鏡像對關聯的次要磁碟區是否存在於遠端儲存陣列上。
+* *延遲* -- 向與鏡像對關聯的遠端儲存陣列上的次要磁碟區傳送 SCSI 測試單元命令，以測試最小、平均和最大延遲。
+
+
+.步驟
+. 選擇功能表：Storage [ Synchronous Mirroring ]。
+. 選擇要測試的鏡像對，然後選擇 *Test Communication* 。
+. 檢閱「結果」視窗中顯示的資訊，如有必要，請遵循指示的修正動作。
++
+[NOTE]
+====
+如果通訊測試失敗,即使您關閉此對話框,測試仍會繼續運行,直到鏡像對之間的通訊恢復為止。
+
+====
+

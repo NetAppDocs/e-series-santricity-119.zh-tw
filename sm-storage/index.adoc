@@ -1,0 +1,14 @@
+---
+permalink: sm-storage/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= SANtricity System Manager 11.9
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過 SANtricity System Manager 管理系統儲存設備。

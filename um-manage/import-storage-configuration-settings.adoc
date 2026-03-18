@@ -1,0 +1,67 @@
+---
+permalink: um-manage/import-storage-configuration-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, import, storage, configuration, settings 
+summary: 您可以將儲存組態從一個儲存陣列匯入到其他儲存陣列。當您需要在網路中設定多個陣列時，此批次作業可節省時間。 
+---
+= 在 SANtricity Unified Manager 中匯入儲存配置設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將儲存組態從一個儲存陣列匯入到其他儲存陣列。當您需要在網路中設定多個陣列時，此批次作業可節省時間。
+
+.開始之前
+* 儲存設備已在 SANtricity System Manager 中針對您要用作來源的儲存陣列進行設定。
+* 目標儲存陣列的現有組態已備份到 System Manager 中（功能表：Settings[System > Save Storage Array Configuration]）。
+* 來源陣列和目標陣列必須符合下列需求：
++
+** 控制器所在的機櫃必須完全相同。
+** 貨架 ID 必須完全相同。
+** 擴充櫃必須在相同的插槽中填入相同類型的磁碟機。
+** RBOD 機箱類型必須相同。
+** HIC（包括主機的資料保證功能）必須完全相同。
+** 目標陣列必須處於最佳狀態。
+** 目標陣列上的磁碟區容量大於來源陣列的容量。
+
+
+* 您瞭解以下限制：
++
+** 不支援從雙工組態匯入至單工組態；不過，允許從單工組態匯入至雙工組態。
+** 來源陣列上 64 TB 或更大的磁碟集區磁碟區將阻止目標上的匯入程序。
+** 精簡磁碟區不包含在匯入程序中。
+
+
+
+
+.關於此任務
+匯入的設定包括已設定的磁碟區（僅限厚磁碟區和非儲存庫磁碟區）、磁碟區群組、集區和熱備援磁碟機指派。
+
+.步驟
+. 在「管理」頁面中，按一下 *Import Settings* 。
++
+Import Settings 精靈隨即開啟。
+
+. 在「選擇設定」對話方塊中，選取 *Storage configuration* ，然後按一下 *Next* 。
++
+此時會開啟一個對話方塊，用於選擇來源陣列。
+
+. 在「選擇來源」對話方塊中、選取您要匯入設定的陣列、然後按一下 *Next* 。
+. 在「選擇目標」對話方塊中、選取一或多個陣列以接收新設定。
++
+[NOTE]
+====
+韌體版本低於 8.50 的儲存陣列無法選擇。此外，如果 Unified Manager 無法與某個陣列通訊（例如，陣列處於離線狀態或存在憑證、密碼或網路問題），則該陣列不會顯示在此對話方塊中。
+
+====
+. 點選 *Finish* 。
++
+Operations 頁面會顯示匯入作業的結果。如果作業失敗，您可以按一下該列以查看更多資訊。
+
+
+
+.結果
+目標儲存陣列現在已設定與來源陣列相同的儲存組態。

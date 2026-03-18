@@ -1,0 +1,47 @@
+---
+permalink: sm-settings/enable-feature-pack.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, feature, pack, 
+summary: 功能包是用於變更儲存陣列屬性的軟體包（例如，將傳輸協定從 Fibre Channel 變更為 iSCSI）。啟用功能包需要特殊的金鑰。 
+---
+= 在 SANtricity System Manager 中啟用功能套件
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+功能包是用於變更儲存陣列屬性的軟體包（例如，將傳輸協定從 Fibre Channel 變更為 iSCSI）。啟用功能包需要特殊的金鑰。
+
+.開始之前
+* 您已依照相關說明完成了新儲存陣列屬性的轉換和準備工作。有關主機協定轉換說明，請參閱您的控制器型號的硬體維護指南。
+* 儲存陣列已離線，因此沒有任何主機或應用程式可以存取它。
+* 所有資料均已備份。
+* 您已獲得功能套件檔案。
++
+功能包檔案載入到管理用戶端（具有瀏覽器以存取 System Manager 的系統）上。
+
+
+
+[NOTE]
+====
+您必須安排停機維護時段，並停止主機和控制器之間的所有 I/O 作業。此外，請注意，在成功完成轉換之前，您將無法存取儲存陣列上的資料。
+
+====
+.關於此任務
+本任務介紹如何使用 System Manager 啟用功能套件。完成後，必須重新啟動儲存陣列。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Add-ons* 下，選擇 *Change Feature Pack*。
+. 點擊 *Browse* ，然後選擇金鑰檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 在欄位中輸入 `change`。
+. 按一下 *Change* 。
++
+功能包遷移開始，控制器重新啟動。未寫入的快取資料將被刪除，以確保沒有 I/O 活動。兩個控制器將自動重新啟動以使新功能包生效。重新啟動完成後，儲存陣列恢復回應狀態。
+
+

@@ -1,0 +1,35 @@
+---
+permalink: sm-settings/remove-directory-server.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remove, directory, server, 
+summary: 若要中斷目錄伺服器與儲存陣列之間的連接，您可以從 Access Management 頁面中刪除伺服器資訊。如果您配置了新伺服器，然後想要刪除舊伺服器，則可能需要執行此操作。 
+---
+= 在 SANtricity System Manager 中刪除目錄伺服器
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要中斷目錄伺服器與儲存陣列之間的連接，您可以從 Access Management 頁面中刪除伺服器資訊。如果您配置了新伺服器，然後想要刪除舊伺服器，則可能需要執行此操作。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+
+.關於此任務
+完成此工作後，所有作用中的使用者工作階段都會終止。只會保留您目前的使用者工作階段。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Directory Services* 標籤。
+. 從清單中選擇要刪除的目錄伺服器。
+. 按一下 *Remove* 。
++
+「刪除目錄伺服器」對話方塊開啟。
+
+. 在欄位中輸入  `remove`，然後點選「刪除」。
++
+目錄伺服器組態設定、權限設定和角色對應已移除。使用者無法再使用此伺服器的認證資料登入。
+
+

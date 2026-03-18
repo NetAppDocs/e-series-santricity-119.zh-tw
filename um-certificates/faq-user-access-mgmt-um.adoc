@@ -1,0 +1,140 @@
+---
+permalink: um-certificates/faq-user-access-mgmt-um.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。 
+---
+= SANtricity Unified Manager 使用者存取管理常見問題解答
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。
+
+
+
+== 為什麼我無法登入？
+
+如果您在嘗試登入時收到錯誤，請檢閱這些可能的原因。
+
+登入錯誤可能由以下原因之一導致：
+
+* 您輸入的使用者名稱或密碼不正確。
+* 您的權限不足。
+* 您多次嘗試登入均告失敗，導致帳號被鎖定。請等待 10 分鐘後再重新登入。
+* SAML 身份驗證已啟用。請重新整理瀏覽器以登入。
+
+
+
+
+== 在新增目錄伺服器之前、我需要瞭解哪些資訊？
+
+在 Access Management 中新增目錄伺服器之前、您必須符合特定需求。
+
+* 使用者群組必須在您的目錄服務中定義。
+* LDAP 伺服器認證資料必須可用，包括網域名稱、伺服器 URL，以及選擇性的繫結帳戶使用者名稱和密碼。
+* 對於使用安全協定的 LDAPS 伺服器，必須將 LDAP 伺服器的憑證鏈安裝在本機電腦上。
+
+
+
+
+== 關於對應至儲存陣列角色，我需要了解哪些資訊？
+
+在將群組對應至角色之前，請先檢閱準則。
+
+RBAC（基於角色的存取控制）功能包括以下角色：
+
+* *Storage admin* -- 對陣列上的儲存物件具有完全讀取 / 寫入權限，但無權存取安全性配置。
+* *Security admin* -- 存取 Access Management 和 Certificate Management 中的安全性組態。
+* *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料和 MEL 事件。無權存取儲存物件或安全性組態。
+* *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+[NOTE]
+====
+所有使用者（包括管理員）都必須擁有 Monitor 角色。
+
+====
+如果您正在使用 LDAP（Lightweight Directory Access Protocol）伺服器和 Directory Services，請確保：
+
+* 管理員已在目錄服務中定義使用者群組。
+* 您知道 LDAP 使用者群組的群組網域名稱。
+
+
+
+
+=== SAML
+
+如果您正在使用儲存陣列中嵌入的 Security Assertion Markup Language (SAML) 功能，請確保：
+
+* Identity Provider (IdP) 管理員已在 IdP 系統中配置使用者屬性和群組成員資格。
+* 您知道群組成員資格名稱。
+* 您知道要對應的群組的屬性值。支援正規表達式。如果這些特殊正規表達式字元不是正規表達式模式的一部分，則必須使用反斜線（(`\`）進行轉義：
++
+[listing]
+----
+\.[]{}()<>*+-=!?^$|
+----
+* 所有使用者（包括管理員）都必須擁有 Monitor 角色。如果使用者沒有 Monitor 角色，Unified Manager 將無法正常運作。
+
+
+
+
+== 在設定和啟用 SAML 之前、我需要了解哪些資訊？
+
+在設定和啟用 Security Assertion Markup Language (SAML) 驗證功能之前，請確保滿足以下要求並了解 SAML 限制。
+
+
+
+=== 需求
+
+開始之前、請確保：
+
+* 您的網路中已配置身分提供者（IdP）。IdP 是一個外部系統，用於向使用者請求憑證並確定使用者是否已成功通過身份驗證。您的安全團隊負責維護 IdP。
+* IdP 管理員已在 IdP 系統中設定使用者屬性和群組。
+* IdP 管理員已確保 IdP 支援在身分驗證時傳回名稱 ID 的功能。
+* 管理員已確保 IdP 伺服器和控制器時鐘同步（透過 NTP 伺服器或調整控制器時鐘設定）。
+* 從 IdP 系統下載 IdP 中繼資料檔案，並可在用於存取 Unified Manager 的本機系統上使用。
+* 您知道儲存陣列中控制器的 IP 位址或網域名稱。
+
+
+
+
+=== 限制
+
+除了上述要求外，請務必了解以下限制：
+
+* 啟用 SAML 後，您_無法_透過使用者介面停用它，也無法編輯 IdP 設定。如果您需要停用或編輯 SAML 組態，請聯絡技術支援以尋求協助。我們建議您在最終組態步驟中啟用 SAML 之前，先測試 SSO 登入。（系統也會在啟用 SAML 之前執行 SSO 登入測試。）
+* 如果將來停用 SAML，系統會自動恢復先前的組態（本機使用者角色和/或目錄服務）。
+* 如果目前已設定目錄服務進行使用者驗證，則 SAML 會覆寫該設定。
+* 配置 SAML 後，以下用戶端無法存取儲存陣列資源：
++
+** 企業管理視窗 (EMW)
+** 命令列介面（CLI）
+** 軟體開發工具包（SDK）用戶端
+** 頻內用戶端
+** HTTP Basic Authentication REST API 用戶端
+** 使用標準 REST API 端點登入
+
+
+
+
+
+
+== 本機使用者有哪些？
+
+本機使用者在系統中是預先定義的，並具有特定的權限。
+
+本機使用者包括：
+
+* *admin* -- 超級管理員，擁有系統所有功能的存取權限。此使用者包含所有角色。首次登入時必須設定密碼。
+* *storage* -- 負責所有儲存配置的管理員。此使用者包含以下角色：Storage Admin、Support Admin 和 Monitor。此帳戶在設定密碼之前處於停用狀態。
+* *security* -- 負責安全配置的使用者，包括 Access Management 和 Certificate Management。此使用者包含以下角色：Security Admin 和 Monitor。此帳戶在設定密碼之前處於停用狀態。
+* *support* -- 負責硬體資源、故障資料和韌體升級的使用者。此使用者包含以下角色：Support Admin 和 Monitor。此帳戶在設定密碼之前處於停用狀態。
+* *monitor* -- 具有系統唯讀權限的使用者。此使用者僅包含 Monitor 角色。此帳戶在設定密碼之前處於停用狀態。
+* *rw* （read/write） -- 此使用者包含下列角色：Storage Admin、Support Admin 和 Monitor。此帳戶在設定密碼之前處於停用狀態。
+* *ro* （read only）-- 此使用者僅包含 Monitor 角色。此帳戶在設定密碼之前處於停用狀態。
+

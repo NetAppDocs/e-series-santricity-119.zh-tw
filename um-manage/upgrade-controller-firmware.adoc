@@ -1,0 +1,113 @@
+---
+permalink: um-manage/upgrade-controller-firmware.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, upgrade, os, operating system 
+summary: 使用最新軟體和 NVSRAM 升級一個或多個儲存陣列，以確保您擁有所有最新功能和錯誤修復。控制器 NVSRAM 是一個控制器檔案，用於指定控制器的預設設定。 
+---
+= 升級 SANtricity 作業系統
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用最新軟體和 NVSRAM 升級一個或多個儲存陣列，以確保您擁有所有最新功能和錯誤修復。控制器 NVSRAM 是一個控制器檔案，用於指定控制器的預設設定。
+
+.開始之前
+* 執行 SANtricity Web Services Proxy 和 Unified Manager 的主機系統上提供了最新的 SANtricity OS 檔案。
+* 您知道是要現在啟動軟體升級、還是稍後再啟動。
++
+您可能出於以下原因選擇稍後啟動：
+
++
+** *時間因素* -- 啟動軟體可能需要較長時間，因此建議您等到 I/O 負載較低時再進行操作。啟動期間控制器會進行故障轉移，因此在升級完成之前，效能可能會低於正常水準。
+** *套件類型* -- 您可能需要在升級其他儲存陣列上的檔案之前，先在一個儲存陣列上測試新的 OS 軟體。
+
+
+
+
+
+IMPORTANT: 系統必須執行 SANtricity OS 11.70.5 才能升級至 11.80.x 或更新版本。
+
+.關於此任務
+++ ++
+
+[NOTE]
+====
+存在資料遺失或儲存陣列損壞的風險 - 升級過程中請勿對儲存陣列進行任何變更。保持儲存陣列供電。
+
+====
+.步驟
+. 如果您的儲存陣列僅包含一個控制器或未使用多路徑驅動程式，請停止對儲存陣列的 I/O 活動以防止應用程式錯誤。如果您的儲存陣列包含兩個控制器並且已安裝多路徑驅動程式，則無需停止 I/O 活動。
+. 從主視圖中選擇 *Manage* ，然後選擇一個或多個要升級的儲存陣列。
+. 選擇選單：Upgrade Center[ 升級 SANtricity OS Software ]。
++
+此時會顯示「升級 SANtricity OS 軟體」頁面。
+
+. 從 NetApp 支援網站下載最新的 SANtricity OS 軟體套件到您的本機電腦。
++
+.. 點選 *Add new file to software repository* 。
+.. 按一下連結以尋找最新的 *SANtricity OS Downloads* 。
+.. 點擊 *Download Latest Release* 連結。
+.. 請按照剩餘的說明將 SANtricity OS �案和 NVSRAM 檔案下載到您的本機。
+
+
++
+[NOTE]
+====
+8.42 版及更高版本需要經過數位簽章的韌體。如果您嘗試下載未簽署的韌體，系統將顯示錯誤訊息並中止下載。
+
+====
+. 選擇要用於升級控制器的 OS 軟體檔案和 NVSRAM 檔案：
++
+.. 從 *Select a SANtricity OS software file* 下拉式選單中，選擇您下載到本機的 OS 檔案。
++
+如果有多個檔案可用，則檔案會依日期從最新到最舊排序。
+
++
+[NOTE]
+====
+軟體儲存庫列出與 Web Services Proxy 相關的所有軟體檔案。如果您沒有看到要使用的檔案，可以按一下 *Add new file to software repository* 連結，瀏覽至要新增的 OS 檔案所在位置。
+
+====
+.. 從 *Select an NVSRAM file* 下拉式選單中，選取您要使用的控制器檔案。
++
+如果有多個檔案，則檔案會依日期從最新到最舊排序。
+
+
+
+. 在「相容儲存陣列」表中，檢視與您選取的 OS 軟體檔案相容的儲存陣列，然後選取您要升級的陣列。
++
+** 在「管理」檢視中選取且與所選韌體檔案相容的儲存陣列，預設會在「相容儲存陣列」表中選取。
+** 無法使用所選韌體檔案更新的儲存陣列在 Compatible Storage Array 表中不可選取，狀態顯示為 *Incompatible* 。
+
+
+. *可選：* 要將軟體檔案傳輸到儲存陣列而不啟動它們，請選取 *Transfer the OS software to the storage arrays, mark it as staged, and activate at a later time* 核取方塊。
+. 按一下 *Start* 。
+. 根據您選擇立即啟動還是稍後啟動，請執行下列其中一項操作：
++
+** 輸入 *TRANSFER* 以確認要將所選升級陣列上的建議作業系統軟體版本傳輸到該陣列，然後按一下 *Transfer* 。
++
+若要啟動已傳輸的軟體，請選擇功能表： Upgrade Center [ Activate Staged OS Software ]。
+
+** 輸入 *UPGRADE* 以確認要將建議的 OS 軟體版本傳輸並啟動到您選擇升級的陣列上，然後按一下 *Upgrade*。
++
+系統會將軟體檔案傳輸到您選擇升級的每個儲存陣列，然後透過啟動重新開機來啟動該檔案。
+
+
+
++
+升級作業期間會發生下列動作：
+
++
+** 升級過程中會執行升級前健全狀況檢查。升級前健全狀況檢查會評估所有儲存陣列元件，以確保升級可以繼續進行。
+** 如果儲存陣列的任何健全狀況檢查失敗、升級將停止。您可以按一下省略符號（ ... ）並選取 *Save Log* 來檢閱錯誤。您也可以選擇置換健全狀況檢查錯誤、然後按一下 *Continue* 以繼續升級。
+** 您可以在升級前健康狀況檢查後取消升級作業。
+
+
+. *可選：* 升級完成後，您可以點擊省略號（...）並選擇 *Save Log* 來查看特定儲存陣列的升級清單。
++
+該檔案以名稱  `upgrade_log-<date>.json` 儲存在瀏覽器的 Downloads 資料夾中。
+
+

@@ -1,0 +1,32 @@
+---
+permalink: sm-hardware/show-or-hide-component-status.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, show, hide, component, status, 
+summary: 您可以顯示磁碟機、控制器、風扇和電源供應器的狀態說明。 
+---
+= 在 SANtricity System Manager 中顯示或隱藏元件狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以顯示磁碟機、控制器、風扇和電源供應器的狀態說明。
+
+.步驟
+. 選擇 *Hardware* 。
+. 若要查看背面或正面組件：
++
+** 如果您想查看控制器和電源 / 風扇罐組件，但顯示的是磁碟機，請按一下 *Controllers & Components* 標籤。
+** 如果您想查看磁碟機、但顯示的是控制器和電源 / 風扇匣元件、請按一下 *Drives* 標籤。
+
+
+. 檢視或隱藏彈出式狀態說明：
++
+** 如果您想查看狀態圖示的彈出式說明，請按一下書架檢視右上角的 *Show status icon details*（選取核取方塊）。
+** 若要隱藏彈出式描述，請再次按一下 *Show status icon details*（清除核取方塊）。
+
+
+. 如果要查看完整的狀態詳細資訊，請在機櫃檢視中選取元件，然後選取 *View settings* 。
+. 如果要查看彩色組件的說明，請選擇 *Legend* 。
+

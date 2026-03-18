@@ -1,0 +1,56 @@
+---
+permalink: sm-settings/configure-snmp-mib-variables.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, snmp, mib, variables, 
+summary: 對於 SNMP 警示，您可以選擇性地設定出現在 SNMP 設陷中的管理資訊庫（MIB）變數。這些變數可以傳回儲存陣列名稱、陣列位置和聯絡人。 
+---
+= 在 SANtricity System Manager 中設定 SNMP MIB 變數
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於 SNMP 警示，您可以選擇性地設定出現在 SNMP 設陷中的管理資訊庫（MIB）變數。這些變數可以傳回儲存陣列名稱、陣列位置和聯絡人。
+
+.開始之前
+必須在具有 SNMP 服務應用程式的伺服器上複製並編譯 MIB 檔案。
+
+如果沒有 MIB 檔案，您可以按以下方式取得：
+
+* 前往  https://mysupport.netapp.com/site/global/dashboard["NetApp 支援"^]。
+* 按一下 *Downloads* 、然後選取 *Downloads* 。
+* 按一下 *E-Series SANtricity OS Controller Software*。
+* 選擇 *Download Latest Release* 。
+* 登入。
+* 接受警告聲明和授權合約。
+* 向下捲動直到看到您的控制器類型的 MIB 檔案，然後按一下連結下載該檔案。
+
+
+.關於此任務
+本任務介紹如何為 SNMP 陷阱定義 MIB 變數。這些變數可以回應 SNMP GetRequests 傳回下列值：
+
+* `sysName` （儲存陣列的名稱）
+* `sysLocation` （儲存陣列的位置）
+* `sysContact`（管理員名稱）
+
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *SNMP* 選項卡。
+. 選擇 *Configure SNMP MIB Variables* 。
++
+「設定 SNMP MIB 變數」對話方塊開啟。
+
+. 輸入以下一個或多個值，然後按一下 *Save* 。
++
+** *名稱* -- MIB 變數的值 `sysName`。例如、輸入儲存陣列的名稱。
+** *位置* -- MIB 變數的值 `sysLocation`。例如、輸入儲存陣列的位置。
+** *Contact* -- MIB 變數的值 `sysContact`。例如，輸入負責儲存陣列的管理員。
+
+
+
+
+.結果
+這些值出現在儲存陣列警示的 SNMP 設陷訊息中。

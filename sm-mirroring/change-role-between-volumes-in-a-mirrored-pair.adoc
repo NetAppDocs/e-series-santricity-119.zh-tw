@@ -1,0 +1,39 @@
+---
+permalink: sm-mirroring/change-role-between-volumes-in-a-mirrored-pair.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, role, volumes, mirrored, pair, 
+summary: 您可以對參與同步鏡像的鏡像對中的兩個磁碟區執行角色互換，以用於管理目的或在本地儲存陣列發生災難時進行操作。 
+---
+= 在 SANtricity System Manager 中變更鏡像配對中磁碟區之間的角色
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以對參與同步鏡像的鏡像配對中的兩個磁碟區執行角色反轉。此工作可能是為了管理目的或在本機儲存陣列發生災難時所需。
+
+.關於此任務
+您可以將主磁碟區降級為次要角色，也可以將次要磁碟區提升為主要角色。任何存取主磁碟區的主機都擁有該磁碟區的讀取 / 寫入存取權。當主磁碟區變成次要磁碟區時，只有主控制器啟動的遠端寫入會寫入磁碟區。
+
+.步驟
+. 選擇功能表：Storage [ Synchronous Mirroring ]。
+. 選擇包含要變更角色之磁碟區的鏡射配對，然後選取功能表：更多 [變更角色]。
++
+系統會顯示確認訊息。
+
+. 確認要變更磁碟區的角色，然後選取 *Change Role* 。
++
+[NOTE]
+====
+如果本機儲存陣列無法與遠端儲存陣列通信，則在請求角色變更但無法聯繫遠端儲存陣列時，系統將顯示「無法聯絡儲存陣列」對話方塊。點選 *Yes* 強制進行角色變更。
+
+====
+
+
+.結果
+System Manager 會執行下列動作：
+
+* 如果可以聯繫到鏡像對中的關聯磁碟區，則磁碟區之間的角色會發生變化。System Manager 會將鏡像對中的次要磁碟區提升為主要角色，或將鏡像對中的主要磁碟區降級為次要角色（取決於您的選擇）。
+

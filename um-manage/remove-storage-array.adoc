@@ -1,0 +1,29 @@
+---
+permalink: um-manage/remove-storage-array.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, remove, storage, arrays, 
+summary: 如果您不再希望透過 SANtricity Unified Manager 管理一個或多個儲存陣列，則可以將其刪除。 
+---
+= 從 SANtricity Unified Manager 移除儲存陣列
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再希望透過 SANtricity Unified Manager 管理一個或多個儲存陣列，則可以將其刪除。
+
+.關於此任務
+您無法存取任何已移除的儲存陣列。但是、您可以透過將瀏覽器直接指向其 IP 位址或主機名稱、來建立與任何已移除儲存陣列的連線。
+
+移除儲存陣列不會對儲存陣列本身或其資料造成任何影響。如果儲存陣列被意外移除，可以重新新增。
+
+.步驟
+. 選擇 *Manage* 頁面。
+. 選擇要移除的一個或多個儲存陣列。
+. 選擇選單：非常規任務 [移除儲存陣列]。
++
+儲存陣列已從 SANtricity Unified Manager 的所有檢視中移除。
+
+

@@ -1,0 +1,64 @@
+---
+permalink: sm-settings/overview-drive-security.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, system, security, key, management, 
+summary: 安全金鑰管理可從系統頁面取得。 
+---
+= 了解 SANtricity System Manager 中的磁碟機安全功能
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從「安全金鑰管理」頁面設定磁碟機安全性和金鑰管理。
+
+
+
+== 什麼是磁碟機安全性？
+
+_Drive Security_ 是一項功能，可防止未經授權存取從儲存陣列中移除的安全啟用磁碟機上的資料。這些磁碟機可以是全磁碟加密 (FDE) 磁碟機或聯邦資訊處理標準 (FIPS) 磁碟機。當 FDE 或 FIPS 磁碟機從陣列中實體移除時，它們將無法運作，直到安裝到另一個陣列中，此時磁碟機將處於安全鎖定狀態，直到提供正確的安全金鑰為止。_安全金鑰_ 是一串字元，在這些類型的磁碟機與儲存陣列中的控制器之間共用。
+
+深入瞭解：
+
+* link:how-the-drive-security-feature-works.html["磁碟機安全功能的運作方式"]
+* link:how-security-key-management-works.html["安全金鑰管理的運作方式"]
+* link:drive-security-terminology.html["磁碟機安全術語"]
+
+
+
+
+== 如何配置金鑰管理？
+
+若要實作 Drive Security，陣列中必須安裝 FDE 磁碟機或 FIPS 磁碟機。若要設定這些磁碟機的金鑰管理，請前往功能表：Settings（設定）[System > Security key management（系統 > 安全金鑰管理）]，您可以在此從控制器的持續性記憶體建立內部金鑰，或從金鑰管理伺服器建立外部金鑰。最後，透過在磁碟區設定中選取「secure-capable」，為儲存池和磁碟區群組啟用 Drive Security。
+
+深入瞭解：
+
+* link:create-internal-security-key.html["建立內部安全金鑰"]
+* link:create-external-security-key.html["建立外部安全金鑰"]
+* link:../sm-storage/create-pool-manually.html["手動建立資源池"]
+* link:../sm-storage/create-volume-group.html["建立磁碟區群組"]
+
+
+
+
+== 如何解鎖磁碟機？
+
+如果您設定了金鑰管理，然後將啟用安全功能的磁碟機從一個儲存陣列移至另一個儲存陣列，則必須將安全金鑰重新指派給新的儲存陣列，才能存取磁碟機上的加密資料。
+
+深入瞭解：
+
+* link:unlock-drives-using-an-internal-security-key.html["使用內部金鑰管理時解鎖磁碟機"]
+* link:unlock-drives-using-an-external-security-key.html["使用外部金鑰管理時解鎖磁碟機"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與金鑰管理相關的工作：
+
+* link:use-ca-signed-certificates-for-authentication-with-a-key-management-server.html["使用 CA 簽署的憑證與金鑰管理伺服器進行驗證"]
+* link:back-up-security-key.html["備份安全金鑰"]
+

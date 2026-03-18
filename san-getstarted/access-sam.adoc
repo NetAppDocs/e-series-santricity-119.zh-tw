@@ -1,0 +1,59 @@
+---
+permalink: san-getstarted/access-sam.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access System Manager 
+summary: 若要存取 System Manager 使用者介面，請在瀏覽器中輸入控制器的 IP 位址。設定精靈將幫助您開始系統配置。 
+---
+= 存取 SANtricity System Manager
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要存取 SANtricity System Manager 使用者介面，請在瀏覽器中輸入控制器的 IP 位址。設定精靈將協助您開始進行系統組態設定。
+
+.開始之前
+* 依照其中一份快速配置指南中的說明安裝和配置硬體：
++
+** https://docs.netapp.com/us-en/e-series/config-linux/index.html["Linux 快速配置"^]
+** https://docs.netapp.com/us-en/e-series/config-vmware/index.html["VMware Express 組態"^]
+** https://docs.netapp.com/us-en/e-series/config-windows/index.html["Windows 快速組態"^]
+
+
+* 配置符合下列需求的管理站：
++
+** 連接到速度為 1 Gbps 或更快的網路。
+** 連接至與儲存管理連接埠相同的子網路。
+** 用作獨立工作站，而不是用於資料管理的主機（I/O 連接）。
+** 設定為頻外管理，其中儲存管理站透過乙太網路連線將命令傳送至儲存系統的控制器。
+** 使用支援的瀏覽器進行設定。參見 link:supported-browsers-os.html["支援的瀏覽器和作業系統"]。
+
+
+
+
+.步驟
+. 在瀏覽器中輸入以下 URL： `+https://<IPAddress>+`
++
+`IPAddress` 是其中一個儲存陣列控制器的位址。
+
++
+首次在尚未設定的陣列上開啟 System Manager 時，會出現「設定管理員密碼」提示。
+
+. 在「設定管理員密碼」和「確認密碼」欄位中輸入 admin 角色的 System Manager 密碼、然後按一下 *Set Password* 。
++
+首次登入時，設定精靈將自動啟動。
+
+. 使用設定精靈執行以下工作：
++
+** *驗證硬體（控制器和磁碟機）* -- 驗證儲存陣列中控制器和磁碟機的數量。為陣列指定一個名稱。
+** *驗證主機和作業系統* -- 驗證儲存陣列可以存取的主機和作業系統類型。
+** *Accept pools* -- 接受快速安裝方法建議的儲存池配置。儲存池是磁碟機的邏輯分組。
+** *設定警示* -- 允許 System Manager 在儲存陣列發生問題時接收自動通知。
+** *啟用 AutoSupport* -- 自動監控儲存陣列的運作狀況、並將故障訊息傳送給技術支援。
+
+
+
+
+如需 Setup Wizard 的詳細資訊，請參閱 link:../sm-interface/setup-wizard-overview.html["設定精靈概述"]。

@@ -1,0 +1,46 @@
+---
+permalink: sm-settings/synchronize-storage-array-clocks.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, synchronize, storage, array, clocks, 
+summary: 如果未啟用網路時間協定（NTP），您可以手動設定控制器上的時鐘，使其與管理用戶端（用於執行存取 SANtricity System Manager 的瀏覽器的系統）同步。 
+---
+= 在 SANtricity System Manager 中同步儲存陣列時鐘
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果未啟用網路時間協定（NTP），您可以手動設定控制器上的時鐘，使其與管理用戶端（用於執行存取 SANtricity System Manager 的瀏覽器的系統）同步。
+
+.關於此任務
+同步機制確保事件日誌中的事件時間戳記與寫入主機日誌檔案的時間戳記一致。在同步過程中，控制器保持可用並正常運作。
+
+[NOTE]
+====
+如果 System Manager 中啟用了 NTP，請勿使用此選項同步時鐘。NTP 會自動使用 SNTP（Simple Network Time Protocol）與外部主機同步時鐘。
+
+====
+[NOTE]
+====
+同步後，您可能會發現效能統計資料遺失或出現偏差，排程受到影響（ASUP、Snapshot 等），且日誌資料中的時間戳記也會出現偏差。使用 NTP 可以避免此問題。
+
+====
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *General* 下，按一下 *Synchronize Storage Array Clocks*。
++
+Synchronize Storage Array Clocks 對話方塊隨即開啟。它顯示控制器和用作管理用戶端的電腦的目前日期和時間。
+
++
+[NOTE]
+====
+對於單工儲存陣列，僅顯示一個控制器。
+
+====
+. 如果對話方塊中顯示的時間不匹配，請按一下 *Synchronize* 。
+
+
+.結果
+同步成功後，事件日誌和主機日誌的事件時間戳記相同。

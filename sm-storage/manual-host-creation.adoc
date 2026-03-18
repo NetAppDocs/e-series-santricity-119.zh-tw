@@ -1,0 +1,22 @@
+---
+permalink: sm-storage/manual-host-creation.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, manual, host, 
+summary: 建立主機是讓儲存陣列知道哪些主機連接到它並允許對磁碟區進行 I/O 存取的必要步驟之一。您只能手動建立主機。 
+---
+= 了解 SANtricity System Manager 中的手動主機建立
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立主機是讓儲存陣列知道哪些主機連接到它並允許對磁碟區進行 I/O 存取的必要步驟之一。您只能手動建立主機。
+
+
+
+== 手動建立
+
+手動建立主機可以確保儲存陣列控制器偵測到的主機連接埠識別碼與主機正確關聯。
+
+手動建立主機時，您可以從清單中選擇或手動輸入主機連接埠標識符來關聯它們。建立主機後，您可以為其指派磁碟區，或者如果您打算共用磁碟區存取權限，則可以將其新增至主機叢集。

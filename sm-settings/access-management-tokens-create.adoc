@@ -1,0 +1,58 @@
+---
+permalink: sm-settings/access-management-tokens-create.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access management, create tokens 
+summary: 您可以建立存取權杖，用於透過 REST API 或 Command Line Interface 進行驗證，以取代使用者名稱和密碼。 
+---
+= 在 SANtricity System Manager 中建立存取權杖
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立存取權杖，以取代使用者名稱和密碼，透過 REST API 或命令列介面（CLI）進行驗證。
+
+
+NOTE: 權杖沒有密碼，因此您必須妥善管理它們。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Access Tokens* 標籤。
+. 選擇 *View/Edit Access Token Settings* 。在對話方塊中、確保已選取 *Enable access tokens* 核取方塊。按一下 *Save* 以關閉對話方塊。
+. 選擇 *Create Access Token* 。
+. 在對話方塊中，選擇權杖的有效期限。
++
+
+NOTE: 權杖過期後，使用者的驗證嘗試將會失敗。
+
+. 按一下 *Create* 。
+. 在對話方塊中，選取下列其中一項：
++
+** *複製* 以將權杖文字儲存到剪貼簿。
+** *下載* 以將權杖文字儲存至檔案。
++
+
+NOTE: 請務必儲存權杖文字。這是您在關閉對話方塊之前查看文字的唯一機會。
+
+
+
+. 按一下 *Close* 。
+. 使用權杖的方式如下：
++
+** *Rest API*：若要在 Rest API 請求中使用令牌，請在請求中新增 HTTP 標頭。例如：
+`Authorization: Bearer _<access-token-value>_`
+** *Secure CLI*：若要在 CLI 中使用權杖，請在命令列中新增權杖值，或使用包含權杖值的檔案路徑。例如：
++
+*** 命令列中的權杖值： `-t _access-token-value_`
+*** 包含權杖值的檔案路徑： `-T _access-token-file_`
++
+
+NOTE: 如果沒有指定使用者名稱、密碼或權杖，CLI 會提示使用者在命令列中輸入存取權杖值。
+
+
+
+
+
+

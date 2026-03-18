@@ -1,0 +1,48 @@
+---
+permalink: sm-storage/disable-snapshot-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, disable, snapshot, volume 
+summary: 當您不再需要快照磁碟區或快照一致性群組中的快照磁碟區，或想要暫時停止使用時，您可以將其停用。 
+---
+= 在 SANtricity System Manager 中停用快照磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要快照磁碟區或快照一致性群組中的快照磁碟區，或想要暫時停止使用時，您可以將其停用。
+
+.關於此任務
+若符合下列任一條件，請使用「停用」選項：
+
+* 您暫時完成了 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區的操作。
+* 您打算稍後重新建立快照磁碟區或快照一致性群組快照磁碟區（指定為讀寫），並希望保留關聯的保留容量，這樣您就不需要再次建立它。
+* 您希望透過停止對讀寫快照磁碟區的寫入活動來提高儲存陣列效能。
+
+
+如果快照磁碟區或快照一致性群組快照磁碟區被指定為讀寫模式，此選項還可讓您停止對其關聯的預留容量磁碟區的任何進一步寫入活動。如果您決定重新建立快照磁碟區或快照一致性群組快照磁碟區，則必須從相同基礎磁碟區中選擇快照映像。
+
+[NOTE]
+====
+如果快照磁碟區或快照一致性群組快照磁碟區是線上複製關係的一部分，則無法對該磁碟區執行停用選項。
+
+====
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 選擇 *Snapshot Volumes* 選項卡。
++
+System Manager 會顯示與儲存陣列相關聯的所有 Snapshot 磁碟區。
+
+. 選擇要停用的快照磁碟區，然後選擇功能表：不常見的工作 [停用]。
+. 確認要執行此操作，然後按一下 *Disable* 。
+
+
+.結果
+* 快照磁碟區仍與其基礎磁碟區相關聯。
+* 快照磁碟區保留其 World Wide Name （ WWN ）。
+* 如果是讀寫，快照磁碟區將保留其關聯的保留容量。
+* 快照磁碟區保留了所有主機指派和存取權限。但是、讀寫請求失敗。
+* 快照磁碟區與其快照映像失去關聯。
+

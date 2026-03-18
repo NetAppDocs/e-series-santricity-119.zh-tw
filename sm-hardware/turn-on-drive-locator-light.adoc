@@ -1,0 +1,30 @@
+---
+permalink: sm-hardware/turn-on-drive-locator-light.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, turn, drive, locator, light, LEDs 
+summary: 在「硬體」頁面中、您可以開啟定位燈、以尋找儲存陣列中磁碟機的實體位置。 
+---
+= 在 SANtricity System Manager 中開啟磁碟機定位指示燈
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在「硬體」頁面中、您可以開啟定位燈、以尋找儲存陣列中磁碟機的實體位置。
+
+.關於此任務
+您可以在「硬體」頁面上找到單一磁碟機或多個磁碟機。
+
+.步驟
+. 選擇 *Hardware* 。
+. 若要尋找一個或多個磁碟機，請執行下列其中一項操作：
++
+** *單一磁碟機* -- 從機櫃圖形中，找到您要在陣列中實際定位的磁碟機。（如果圖形顯示控制器，請按一下 *Drives* 標籤。）按一下磁碟機以顯示其內容功能表，然後選取 *Turn on locator light*。
++
+硬碟定位指示燈亮起。找到硬碟後、返回對話框並選擇 *Turn off* 。
+
+** *多個磁碟機* -- 在篩選欄位中，從左側下拉清單中選擇實體磁碟機類型，從右側下拉清單中選擇邏輯磁碟機類型。符合條件的磁碟機數量顯示在欄位的最右側。接下來，您可以按一下 *Turn on locator lights* 或從內容功能表中選擇 *Locate all filtered drives*。實際找到磁碟機後，返回對話方塊並選擇 *Turn off*。
+
+
+

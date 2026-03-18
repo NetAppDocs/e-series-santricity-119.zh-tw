@@ -1,0 +1,68 @@
+---
+permalink: sm-storage/convert-a-snapshot-volume-to-read-write-mode.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, convert, snapshot, volume, read-write mode 
+summary: 如果需要，您可以將唯讀 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區轉換為讀寫模式。 
+---
+= 在 SANtricity System Manager 中將快照磁碟區轉換為讀寫模式
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果需要，您可以將唯讀 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區轉換為讀寫模式。
+
+轉換為讀寫存取的快照磁碟區包含其自身的預留容量。此容量用於儲存主機應用程式對基礎磁碟區所做的任何後續修改，而不會影響參照的快照映像。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 選擇 *Snapshot Volumes* 選項卡。
++
+Snapshot Volumes 表隨即顯示，並顯示與儲存陣列關聯的所有快照磁碟區。
+
+. 選擇要轉換的唯讀快照磁碟區，然後按一下 *Convert to Read/Write*。
++
+「轉換為讀取/寫入」對話方塊將顯示，並啟用 *Reserve Capacity* 步驟。Volume Candidate 表格僅顯示支援指定預留容量的候選磁碟區。
+
+. 若要為讀寫快照磁碟區分配保留容量，請執行下列其中一項動作：
++
+** *接受預設設定* -- 使用此建議選項，以預設設定為快照磁碟區分配保留容量。
+** *根據您的資料儲存需求分配您自己的預留容量設定* -- 使用下列準則分配預留容量。
++
+*** 預留容量的預設設定為基本磁碟區容量的 40% ，通常這個容量就足夠了。
+*** 所需容量取決於對磁碟區進行 I/O 寫入的頻率和大小。
+
+
+
+
+. 選擇 *Next* 以檢閱或編輯設定。
++
+「編輯設定」對話方塊隨即出現。
+
+. 根據需要接受或指定快照磁碟區的設定，然後選取 *Finish* 以轉換快照磁碟區。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+*保留容量設定*
+
+
+
+ a| 
+有以下情況請通知我⋯
+ a| 
+使用微調框調整系統在快照群組的預留容量接近滿時發送警示通知的百分比點。
+
+當快照磁碟區的預留容量超過指定的臨界值時，系統會發出警示，讓您有時間增加預留容量或刪除不必要的物件。
+
+|===
+====
+

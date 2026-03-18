@@ -1,0 +1,59 @@
+---
+permalink: sm-settings/overview-access-management.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access, management, 
+summary: Access Management 是在 SANtricity System Manager 中建立使用者驗證的一種方法。驗證方法包括 RBAC（角色型存取控制）、Directory Services 和 Security Assertion Markup Language（SAML）2.0。 
+---
+= 了解 SANtricity System Manager 中的存取管理
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存取管理是在 SANtricity System Manager 中建立使用者驗證的方法。
+
+
+
+== 有哪些驗證方法可用？
+
+驗證方法包括 RBAC（角色型存取控制）、Directory Services 和 Security Assertion Markup Language（SAML）：
+
+* *RBAC/ 本機使用者角色* -- 驗證透過儲存陣列中強制執行的 RBAC 功能進行管理。本機使用者角色包括預先定義的使用者設定檔和具有特定存取權限的角色。
+* *目錄服務* -- 驗證透過 LDAP （輕量級目錄存取協定）伺服器和目錄服務（例如 Microsoft 的 Active Directory）進行管理。
+* *SAML* -- 驗證透過身分提供者（IdP）使用 SAML 2.0 進行管理。
+
+
+深入瞭解：
+
+* link:how-access-management-works.html["存取管理的運作方式"]
+* link:access-management-terminology.html["存取管理術語"]
+* link:permissions-for-mapped-roles.html["映射角色的權限"]
+* link:access-management-with-local-user-roles.html["本機使用者角色"]
+* link:access-management-with-directory-services.html["目錄服務"]
+* link:access-management-with-saml.html["SAML"]
+
+
+
+
+== 如何配置身份驗證？
+
+儲存陣列已預先設定為使用本機使用者角色，這是 RBAC 功能的實作。如果要設定其他方法，請前往功能表：Settings[Access Management]。
+
+深入瞭解：
+
+* link:add-directory-server.html["新增 LDAP 目錄伺服器"]
+* link:configure-saml.html["設定 SAML"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與存取管理相關的工作：
+
+* link:change-passwords.html["更改密碼"]
+* link:view-audit-log-activity.html["檢視稽核記錄活動"]
+* link:configure-syslog-server-for-audit-logs.html["設定 syslog 伺服器以進行稽核記錄"]
+

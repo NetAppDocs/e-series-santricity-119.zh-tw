@@ -1,0 +1,65 @@
+---
+permalink: sm-storage/rtv-how-remote-storage-works.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remote, storage 
+summary: 遠端儲存功能可讓您將資料從遠端儲存系統匯入至本機 E-Series 儲存系統。當您需要以最短的停機時間簡化資料遷移流程時，例如在設備升級期間，此功能非常有用。 
+---
+= 遠端儲存在 SANtricity 軟體中的工作原理
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+遠端儲存功能可讓您將資料從遠端儲存系統匯入至本機 E-Series 儲存系統。當您需要以最短的停機時間簡化資料遷移流程時，例如在設備升級期間，此功能非常有用。
+
+若要設定遠端儲存功能，您必須先設定硬體，然後使用 System Manager 建立遠端儲存物件。配置完成後，匯入程序即開始。
+
+
+
+== 硬體設定
+
+使用以下工作流程準備硬體連線。
+
+這些步驟在遠端儲存功能的使用者指南中有更詳細的描述，該指南可從 E-Series 和 SANtricity 文件中心獲取 https://docs.netapp.com/us-en/e-series/remote-storage-volumes/index.html["遠端儲存磁碟區總覽"^]，以及 https://www.netapp.com/pdf.html?item=/media/28697-tr-4893-deploy.pdf["遠端儲存技術報告"^]。
+
+
+NOTE: SANtricity 遠端儲存磁碟區目前不支援 E4000 系統。
+
+在本機 E 系列儲存系統上：
+
+. 確保每個控制器都與遠端儲存系統建立了 iSCSI 連線。透過此連線，本機 E-Series 系統可作為 iSCSI 啟動器，並可將其設定為遠端系統上的主機。
+. 為導入操作建立目標磁碟區。確保該磁碟區的容量等於或大於遠端儲存系統上的來源磁碟區、區塊大小相符且未對應。請參閱 link:create-volumes.html["建立磁碟區"]。
+. 從本機 E-Series 系統的 System Manager 介面取得其 iSCSI Qualified Name（IQN）。稍後將使用此 IQN 將本機 E-Series 系統設定為遠端儲存系統上的主機。在 System Manager 中，前往：menu:Settings[System > iSCSI settings > Target IQN]。
+
+
+在遠端儲存系統上：
+
+. 使用本機 E 系列系統及其 IQN ，將其配置為遠端系統的主機。請務必如下設定正確的主機類型：
++
+** 如果遠端系統是 E-Series 型號，請參閱 link:overview-hosts.html["主機和主機叢集概述"]。使用 "Factory Default" 作為主機類型。
+** 如果遠端系統來自其他廠商，請根據可用選項選擇適當的主機類型。
+
+
+. 停止所有 I/O 操作、卸載所有檔案系統，並移除來源磁碟區對主機或應用程式的所有指派。
+. 將磁碟區指派給新建立的本機 E-Series 儲存系統主機。
+. 對於選定的來源磁碟區，請從遠端儲存系統收集下列資訊，以便建立匯入作業：
++
+** iSCSI 限定名稱（IQN）
+** iSCSI IP 位址
+** 來源磁碟區的 LUN 編號
+
+
+
+
+
+
+== System Manager 設定
+
+使用下列工作流程建立用於匯入的遠端儲存物件：
+
+. 使用 System Manager 介面中的 Remote Storage 精靈，將遠端儲存裝置（資料匯入的來源）對應到 E-Series 系統上的目標磁碟區。選擇 *Finish* 後，匯入程序即開始。
+. 從「檢視操作」對話方塊或「進行中的操作」面板監控匯入過程。如有必要，您還可以暫停和恢復該過程。
+. （可選）在匯入完成後中斷來源磁碟區和目標磁碟區之間的連線，或保持連線以供未來匯入使用。
+

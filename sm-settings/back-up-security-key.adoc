@@ -1,0 +1,56 @@
+---
+permalink: sm-settings/back-up-security-key.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, backup, security, key, 
+summary: 建立或變更安全金鑰後、您可以建立金鑰檔案的備份複本、以防原始檔案毀損。 
+---
+= 在 SANtricity System Manager 中備份安全性金鑰
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立或變更安全金鑰後、您可以建立金鑰檔案的備份複本、以防原始檔案毀損。
+
+.關於此任務
+本任務說明如何備份您先前建立的安全金鑰。在此程序期間，您會為備份建立新的通關密語。此通關密語不需要與建立或上次變更原始金鑰時所使用的通關密語相符。通關密語僅適用於您正在建立的備份。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Security key management* 下，選擇 *Back Up Key* 。
++
+備份安全金鑰對話方塊開啟。
+
+. 在 *Define a pass phrase/Re-enter pass phrase* 欄位中，輸入並確認此備份的密碼短語。
++
+該值可以包含 8 到 32 個字元，並且必須包含以下所有內容：
+
++
+** 一個大寫字母（一個或多個）
+** 一個數字 （一個或多個）
+** 一個非字母數字字元，例如 !、*、@ （一個或多個）
+
+
++
+[CAUTION]
+====
+*請務必記錄您的輸入內容以備後用*。您需要使用密碼短語才能存取此安全金鑰的備份。
+
+====
+. 點選 *Back Up* 。
++
+安全金鑰備份將下載到您的本機主機，然後開啟 *Confirm/Record Security Key Backup* 對話方塊。
+
++
+[NOTE]
+====
+下載的安全金鑰檔案路徑可能取決於瀏覽器的預設下載位置。
+
+====
+. 請將您的密碼短語記錄在安全的地方，然後按一下 *Close* 。
+
+
+.完成後
+您應該驗證備份安全金鑰。

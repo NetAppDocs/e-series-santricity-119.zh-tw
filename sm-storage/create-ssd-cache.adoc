@@ -1,0 +1,103 @@
+---
+permalink: sm-storage/create-ssd-cache.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, create, ssd, cache 
+summary: 為了動態提升系統效能，您可以使用 SSD Cache 功能，將最常存取的資料（「熱」資料）快取到延遲較低的固態硬碟（SSD）上。SSD Cache 僅用於主機讀取操作。 
+---
+= 在 SANtricity System Manager 中建立 SSD 快取
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了動態提升系統效能，您可以使用 SSD Cache 功能，將最常存取的資料（「熱」資料）快取到延遲較低的固態硬碟（SSD）上。SSD Cache 僅用於主機讀取操作。
+
+.開始之前
+您的儲存陣列必須包含一些 SSD 磁碟機。
+
+.關於此任務
+建立新的 SSD 快取時，可以使用單一硬碟或多個硬碟。由於讀取快取位於儲存陣列中，因此使用該儲存陣列的所有應用程式都可以共用快取。您只需選擇要快取的磁碟區，快取過程就會自動動態進行。
+
+建立新的 SSD Cache 時，請遵循以下準則。
+
+* 您只能在建立 SSD 快取時啟用安全功能，之後無法再啟用。
+* 每個儲存陣列僅支援一個 SSD Cache 。
+* 如果只有一個磁碟區啟用了 SSD 快取，則整個 SSD 快取將指派給擁有該磁碟區的控制器。
+* 儲存陣列上可用的最大 SSD Cache 容量取決於控制器的主快取容量。
+* 快照映像不支援 SSD 快取。
+* 如果匯入或匯出啟用或停用 SSD Cache 的磁碟區，則不會匯入或匯出快取的資料。
+* 任何被指派使用控制器 SSD Cache 的磁碟區都不符合自動負載平衡傳輸的條件。
+* 如果關聯的磁碟區啟用了安全功能，則建立啟用了安全功能的 SSD Cache。
+
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 點選選單：建立 [SSD Cache]。
++
+此時會出現 Create SSD Cache 對話方塊。
+
+. 輸入 SSD 快取的名稱。
+. 根據以下特性選擇要使用的 SSD Cache 候選產品。
++
+[cols="25h,~"]
+|===
+| 特性 | 使用 
+
+
+ a| 
+容量
+ a| 
+顯示可用容量（單位：GiB）。請根據您的應用程式儲存需求選擇容量。
+
+SSD Cache 的最大容量取決於控制器的主快取容量。如果分配給 SSD Cache 的容量超過最大值，則多餘的容量將無法使用。
+
+SSD 快取容量計入您的總分配容量。
+
+
+
+ a| 
+總磁碟機數
+ a| 
+顯示可用於此 SSD 快取的磁碟機數量。選擇具有所需磁碟機數量的 SSD 候選方案。
+
+
+
+ a| 
+具備安全能力
+ a| 
+指示 SSD Cache 候選裝置是否完全由安全磁碟機組成，這些磁碟機可以是 Full Disk Encryption（FDE）磁碟機或 Federal Information Processing Standard（FIPS）磁碟機。
+
+如果要建立啟用安全功能的 SSD 緩存，請在「安全功能」欄中尋找 *Yes - FDE* 或 *Yes - FIPS*。
+
+
+
+ a| 
+啟用安全功能？
+ a| 
+此選項允許對支援安全功能的硬碟啟用磁碟機安全功能。如果要建立支援安全功能的 SSD 快取，請勾選「啟用安全性」核取方塊。
+
+[NOTE]
+====
+安全功能一旦啟用便無法停用。您只能在建立 SSD Cache 時啟用其安全功能，之後無法再啟用。
+
+====
+
+
+ a| 
+具備 DA 功能
+ a| 
+指示此 SSD Cache 候選產品是否支援 Data Assurance（DA）。Data Assurance（DA）會檢查並修正資料從控制器傳送到磁碟機過程中可能出現的錯誤。
+
+如果要使用 DA，請選擇支援 DA 的 SSD Cache 候選裝置。此選項僅在啟用 DA 功能後可用。
+
+SSD Cache 可以包含支援 DA 和不支援 DA 的磁碟機，但要使用 DA，所有磁碟機都必須支援 DA。
+
+|===
+. 將 SSD 快取與要實作 SSD 讀取快取的磁碟區建立關聯。若要立即在相容磁碟區上啟用 SSD 快取，請選取 *在已對應至主機的現有相容磁碟區上啟用 SSD 快取* 核取方塊。
++
+如果磁碟區具有相同的 Drive Security 和 DA 功能，則這些磁碟區是相容的。
+
+. 按一下 *Create* 。
+

@@ -1,0 +1,41 @@
+---
+permalink: sm-support/view-autosupport-log.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, autosupport, log 
+summary: AutoSupport 日誌提供有關狀態、調度歷史記錄以及 AutoSupport 調度過程中遇到的錯誤的資訊。 
+---
+= 在 SANtricity System Manager 中檢視 AutoSupport 日誌
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 日誌提供有關狀態、調度歷史記錄以及 AutoSupport 調度過程中遇到的錯誤的資訊。
+
+.關於此任務
+可以存在多個日誌檔案。當目前的日誌檔案達到 200 KB 時，就會將其歸檔並建立新的日誌檔案。歸檔的日誌檔案名稱為 `ASUPMessages.n`，其中 _n_ 是 1 到 9 的整數。如果存在多個日誌檔案，您可以選擇檢視最新的日誌或先前的日誌。
+
+* *Current log* -- 顯示最新擷取事件的清單。
+* *已歸檔日誌* -- 顯示較早事件的清單。
+
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *View AutoSupport Log* 。
++
+此時會跳出一個對話框，列出目前的 AutoSupport 日誌。
+
+. 如果要查看先前的 AutoSupport 日誌、請選取 *Archived* 選項按鈕、然後從 *Select AutoSupport log* 下拉式清單中選取日誌。
++
+只有當儲存陣列上存在已歸檔日誌時、才會顯示「已歸檔」選項。
+
++
+選取的 AutoSupport 日誌會顯示在對話方塊中。
+
+. *選用：* 若要搜尋 AutoSupport 記錄、請在 *Find* 方塊中輸入詞彙、然後按一下 *Find* 。
++
+再次點選 *Find* 以搜尋該詞彙的其他出現位置。
+
+

@@ -1,0 +1,50 @@
+---
+permalink: sm-settings/switch-from-external-to-internal-key-management.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, switch, external, internal, key, management, 
+summary: 您可以將 Drive Security 的管理方式從外部金鑰伺服器變更為儲存陣列所使用的內部方式。先前為外部金鑰管理定義的安全金鑰將用於內部金鑰管理。 
+---
+= 在 SANtricity System Manager 中，將金鑰管理從外部切換到內部
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將 Drive Security 的管理方式從外部金鑰伺服器變更為儲存陣列所使用的內部方式。先前為外部金鑰管理定義的安全金鑰將用於內部金鑰管理。
+
+.關於此任務
+在此任務中、您將停用外部金鑰管理、並將新的備份複本下載到本機主機。現有金鑰仍用於 Drive Security 、但將在儲存陣列內部進行管理。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Security key management* 下、選取 *Disable External Key Management* 。
++
+停用外部金鑰管理對話方塊開啟。
+
+. 在 *Define a pass phrase/Re-enter pass phrase* 中，輸入並確認金鑰備份的密碼短語。該值的長度必須介於 8 到 32 個字元之間，且必須包含下列各項：
++
+** 一個或多個大寫字母。請注意，複雜密碼區分大小寫。
+** 一個數字（一個或多個）。
+** 非字母數字字元，例如 !、*、@ （一個或多個）。
+
+
++
+[CAUTION]
+====
+_請務必記錄您的輸入內容以備後用_。如果您需要從儲存陣列中移動啟用安全功能的磁碟機，則必須知道識別碼和密碼以解鎖磁碟機資料。
+
+====
+. 按一下 *Disable* 。
++
+備份金鑰已下載到您的本機主機。
+
+. 記錄您的金鑰識別碼、密碼短語和已下載金鑰檔案的位置，然後按一下 *Close* 。
+
+
+.結果
+磁碟機安全性現在由儲存陣列內部進行管理。
+
+.完成後
+您應該驗證安全金鑰，以確保金鑰檔案未損毀。

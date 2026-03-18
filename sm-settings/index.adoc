@@ -1,0 +1,14 @@
+---
+permalink: sm-settings/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= SANtricity System Manager 11.9
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定 SANtricity System Manager，以進行一些常規陣列設定和附加功能。

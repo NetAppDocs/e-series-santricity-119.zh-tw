@@ -1,0 +1,71 @@
+---
+permalink: sm-settings/define-log-policies.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, define, audit, log, policies, 
+summary: 您可以變更覆寫原則和稽核記錄中記錄的事件類型。 
+---
+= 在 SANtricity System Manager 中定義稽核日誌原則
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更覆寫原則和稽核記錄中記錄的事件類型。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+
+.關於此任務
+本任務說明如何變更稽核日誌設定，包括覆寫舊事件的原則和記錄事件類型的原則。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Audit Log* 標籤。
+. 選擇 *View/Edit Settings* 。
++
+Audit Log Settings 對話方塊開啟。
+
+. 變更覆寫原則或記錄的事件類型。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+覆寫原則
+ a| 
+確定達到最大容量時覆寫舊事件的原則：
+
+** *允許在稽核日誌已滿時覆寫稽核日誌中最舊的事件* -- 當稽核日誌達到 50,000 筆記錄時覆寫舊事件。
+** *要求手動刪除稽核日誌事件* -- 指定事件不會自動刪除；而是在達到設定的百分比時顯示臨界值警告。事件必須手動刪除。
++
+
+NOTE: 如果覆蓋策略已停用，且稽核日誌條目達到最大限制，則沒有 Security Admin 權限的使用者將被拒絕存取 System Manager。若要恢復沒有 Security Admin 權限使用者的系統存取權限，必須由具有 Security Admin 角色的使用者刪除舊的事件記錄。
+
++
+
+NOTE: 如果 syslog 伺服器設定為歸檔稽核記錄，則覆寫原則不適用。
+
+
+
+
+
+ a| 
+要記錄的動作層級
+ a| 
+確定要記錄的事件類型：
+
+** *僅記錄修改事件* -- 僅顯示使用者動作涉及對系統進行變更的事件。
+** *記錄所有修改和唯讀事件* -- 顯示所有事件，包括涉及讀取或下載資訊的使用者動作。
+
+
+|===
+====
+. 按一下 *Save* 。
+

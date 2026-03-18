@@ -1,0 +1,51 @@
+---
+permalink: um-manage/how-import-settings-works.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, import, settings, 
+summary: 您可以使用 Unified Manager 將設定從一個儲存陣列匯入到多個儲存陣列。Import Settings 功能是一項批次操作，當您需要在網路中配置多個陣列時，它可以節省時間。 
+---
+= 了解如何在 SANtricity Unified Manager 中配置多個儲存陣列
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 SANtricity Unified Manager 將設定從一個儲存陣列匯入到多個儲存陣列。「匯入設定」功能是一項批次操作，當您需要在網路中配置多個陣列時，它可以節省時間。
+
+
+
+== 可供匯入的設定
+
+以下組態可匯入至多個陣列：
+
+* *警示* -- 使用電子郵件、 syslog 伺服器或 SNMP 伺服器向管理員傳送重要事件的警示方法。
+* *AutoSupport* -- 監控儲存陣列運作狀況並自動向技術支援發送調度資訊的功能。
+* *目錄服務* -- 一種透過 LDAP （輕量級目錄存取協定）伺服器和目錄服務（例如 Microsoft 的 Active Directory）進行管理的使用者驗證方法。
+* *儲存組態* -- 與下列項目相關的組態：
++
+** 磁碟區（僅限厚磁碟區和非儲存庫磁碟區）
+** Volume 群組和集區
+** 熱備援磁碟機指派
+
+
+* *系統設定* -- 與下列項目相關的組態：
++
+** 磁碟區的媒體掃描設定
+** SSD 設定
+** 自動負載平衡（不包括主機連線報告）
+
+
+
+
+
+
+== 組態工作流程
+
+若要匯入設定、請遵循此工作流程：
+
+. 在用作來源的儲存陣列上，使用 System Manager 配置設定。
+. 在將要用作目標的儲存陣列上，使用 System Manager 備份其組態。
+. 從 Unified Manager 中，前往 *Manage* 頁面並匯入設定。
+. 從 *Operations* 頁面檢閱 Import Settings 操作的結果。
+

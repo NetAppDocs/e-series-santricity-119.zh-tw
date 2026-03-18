@@ -1,0 +1,40 @@
+---
+permalink: sm-support/collect-support-data-manually.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, collect, support, data, manually 
+summary: 您可以將儲存陣列的各種庫存、狀態和效能資料收集到單一檔案中。技術支援人員可以使用該檔案進行疑難排解和進一步分析。 
+---
+= 在 SANtricity System Manager 中手動收集支援資料
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將儲存陣列的各種庫存、狀態和效能資料收集到單一檔案中。技術支援人員可以使用該檔案進行疑難排解和進一步分析。
+
+.關於此任務
+++ ++
+
+[NOTE]
+====
+如果啟用了 AutoSupport 功能，您也可以透過前往 *AutoSupport* 標籤並選擇 *傳送 AutoSupport Dispatch* 來收集此資料。
+
+====
+一次只能執行一個收集作業。如果您嘗試啟動另一個作業，您會收到錯誤訊息。
+
+[NOTE]
+====
+僅在技術支援人員指示時才執行此操作。
+
+====
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *Collect Support Data* 。
+. 點擊 *Collect* 。
++
+該檔案以名稱  `support-data.7z` 儲存在瀏覽器的「下載」資料夾中。如果您的機櫃包含抽屜，則該機櫃的診斷資料會歸檔在名為  `tray-component-state-capture.7z` 的個別壓縮檔案中。
+
+. 請按照技術支援人員提供的說明將檔案傳送給他們。
+

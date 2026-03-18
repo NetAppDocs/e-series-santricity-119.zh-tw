@@ -1,0 +1,42 @@
+---
+permalink: sm-mirroring/suspend-or-resume-mirror-consistency-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, suspend, resume, synchronization, mirror, consistency, group, 
+summary: 您可以暫停或恢復鏡像一致性群組內所有鏡像配對的資料同步，這比暫停或恢復單一鏡像配對的同步更有效率。 
+---
+= 在 SANtricity System Manager 中暫停或恢復鏡像一致性群組的同步
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以暫停或恢復鏡像一致性群組內所有鏡像配對的資料同步，這比暫停或恢復單一鏡像配對的同步更有效率。
+
+.關於此任務
+暫停和恢復群組的同步有助於減少在將本機儲存陣列上的任何變更資料複製到遠端儲存陣列時可能對主機應用程式造成的任何效能影響。
+
+鏡像一致性群組及其鏡像配對的狀態將保持暫停狀態，直到您使用 Resume 選項恢復同步活動。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+鏡像一致性群組表隨即出現，並顯示與儲存陣列關聯的所有鏡像一致性群組。
+
+. 選擇要暫停或恢復的鏡像一致性群組，然後選擇 menu:More[Suspend] 或 menu:More[Resume]。
++
+系統會顯示確認訊息。
+
+. 選擇 *Yes* 進行確認。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 暫停或恢復鏡像一致性群組中所有鏡像配對之間的資料傳輸，而不移除鏡像關係。
+* 記錄鏡像組暫停期間寫入鏡像一致性組主端的所有數據，並在鏡像組恢復運行時自動將數據寫入鏡像一致性組的輔助端。無需進行完全同步。
+* 對於 _suspended_ 鏡像一致性群組，在鏡像一致性群組表中顯示 *user-suspended*。
+* 對於已復原的鏡像一致性群組，在鏡像一致性群組暫停期間寫入主磁碟區的資料會立即寫入輔助磁碟區。如果已設定自動同步間隔，則會恢復定期同步。
+

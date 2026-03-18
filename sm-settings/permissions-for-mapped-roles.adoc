@@ -1,0 +1,27 @@
+---
+permalink: sm-settings/permissions-for-mapped-roles.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, permissions, mapped, roles, 
+summary: 儲存陣列上強制執行的 RBAC（基於角色的存取控制）功能包括預先定義的使用者設定檔，每個設定檔都對應有一個或多個角色。每個角色都包含存取 SANtricity System Manager 中任務的權限。 
+---
+= 了解 SANtricity System Manager 中映射角色的權限
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存陣列上強制執行的 RBAC（基於角色的存取控制）功能包括預先定義的使用者設定檔，每個設定檔都對應有一個或多個角色。每個角色都包含存取 SANtricity System Manager 中任務的權限。
+
+使用者設定檔和映射角色可透過任一 System Manager 的使用者介面中的選單「設定」[存取管理 > 本機使用者角色]存取。
+
+這些角色為使用者提供執行任務的權限，具體如下：
+
+* *Storage admin* -- 對儲存物件（例如、磁碟區和磁碟集區）具有完全的讀取 / 寫入權限、但無權存取安全性組態。
+* *Security admin* -- 可以存取 Access Management 中的安全性設定、憑證管理、稽核日誌管理，以及啟用或停用舊版管理介面（SYMbol）的功能。
+* *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料、MEL 事件和控制器韌體升級。無權存取儲存物件或安全性配置。
+* *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+如果使用者沒有執行某個任務的權限，則該任務會顯示為灰色或不會在使用者介面中顯示。

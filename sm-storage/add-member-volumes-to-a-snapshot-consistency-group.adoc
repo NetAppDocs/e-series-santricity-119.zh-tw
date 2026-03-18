@@ -1,0 +1,61 @@
+---
+permalink: sm-storage/add-member-volumes-to-a-snapshot-consistency-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, add, member, volume, snapshot consistency group 
+summary: 您可以為現有快照一致性群組新增新的成員磁碟區。新增新的成員磁碟區時，您也必須為該成員磁碟區預留容量。 
+---
+= 在 SANtricity System Manager 中向快照一致性群組新增成員磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為現有快照一致性群組新增新的成員磁碟區。新增新的成員磁碟區時，您也必須為該成員磁碟區預留容量。
+
+.開始之前
+* 成員磁碟區必須為最佳狀態。
+* 快照一致性群組的磁碟區數必須少於允許的最大磁碟區數（由您的組態定義）。
+* 每個預留容量磁碟區必須與關聯的成員磁碟區具有相同的 Data Assurance (DA) 和安全設定。
+
+
+.關於此任務
+您可以將標準磁碟區或精簡磁碟區新增至快照一致性群組。基礎磁碟區可以位於儲存池或磁碟區群組中。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 選擇 *Snapshot Consistency Groups* 標籤。
++
+表格隨即顯示，並列出與儲存陣列相關聯的所有 Snapshot 一致性群組。
+
+. 選擇要修改的快照一致性群組，然後按一下 *Add Members* 。
++
+此時會出現「新增成員」對話方塊。
+
+. 選擇要新增的成員磁碟區，然後按一下 *Next* 。
++
+此時會顯示「預留容量」步驟。「Volume Candidate」表僅顯示支援指定預留容量的候選項目。
+
+. 使用微調框為成員磁碟區分配保留容量。執行下列其中一項動作：
++
+** *接受預設設定。*
++
+使用此建議選項，以預設設定將保留容量分配給成員磁碟區。
+
+** *分配您自己的預留容量設定，以滿足您的資料儲存需求。*
++
+如果您變更預設保留容量設定，請按一下 *Refresh Candidates* 以重新整理您指定之保留容量的候選清單。
+
++
+請依照以下準則分配保留容量。
+
++
+*** 預留容量的預設設定為基本磁碟區容量的 40% ，通常這個容量就足夠了。
+*** 所需容量會根據磁碟區的 I/O 寫入頻率和大小、以及快照映像收集的數量和持續時間而有所不同。
+
+
+
+
+. 點擊 *Finish* 以新增成員卷。
+

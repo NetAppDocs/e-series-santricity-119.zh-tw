@@ -1,0 +1,30 @@
+---
+permalink: sm-settings/edit-key-management-server-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, key, management, server, settings, 
+summary: 如果您設定了外部金鑰管理，您可以隨時檢視和編輯金鑰管理伺服器設定。 
+---
+= 在 SANtricity System Manager 中編輯金鑰管理伺服器設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您設定了外部金鑰管理，您可以隨時檢視和編輯金鑰管理伺服器設定。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Security key management* 下，選擇 *View/Edit Key Management Server Settings* 。
+. 編輯以下欄位中的資訊：
++
+** *金鑰管理伺服器位址* -- 輸入用於金鑰管理的伺服器的完全限定網域名稱或 IP 位址（IPv4 或 IPv6）。
+** *金鑰管理連接埠號碼* -- 輸入用於 Key Management Interoperability Protocol (KMIP) 通訊的連接埠號碼。
++
+*可選：* 您可以透過點擊 *Add Key Server* 來新增另一個金鑰伺服器。
+
+
+
+. 按一下 *Save* 。
+

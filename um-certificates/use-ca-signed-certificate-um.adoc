@@ -1,0 +1,108 @@
+---
+permalink: um-certificates/use-ca-signed-certificate-um.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, ca-signed, certificates 
+summary: 您可以取得並匯入 CA 簽署的憑證，以便安全地存取託管 Unified Manager 的管理系統。 
+---
+= 使用 CA 簽署的憑證進行管理系統
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以取得並匯入 CA 簽署的憑證，以便安全地存取託管 SANtricity Unified Manager 的管理系統。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+
+.關於此任務
+使用 CA 簽署的憑證是一個三步驟程序。
+
+
+
+== 步驟 1：完成 CSR 檔案
+
+您必須先產生憑證簽章要求（CSR）檔案，該檔案用於識別您的組織以及安裝 Web Services Proxy 和 Unified Manager 的主機系統。
+
+[NOTE]
+====
+或者，您可以使用 OpenSSL 等工具產生 CSR 檔案，然後跳到 <<步驟 2：提交 CSR 檔案>>。
+
+====
+.步驟
+. 選擇 *Certificate Management* 。
+. 從「管理」標籤中，選取 *Complete CSR* 。
+. 輸入以下資訊，然後按一下 *Next* ：
++
+** *組織名稱* -- 貴公司或組織的完整法定名稱。請包含後綴，例如 Inc. 或 Corp.。
+** *組織單位（選用）* -- 貴組織中負責處理憑證的部門。
+** *城市 / 地區* -- 您的主機系統或企業所在的城市。
+** *州 / 地區（可選）* -- 您的主機系統或企業所在的州或地區。
+** *國家 / 地區 ISO 代碼* -- 您所在國家 / 地區的兩位數 ISO（International Organization for Standardization）代碼，例如 US。
+
+
+. 請輸入以下有關安裝 Web Services Proxy 的主機系統的資訊：
++
+** *通用名稱* -- 安裝 Web Services Proxy 的主機系統的 IP 位址或 DNS 名稱。請確保此位址正確；它必須與您在瀏覽器中存取 Unified Manager 時輸入的位址完全一致。請勿包含 http:// 或 https://。DNS 名稱不能以萬用字元開頭。
+** *備用 IP 位址* -- 如果通用名稱是 IP 位址，您可以選擇性地輸入主機系統的任何其他 IP 位址或別名。對於多個項目，請使用逗號分隔格式。
+** *備用 DNS 名稱* -- 如果通用名稱是 DNS 名稱，請輸入主機系統的任何其他 DNS 名稱。多個條目請使用逗號分隔格式。如果沒有備用 DNS 名稱，但您在第一個欄位中輸入了 DNS 名稱，請將該名稱複製到此處。DNS 名稱不能以萬用字元開頭。
+
+
+. 請確保主機資訊正確。如果主機資訊不正確，則嘗試匯入憑證時，從 CA 傳回的憑證將會失敗。
+. 點選 *Finish* 。
+. 前往 <<步驟 2：提交 CSR 檔案>>。
+
+
+
+
+== 步驟 2：提交 CSR 檔案
+
+建立憑證簽署要求（CSR）檔案後，將其傳送給憑證授權單位（CA），以取得託管 Unified Manager 和 Web Services Proxy 的系統所簽署的管理憑證。
+
+
+NOTE: E-Series 系統要求簽章憑證採用 PEM 格式（Base64 ASCII 編碼），包括下列檔案類型：.pem、.crt、.cer 或 .key。
+
+.步驟
+. 找到已下載的 CSR 檔案。
++
+下載的資料夾位置取決於您的瀏覽器。
+
+. 將 CSR 檔案提交給 CA（例如 Verisign 或 DigiCert），並要求 PEM 格式的簽署憑證。
++
+[CAUTION]
+====
+*向 CA 提交 CSR 檔案後，請勿重新產生另一個 CSR 檔案。*每次產生 CSR 時，系統都會建立私鑰和公鑰對。公鑰是 CSR 的一部分，而私鑰則保存在系統的金鑰庫中。當您收到簽署的憑證並匯入時，系統會確保私鑰和公鑰都是原始金鑰對。如果金鑰不匹配，簽署的憑證將無法使用，您必須向 CA 申請新的憑證。
+
+====
+. 當 CA 返回已簽署的憑證後，請轉到 <<步驟 3：匯入管理憑證>>。
+
+
+
+
+== 步驟 3：匯入管理憑證
+
+從憑證授權單位（CA）收到簽署憑證後，將憑證匯入安裝了 Web Services Proxy 和 Unified Manager 介面的主機系統中。
+
+.開始之前
+* 您已收到來自憑證授權單位的簽署憑證。這些文件包括根證書、一個或多個中間證書以及伺服器證書。
+* 如果 CA 提供鏈式憑證檔案（例如 .p7b 檔案），您必須將鏈式檔案解壓縮為個別檔案：根憑證、一或多個中繼憑證、以及伺服器憑證。您可以使用 Windows `certmgr` 公用程式來解壓縮檔案（按一下滑鼠右鍵並選取功能表：所有工作 [匯出]）。建議使用 Base-64 編碼。匯出完成後、鏈中的每個憑證檔案都會顯示一個 CER 檔案。
+* 您已將憑證檔案複製到執行 Web Services Proxy 的主機系統。
+
+
+.步驟
+. 選擇 *Certificate Management* 。
+. 從「管理」標籤中，選取 *Import* 。
++
+此時會開啟一個對話方塊，用於匯入憑證檔案。
+
+. 點選 *Browse* 先選擇根憑證和中間憑證檔案，然後選擇伺服器憑證。如果您使用外部工具產生了 CSR，則也必須匯入與 CSR 一起建立的私密金鑰檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 點選 *Import* 。
+
+
+.結果
+檔案已上傳並驗證。憑證資訊會顯示在憑證管理頁面上。

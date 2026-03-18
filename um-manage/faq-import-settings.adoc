@@ -1,0 +1,45 @@
+---
+permalink: um-manage/faq-import-settings.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。 
+---
+= SANtricity Unified Manager 匯入設定常見問題解答
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。
+
+
+
+== 將匯入哪些設定？
+
+匯入設定功能是一項批次作業，可將組態從一個儲存陣列載入到多個儲存陣列。此作業期間匯入的設定取決於來源儲存陣列在 SANtricity System Manager 中的組態方式。
+
+以下設定可以匯入多個儲存陣列：
+
+* *電子郵件警示* -- 設定包括郵件伺服器位址和警示收件者的電子郵件地址。
+* *Syslog 警示* -- 設定包括 syslog 伺服器位址和 UDP 連接埠。
+* *SNMP 警報* -- 設定包含 SNMP 伺服器的社群名稱和 IP 位址。
+* *AutoSupport* -- 設定包括單獨的功能（基本 AutoSupport、AutoSupport OnDemand 和遠端診斷）、維護視窗、交付方式和排程計畫。
+* *目錄服務* -- 組態包括 LDAP（Lightweight Directory Access Protocol）伺服器的網域名稱和 URL，以及 LDAP 伺服器使用者群組與儲存陣列預先定義角色的對應。
+* *儲存組態* -- 組態包括磁碟區（僅限完整磁碟區和僅限非儲存庫磁碟區）、磁碟區群組、資源池和熱備援磁碟機指派。
+* *系統設定* -- 組態包括磁碟區的媒體掃描設定、控制器的 SSD 快取和自動負載平衡（不包括主機連線報告）。
+
+
+
+
+== 為什麼我看不到我所有的儲存陣列？
+
+在匯入設定作業期間，部分儲存陣列可能無法在目標選取對話方塊中使用。
+
+儲存陣列可能不會顯示，原因如下：
+
+* 韌體版本低於 8.50。
+* 儲存陣列已離線。
+* 系統無法與該陣列通訊（例如、該陣列存在憑證、密碼或網路問題）。
+

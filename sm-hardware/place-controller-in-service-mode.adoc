@@ -1,0 +1,37 @@
+---
+permalink: sm-hardware/place-controller-in-service-mode.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, place, controller, service, mode, 
+summary: 如果接獲指示，您可以將控制器置於維修模式。 
+---
+= 在 SANtricity System Manager 中將控制器置於服務模式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果接獲指示，您可以將控制器置於維修模式。
+
+.開始之前
+* 儲存陣列必須有兩個控制器。未置於服務模式的控制器必須處於線上狀態（處於最佳狀態）。
+* 請確保沒有磁碟區正在使用，或在使用這些磁碟區的所有主機上都安裝了多重路徑驅動程式。
+
+
+[NOTE]
+====
+將控制器置於維修模式可能會顯著降低效能。除非技術支援人員指示，否則請勿將控制器置於維修模式。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 按一下要置於維修模式的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Place in service mode*，並確認要執行此操作。
+

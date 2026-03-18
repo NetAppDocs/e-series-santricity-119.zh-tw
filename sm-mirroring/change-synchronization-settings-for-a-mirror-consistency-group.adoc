@@ -1,0 +1,66 @@
+---
+permalink: sm-mirroring/change-synchronization-settings-for-a-mirror-consistency-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, synchronization, settings, mirror, consistency, group, 
+summary: 您可以變更本機儲存陣列上的鏡像一致性群組在初始資料同步或在非同步鏡像作業期間重新同步資料時所使用的同步設定和警告臨界值。 
+---
+= 在 SANtricity System Manager 中變更鏡像一致性群組的同步設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更本機儲存陣列上的鏡像一致性群組在初始資料同步或在非同步鏡像作業期間重新同步資料時所使用的同步設定和警告臨界值。
+
+.關於此任務
+變更同步設定會影響鏡像一致性群組內所有鏡像配對的同步作業。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+鏡像一致性群組表隨即出現，並顯示與儲存陣列關聯的所有鏡像一致性群組。
+
+. 選擇要編輯的鏡像一致性群組，然後選擇功能表：更多 [編輯設定]。
++
+系統會顯示 Edit Settings 對話方塊。
+
+. 根據需要編輯同步和警示設定，然後按一下 *Save* 。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+同步鏡像配對…
+ a| 
+指定是否要手動或自動同步遠端儲存陣列上的鏡像配對。
+
+** **手動** – 選擇此選項可手動同步遠端儲存陣列上的鏡像配對。
+** **自動，每隔** – 選擇此選項可自動同步遠端儲存陣列上的鏡像對，方法是指定從上次更新開始到下次更新開始的時間間隔。預設時間間隔為 10 分鐘。
+
+
+
+
+ a| 
+提醒我…
+ a| 
+如果將同步方式設定為自動同步，請設定以下警示：
+
+** **同步** – 設定 System Manager 發送同步未完成警示的時間長度。
+** **遠端復原點** – 設定一個時間限制，超過此限制後，System Manager 將發送警報，提示遠端儲存陣列上的復原點資料已超過您定義的時間限制。時間限制應從上次更新結束的時間算起。
+** **預留容量臨界值** – 定義預留容量數量，當達到該數量時，System Manager 會發送警示，通知您即將達到預留容量臨界值。依剩餘容量的百分比定義臨界值。
+
+
+|===
+====
+
+
+.結果
+System Manager 會變更鏡像一致性群組中每個鏡像配對的同步設定。

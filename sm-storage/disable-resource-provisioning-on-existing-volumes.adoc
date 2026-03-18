@@ -1,0 +1,49 @@
+---
+permalink: sm-storage/disable-resource-provisioning-on-existing-volumes.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, disable, resource provisioning, 
+summary: 您可以啟用或停用現有資源池或磁碟區群組的資源配置。 
+---
+= 在 SANtricity System Manager 中啟用或停用現有磁碟區群組和集區上的資源配置
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於任何支援 DULBE 的磁碟機，您可以啟用或停用資源池或磁碟區群組中現有磁碟區的資源配置。
+
+資源配置是 EF300 和 EF600 儲存陣列的功能，它允許磁碟區立即投入使用，無需背景初始化程序。分配給該磁碟區的所有磁碟機區塊都將被取消配置（取消對應），這可以延長 SSD 的使用壽命並提高最大寫入效能。
+
+預設情況下，如果磁碟機支援 DULBE，則系統會啟用資源配置。除非您之前已停用資源配置，否則無需啟用它。
+
+.開始之前
+* 您必須擁有 EF300 或 EF600 儲存陣列。
++
+
+NOTE: 目前 EF300C 或 EF600C 儲存陣列不支援 DULBE 。
+
+* 您必須擁有 SSD 磁碟區群組或儲存池，其中所有磁碟機都必須支援 NVMe Deallocated or Unwritten Logical Block Error Enable (DULBE) 錯誤復原功能。否則，資源配置選項將不可用。
+
+
+.關於此任務
+啟用現有磁碟區群組和儲存池的資源配置時，所選磁碟區群組或儲存池中的所有磁碟區都會發生變更，以允許釋放區塊。此程序可能涉及背景作業，以確保在取消對應精細度上進行一致的配置。此作業不會取消對應任何空間。背景作業完成後，作業系統需要取消對應任何未使用的區塊以建立可用空間。
+
+當您停用現有磁碟區群組或資源池的資源配置時，背景作業會重寫每個磁碟區中的所有邏輯區塊。現有資料保持不變。寫入作業會將區塊對應或配置到與磁碟區群組或資源池相關的磁碟機上。
+
+
+NOTE: 對於新的磁碟區群組和集區，您可以從功能表啟用或停用資源配置：Settings（設定）[System（系統）> Additional Settings（其他設定）> Enable/Disable Resource-Provisioned Volumes（啟用/停用資源配置磁碟區）]。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 從清單中選擇一個資源池或磁碟區群組。
++
+您一次只能選擇一個資源池或 Volume 群組。向下捲動清單以查看其他資源池或 Volume 群組。
+
+. 選擇 *Uncommon Tasks*、然後選擇 *Enable resource provisioning* 或 *Disable resource provisioning*。
+. 在對話方塊中確認操作。
+
+
+
+NOTE: *如果您重新啟用了 DULBE* -- 後台操作完成後，您可能需要重新啟動主機，以便偵測到 DULBE 組態變更，然後重新掛載所有檔案系統。

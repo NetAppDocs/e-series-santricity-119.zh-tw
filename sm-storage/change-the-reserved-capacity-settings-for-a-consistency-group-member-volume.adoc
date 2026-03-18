@@ -1,0 +1,64 @@
+---
+permalink: sm-storage/change-the-reserved-capacity-settings-for-a-consistency-group-member-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, reserved capacity, settings, consistency group, member volume 
+summary: 您可以變更一致性群組成員磁碟區的設定，以調整 System Manager 在成員磁碟區的保留容量接近全滿時傳送警示通知的百分比點，並變更保留容量達到其最大定義百分比時要使用的原則。 
+---
+= 在 SANtricity System Manager 中變更一致性群組成員磁碟區的預留容量設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更一致性群組成員磁碟區的設定，以調整 SANtricity System Manager 在成員磁碟區的保留容量接近全滿時傳送警示通知的百分比點，並變更保留容量達到其最大定義百分比時要使用的原則。
+
+.關於此任務
+變更單一成員磁碟區的保留容量設定也會變更與一致性群組相關聯之所有成員磁碟區的保留容量設定。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 按一下 *Reserved Capacity* 標籤。
+. 選擇要編輯的一致性群組成員磁碟區，然後按一下 *View/Edit Settings* 。
++
+出現 Member Volume Reserved Capacity Settings 對話方塊。
+
+. 根據需要變更成員磁碟區的預留容量設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+有以下情況請通知我⋯
+ a| 
+使用微調框調整 System Manager 在成員磁碟區的預留容量接近滿時發送警示通知的百分比點。
+
+當成員磁碟區的預留容量超過指定閾值時，System Manager 會發出警報，讓您有時間增加預留容量或刪除不必要的物件。
+
+
+NOTE: 變更一個成員磁碟區的警示設定，將變更屬於相同一致性群組的 _all_ 成員磁碟區的警示設定。
+
+
+
+ a| 
+完全保留容量的原則
+ a| 
+您可以選擇下列其中一項原則：
+
+** *清除最舊的快照映像* -- System Manager 會自動清除一致性群組中最舊的快照映像，從而釋放成員的保留容量，以便在群組內重複使用。
+** *拒絕對基礎磁碟區的寫入* —— 當保留容量達到其最大定義百分比時，System Manager 會拒絕任何對觸發保留容量存取的基礎磁碟區的 I/O 寫入請求。
+
+
+|===
+====
+. 按一下 *儲存* 以套用變更。
+
+
+.結果
+System Manager 會變更成員磁碟區的保留容量設定，以及一致性群組中所有成員磁碟區的保留容量設定。

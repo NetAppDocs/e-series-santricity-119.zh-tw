@@ -1,0 +1,35 @@
+---
+permalink: sm-storage/change-controller-ownership-of-a-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, controller ownership, volume 
+summary: 您可以變更磁碟區的首選控制器所有權，以便主機應用程式的 I/O 透過新路徑進行定向。 
+---
+= 在 SANtricity System Manager 中變更磁碟區的控制器所有權
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更磁碟區的首選控制器所有權，以便主機應用程式的 I/O 透過新路徑進行定向。
+
+.開始之前
+如果未使用多路徑驅動程式，則必須關閉目前正在使用該磁碟區的所有主機應用程式。此操作可防止 I/O 路徑變更時出現應用程式錯誤。
+
+.關於此任務
+您可以變更儲存池或磁碟區群組中一個或多個磁碟區的控制器擁有權。
+
+.步驟
+. 選擇選單：Storage [ Volumes ]。
+. 選擇任意磁碟區，然後選擇功能表：更多 [變更擁有權]。
++
+此時將顯示「更改磁碟區所有權」對話框。儲存陣列上的所有磁碟區都會顯示在此對話框中。
+
+. 使用 *Preferred Owner* 下拉清單變更要變更的每個磁碟區的首選控制器，並確認要執行此操作。
+
+
+.結果
+* System Manager 會變更磁碟區的控制器所有權。磁碟區的 I/O 現在會透過此 I/O 路徑導向。
+* 在多路徑驅動程式重新配置以識別新路徑之前，磁碟區可能不會使用新的 I/O 路徑。此動作通常耗時不到五分鐘。
+

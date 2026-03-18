@@ -1,0 +1,31 @@
+---
+permalink: sm-storage/create-workloads.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, create, workloads 
+summary: 您可以為任何類型的應用程式建立工作負載。 
+---
+= 在 SANtricity System Manager 中建立工作負載
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為任何類型的應用程式建立工作負載。
+
+.關於此任務
+工作負載是支援應用程式的儲存物件。您可以為每個應用程式定義一個或多個工作負載或執行個體。
+
+.步驟
+. 選擇選單：Storage [ Volumes ]。
+. 選擇選單：Create [Workload]。
++
+此時將顯示「建立應用程式工作負載」對話方塊。
+
+. 使用下拉清單選擇要為其建立工作負載的應用程式類型，然後輸入工作負載名稱。
+. 按一下 *Create* 。
+
+
+.完成後
+您已準備好為已建立的工作負載新增儲存容量。使用 *Create Volume* 選項為應用程式建立一個或多個磁碟區，並為每個磁碟區分配特定的容量。

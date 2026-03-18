@@ -1,0 +1,54 @@
+---
+permalink: um-manage/import-alert-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, import, alert, settings 
+summary: 您可以將警示組態從一個儲存陣列匯入到其他儲存陣列。當您需要在網路中設定多個陣列時，此批次作業可節省時間。 
+---
+= 在 SANtricity Unified Manager 中匯入警示設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將警示組態從一個儲存陣列匯入到其他儲存陣列。當您需要在網路中設定多個陣列時，此批次作業可節省時間。
+
+.開始之前
+* 在 System Manager 中為要用作來源的儲存陣列配置警報（功能表：Settings[Alerts]）。
+* 目標儲存陣列的現有組態已備份到 System Manager 中（功能表：Settings[System > Save Storage Array Configuration]）。
+
+
+.關於此任務
+您可以選擇透過電子郵件、 SNMP 或 syslog 接收匯入作業的警示。匯入的設定包括：
+
+* *Email 警示* -- 郵件伺服器位址和警示收件者的 email 位址。
+* *Syslog 警示* -- syslog 伺服器位址和 UDP 連接埠。
+* *SNMP 警示* -- SNMP 伺服器的社群名稱和 IP 位址。
+
+
+.步驟
+. 在「管理」頁面中，按一下 *Import Settings* 。
++
+Import Settings 精靈隨即開啟。
+
+. 在「選擇設定」對話方塊中、選取 *Email alerts*、*SNMP alerts* 或 *Syslog alerts*、然後按一下 *Next*。
++
+此時會開啟一個對話方塊，用於選擇來源陣列。
+
+. 在「選擇來源」對話方塊中、選取您要匯入設定的陣列、然後按一下 *Next* 。
+. 在「選擇目標」對話方塊中、選取一或多個陣列以接收新設定。
++
+[NOTE]
+====
+韌體版本低於 8.50 的儲存陣列無法選擇。此外，如果 Unified Manager 無法與某個陣列通訊（例如，陣列處於離線狀態或存在憑證、密碼或網路問題），則該陣列不會顯示在此對話方塊中。
+
+====
+. 點選 *Finish* 。
++
+Operations 頁面會顯示匯入作業的結果。如果作業失敗，您可以按一下該列以查看更多資訊。
+
+
+
+.結果
+目標儲存陣列現已設定為透過電子郵件、SNMP 或 syslog 向管理員傳送警示。

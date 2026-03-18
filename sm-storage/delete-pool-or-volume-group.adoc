@@ -1,0 +1,42 @@
+---
+permalink: sm-storage/delete-pool-or-volume-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, delete, pool, volume, group 
+summary: 您可以刪除儲存池或磁碟區群組，以建立更多未指派的容量，您可以重新配置這些容量以滿足應用程式儲存需求。 
+---
+= 在 SANtricity System Manager 中刪除資源池或磁碟區群組
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除儲存池或磁碟區群組，以建立更多未指派的容量，您可以重新配置這些容量以滿足應用程式儲存需求。
+
+.開始之前
+* 您必須備份儲存池或磁碟區群組中所有磁碟區上的資料。
+* 您必須停止所有輸入 / 輸出（I/O）。
+* 您必須卸載磁碟區上的所有檔案系統。
+* 您必須刪除池或磁碟區群組中的任何鏡射關係。
+* 您必須停止池或磁碟區群組中正在進行的任何磁碟區複製作業。
+* 池或磁碟區群組不得參與非同步鏡射作業。
+* 磁碟區群組中的磁碟機不得具有持續保留。
+
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 從清單中選擇一個資源池或磁碟區群組。
++
+您一次只能選擇一個資源池或 Volume 群組。向下捲動清單以查看其他資源池或 Volume 群組。
+
+. 選擇選單：Uncommon Tasks [ Delete ] 並確認。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 刪除資源池或磁碟區群組中的所有資料。
+* 刪除與儲存池或磁碟區群組相關的所有磁碟機。
+* 取消指派相關磁碟機，讓您可以在新的或現有的集區或磁碟區群組中重複使用它們。
+

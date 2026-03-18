@@ -1,0 +1,24 @@
+---
+permalink: um-certificates/permissions-for-mapped-roles-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, permissions, mapped, roles 
+summary: RBAC（基於角色的存取控制）功能包括預先定義的使用者，每個使用者都會對應到一個或多個角色。每個角色都包含存取 SANtricity Unified Manager 中各項任務的權限。 
+---
+= 映射角色的權限
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+RBAC（基於角色的存取控制）功能包括預先定義的使用者，每個使用者都會對應到一個或多個角色。每個角色都包含存取 SANtricity Unified Manager 中各項任務的權限。
+
+這些角色為使用者提供執行任務的權限，具體如下：
+
+* *Storage admin* -- 對陣列上的儲存物件具有完全讀取 / 寫入權限，但無權存取安全性配置。
+* *Security admin* -- 存取 Access Management 和 Certificate Management 中的安全性組態。
+* *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料和 MEL 事件。無權存取儲存物件或安全性組態。
+* *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+如果使用者沒有某個功能的權限，則該功能要麼不可供選擇，要麼不會顯示在使用者介面中。

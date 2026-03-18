@@ -1,0 +1,37 @@
+---
+permalink: sm-storage/delete-snapshot-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, delete, snapshot, volume 
+summary: 您可以刪除不再需要用於備份或軟體應用程式測試目的的 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區。 
+---
+= 在 SANtricity System Manager 中刪除快照磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除不再需要用於備份或軟體應用程式測試目的的 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區。
+
+您也可以指定要刪除與  `read-write` 快照磁碟區關聯的快照預留容量磁碟區，還是將快照預留容量磁碟區保留為未指派的磁碟區。
+
+.關於此任務
+刪除基礎磁碟區會自動刪除所有關聯的快照磁碟區或一致性群組快照磁碟區。您無法刪除狀態為 *In Progress* 的磁碟區複本中的快照磁碟區。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 選擇 *Snapshot Volumes* 選項卡。
++
+System Manager 會顯示與儲存陣列相關聯的所有 Snapshot 磁碟區。
+
+. 選擇要刪除的快照磁碟區，然後選取功能表：非常規工作 [ 刪除 ] 。
+. 確認要執行此操作，然後按一下 *Delete* 。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 刪除所有成員 Snapshot 磁碟區（適用於 Snapshot 一致性群組 Snapshot 磁碟區）。
+* 移除所有關聯的主機指派。
+

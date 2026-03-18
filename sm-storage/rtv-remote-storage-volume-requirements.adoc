@@ -1,0 +1,58 @@
+---
+permalink: sm-storage/rtv-remote-storage-volume-requirements.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remote, storage, volume, requirements 
+summary: 用於匯入的磁碟區必須符合大小、狀態和其他條件的要求。 
+---
+= 了解 SANtricity 軟體中的遠端儲存磁碟區需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+用於匯入的磁碟區必須符合大小、狀態和其他條件的要求。
+
+
+
+== 遠端儲存磁碟區
+
+導入的來源磁碟區稱為「遠端儲存磁碟區」。此磁碟區必須符合以下條件：
+
+* 不能是其他匯入的一部分
+* 必須具備線上狀態
+
+
+導入開始後，控制器韌體會在背景建立一個遠端儲存磁碟區。由於此背景程序的存在，此遠端儲存磁碟區無法在 System Manager 中進行管理，只能用於匯入操作。
+
+建立完成後，遠端儲存磁碟區的處理方式與 E 系列系統上的任何其他標準磁碟區相同，但有以下例外：
+
+* 可用作遠端儲存設備的 Proxy 。
+* 不能用作其他磁碟區副本或快照的候選對象。
+* 匯入過程中無法變更 Data Assurance 設定。
+* 無法對應到任何主機，因為它們嚴格保留用於匯入作業。
+
+
+每個遠端儲存磁碟區僅與一個遠端儲存物件關聯；但是，一個遠端儲存物件可以與多個遠端儲存磁碟區關聯。遠端儲存磁碟區透過以下組合進行唯一識別：
+
+* 遠端儲存物件識別碼
+* 遠端儲存設備 LUN 編號
+
+
+
+
+== 目標磁碟區候選項目
+
+目標磁碟區是本地 E 系列系統上的目的地磁碟區。目的地磁碟區必須符合以下條件：
+
+* 必須是 RAID/DDP 磁碟區。
+* 容量必須等於或大於遠端儲存磁碟區。
+* 必須具有與遠端儲存磁碟區相同的區塊大小。
+* 必須具有有效狀態 （最佳）。
+* 不能存在以下任何關係：Volume Copy、Snapshot 複本、非同步或同步鏡射。
+* 不能進行任何重新配置操作：Dynamic Volume Expansion、Dynamic Capacity Expansion、Dynamic Segment Size、Dynamic RAID Migration、Dynamic Capacity Reduction 或 Defragmentation。
+* 無法在匯入開始之前對應至主機（但可在匯入完成後進行對應）。
+* 不能啟用 Flash Read Cached（FRC）。
+
+
+System Manager 會在「匯入遠端儲存」精靈中自動檢查這些要求。只有滿足所有要求的磁碟區才會顯示在目標磁碟區選擇清單中。

@@ -1,0 +1,50 @@
+---
+permalink: um-manage/requirements-for-replicating-storage-configurations.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, requirements, replicating, storage, configurations 
+summary: 在將儲存組態從一個儲存陣列匯入到另一個儲存陣列之前，請先檢閱相關要求和準則。 
+---
+= 在 SANtricity Unified Manager 中複製儲存陣列組態的需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將儲存組態從一個儲存陣列匯入到另一個儲存陣列之前，請先檢閱相關要求和準則。
+
+
+
+== 書架
+
+* 控制器所在的機架在來源陣列和目標陣列上必須完全相同。
+* 來源陣列和目標陣列上的 Shelf ID 必須相同。
+* 擴充櫃必須在相同的插槽中安裝相同的磁碟機類型（如果磁碟機用於配置中，未使用的磁碟機位置則無關緊要）。
+
+
+
+
+== 控制器
+
+* 來源陣列和目標陣列的控制器類型可以不同（例如，從 E2800 匯入到 E5700），但 RBOD 機箱類型必須相同。
+* 來源陣列和目標陣列的 HIC（包括主機的 DA 功能）必須完全相同。
+* 不支援從雙工組態匯入至單工組態；不過，允許從單工組態匯入至雙工組態。
+* FDE 設定不包含在匯入程序中。
+
+
+
+
+== 狀態
+
+* 目標陣列必須處於最佳狀態。
+* 來源陣列無需處於 Optimal 狀態。
+
+
+
+
+== 儲存
+
+* 只要目標陣列的磁碟區容量大於來源陣列，來源陣列和目標陣列的硬碟容量可以不同。（目標陣列可能具有更新、容量更大的硬碟，但複製操作不會將這些硬碟完全配置成磁碟區。）
+* 來源陣列上 64 TB 或更大的磁碟集區磁碟區將阻止目標上的匯入程序。
+* 精簡磁碟區不包含在匯入程序中。
+

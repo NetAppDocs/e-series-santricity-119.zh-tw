@@ -1,0 +1,53 @@
+---
+permalink: um-certificates/resolve-untrusted-certificates-certificate-page.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, resolve, untrusted, certificates 
+summary: 當儲存陣列嘗試與 SANtricity Unified Manager 建立安全連線，但連線無法確認安全性時，就會出現不受信任的憑證。 
+---
+= 解決不受信任的憑證問題
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當儲存陣列嘗試與 SANtricity Unified Manager 建立安全連線，但連線無法確認安全性時，就會出現不受信任的憑證。
+
+在「憑證」頁面中，您可以透過從儲存陣列匯入自簽章憑證或匯入由受信任的第三方所頒發的憑證授權單位 (CA) 憑證來解決不受信任的憑證問題。
+
+.開始之前
+* 您必須使用具有 Security Admin 權限的使用者設定檔登入。
+* 如果您打算匯入由 CA 簽署的憑證：
++
+** 您已為儲存陣列中的每個控制器產生憑證簽署要求（.CSR 檔案）、並將其傳送給 CA。
+** CA 回傳了受信任的憑證檔案。
+** 憑證檔案可在您的本機系統上取得。
+
+
+
+
+.關於此任務
+如果出現以下任何一種情況、您可能需要安裝額外的受信任 CA 憑證：
+
+* 您最近新增了一個儲存陣列。
+* 其中一份或兩份憑證已過期。
+* 一份或兩份憑證已撤銷。
+* 一個或兩個憑證缺少根憑證或中繼憑證。
+
+
+.步驟
+. 選擇 *Certificate Management* 。
+. 選擇 *Trusted* 選項卡。
++
+此頁面顯示儲存陣列報告的所有憑證。
+
+. 選擇選單：匯入 [憑證] 以匯入 CA 憑證，或選擇選單：匯入 [自我簽署儲存陣列憑證] 以匯入自我簽署憑證。
++
+若要限制檢視，您可以使用 *Show certificates that are...* 篩選欄位，或者您可以透過按一下其中一個欄標題來對憑證列進行排序。
+
+. 在對話方塊中、選取憑證、然後按一下 *匯入* 。
++
+憑證已上傳並驗證。
+
+

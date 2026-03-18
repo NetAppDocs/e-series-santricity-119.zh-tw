@@ -1,0 +1,29 @@
+---
+permalink: sm-settings/add-alert-email-addresses.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, add, email, addresses, alerts, 
+summary: 您最多可以新增 20 位電子郵件警示收件者。 
+---
+= 在 SANtricity System Manager 中新增用於接收警示的電子郵件地址
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您最多可以新增 20 位電子郵件警示收件者。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *Email* 標籤。
+. 選擇 *Add Emails*。
++
+Add Emails 對話方塊開啟。
+
+. 在空白欄位中輸入新的電子郵件地址。如果要新增多個地址，請選擇 *Add another email* 以開啟另一個欄位。
+. 點擊 *Add* 。
+
+
+.結果
+「提醒」頁面的「電子郵件」標籤會顯示新的電子郵件地址。

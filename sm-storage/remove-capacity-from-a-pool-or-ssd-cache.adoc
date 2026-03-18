@@ -1,0 +1,61 @@
+---
+permalink: sm-storage/remove-capacity-from-a-pool-or-ssd-cache.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remove, capacity, pool, ssd cache 
+summary: 您可以移除磁碟機以減少現有儲存池或 SSD Cache 的容量。 
+---
+= 在 SANtricity System Manager 中從資源池或 SSD Cache 移除容量
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以移除磁碟機以減少現有儲存池或 SSD Cache 的容量。
+
+移除磁碟機後，儲存池或 SSD Cache 中每個磁碟區的資料將重新分配到剩餘的磁碟機上。移除的磁碟機將變為未指派狀態，其容量將計入儲存陣列的總可用容量。
+
+.關於此任務
+移除容量時，請遵循以下準則：
+
+* 必須先刪除 SSD Cache，才能移除 SSD Cache 中的最後一個磁碟機。
+* 您無法將資源池中的磁碟機數量減少到少於 11 個磁碟機。
+* 一次最多可以移除 12 個磁碟機。如果需要移除超過 12 個磁碟機，請重複上述步驟。
+* 如果儲存池或 SSD Cache 中沒有足夠的可用容量來容納資料，則無法移除磁碟機，因為資料會重新分配到儲存池或 SSD Cache 中的剩餘磁碟機。
+
+
+.了解潛在的效能影響
+[%collapsible]
+====
+* 從儲存池或 SSD Cache 中移除磁碟機可能會導致磁碟區效能下降。
+* 從儲存池或 SSD Cache 中移除容量時，不會消耗保留容量。但是，保留容量可能會根據儲存池或 SSD Cache 中剩餘磁碟機的數量而減少。
+
+
+====
+.了解對具備安全功能的磁碟機的影響
+[%collapsible]
+====
+* 如果移除最後一個不具備安全功能的磁碟機，儲存池中將只剩下具備安全功能的磁碟機。在這種情況下，您可以選擇為儲存池啟用安全功能。
+* 如果移除最後一個不具備 Data Assurance (DA) 功能的磁碟機，則儲存池中將只剩下具備 DA 功能的磁碟機。
+
+
+
+NOTE: 在儲存池上建立的任何新磁碟區都將支援 DA。如果要使現有磁碟區支援 DA，則需要刪除該磁碟區，然後重新建立。
+
+====
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 選擇儲存池或 SSD Cache，然後按一下功能表：更多 [移除容量]。
++
+出現「移除容量」對話方塊。
+
+. 從清單中選擇一或多個磁碟機。
++
+當您在清單中選擇或取消選擇磁碟機時、* 已選總容量 * 欄位會更新。此欄位顯示移除所選磁碟機後儲存池或 SSD Cache 的總容量。
+
+. 按一下 *Remove* 、然後確認您要移除磁碟機。
++
+池或 SSD Cache 容量的減少反映在「池和磁碟區組」視圖中。
+
+

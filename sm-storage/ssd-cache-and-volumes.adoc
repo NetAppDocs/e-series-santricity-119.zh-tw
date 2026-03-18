@@ -1,0 +1,39 @@
+---
+permalink: sm-storage/ssd-cache-and-volumes.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, ssd, cache, volumes 
+summary: 您可以為 SSD Cache 新增磁碟區，以提高唯讀效能。SSD Cache 由一組固態硬碟（SSD）磁碟機組成，您可以將這些磁碟機按邏輯分組到儲存陣列中。 
+---
+= 了解 SANtricity 軟體中的 SSD 快取和磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為 SSD Cache 新增磁碟區，以提高唯讀效能。SSD Cache 由一組固態硬碟（SSD）磁碟機組成，您可以將這些磁碟機按邏輯分組到儲存陣列中。
+
+
+
+== 磁碟區
+
+簡單的磁碟區 I/O 機制用於在 SSD Cache 之間傳輸資料。資料快取並儲存在 SSD 上後，後續對該資料的讀取操作均在 SSD Cache 上進行，因此無需存取 HDD 磁碟區。
+
+SSD Cache 是與控制器動態隨機存取記憶體（DRAM）中的主快取一起使用的輔助快取。
+
+* 在主快取中，主機讀取後，資料儲存在 DRAM 中。
+* 在 SSD Cache 中，資料從磁碟區複製並儲存在兩個內部 RAID 磁碟區（每個控制器一個）上，這兩個磁碟區會在建立 SSD Cache 時自動建立。
+
+
+內部 RAID 磁碟區用於內部快取處理。這些磁碟區無法在使用者介面中存取或顯示。但是，這兩個磁碟區會佔用儲存陣列允許的磁碟區總數。
+
+[NOTE]
+====
+任何被指派使用控制器 SSD Cache 的磁碟區都不符合自動負載平衡傳輸的條件。
+
+====
+
+
+== 磁碟機安全功能
+
+若要在啟用了 Drive Security（安全模式）的磁碟區上使用 SSD Cache，該磁碟區和 SSD Cache 的 Drive Security 功能必須相符。如果它們不匹配，則該磁碟區將無法啟用安全功能。

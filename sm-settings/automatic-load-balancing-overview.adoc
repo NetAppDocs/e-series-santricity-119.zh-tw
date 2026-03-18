@@ -1,0 +1,95 @@
+---
+permalink: sm-settings/automatic-load-balancing-overview.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, automatic, load, balancing, 
+summary: 自動負載平衡透過動態回應負載隨時間的變化，並自動調整磁碟區控制器所有權來修正工作負載在控制器之間轉移時的任何負載不平衡問題，從而提供改進的 I/O 資源管理。 
+---
+= 了解 SANtricity 軟體中的自動負載平衡
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動負載平衡透過動態回應負載隨時間的變化，並自動調整磁碟區控制器所有權來修正工作負載在控制器之間轉移時的任何負載不平衡問題，從而提供改進的 I/O 資源管理。
+
+每個控制器的工作負載都會受到持續監控，並且在主機上安裝的多路徑驅動程式的配合下，可以在必要時自動進行負載平衡。當負載在控制器之間自動重新平衡後，儲存管理員無需手動調整磁碟區控制器的所有權以適應儲存陣列上的負載變化。
+
+啟用自動負載平衡後，它將執行以下功能：
+
+* 自動監控並平衡控制器資源使用率。
+* 根據需要自動調整磁碟區控制器所有權，從而優化主機和儲存陣列之間的 I/O 頻寬。
+
+
+
+
+== 啟用和停用自動負載平衡
+
+所有儲存陣列預設會啟用自動負載平衡。
+
+您可能會因為以下原因想要停用儲存陣列上的自動負載平衡：
+
+* 您不希望為了平衡工作負載而自動變更特定磁碟區的控制器所有權。
+* 您目前在一個高度最佳化的環境中運行，負載分配經過精心設置，以實現控制器之間的特定分配。
+
+
+
+
+== 支援 Automatic Load Balancing 功能的主機類型
+
+即使在儲存陣列層級啟用了自動負載平衡，您為主機或主機叢集選擇的主機類型也會直接影響該功能的運作方式。
+
+在跨控制器平衡儲存陣列的工作負載時，Automatic Load Balancing 功能會嘗試移動兩個控制器均可存取且僅對應到能夠支援 Automatic Load Balancing 功能的主機或主機叢集的磁碟區。
+
+此行為可防止主機因負載平衡程序而失去對磁碟區的存取權；但是，如果某些磁碟區對應到不支援自動負載平衡的主機，則會影響儲存陣列平衡工作負載的能力。若要使自動負載平衡能夠平衡工作負載，多重路徑驅動程式必須支援 TPGS，且主機類型必須包含在下表中。
+
+[NOTE]
+====
+若要讓主機叢集能夠進行自動負載平衡，該群組中的所有主機都必須能夠支援自動負載平衡。
+
+====
+[cols="1a,1a"]
+|===
+| 支援 Automatic Load Balancing 的主機類型 | 使用此多重路徑驅動程式 
+
+
+ a| 
+Windows 或 Windows 叢集
+ a| 
+MPIO 搭配 NetApp E 系列 DSM
+
+
+
+ a| 
+Linux DM-MP （Kernel 3.10 或更新版本）
+ a| 
+帶有 `scsi_dh_alua`裝置處理常式的 DM-MP
+
+
+
+ a| 
+VMware
+ a| 
+Native Multipathing Plugin (NMP) 與 `VMW_SATP_ALUA Storage Array Type`外掛程式
+
+|===
+[NOTE]
+====
+除少數例外情況外，不支援 Automatic Load Balancing 的主機類型無論是否啟用此功能，都能正常運作。一個例外情況是，如果系統發生故障轉移，儲存陣列會在資料路徑恢復後，將未映射或未指派的磁碟區移回其所屬控制器。任何已對應或指派給非 Automatic Load Balancing 主機的磁碟區都不會被移動。
+
+====
+請參閱 https://mysupport.netapp.com/matrix["互通性對照表工具"^]以取得特定多路徑驅動程式、作業系統層級和控制器磁碟機匣支援的相容性資訊。
+
+
+
+== 驗證作業系統與 Automatic Load Balancing 功能的相容性
+
+在設定新系統（或遷移現有系統）之前、請先確認作業系統與 Automatic Load Balancing 功能的相容性。
+
+. 前往 https://mysupport.netapp.com/matrix["互通性對照表工具"^]尋找您的解決方案並驗證支援。
++
+如果您的系統執行的是 Red Hat Enterprise Linux 6 或 SUSE Linux Enterprise Server 11，請聯絡技術支援。
+
+. 更新和配置  `/etc/multipath.conf file`。
+. 確保 `retain_attached_device_handler`和 `detect_prio`都設定為 `yes`（針對適用的供應商和產品），或使用預設設定。
+

@@ -1,0 +1,41 @@
+---
+permalink: sm-support/enable-or-disable-autosupport-features.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, disable, autosupport, 
+summary: 您可以在初始設定期間啟用 AutoSupport 功能和個別 AutoSupport 功能，也可以稍後啟用或停用它們。 
+---
+= 在 SANtricity System Manager 中啟用或停用 AutoSupport 功能
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在初始設定期間啟用 AutoSupport 功能和個別 AutoSupport 功能，也可以稍後啟用或停用它們。
+
+.開始之前
+如果要啟用 AutoSupport OnDemand 或遠端診斷，則必須將 AutoSupport 傳輸方式設定為 HTTPS。
+
+.關於此任務
+您可以隨時停用 AutoSupport 功能，但強烈建議您保持啟用狀態。啟用 AutoSupport 功能可顯著加快儲存陣列出現問題時的故障排查和解決速度。
+
+AutoSupport 功能由三個獨立的功能組成，您可以分別啟用它們。
+
+* *基本 AutoSupport* -- 允許您的儲存陣列自動收集資料並將其傳送給技術支援。
+* *AutoSupport OnDemand* -- 允許技術支援人員在需要排查問題時請求重新傳送先前的 AutoSupport 調度請求。所有傳輸均由儲存陣列發起，而非 AutoSupport 伺服器。儲存陣列會定期與 AutoSupport 伺服器通信，以確定是否存在待處理的重新傳輸請求，並做出相應的回應。
+* *遠端診斷* -- 允許技術支援人員在需要排查問題時請求新的最新 AutoSupport 派送。所有傳輸均由儲存陣列發起，而非 AutoSupport 伺服器。儲存陣列會定期與 AutoSupport 伺服器通信，以確定是否有待處理的新請求，並做出相應的回應。
+
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Enable/Disable AutoSupport Features* 。
+. 選取您要啟用的 AutoSupport 功能旁的核取方塊。
++
+對話方塊中各項功能之間存在依賴關係，這可以從它們的縮排看出。例如，必須先啟用 AutoSupport OnDemand，才能啟用遠端診斷。
+
+. 按一下 *Save* 。
++
+如果停用 AutoSupport，首頁會顯示通知。您可以點選 *Ignore* 關閉通知。
+
+

@@ -1,0 +1,46 @@
+---
+permalink: sm-settings/access-management-with-directory-services.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access management, directory services, 
+summary: 對於存取管理，管理員可以使用 LDAP（輕量型目錄存取協定）伺服器和目錄服務，例如 Microsoft 的 Active Directory。 
+---
+= 在 SANtricity System Manager 中使用目錄服務配置存取管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於 Access Management，管理員可以使用 LDAP（Lightweight Directory Access Protocol）伺服器和目錄服務，例如 Microsoft 的 Active Directory。
+
+
+
+== 組態工作流程
+
+如果網路中使用 LDAP 伺服器和目錄服務，則組態設定方式如下：
+
+. 管理員使用包含 Security Admin 權限的使用者設定檔登入 System Manager。
++
+[NOTE]
+====
+ `admin` 使用者擁有系統所有功能的完整存取權限。
+
+====
+. 管理員輸入 LDAP 伺服器的組態設定。設定包括網域名稱、URL 和繫結帳戶資訊。
+. 如果 LDAP 伺服器使用安全性協定（LDAPS），則管理員會上傳憑證授權單位（CA）憑證鏈，用於 LDAP 伺服器和儲存陣列之間的驗證。
+. 伺服器連線建立後，管理員會將使用者群組對應到儲存陣列的角色。這些角色是預先定義的，無法修改。
+. 管理員測試 LDAP 伺服器與儲存陣列之間的連線。
+. 使用者使用已指派的 LDAP/ 目錄服務認證登入系統。
+
+
+
+
+== 管理
+
+使用目錄服務進行驗證時、管理員可以執行下列管理任務：
+
+* 新增目錄伺服器。
+* 編輯目錄伺服器設定。
+* 將 LDAP 使用者對應至本機使用者角色。
+* 刪除目錄伺服器。
+

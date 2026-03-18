@@ -1,0 +1,30 @@
+---
+permalink: sm-hardware/change-shelf-ids.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, shelf, ids, 
+summary: 機櫃 ID 是儲存陣列中唯一識別機櫃的編號。機櫃按順序編號，從 00 或 01 開始，位於每個機櫃視圖的左上角。 
+---
+= 在 SANtricity System Manager 中變更磁碟櫃 ID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+機櫃 ID 是儲存陣列中唯一識別機櫃的編號。機櫃按順序編號，從 00 或 01 開始，位於每個機櫃視圖的左上角。
+
+.關於此任務
+控制器韌體會自動指派磁碟櫃 ID，但如果您想要建立不同的排序方案，可以變更該編號。
+
+.步驟
+. 選擇 *Hardware* 。
+. 選擇 Controller Shelf 或 Drive Shelf 的下拉式清單，然後選擇 *Change ID* 。
+. 在「變更書架 ID」對話方塊中、選取下拉式清單以顯示可用的編號。
++
+此對話方塊不顯示目前指派給作用中磁碟櫃的 ID。
+
+. 選擇可用的號碼，然後點選 *Save* 。
++
+根據您選擇的數量，Hardware 頁面上的機櫃順序可能會重新排列。如有需要，您可以使用每個機櫃右上角的上下箭頭來調整順序。
+
+

@@ -1,0 +1,152 @@
+---
+permalink: sm-settings/edit-directory-server-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, directory, server, settings, role, mappings, 
+summary: 如果您之前在 Access Management 中配置了目錄伺服器，您可以隨時變更其設定。設定包括伺服器連接資訊和群組到角色的對應。 
+---
+= 在 SANtricity System Manager 中編輯目錄伺服器設定和角色對應
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您之前在 Access Management 中配置了目錄伺服器，您可以隨時變更其設定。設定包括伺服器連接資訊和群組到角色的對應。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* 必須定義目錄伺服器。
+
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Directory Services* 標籤。
+. 如果定義了多個伺服器，請從表格中選取要編輯的伺服器。
+. 選擇 *View/Edit Settings* 。
++
+Directory Server Settings 對話方塊隨即開啟。
+
+. 在 Server Settings 標籤中，變更所需的設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+* 組態設定 *
+
+
+
+ a| 
+網域
+ a| 
+LDAP 伺服器的網域名稱。如果有多個網域，請以逗號分隔清單輸入網域。網域名稱用於登入（_username_@_domain_）中，以指定要進行驗證的目錄伺服器。
+
+
+
+ a| 
+伺服器 URL
+ a| 
+存取 LDAP 伺服器的 URL，格式為 `ldap[s]://host:port`。
+
+
+
+ a| 
+綁定帳戶 （選用）
+ a| 
+用於對 LDAP 伺服器進行搜尋查詢以及在群組內進行搜尋的唯讀使用者帳戶。
+
+
+
+ a| 
+綁定密碼（選用）
+ a| 
+綁定帳戶的密碼。（輸入綁定帳戶後才會顯示此欄位。）
+
+
+
+ a| 
+儲存前測試伺服器連線
+ a| 
+檢查儲存陣列是否可以與 LDAP 伺服器組態通訊。此測試會在您按一下對話方塊底部的 *Save* 後進行。如果選取此核取方塊且測試失敗，則組態不會變更。您必須解決錯誤或取消選取此核取方塊以跳過測試並重新編輯組態。
+
+
+
+ a| 
+*權限設定*
+
+
+
+ a| 
+搜尋基準 DN
+ a| 
+用於搜尋使用者的 LDAP 上下文，通常以  `CN=Users, DC=cpoc, DC=local` 的形式呈現。
+
+
+
+ a| 
+使用者名稱屬性
+ a| 
+綁定到使用者 ID 以進行身份驗證的屬性。例如： `sAMAccountName`
+
+
+
+ a| 
+群組屬性
+ a| 
+使用者群組屬性列表，用於群組到角色的對應。例如： `memberOf, managedObjects`。
+
+|===
+====
+. 在「角色對應」標籤中，變更所需的對應。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+*對應*
+
+
+
+ a| 
+群組 DN
+ a| 
+要對應的 LDAP 使用者群組的網域名稱。支援正規表達式。如果下列特殊正規表示式字元不是正規表示式模式的一部分，則必須使用反斜線 (`\` 進行轉義：\.[]{}()<>*+-=!?^$|
+
+
+
+ a| 
+角色
+ a| 
+儲存陣列的角色將會對應到群組 DN。您必須單獨選擇要包含在此群組中的每個角色。「監控」角色必須與其他角色結合使用才能登入 SANtricity System Manager。儲存陣列的角色包括以下幾種：
+
+** *Storage admin* -- 對儲存物件（例如、磁碟區和磁碟集區）具有完全的讀取 / 寫入權限、但無權存取安全性組態。
+** *Security admin* -- 可以存取 Access Management 中的安全性設定、憑證管理、稽核日誌管理，以及啟用或停用舊版管理介面（SYMbol）的功能。
+** *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料、MEL 事件和控制器韌體升級。無權存取儲存物件或安全性配置。
+** *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+|===
+====
++
+[NOTE]
+====
+所有使用者（包括管理員）都必須擁有 Monitor 角色。如果使用者沒有 Monitor 角色，System Manager 將無法正常運作。
+
+====
+. 如果需要，請按一下 *Add another mapping* 以輸入更多群組到角色的對應。
+. 按一下 *Save* 。
+
+
+.結果
+完成此工作後，所有作用中的使用者工作階段都會終止。只會保留您目前的使用者工作階段。

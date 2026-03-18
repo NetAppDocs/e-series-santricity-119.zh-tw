@@ -1,0 +1,66 @@
+---
+permalink: sm-support/configure-autosupport-delivery-method.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, autosupport, ASUP, delivery, method 
+summary: AutoSupport 功能支援使用 HTTPS 和 SMTP 協定向技術支援部門傳送訊息。 
+---
+= 在 SANtricity System Manager 中配置 AutoSupport 交付方式
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 功能支援使用 HTTPS 和 SMTP 協定向技術支援部門傳送訊息。
+
+.開始之前
+* AutoSupport 功能必須啟用。您可以在 AutoSupport 頁面上查看其是否已啟用。
+* 您的網路中必須安裝並設定 DNS 伺服器。DNS 伺服器位址必須在 System Manager 中設定（此任務可在「硬體」頁面中找到）。
+
+
+.關於此任務
+檢閱不同的通訊協定：
+
+* *HTTPS* -- 讓您可以使用 HTTPS 直接連接到目標技術支援伺服器。如果您要啟用 AutoSupport OnDemand 或 Remote Diagnostics ，則必須將 AutoSupport 傳輸方式設定為 HTTPS 。
+* *電子郵件* -- 允許您使用電子郵件伺服器作為傳送 AutoSupport 郵件的遞送方式。
+
+
+[NOTE]
+====
+*HTTPS 和電子郵件方式的差異*。使用 SMTP 的電子郵件傳送方式與 HTTPS 傳送方式有一些重要差異。首先，電子郵件傳送方式的封包大小限制為 5MB，這表示某些 ASUP 資料集合將無法傳送。其次，AutoSupport OnDemand 功能僅適用於 HTTPS 傳送方式。
+
+====
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Configure AutoSupport Delivery Method* 。
++
+此時會出現一個對話方塊，列出派送交付方法。
+
+. 選擇所需的傳送方法，然後選擇該傳送方法的參數。執行下列其中一項作業：
++
+** 如果您選擇了 HTTPS，請選擇下列其中一個傳送參數：
++
+*** *直接* -- 此傳遞參數為預設選項。選擇此選項後，您可以使用 HTTPS 協定直接連接到目標技術支援系統。
+*** *透過 Proxy 伺服器* -- 選擇此選項可指定與目標技術支援系統建立連線所需的 HTTP Proxy 伺服器詳細資訊。您必須指定主機位址和連接埠號碼。但是，只有在需要時才需要輸入主機驗證詳細資訊（使用者名稱和密碼）。
+*** *透過 Proxy 自動設定指令碼（PAC）* -- 指定 Proxy Auto-Configuration（PAC）指令碼檔案的位置。PAC 檔案可讓系統自動選擇適當的 Proxy 伺服器，以便與目標技術支援系統建立連線。
+
+
+** 如果您選擇的是電子郵件，請輸入以下資訊：
++
+*** 郵件伺服器位址可以是完整網域名稱、IPv4 位址或 IPv6 位址。
+*** 在 AutoSupport 派送電子郵件的寄件者欄位中顯示的電子郵件地址。
+*** *可選；如果您想執行組態測試*：AutoSupport 系統收到測試派送時傳送確認的電子郵件地址。
+*** 如果要加密郵件，請選擇 *SMTPS* 或 *STARTTLS* 作為加密類型，然後選擇加密郵件的連接埠號碼。否則，請選擇 *None*。
+*** 如有需要，請輸入使用者名稱和密碼，以便向外寄件者和郵件伺服器進行驗證。
+
+
+
+
+. 如果您的防火牆封鎖了這些 ASUP 派送的傳送，請將下列 URL 新增至您的白名單： `\https://support.netapp.com/put/AsupPut/`
+. 點選 *Test Configuration* 以使用指定的交付參數測試與技術支援伺服器的連線。如果您啟用了 AutoSupport On-Demand 功能，系統也會測試 AutoSupport OnDemand 派送交付的連線。
++
+如果組態測試失敗，請檢查組態設定並再次執行測試。如果測試仍然失敗，請聯絡技術支援。
+
+. 按一下 *Save* 。
+

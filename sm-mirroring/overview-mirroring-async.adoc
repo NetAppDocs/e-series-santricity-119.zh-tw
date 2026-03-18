@@ -1,0 +1,55 @@
+---
+permalink: sm-mirroring/overview-mirroring-async.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, ARVM, asynchronous, mirroring, firmware, 
+summary: 非同步鏡像功能提供了一種基於控制器級韌體的機制，用於在本機儲存陣列和遠端儲存陣列之間進行資料複製。 
+---
+= 了解 SANtricity 軟體中的非同步鏡像功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+非同步鏡像功能提供了一種基於控制器級韌體的機制，用於在本機儲存陣列和遠端儲存陣列之間進行資料複製。
+
+
+
+== 什麼是非同步鏡像？
+
+_非同步鏡像_ 會在特定時間點擷取主磁碟區的狀態，並僅複製自上次映像擷取以來發生變更的資料。主站台可以立即更新，而次要站台則可根據頻寬情況進行更新。資訊會被快取，並在網路資源可用時稍後傳送。
+
+非同步鏡像以磁碟區為單位建立，但在群組層級進行管理，可讓您將獨立的遠端鏡像磁碟區與給定儲存陣列上的任何主磁碟區建立關聯。這種鏡像類型非常適合滿足不間斷作業的需求，而且一般來說，對於週期性程序的網路效率更高。
+
+深入瞭解：
+
+* link:how-asynchronous-mirroring-works.html["非同步鏡像的運作方式"]
+* link:asynchronous-terminology.html["非同步鏡像術語"]
+* link:asynchronous-mirror-status.html["非同步鏡像狀態"]
+* link:volume-ownership-sync.html["磁碟區所有權"]
+* link:role-change-of-a-mirror-consistency-group.html["鏡像一致性群組的角色變更"]
+
+
+
+
+== 如何配置非同步鏡像？
+
+您必須使用 Unified Manager 介面來執行陣列之間的初始鏡像配置。配置完成後，您可以在 System Manager 中管理鏡像對和一致性群組。
+
+深入瞭解：
+
+* link:requirements-for-using-asynchronous-mirroring.html["使用非同步鏡像的要求"]
+* link:workflow-for-mirroring-a-volume-asynchronously.html["非同步鏡射磁碟區的工作流程"]
+* link:../um-manage/create-asynchronous-mirrored-pair-um.html["在 Unified Manager 中建立非同步鏡像配對"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與非同步鏡像相關的概念：
+
+* link:what-do-i-need-to-know-before-creating-a-mirror-consistency-group.html["建立鏡像一致性群組之前需要瞭解的事項"]
+* link:asynchronous-mirroring-what-do-i-need-to-know-before-creating-a-mirrored-pair.html["建立鏡像配對之前需要了解的內容"]
+* link:how-does-asynchronous-mirroring-differ-from-synchronous-mirroring-async.html["非同步鏡像與同步鏡像有何不同"]
+

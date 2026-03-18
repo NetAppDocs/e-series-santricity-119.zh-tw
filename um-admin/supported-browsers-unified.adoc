@@ -1,0 +1,54 @@
+---
+permalink: um-admin/supported-browsers-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, supported, browsers 
+summary: SANtricity Unified Manager 可透過多種類型的瀏覽器存取。 
+---
+= SANtricity Unified Manager 支援的瀏覽器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity Unified Manager 可透過多種類型的瀏覽器存取。
+
+支援下列瀏覽器和版本。
+
+[cols="1a,1a"]
+|===
+| 瀏覽器 | 最低版本 
+
+
+ a| 
+Google Chrome
+ a| 
+89
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+80
+
+
+
+ a| 
+Safari
+ a| 
+14
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+90
+
+|===
+[NOTE]
+====
+必須安裝 Web Services Proxy 並使其可供瀏覽器使用。
+
+====

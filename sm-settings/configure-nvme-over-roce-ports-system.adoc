@@ -1,0 +1,94 @@
+---
+permalink: sm-settings/configure-nvme-over-roce-ports-system.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, nvme, roce, ports, 
+summary: 如果您的控制器包含用於透過 RoCE（RDMA over Converged Ethernet）進行 NVMe 連接的功能，則可以從系統頁面設定 NVMe 連接埠設定。 
+---
+= 在 SANtricity System Manager 中設定 NVMe over RoCE 連接埠
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的控制器包含用於透過 RoCE（RDMA over Converged Ethernet）進行 NVMe 連接的功能，則可以從系統頁面設定 NVMe 連接埠設定。
+
+.開始之前
+* 您的控制器必須包含 NVMe over RoCE 主機連接埠；否則，System Manager 中將無法使用 NVMe over RoCE 設定。
+* 您必須知道主機連線的 IP 位址。
+
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *NVMe over ROCE 設定*下、選取*設定 NVMe over ROCE 連接埠*。
+. 選擇要設定的具有 NVMe over RoCE 連接埠的控制器。按一下 *Next* 。
+. 從下拉清單中選擇要設定的 HIC 連接埠。按一下 *Next* 。
+. 設定連接埠設定。
++
+若要查看所有連接埠設定，請按一下對話方塊右側的 *Show more port settings* 連結。
+
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="1a,1a"]
+|===
+| 連接埠設定 | 說明 
+
+
+ a| 
+已設定的乙太網路連接埠速度
+ a| 
+選擇與連接埠上 SFP 速度能力相符的速度。
+
+
+
+ a| 
+啟用 IPv4 / 啟用 IPv6
+ a| 
+選擇其中一個或兩個選項以啟用對 IPv4 和 IPv6 網路的支援。
+
+
+NOTE: 如果要停用連接埠存取，請取消選取這兩個核取方塊。
+
+
+
+ a| 
+MTU 大小（點擊 *Show more port settings* 即可查看。）
+ a| 
+如有必要，請輸入最大傳輸單元（MTU）的新大小（以位元組為單位）。
+
+預設的最大傳輸單元 (MTU) 大小為每幀 1500 位元組。您必須輸入介於 1500 到 9000 之間的值。
+
+|===
+====
++
+如果您選擇了 *Enable IPv4*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv4 設定。如果您選擇了 *Enable IPv6*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv6 設定。如果您同時選擇了這兩個選項，則會先開啟 IPv4 設定對話框，按一下 *Next* 後，才會開啟 IPv6 設定對話框。
+
+. 設定 IPv4 和 / 或 IPv6 設定，可自動或手動設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="1a,1a"]
+|===
+| 連接埠設定 | 說明 
+
+
+ a| 
+自動取得組態
+ a| 
+選擇此選項可自動取得組態。
+
+
+
+ a| 
+手動指定靜態組態
+ a| 
+選擇此選項，然後在欄位中輸入靜態位址。（如有需要，您可以將位址剪下並貼上到欄位中。）對於 IPv4，請包含網路子網路遮罩和閘道。對於 IPv6，請包含可路由 IP 位址和路由器 IP 位址。如果您正在設定配備 200Gb 功能 HIC 的 EF600 儲存陣列，此對話方塊會顯示兩組網路參數欄位，一組用於實體連接埠（外部），另一組用於虛擬連接埠（內部）。您應該為這兩個連接埠指派唯一的參數。這些設定可讓主機在每個連接埠之間建立路徑，並讓 HIC 達到最高效能。如果您未為虛擬連接埠指派 IP 位址，HIC 將以大約一半的速度運作。
+
+|===
+====
+. 點選 *Finish* 。
+

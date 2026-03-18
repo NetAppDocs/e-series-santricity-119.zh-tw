@@ -1,0 +1,31 @@
+---
+permalink: sm-support/disable-autosupport-maintenance-window.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, disable, autosupport, ASUP, maintenance window 
+summary: 停用 AutoSupport 維護視窗後，系統會在發生錯誤事件時自動建立工單。停用 AutoSupport 維護視窗後，如果出現問題，儲存陣列將使用 AutoSupport 向技術支援提交工單。 
+---
+= 在 SANtricity System Manager 中停用 AutoSupport 維護時段
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+停用 AutoSupport 維護視窗後，系統會在發生錯誤事件時自動建立工單。停用 AutoSupport 維護視窗後，如果出現問題，儲存陣列將使用 AutoSupport 向技術支援提交工單。
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Disable AutoSupport Maintenance window* 。
+. 輸入電子郵件地址，以接收停用維護時段要求已處理的確認。
++
+根據您的配置，您最多可以輸入五個電子郵件地址。如果您想要新增多個位址，請選取 *Add another email* 以開啟另一個欄位。
+
+. 點選 *Yes* 。
++
+已啟用 AutoSupport 錯誤事件自動建立工單功能。
+
+
+
+.完成後
+維護視窗將在 AutoSupport 伺服器處理完儲存陣列的請求後結束。請等待收到確認郵件後再進行操作。

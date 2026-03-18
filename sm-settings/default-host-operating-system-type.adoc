@@ -1,0 +1,29 @@
+---
+permalink: sm-settings/default-host-operating-system-type.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, default, host, operating, system, 
+summary: 預設主機類型是儲存陣列在主機首次連接時使用的。它定義了儲存陣列中的控制器在存取磁碟區時如何與主機的作業系統協同運作。 
+---
+= 了解 SANtricity 軟體中的預設主機作業系統類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+預設主機類型是儲存陣列在主機首次連接時使用的。它定義了儲存陣列中的控制器在存取磁碟區時如何與主機的作業系統協同運作。
+
+如果需要根據連接到儲存陣列的主機變更其運作方式，您可以變更主機類型。通常，您會在將主機連接到儲存陣列之前或連接其他主機時變更預設主機類型。
+
+請牢記以下準則：
+
+* 如果您打算連接到儲存陣列的所有主機都具有相同的作業系統（同構主機環境）、請變更主機類型以符合作業系統。
+* 如果計劃將具有不同作業系統的多個主機連接到儲存陣列（異質主機環境）、請變更主機類型以符合大多數主機的作業系統。
++
+例如，如果您將八台不同的主機連接到儲存陣列，而其中六台主機運行的是 Windows 作業系統，則必須選擇 Windows 作為預設主機作業系統類型。
+
+* 如果連接的主機大多混合使用了不同的作業系統，請將主機類型變更為 Factory Default。
++
+例如，如果您將八台不同的主機連接到儲存陣列，其中兩台主機運行 Windows 作業系統，三台主機運行 VMware 作業系統，另外三台主機運行 Linux 作業系統，則必須選擇 Factory Default 作為預設主機作業系統類型。
+
+

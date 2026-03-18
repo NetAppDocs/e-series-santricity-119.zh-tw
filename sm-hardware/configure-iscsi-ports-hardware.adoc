@@ -1,0 +1,156 @@
+---
+permalink: sm-hardware/configure-iscsi-ports-hardware.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, iscsi, ports, 
+summary: 如果您的控制器包含 iSCSI 主機連接，則可以從硬體頁面設定 iSCSI 連接埠設定。 
+---
+= 在 SANtricity System Manager 中設定 iSCSI 連接埠
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的控制器包含 iSCSI 主機連接，則可以從硬體頁面設定 iSCSI 連接埠設定。
+
+.開始之前
+* 您的控制器必須包含 iSCSI 連接埠；否則、iSCSI 設定將不可用。
+* 您必須了解網路速度（連接埠與主機之間的資料傳輸速率）。
+
+
+[NOTE]
+====
+只有當您的儲存陣列支援 iSCSI 時、iSCSI 設定和功能才會顯示。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 按一下要設定 iSCSI 連接埠的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Configure iSCSI ports* 。
++
+[NOTE]
+====
+只有當 System Manager 偵測到控制器上的 iSCSI 連接埠時，才會顯示 *Configure iSCSI ports* 選項。
+
+====
++
+Configure iSCSI Ports 對話方塊開啟。
+
+. 在下拉清單中，選擇要設定的連接埠，然後按一下 *Next* 。
+. 選擇組態連接埠設定，然後按一下 *Next* 。
++
+若要查看所有連接埠設定，請按一下對話方塊右側的 *Show more port settings* 連結。
+
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 連接埠設定 | 說明 
+
+
+ a| 
+已設定的乙太網路連接埠速度（僅適用於某些類型的 Host Interface Card）
+ a| 
+選擇與連接埠上 SFP 速度能力相符的速度。
+
+
+
+ a| 
+Forward Error Correction（FEC）模式（僅適用於某些類型的主機介面卡）
+ a| 
+如果需要，請為指定的主機連接埠選取其中一種 FEC 模式。
+
+
+NOTE: Reed Solomon 模式不支援 25 Gbps 連接埠速度。
+
+
+
+ a| 
+啟用 IPv4 / 啟用 IPv6
+ a| 
+選擇其中一個或兩個選項以啟用對 IPv4 和 IPv6 網路的支援。
+
+
+NOTE: 如果要停用連接埠存取，請取消選取這兩個核取方塊。
+
+
+
+ a| 
+TCP 監聽連接埠（點擊 *Show more port settings* 即可查看。）
+ a| 
+如有必要，請輸入新的連接埠號碼。
+
+監聽連接埠是控制器用於監聽來自主機 iSCSI 發起程序的 iSCSI 登入請求的 TCP 連接埠號碼。預設監聽連接埠為 3260。您必須輸入 3260 或介於 49152 和 65535 之間的數值。
+
+
+
+ a| 
+MTU 大小（點擊 *Show more port settings* 即可查看。）
+ a| 
+如有必要，請輸入最大傳輸單元（MTU）的新大小（以位元組為單位）。
+
+預設的最大傳輸單元 (MTU) 大小為每幀 1500 位元組。您必須輸入介於 1500 到 9000 之間的值。
+
+
+
+ a| 
+啟用 ICMP PING 回應
+ a| 
+選取此選項可啟用 Internet Control Message Protocol (ICMP)。聯網電腦的作業系統使用此協定發送訊息。這些 ICMP 訊息用於確定主機是否可達以及封包往返該主機所需的時間。
+
+|===
+====
++
+如果您選擇了 *Enable IPv4*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv4 設定。如果您選擇了 *Enable IPv6*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv6 設定。如果您同時選擇了這兩個選項，則會先開啟 IPv4 設定對話框，按一下 *Next* 後，才會開啟 IPv6 設定對話框。
+
+. 設定 IPv4 和/或 IPv6 設定，可以選擇自動或手動設定。若要查看所有連接埠設定，請按一下對話方塊右側的 *Show more settings* 連結。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 連接埠設定 | 說明 
+
+
+ a| 
+自動取得組態
+ a| 
+選擇此選項可自動取得組態。
+
+
+
+ a| 
+手動指定靜態組態
+ a| 
+選擇此選項，然後在欄位中輸入靜態位址。（如有需要，您可以將位址剪下並貼上到欄位中。）對於 IPv4，請包含網路子網路遮罩和閘道。對於 IPv6，請包含可路由 IP 位址和路由器 IP 位址。
+
+
+
+ a| 
+啟用 VLAN 支援（點擊「顯示更多設定」即可啟用。）
+ a| 
+選擇此選項可啟用 VLAN 並輸入其 ID。VLAN 是一種邏輯網路，其行為如同與其他由同一交換器、同一路由器或兩者支援的實體和虛擬區域網路（LAN）實體隔離。
+
+
+
+ a| 
+啟用乙太網路優先權（點擊 *Show more settings* 即可啟用。）
+ a| 
+選取此選項可啟用用於確定網路存取優先權的參數。使用滑桿選擇優先權，範圍從 1 （最低）到 7 （最高）。
+
+在乙太網路等共用區域網路（LAN）環境中，許多站點可能會爭用網路存取權限。存取權限遵循先到先得的原則。兩個站點可能同時嘗試存取網路，這會導致兩個站點都退出並等待一段時間後再試。對於交換式乙太網路，由於每個交換器連接埠只連接一個站點，因此可以最大限度地減少這種情況。
+
+|===
+====
+. 點選 *Finish* 。
+

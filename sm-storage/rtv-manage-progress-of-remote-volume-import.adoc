@@ -1,0 +1,35 @@
+---
+permalink: sm-storage/rtv-manage-progress-of-remote-volume-import.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remote, storage, imports 
+summary: 匯入程序開始後，您可以檢視其進度並採取行動。 
+---
+= 在 SANtricity System Manager 中管理遠端儲存匯入的進度
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+匯入程序開始後，您可以檢視其進度並採取行動。
+
+.關於此任務
+對於每個匯入作業，「進行中的作業」對話方塊會顯示完成百分比和預估剩餘時間。動作包括變更匯入優先順序、停止和繼續作業，以及中斷與作業的連線。
+
+您也可以從主頁查看正在進行的操作（選單： Home [ Show operations in progress ]）。
+
+.步驟
+. 在遠端儲存頁面中，選擇 *View Operations* 。
++
+顯示「正在進行的作業」對話方塊。
+
+. 如果需要，可以使用 *Actions* 欄中的連結來停止和繼續、變更優先順序或中斷與作業的連線。
++
+** *變更優先權* -- 選取 *變更優先權* 以變更正在進行或擱置中作業的處理優先權。將優先權套用至作業，然後按一下 *確定*。
+** *停止* -- 選擇 *停止* 可暫停從遠端儲存裝置複製資料。匯入配對之間的關係仍然保持不變，當您準備好繼續匯入作業時，可以選擇 *Resume* 。
+** *Resume* -- 選擇 *Resume* 可從中斷處繼續執行已停止或失敗的程序。接下來，為 Resume 操作設定優先級，然後按一下 *OK*。此操作_不會_從頭開始重新匯入。如果要從頭開始重新匯入，則必須選擇 *Disconnect*，然後透過 Import Remote Storage 精靈重新建立匯入。
+** *中斷連線* -- 選取 *中斷連線* 可中斷已停止、已完成或已失敗的匯入作業的來源磁碟區與目的地磁碟區之間的關係。
+
+
+

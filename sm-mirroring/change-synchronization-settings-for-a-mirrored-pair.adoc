@@ -1,0 +1,57 @@
+---
+permalink: sm-mirroring/change-synchronization-settings-for-a-mirrored-pair.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, synchronization, settings, mirrored, pair, 
+summary: 您可以變更鏡像配對在通訊中斷後用於完成重新同步作業的同步優先順序和重新同步原則。 
+---
+= 在 SANtricity System Manager 中變更鏡像配對的同步設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更鏡像配對在通訊中斷後用於完成重新同步作業的同步優先順序和重新同步原則。
+
+.關於此任務
+您只能在包含主磁碟區的儲存陣列上編輯鏡像配對的同步設定。
+
+.步驟
+. 選擇功能表：Storage [ Synchronous Mirroring ]。
+. 選擇要編輯的鏡像配對，然後選取功能表：更多 [編輯設定]。
++
+系統顯示 View/Edit Settings 對話框。
+
+. 使用滑桿編輯同步優先順序。
++
+同步優先順序決定了在通訊中斷後，用於完成重新同步作業的系統資源與用於服務 I/O 請求的系統資源之間的比例。
+
++
+.關於同步速率的更多資訊
+[%collapsible]
+====
+同步優先權共有五種：
+
+** 最低
+** 低
+** 中
+** 高
+** 最高
+
+
+====
++
+如果將同步優先權設為最低，則優先執行 I/O 活動，重新同步操作所需時間會更長。如果將同步優先權設為最高，則優先執行重新同步操作，但儲存陣列的 I/O 活動可能會受到影響。
+
+. 根據需要編輯重新同步原則。
++
+您可以手動或自動重新同步遠端儲存陣列上的鏡像配對。
+
++
+** *手動*（建議選項）-- 選擇此選項可在鏡像配對恢復通訊後，要求手動恢復同步。此選項能最大程度地提高資料恢復的成功率。
+** *Automatic* -- 選擇此選項可在恢復與鏡像對的通訊後自動開始重新同步。
+
+
+. 選擇 *Save* 。
+

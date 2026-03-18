@@ -1,0 +1,86 @@
+---
+permalink: sm-storage/view-ssd-cache-statistics.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, ssd cache, statistics 
+summary: 您可以檢視 SSD 快取的統計資料，例如讀取、寫入、快取命中、快取分配百分比和快取使用率百分比。 
+---
+= 在 SANtricity System Manager 中檢視 SSD Cache 統計資料
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視 SSD 快取的統計資料，例如讀取、寫入、快取命中、快取分配百分比和快取使用率百分比。
+
+「檢視 SSD 快取統計資料」對話方塊中顯示的是名義統計資訊，它是詳細統計資料的子集。只有將所有 SSD 統計資料匯出到  `.csv` 檔案後，才能檢視 SSD 快取的詳細統計資料。
+
+在查看和解讀統計數據時，請記住，有些解讀是透過綜合查看多個統計數據得出的。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 選擇要檢視統計資料的 SSD Cache，然後按一下功能表：更多 [檢視 SSD Cache 統計資料]。
++
+「檢視 SSD Cache 統計資料」對話方塊隨即出現，並顯示所選 SSD Cache 的標稱統計資料。
+
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+讀取
+ a| 
+顯示主機從啟用 SSD Cache 的磁碟區讀取資料的總次數。讀取次數與寫入次數的比率越高，快取的運作效果越好。
+
+
+
+ a| 
+寫入
+ a| 
+主機對啟用 SSD Cache 的磁碟區的總寫入次數。讀取與寫入的比率越高，快取的運作效果越好。
+
+
+
+ a| 
+快取命中
+ a| 
+顯示快取命中次數。
+
+
+
+ a| 
+快取命中率 %
+ a| 
+顯示快取命中的百分比。此數值由快取命中數 / （讀取數 + 寫入數）得出。為確保 SSD Cache 有效運作，快取命中百分比應大於 50%。
+
+
+
+ a| 
+快取分配 %
+ a| 
+顯示已分配的 SSD Cache 儲存百分比，以此控制器可用的 SSD Cache 儲存百分比表示，並從已分配位元組 / 可用位元組衍生而來。
+
+
+
+ a| 
+快取利用率 %
+ a| 
+顯示已啟用磁碟區的資料所佔 SSD Cache 儲存空間的百分比，以已指派 SSD Cache 儲存空間的百分比表示。此數值代表 SSD Cache 的利用率或密度。計算方法為：已分配位元組數 / 可用位元組數。
+
+
+
+ a| 
+全部匯出
+ a| 
+將所有 SSD Cache 統計資料匯出為 CSV 格式。匯出的檔案包含 SSD Cache 的所有可用統計資料（包括標稱值和詳細值）。
+
+|===
+====
+. 按一下 *Cancel* 關閉對話方塊。
+

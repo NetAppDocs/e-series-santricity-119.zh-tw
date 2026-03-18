@@ -1,0 +1,47 @@
+---
+permalink: sm-settings/obtain-a-feature-key-file.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, obtain, feature, key, file, 
+summary: 若要在儲存陣列上啟用進階功能或功能包、您必須先取得功能金鑰檔案。金鑰僅與一個儲存陣列相關聯。 
+---
+= 在 SANtricity System Manager 中取得功能金鑰檔案
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要在儲存陣列上啟用進階功能或功能包、您必須先取得功能金鑰檔案。金鑰僅與一個儲存陣列相關聯。
+
+.關於此任務
+本任務說明如何收集功能所需的資訊，然後傳送功能金鑰檔案的要求。所需資訊包括：
+
+* 機箱序號
+* 功能啟用識別碼
+* 功能啟動碼
+
+
+.步驟
+. 在 System Manager 中，找到並記錄機箱序號。您可以將滑鼠懸停在「Support Center」磁貼上來查看此序號。
+. 在 System Manager 中、找到 Feature Enable Identifier 。前往功能表：設定 [System] 、然後向下捲動至 *Add-ons* 。尋找 *Feature Enable Identifier* 。記錄 Feature Enable Identifier 的編號。
+. 找到並記錄功能啟動碼。對於功能包，此代碼會在執行轉換的相應說明中提供。
++
+如需使用進階功能、您可以從 Support 網站取得啟動碼，具體操作如下：
+
++
+.. 登入  https://mysupport.netapp.com/site/global/dashboard["NetApp 支援"^]。
+.. 請前往您產品的 *Software Licenses* 頁面。
+.. 輸入儲存陣列機箱的序號，然後按一下 *Go* 。
+.. 請在 *License Key* 欄位中尋找功能啟動碼。
+.. 記錄您所需功能的功能啟動碼。
+
+
+. 請透過電子郵件或文字文件向您的儲存供應商要求功能金鑰檔案，其中包含以下資訊：機箱序號、啟用識別碼和功能啟動碼。
++
+您也可以存取 http://partnerspfk.netapp.com["NetApp 授權啟動：儲存陣列進階功能啟動"^]並輸入所需資訊以取得該功能或功能包。（本網站上的說明適用於進階功能，而非功能包。）
+
+
+
+.完成後
+擁有功能金鑰檔案後，即可啟用進階功能或功能包。

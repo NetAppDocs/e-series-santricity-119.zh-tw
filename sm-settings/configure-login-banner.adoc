@@ -1,0 +1,37 @@
+---
+permalink: sm-settings/configure-login-banner.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, login, banner, 
+summary: 您可以建立一個登入橫幅，在使用者於 SANtricity System Manager 中建立工作階段之前向其顯示。該橫幅可以包含諮詢通知和同意訊息。 
+---
+= 在 SANtricity System Manager 中設定登入橫幅
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立一個登入橫幅，在使用者於 SANtricity System Manager 中建立工作階段之前向其顯示。該橫幅可以包含諮詢通知和同意訊息。
+
+.關於此任務
+建立橫幅後，它會在登入畫面前的對話方塊中顯示。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在「一般」部分下，選擇 *Configure Login Banner* 。
++
+Configure Login Banner 對話方塊開啟。
+
+. 輸入您要在登入橫幅中顯示的文字。
++
+[NOTE]
+====
+請勿使用 HTML 或其他標記標籤進行格式化。
+
+====
+. 按一下 *Save* 。
+
+
+.結果
+下次使用者登入 System Manager 時，該文字將在對話方塊中開啟。使用者必須按一下 *OK* 才能繼續進入登入畫面。

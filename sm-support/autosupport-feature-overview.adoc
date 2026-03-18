@@ -1,0 +1,55 @@
+---
+permalink: sm-support/autosupport-feature-overview.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, autosupport, ASUP 
+summary: AutoSupport 功能可監控儲存陣列的運作狀況，並自動向技術支援發送排程資訊。 
+---
+= 了解 E 系列的 AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 功能可監控儲存陣列的運作狀況，並自動向技術支援發送排程資訊。
+
+技術支援部門會被動地利用 AutoSupport 資料來加快客戶問題的診斷和解決速度，並主動地偵測和避免潛在問題。
+
+AutoSupport 資料包含儲存陣列的組態、狀態、效能和系統事件資訊。AutoSupport 資料不包含任何使用者資料。派送可以立即傳送或依排程（每日和每週）傳送。
+
+
+
+== 主要優勢
+
+AutoSupport 功能的一些主要優點包括：
+
+* 加速案件處理時間
+* 先進的監控功能可加速事件管理
+* 根據排程自動產生報告，以及自動產生關於重大事件的報告
+* 針對特定元件 (例如磁碟機) 的自動化硬體更換要求
+* 以非侵入式方式發出警報，通知您出現問題並提供資訊，以便技術支援人員採取糾正措施
+* AutoSupport 分析工具，可監控已知組態問題的派送
+
+
+
+
+== 個別 AutoSupport 功能
+
+AutoSupport 功能由三個獨立的功能組成，您可以分別啟用它們。
+
+* *基本 AutoSupport* -- 允許您的儲存陣列自動收集資料並將其傳送給技術支援。
+* *AutoSupport OnDemand* -- 允許技術支援人員在需要排查問題時請求重新傳送先前的 AutoSupport 調度請求。所有傳輸均由儲存陣列發起，而非 AutoSupport 伺服器。儲存陣列會定期與 AutoSupport 伺服器通信，以確定是否存在待處理的重新傳輸請求，並做出相應的回應。
+* *遠端診斷* -- 允許技術支援人員在需要排查問題時請求新的最新 AutoSupport 派送。所有傳輸均由儲存陣列發起，而非 AutoSupport 伺服器。儲存陣列會定期與 AutoSupport 伺服器通信，以確定是否有待處理的新請求，並做出相應的回應。
+
+
+
+
+== AutoSupport 與收集支援資料之間的差異
+
+儲存陣列中存在兩種收集支援資料的方法：
+
+* *AutoSupport 功能* -- 資料會自動收集。
+* *收集支援資料選項* -- 必須手動收集和傳送資料。
+
+
+AutoSupport 功能更易於使用，因為資料會自動收集和傳送。AutoSupport 資料可用於在問題發生之前主動預防。AutoSupport 功能可加快疑難排解速度，因為技術支援人員已可存取資料。基於這些原因，AutoSupport 功能是首選的資料收集方法。

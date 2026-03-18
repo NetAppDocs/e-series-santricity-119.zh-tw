@@ -1,0 +1,96 @@
+---
+permalink: sm-settings/use-ca-signed-certificates-for-authentication-with-a-key-management-server.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, ca-signed, certificates, authentication, key, management, server, 
+summary: 為了確保金鑰管理伺服器與儲存陣列控制器之間的通訊安全，必須配置相應的憑證集。 
+---
+= 在 SANtricity System Manager 中使用 CA 簽署的憑證對金鑰管理伺服器進行驗證
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了確保金鑰管理伺服器與儲存陣列控制器之間的通訊安全，必須配置相應的憑證集。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+
+.關於此任務
+控制器與金鑰管理伺服器之間的驗證是一個兩步驟程序。
+
+
+
+== 步驟 1：完成並提交 CSR 以透過金鑰管理伺服器進行驗證
+
+您必須先產生憑證簽署要求（CSR）檔案，然後使用該 CSR 向金鑰管理伺服器信任的憑證授權單位（CA）要求已簽署的用戶端憑證。您也可以使用下載的 CSR 檔案從金鑰管理伺服器建立並下載用戶端憑證。用戶端憑證用於驗證儲存陣列的控制器，以便金鑰管理伺服器可以信任其 Key Management Interoperability Protocol（KMIP）要求。
+
+
+NOTE: 透過私密金鑰和公開金鑰配對在外部產生的 CSR 檔案可以透過「建立外部安全金鑰」對話方塊匯入。如需匯入外部產生的 CSR 檔案的詳細資訊，請參閱 https://docs.netapp.com/us-en/e-series-santricity/sm-settings/use-ca-signed-certificates-for-authentication-with-a-key-management-server.html#step-2-import-certificates-for-the-key-management-server["步驟 2：匯入金鑰管理伺服器的憑證"]。
+
+.步驟
+. 選擇功能表：Settings [ Certificates ]。
+. 從「金鑰管理」標籤中，選取 *Complete CSR*。
+. 請輸入以下資訊：
++
+** *通用名稱* -- 用於識別客戶端的名稱。通常的做法是使通用名稱與 KMS 伺服器對客戶端憑證命名慣例的要求相符。通用名稱通常有助於 KMS 在握手期間出示憑證時識別客戶端的憑證。
+** *組織名稱* -- 貴公司或組織的完整法定名稱。請包含後綴，例如 Inc. 或 Corp.。
+** *組織單位（選用）* -- 貴組織中負責處理憑證的部門。
+** *City/Locality* -- 您的組織所在的城市或地區。
+** *州 / 地區（選用）* -- 您的組織所在的州或地區。
+** *國家 / 地區 ISO 代碼* -- 貴組織所在國家 / 地區的兩位數 ISO（International Organization for Standardization）代碼，例如 US。
+
+
+. 按一下 *Download* 。
++
+CSR 檔案會儲存至您的本機系統。
+
+. 向金鑰管理伺服器信任的 CA 請求已簽署的用戶端憑證。
++
+
+NOTE: 金鑰管理伺服器通常會具備直接產生簽章憑證的功能，因為它本身就扮演 CA 的角色。
+
+. 當您擁有用戶端憑證時，請前往 <<步驟 2：匯入金鑰管理伺服器的憑證>>。
+
+
+
+
+== 步驟 2：匯入金鑰管理伺服器的憑證
+
+下一步，您需要匯入用於儲存陣列和金鑰管理伺服器之間驗證的憑證。憑證分為兩種類型：客戶端憑證用於驗證儲存陣列的控制器，金鑰管理伺服器憑證用於驗證伺服器本身。您必須同時載入控制器的客戶端憑證檔案和金鑰管理伺服器的伺服器憑證檔案。
+
+.開始之前
+* 您已擁有一個已簽署的用戶端憑證檔案（請參閱 <<步驟 1：完成並提交 CSR 以透過金鑰管理伺服器進行驗證>>），並且已將該檔案複製到您存取 System Manager 的主機上。用戶端憑證用於驗證儲存陣列的控制器，以便金鑰管理伺服器可以信任其 Key Management Interoperability Protocol（KMIP）請求。
+* 您必須從金鑰管理伺服器擷取憑證文件，然後將該文件複製到您存取 System Manager 的主機。金鑰管理伺服器憑證用於驗證金鑰管理伺服器，以便儲存陣列可以信任其 IP 位址。您可以為金鑰管理伺服器使用根憑證、中間憑證或伺服器憑證。
++
+[NOTE]
+====
+如需伺服器憑證的詳細資訊，請參閱金鑰管理伺服器的說明文件。
+
+====
+
+
+.步驟
+. 選擇功能表：Settings [ Certificates ]。
+. 從「金鑰管理」標籤中，選取 *Import* 。
++
+此時會開啟一個對話方塊，用於匯入憑證檔案。
+
+. 在 *Select client certificate* 旁邊、按一下 *Browse* 按鈕以選取儲存陣列控制器的用戶端憑證檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 如果您使用私鑰和公鑰對在外部產生了憑證檔案，請按一下 *選擇私鑰檔案* 旁邊的 *瀏覽* 按鈕，為儲存陣列的控制器選擇憑證檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 在 *Select key management server's server certificate* 旁邊，按一下 *Browse* 按鈕，選擇金鑰管理伺服器的伺服器憑證檔案。您可以為金鑰管理伺服器選擇根憑證、中間憑證或伺服器憑證。
++
+檔案名稱會顯示在對話方塊中。
+
+. 點選 *Import* 。
++
+檔案已上傳並通過驗證。
+
+

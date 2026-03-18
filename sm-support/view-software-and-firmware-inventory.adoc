@@ -1,0 +1,31 @@
+---
+permalink: sm-support/view-software-and-firmware-inventory.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, software, firmware, inventory 
+summary: 軟體和韌體清單列出儲存陣列中每個元件的韌體版本。 
+---
+= 在 SANtricity System Manager 中檢視軟體和韌體清單
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+軟體和韌體清單列出儲存陣列中每個元件的韌體版本。
+
+.關於此任務
+儲存陣列由多個元件構成，包括控制器、磁碟機、硬碟盒和輸入/輸出模組（IOM）。每個元件都包含韌體。某些韌體版本依賴其他韌體版本。若要取得儲存陣列中所有韌體版本的資訊，請檢視軟體和韌體清單。技術支援人員可以分析軟體和韌體清單，以偵測任何韌體不相符的情況。
+
+.步驟
+. 選擇功能表：Support [ Support Center > Support Resources ] 標籤。
+. 向下捲動至 *Launch detailed storage array information* ，然後選擇 *Software and Firmware Inventory* 。
++
+螢幕上會顯示軟體和韌體清單報告。
+
+. 若要儲存軟體和韌體清單、請按一下 *Save* 。
++
+檔案會以檔案名稱  `firmware-inventory.txt` 儲存在瀏覽器的「下載」資料夾中。
+
+. 請按照技術支援人員提供的說明將檔案傳送給他們。
+

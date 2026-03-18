@@ -1,0 +1,26 @@
+---
+permalink: sm-settings/access-management-tokens-revoke.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access management, revoke tokens 
+summary: 如果確定某個存取權杖已洩露，您可以撤銷所有存取權杖。 
+---
+= 在 SANtricity System Manager 中撤銷存取權杖
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果確定某個存取權杖已被洩露，或者想要對用於簽署和驗證存取權杖的加密金鑰執行手動金鑰輪換，則可以撤銷所有存取權杖。
+
+此操作會重新產生用於簽署權杖的金鑰。金鑰重設後、_所有_ 已核發的權杖將立即失效。由於儲存陣列不會追蹤權杖、因此無法撤銷個別權杖。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *Access Tokens* 標籤。
+. 選擇 *Revoke All Access Tokens* 。
+. 在對話方塊中，按一下 *Yes* 。
+
+
+撤銷所有權杖後、您可以建立新權杖並立即使用。

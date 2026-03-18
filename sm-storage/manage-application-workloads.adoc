@@ -1,0 +1,14 @@
+---
+permalink: sm-storage/manage-application-workloads.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, applications, workloads 
+summary: 您可以管理應用程式和工作負載，查看儲存陣列上所有現有磁碟區，並按工作負載名稱和應用程式類型進行分組。您也可以為現有或新的工作負載新增磁碟區，變更現有工作負載的設定，以及建立新的磁碟區和工作負載。 
+---
+= 在 SANtricity System Manager 中管理應用程式和工作負載
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以管理應用程式和工作負載，查看儲存陣列上所有現有磁碟區，並按工作負載名稱和應用程式類型進行分組。您也可以為現有或新的工作負載新增磁碟區，變更現有工作負載的設定，以及建立新的磁碟區和工作負載。

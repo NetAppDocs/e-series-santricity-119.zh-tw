@@ -1,0 +1,68 @@
+---
+permalink: sm-storage/rtv-terminology.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remote, storage, terms 
+summary: 了解遠端儲存術語如何應用於您的儲存陣列。 
+---
+= 了解 SANtricity 軟體中的遠端儲存術語
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解遠端儲存術語如何應用於您的儲存陣列。
+
+[cols="25h,~"]
+|===
+| 期限 | 說明 
+
+
+ a| 
+IQN
+ a| 
+iSCSI 限定名稱（IQN）標識符，是 iSCSI 發起程序或目標的唯一名稱。
+
+
+
+ a| 
+LUN
+ a| 
+邏輯單元號碼，用於識別可呈現給主機以供存取的邏輯單元。
+
+
+
+ a| 
+遠端儲存系統
+ a| 
+資料最初儲存的儲存系統。遠端儲存系統可以是 E-Series 型號，也可以是其他供應商的系統。
+
+
+
+ a| 
+遠端儲存裝置
+ a| 
+資料最初儲存在遠端系統的實體或邏輯裝置上。在 E-Series 儲存系統中，這稱為「Volume」。
+
+
+
+ a| 
+遠端儲存物件
+ a| 
+此物件包含的資訊可讓 E 系列系統識別遠端儲存系統並與之連接。這些資訊包括遠端儲存系統的 IQN 和 IP 位址。遠端儲存物件代表遠端儲存系統與 E 系列系統之間的通訊。
+
+
+
+ a| 
+遠端儲存磁碟區
+ a| 
+E 系列系統上的標準磁碟區，可讓您存取遠端儲存設備上的資料。
+
+
+
+ a| 
+磁碟區
+ a| 
+用於儲存資料的容器。它是為主機存取資料而建立的邏輯元件。
+
+|===

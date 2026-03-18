@@ -1,0 +1,64 @@
+---
+permalink: sm-storage/overview-pools-volume-groups.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, pools, volume groups 
+summary: 您可以從儲存陣列中未指派磁碟機的子集中建立邏輯儲存容量。根據您的環境需求，此邏輯容量可以採用儲存池或磁碟區群組的形式。 
+---
+= 了解 SANtricity System Manager 中的資源池和磁碟區群組
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從儲存陣列中未指派磁碟機的子集中建立邏輯儲存容量。根據您的環境需求，此邏輯容量可以採用儲存池或磁碟區群組的形式。
+
+
+
+== 什麼是資源池和 Volume 群組？
+
+_pool_ 是一組邏輯上分組的磁碟機。_volume group_ 是用來存放具有共同特徵的 volume 的容器。您可以使用 pool 或 volume group 來建立主機可存取的 volume。
+
+深入瞭解：
+
+* link:how-pools-and-volume-groups-work.html["資源池和磁碟區群組的運作方式"]
+* link:capacity-terminology.html["容量術語"]
+* link:decide-to-use-a-pool-or-volume-group.html["決定使用資源池還是磁碟區群組"]
+
+
+
+
+== 如何建立資源池？
+
+您可以允許 System Manager 在偵測到儲存陣列中未指派的容量時自動建立儲存池。或者，當自動建立無法確定最佳組態時，您可以從功能表：Storage[Pools & Volume Groups] 手動建立儲存池。
+
+深入瞭解：
+
+* link:automatic-versus-manual-pool-creation.html["自動建立池與手動建立池"]
+* link:create-pool-automatically.html["自動建立集區"]
+* link:create-pool-manually.html["手動建立資源池"]
+* link:add-capacity-to-a-pool-or-volume-group.html["向資源池或磁碟區群組新增容量"]
+
+
+
+
+== 如何建立磁碟區群組？
+
+您可以從選單：Storage [Pools & Volume Groups] 建立磁碟區群組。
+
+深入瞭解：
+
+* link:create-volume-group.html["建立磁碟區群組"]
+* link:add-capacity-to-a-pool-or-volume-group.html["向資源池或磁碟區群組新增容量"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與資源池和磁碟區群組相關的概念：
+
+* link:how-reserved-capacity-works.html["預留容量的運作方式"]
+* link:how-ssd-cache-works.html["SSD 快取的工作原理"]
+

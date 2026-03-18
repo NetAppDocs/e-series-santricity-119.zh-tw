@@ -1,0 +1,71 @@
+---
+permalink: sm-settings/configure-iscsi-authentication.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, iscsi, authentication, 
+summary: 為了增強 iSCSI 網路的安全性，您可以在控制器（目標）和主機（啟動器）之間設定驗證。 
+---
+= 在 SANtricity System Manager 中設定 iSCSI 驗證
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了增強 iSCSI 網路的安全性，您可以在控制器（目標）和主機（啟動器）之間設定驗證。
+
+System Manager 使用 Challenge Handshake Authentication Protocol（CHAP）方法，該方法在初始連結建立期間驗證目標和啟動器的身分。驗證是以稱為 _CHAP secret_ 的共用安全金鑰為基礎。
+
+.開始之前
+您可以先為啟動器（iSCSI 主機）設定 CHAP 密碼，也可以在為目標（控制器）設定 CHAP 密碼之後再設定。在執行本工作中的說明之前，您應該先等待主機建立 iSCSI 連線，然後再在各個主機上設定 CHAP 密碼。連線建立後，主機的 IQN 名稱及其 CHAP 密碼將列在 iSCSI 驗證對話方塊（本工作中已說明）中，您無需手動輸入。
+
+.關於此任務
+您可以選擇以下其中一種驗證方法：
+
+* *單向驗證* -- 使用此設定允許控制器驗證 iSCSI 主機的身分（單向驗證）。
+* *雙向驗證* -- 使用此設定可允許控制器和 iSCSI 主機執行驗證（雙向驗證）。此設定提供第二層安全性，讓控制器能夠驗證 iSCSI 主機的身分；反過來，iSCSI 主機也能驗證控制器的身分。
+
+
+[NOTE]
+====
+只有當您的儲存陣列支援 iSCSI 時，iSCSI 設定和功能才會顯示在「設定」頁面上。
+
+====
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 iSCSI 設定下，按一下 *Configure Authentication* 。
++
+此時會顯示「Configure Authentication」（配置身份驗證）對話框，其中顯示了目前設定的方法。它還會顯示是否有任何主機配置了 CHAP 金鑰。
+
+. 請選擇以下選項之一：
++
+** *不進行身份驗證* -- 如果您不希望控制器驗證 iSCSI 主機的身份，請選擇此選項並按一下 *Finish*。對話框將關閉，配置完成。
+** *單向驗證* -- 若要允許控制器驗證 iSCSI 主機的身分，請選取此選項，然後按一下 *Next* 以顯示 Configure Target CHAP 對話方塊。
+** *雙向驗證* -- 若要允許控制器和 iSCSI 主機都執行驗證，請選擇此選項，然後按一下 *Next* 以顯示 Configure Target CHAP 對話方塊。
+
+
+. 對於單向或雙向驗證，請輸入或確認控制器（目標）的 CHAP 金鑰。CHAP 密鑰的長度必須介於 12 到 57 個可列印的 ASCII 字元之間。
++
+[NOTE]
+====
+如果控制器的 CHAP 金鑰先前已配置，則該欄位中的字元將被遮罩。如有必要，您可以替換現有字元（新字元不會被遮罩）。
+
+====
+. 請執行下列其中一項操作：
++
+** 如果您正在設定單向驗證，請按一下 *Finish*。對話方塊將關閉，配置即完成。
+** 如果您正在設定雙向驗證，請按一下 *Next* 以顯示 Configure Initiator CHAP 對話方塊。
+
+
+. 若要啟用雙向驗證，請為任意 iSCSI 主機（發起方）輸入或確認 CHAP 金鑰，金鑰長度為 12 到 57 個可列印 ASCII 字元。如果您不想為特定主機設定雙向驗證，請將「發起方 CHAP 金鑰」欄位留空。
++
+[NOTE]
+====
+如果主機的 CHAP 金鑰之前已配置，則該欄位中的字元將被遮罩。如有必要，您可以替換現有字元（新字元不會被遮罩）。
+
+====
+. 點選 *Finish* 。
+
+
+.結果
+除非您指定不進行驗證，否則將在控制器和 iSCSI 主機之間的 iSCSI 登入序列期間進行驗證。

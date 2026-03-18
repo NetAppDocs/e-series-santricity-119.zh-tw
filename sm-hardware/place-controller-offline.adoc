@@ -1,0 +1,43 @@
+---
+permalink: sm-hardware/place-controller-offline.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, place, controller, offline, 
+summary: 如果接到指示，您可以將控制器離線。 
+---
+= 在 SANtricity System Manager 中將控制器置於離線狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果接到指示，您可以將控制器離線。
+
+.開始之前
+* 您的儲存陣列必須有兩個控制器。您未離線的控制器必須處於線上狀態（處於最佳狀態）。
+* 請確保沒有磁碟區正在使用，或在使用這些磁碟區的所有主機上都安裝了多重路徑驅動程式。
+
+
+.關於此任務
+++ ++
+
+[CAUTION]
+====
+除非 Recovery Guru 或技術支援人員指示，否則請勿將控制器離線。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 點選要離線的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Place offline*，並確認要執行此操作。
+
+
+.結果
+System Manager 可能需要幾分鐘才能將控制器的狀態更新為離線。在狀態更新完成之前，請勿執行任何其他操作。

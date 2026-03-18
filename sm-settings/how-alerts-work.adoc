@@ -1,0 +1,58 @@
+---
+permalink: sm-settings/how-alerts-work.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, alarm, alerts, 
+summary: 警示會通知管理員儲存陣列上發生的重要事件。警示可透過電子郵件、SNMP 設陷和 syslog 傳送。 
+---
+= SANtricity System Manager 中的警示運作方式
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+警示會通知管理員儲存陣列上發生的重要事件。警示可透過電子郵件、SNMP 設陷和 syslog 傳送。
+
+警報處理流程如下：
+
+. 管理員在 System Manager 中配置下列一種或多種警示方法：
++
+** *Email* -- 訊息將發送到電子郵件地址。
+** *SNMP* -- SNMP 陷阱會傳送至 SNMP 伺服器。
+** *Syslog* -- 訊息被傳送到 syslog 伺服器。
+
+
+. 當儲存陣列的事件監視器偵測到問題時，它會將該問題的資訊寫入事件日誌（可透過選單：Support [Event Log] 存取）。例如，問題可能包括電池故障、元件從 Optimal 狀態變為 Offline 狀態，或控制器中的冗餘錯誤等事件。
+. 如果事件監視器判定事件為「可警示」，則會使用已設定的警示方法（電子郵件、SNMP 和 / 或 syslog）傳送通知。所有嚴重事件以及部分警告和資訊事件均被視為「可警示」。
+
+
+
+
+== 警示組態
+
+您可以透過初始設定精靈（僅限電子郵件警報）或警報頁面設定警報。若要檢查目前配置，請前往選單：Settings[Alerts]。
+
+「警報」磁貼顯示警報組態，組態方式可以是下列幾種之一：
+
+* 未配置。
+* 已配置；至少設定了一種警示方法。若要確定已配置哪些警示方法，請將游標指向圖塊。
+
+
+
+
+== 警示資訊
+
+警示可以包含以下類型的資訊：
+
+* 儲存陣列的名稱。
+* 與事件日誌項目相關的事件錯誤類型。
+* 事件發生的日期和時間。
+* 事件簡述。
+
+
+[NOTE]
+====
+Syslog 警示遵循 RFC 5424 訊息標準。
+
+====

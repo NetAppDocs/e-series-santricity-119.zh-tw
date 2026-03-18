@@ -1,0 +1,43 @@
+---
+permalink: sm-settings/access-management-with-local-user-roles.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access management, local, user, roles, 
+summary: 對於存取管理，管理員可以使用儲存陣列中強制執行的 RBAC（基於角色的存取控制）功能。這些功能被稱為本機使用者角色。 
+---
+= 在 SANtricity System Manager 中使用本機使用者角色設定存取管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於存取管理，管理員可以使用儲存陣列中強制執行的 RBAC（role-based access control，基於角色的存取控制）功能。這些功能被稱為「本機使用者角色」。
+
+
+
+== 組態工作流程
+
+儲存陣列已預先配置本機使用者角色。若要使用本機使用者角色進行驗證、管理員可以執行下列操作：
+
+. 管理員使用包含 Security Admin 權限的使用者設定檔登入 System Manager。
++
+[NOTE]
+====
+ `admin` 使用者擁有系統所有功能的完整存取權限。
+
+====
+. 管理員會審核使用者設定檔，這些設定檔是預先定義的，無法修改。
+. 管理員可以選擇為每個使用者設定檔指派新密碼。
+. 使用者使用已指派的憑證登入系統。
+
+
+
+
+== 管理
+
+僅使用本機使用者角色進行驗證時、管理員可以執行下列管理工作：
+
+* 更改密碼。
+* 設定密碼的最小長度。
+* 允許使用者無需密碼即可登入。
+

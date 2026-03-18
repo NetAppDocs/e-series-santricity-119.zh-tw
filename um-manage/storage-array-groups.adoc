@@ -1,0 +1,28 @@
+---
+permalink: um-manage/storage-array-groups.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, storage, array, groups 
+summary: 您可以透過對一組儲存陣列進行分組來管理您的實體和虛擬化基礎架構。您可能希望對儲存陣列進行分組，以便更輕鬆地執行監控或報告作業。 
+---
+= 了解 SANtricity Unified Manager 中的儲存陣列群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過對一組儲存陣列進行分組來管理您的實體和虛擬化基礎架構。您可能希望對儲存陣列進行分組，以便更輕鬆地執行監控或報告作業。
+
+
+
+== 儲存陣列群組的類型
+
+* *所有群組*
++
+「全部」群組是預設群組，包含組織中發現的所有儲存陣列。「全部」群組可從主視圖存取。
+
+* *使用者建立的群組*
++
+使用者建立的群組包含您手動選擇新增至該群組的儲存陣列。可以從主視圖存取使用者建立的群組。
+
+

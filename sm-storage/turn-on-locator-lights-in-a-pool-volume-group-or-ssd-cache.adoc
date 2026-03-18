@@ -1,0 +1,24 @@
+---
+permalink: sm-storage/turn-on-locator-lights-in-a-pool-volume-group-or-ssd-cache.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, lights, LEDs 
+summary: 您可以定位磁碟機，以實體識別組成所選儲存池、Volume 群組或 SSD Cache 的所有磁碟機。所選儲存池、Volume 群組或 SSD Cache 中每個磁碟機上的 LED 指示燈都會亮起。 
+---
+= 在 SANtricity System Manager 中開啟儲存池、磁碟區群組或 SSD Cache 的定位指示燈
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以定位磁碟機，以實體識別組成所選儲存池、Volume 群組或 SSD Cache 的所有磁碟機。所選儲存池、Volume 群組或 SSD Cache 中每個磁碟機上的 LED 指示燈都會亮起。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 選擇要尋找的儲存池、磁碟區群組或 SSD Cache，然後按一下功能表：更多 [開啟定位燈]。
++
+此時會跳出對話框，指示所選儲存池、磁碟區群組或 SSD Cache 中的磁碟機上的指示燈已開啟。
+
+. 成功找到磁碟機後，按一下 *關閉* 。
+

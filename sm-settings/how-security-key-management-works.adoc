@@ -1,0 +1,58 @@
+---
+permalink: sm-settings/how-security-key-management-works.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, security, key, management, 
+summary: 當您實作 Drive Security 功能時，啟用安全功能的磁碟機（FIPS 或 FDE）需要安全金鑰才能存取資料。安全金鑰是一串字元，在這些類型的磁碟機和儲存陣列中的控制器之間共用。 
+---
+= SANtricity System Manager 中的安全金鑰管理工作原理
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您實作 Drive Security 功能時，啟用安全功能的磁碟機（FIPS 或 FDE）需要安全金鑰才能存取資料。安全金鑰是一串字元，在這些類型的磁碟機和儲存陣列中的控制器之間共用。
+
+每當硬碟電源關閉後再開啟時，啟用安全功能的硬碟會變更為安全鎖定狀態，直到控制器套用安全金鑰為止。如果從儲存陣列中移除啟用安全功能的硬碟，該硬碟的資料就會被鎖定。當硬碟重新安裝到不同的儲存陣列時，它會先尋找安全金鑰，然後才能再次存取資料。若要解鎖資料，您必須套用原始安全金鑰。
+
+您可以使用下列其中一種方法來建立和管理安全性金鑰：
+
+* 控制器持續性記憶體上的內部金鑰管理。
+* 外部金鑰管理伺服器上的外部金鑰管理。
+
+
+
+
+== 內部金鑰管理
+
+內部金鑰保存在控制器持久記憶體中一個無法存取的位置，並被「`hidden`」起來。若要實現內部金鑰管理，請執行下列步驟：
+
+. 在儲存陣列中安裝具備安全功能的磁碟機。這些磁碟機可以是 Full Disk Encryption (FDE) 磁碟機或 Federal Information Processing Standard (FIPS) 磁碟機。
+. 請確保已啟用磁碟機安全功能。如有必要，請聯絡您的儲存供應商，以取得啟用磁碟機安全功能的說明。
+. 建立內部安全性金鑰，需要定義一個識別碼和一個密碼短語。識別碼是一個與安全性金鑰關聯的字串，儲存在控制器和所有與該金鑰關聯的磁碟機上。密碼短語用於加密安全性金鑰以進行備份。若要建立內部金鑰，請前往功能表：Settings （設定） [System （系統） > Security key management （安全性金鑰管理） > Create Internal Key （建立內部金鑰）]。
+
+
+安全金鑰儲存在控制器上一個隱藏且無法存取的位置。您可以建立啟用安全功能的磁碟區群組或集區，也可以為現有磁碟區群組和集區啟用安全功能。
+
+
+
+== 外部金鑰管理
+
+外部金鑰保存在獨立的金鑰管理伺服器上，並使用 Key Management Interoperability Protocol (KMIP)。若要實現外部金鑰管理，請執行下列步驟：
+
+. 在儲存陣列中安裝具備安全功能的磁碟機。這些磁碟機可以是 Full Disk Encryption (FDE) 磁碟機或 Federal Information Processing Standard (FIPS) 磁碟機。
+. 請確保已啟用磁碟機安全功能。如有必要，請聯絡您的儲存供應商，以取得啟用磁碟機安全功能的說明。
+. 取得已簽署的用戶端憑證檔案。用戶端憑證用於驗證儲存陣列的控制器，以便金鑰管理伺服器可以信任其 KMIP 請求。
++
+.. 首先，您需要填寫並下載用戶端 Certificate Signing Request（CSR）。進入選單：Settings［Certificates > Key Management > Complete CSR］。
+.. 接下來，您需要向金鑰管理伺服器信任的憑證授權單位（CA）要求已簽署的用戶端憑證。（您也可以使用 CSR 檔案從金鑰管理伺服器建立並下載用戶端憑證。）
+.. 取得用戶端憑證檔案後，將該檔案複製到您存取 System Manager 的主機上。
+.. 或者，您可以使用私密金鑰和公開金鑰配對在外部產生憑證簽署要求。
+
+
+. 從金鑰管理伺服器檢索憑證檔案，然後將該檔案複製到您存取 System Manager 的主機。金鑰管理伺服器憑證用於驗證金鑰管理伺服器，以便儲存陣列可以信任其 IP 位址。您可以為金鑰管理伺服器使用根憑證、中間憑證或伺服器憑證。
+. 建立外部金鑰，這包括定義金鑰管理伺服器的 IP 位址和用於 KMIP 通訊的連接埠號碼。在此過程中，您還需要載入憑證檔案。若要建立外部金鑰，請前往功能表：Settings[System > Security key management > Create External Key]。
+
+
+系統會使用您輸入的認證連線至金鑰管理伺服器。然後，您可以建立啟用安全功能的磁碟區群組或集區，也可以在現有磁碟區群組和集區上啟用安全功能。

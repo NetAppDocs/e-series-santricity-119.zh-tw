@@ -1,0 +1,21 @@
+---
+permalink: sm-support/view-autosupport-status.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, autosupport, status 
+summary: AutoSupport 頁面會顯示 AutoSupport 功能及個別 AutoSupport 功能目前是否已啟用。 
+---
+= 在 SANtricity System Manager 中檢視 AutoSupport 狀態
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 頁面會顯示 AutoSupport 功能及個別 AutoSupport 功能目前是否已啟用。
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 請查看頁面右側標籤下方，確認基本 AutoSupport 功能是否已啟用。
+. 將滑鼠停留在問號上，即可查看各項 AutoSupport 功能是否已啟用。
+

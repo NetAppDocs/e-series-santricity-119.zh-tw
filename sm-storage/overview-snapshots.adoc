@@ -1,0 +1,69 @@
+---
+permalink: sm-storage/overview-snapshots.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, snapshots 
+summary: Snapshot 功能可讓您建立儲存陣列磁碟區的某個時間點映像，用於備份或測試。 
+---
+= 了解 SANtricity System Manager 中的快照
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snapshot 功能可讓您建立儲存陣列磁碟區的某個時間點映像，用於備份或測試。
+
+
+
+== 什麼是快照映像？
+
+_snapshot image_ 是磁碟區資料的邏輯副本，在特定時間點擷取。與還原點類似，snapshot image 可讓您回滾到已知良好的資料集。雖然主機可以存取 snapshot image，但不能直接讀取或寫入。
+
+深入瞭解：
+
+* link:how-snapshot-storage-works.html["快照儲存的運作方式"]
+* link:snapshot-terminology.html["快照術語"]
+* link:base-volumes-reserved-capacity-and-snapshot-groups.html["基礎磁碟區、保留容量和快照群組"]
+* link:snapshot-schedules-and-snapshot-consistency-groups.html["快照排程和一致性群組"]
+* link:snapshot-volumes.html["快照磁碟區"]
+
+
+
+
+== 如何建立快照？
+
+您可以手動從基礎磁碟區或快照一致性群組建立快照映像。此程序可從功能表：Storage [Snapshots] 取得。
+
+深入瞭解：
+
+* link:requirements-and-guidelines-for-snapshots.html["快照的要求和準則"]
+* link:workflow-for-creating-snapshot-images-and-snapshot-volumes.html["建立快照映像和磁碟區的工作流程"]
+* link:create-snapshot-image.html["建立快照映像"]
+* link:schedule-snapshot-images.html["排程快照映像"]
+* link:create-snapshot-consistency-group.html["建立 Snapshot 一致性群組"]
+* link:create-snapshot-volume.html["建立 Snapshot 磁碟區"]
+
+
+
+
+== 如何從快照回滾資料？
+
+_回滾_ 是將基礎磁碟區中的資料還原到先前某個時間點的過程。您可以從選單：Storage [Snapshots] 回滾快照資料。
+
+深入瞭解：
+
+* link:snapshot-rollback.html["快照復原"]
+* link:start-snapshot-image-rollback-for-base-volume.html["啟動基礎磁碟區的快照映像復原"]
+* link:start-snapshot-image-rollback-for-consistency-group-member-volumes.html["對一致性群組成員啟動快照映像復原"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與快照相關的工作：
+
+* link:change-the-reserved-capacity-settings-for-a-snapshot-volume.html["變更快照磁碟區的保留容量"]
+* link:change-the-reserved-capacity-settings-for-a-snapshot-group.html["變更快照群組的保留容量"]
+

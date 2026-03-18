@@ -1,0 +1,34 @@
+---
+permalink: sm-mirroring/update-remote-ip-address.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, update, remote, ip, address, connection, 
+summary: 您可以更新遠端儲存陣列的 iSCSI IP 位址，以重新建立與本機儲存陣列的連線。 
+---
+= 在 SANtricity System Manager 中更新遠端儲存陣列 IP 位址
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更新遠端儲存陣列的 iSCSI IP 位址，以重新建立與本機儲存陣列的連線。
+
+.開始之前
+本機儲存陣列和遠端儲存陣列都必須設定為使用 iSCSI 連線進行非同步鏡射。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+Mirror Consistency Group 表格會顯示與儲存陣列相關聯的所有鏡像一致性群組。
+
+. 選擇要更新的鏡像一致性群組，然後選擇功能表：More[Update remote IP address]。
++
+系統顯示 Update Remote IP Address 對話框。
+
+. 選擇 *Update* 以更新遠端儲存陣列的 iSCSI IP 位址。
+
+
+.結果
+系統會重設遠端儲存陣列的 IP 位址，以重新建立與本機儲存陣列的連線。

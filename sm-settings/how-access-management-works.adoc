@@ -1,0 +1,80 @@
+---
+permalink: sm-settings/how-access-management-works.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, authentication, users, roles, access, Management, 
+summary: 存取管理是在 SANtricity System Manager 中建立使用者驗證的方法。 
+---
+= SANtricity System Manager 中的存取管理工作原理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存取管理是在 SANtricity System Manager 中建立使用者驗證的方法。
+
+組態和使用者驗證的運作方式如下：
+
+. 管理員使用包含 Security Admin 權限的使用者設定檔登入 System Manager。
++
+[NOTE]
+====
+首次登入時，使用者名稱  `admin` 會自動顯示且無法變更。 `admin` 使用者擁有系統所有功能的完整存取權限。
+
+====
+. 管理員在使用者介面中導覽至 Access Management。儲存陣列已預先設定為使用本機使用者角色，這是 RBAC（角色型存取控制）功能的實作。
+. 管理員會設定下列一或多種驗證方法：
++
+** *本機使用者角色* -- 驗證透過儲存陣列中強制執行的 RBAC 功能進行管理。本機使用者角色包括預先定義的使用者設定檔和具有特定存取權限的角色。管理員可以將這些本機使用者角色作為唯一的驗證方法，也可以將其與目錄服務結合使用。除了設定使用者密碼之外，無需其他組態設定。
+** *目錄服務* -- 驗證透過 LDAP（輕量級目錄存取協定）伺服器和目錄服務（例如 Microsoft 的 Active Directory）進行管理。管理員連接到 LDAP 伺服器，然後將 LDAP 使用者對應到儲存陣列中嵌入的本機使用者角色。
+** *SAML* -- 驗證透過身分提供者（IdP）使用 Security Assertion Markup Language（SAML）2.0 進行管理。管理員在 IdP 系統和儲存陣列之間建立通訊，然後將 IdP 使用者對應到嵌入儲存陣列中的本機使用者角色。
+
+
+. 管理員為使用者提供 System Manager 的登入憑證。
+. 使用者透過輸入憑證登入系統。
++
+[NOTE]
+====
+如果使用 SAML 和 SSO（單一登入）管理驗證，系統可能會繞過 System Manager 登入對話方塊。
+
+====
++
+登入期間，系統會在背景執行下列工作：
+
++
+** 根據使用者帳戶驗證使用者名稱和密碼。
+** 根據指派的角色決定使用者的權限。
+** 為使用者提供使用者介面中各項任務的存取權限。
+** 在介面右上角顯示使用者名稱。
+
+
+
+
+
+
+== System Manager 中可用的任務
+
+使用者對任務的存取權限取決於其被指派的角色，包括以下幾種：
+
+* *Storage admin* -- 對儲存物件（例如、磁碟區和磁碟集區）具有完全的讀取 / 寫入權限、但無權存取安全性組態。
+* *Security admin* -- 可以存取 Access Management 中的安全性設定、憑證管理、稽核日誌管理，以及啟用或停用舊版管理介面（SYMbol）的功能。
+* *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料、MEL 事件和控制器韌體升級。無權存取儲存物件或安全性配置。
+* *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+不可用的任務會顯示為灰色或不顯示在使用者介面中。例如，具有 Monitor 角色的使用者可以檢視所有磁碟區資訊，但無法存取修改該磁碟區的功能。*Copy Services* 和 *Add to Workload* 等功能的標籤會顯示為灰色；只有 *View/Edit Settings* 可用。
+
+
+
+== Unified Manager 和 Storage Manager 的限制
+
+如果為儲存陣列配置了 SAML，則使用者無法透過 Unified Manager 或舊版 Storage Manager 介面發現或管理該陣列的儲存。
+
+設定本機使用者角色和目錄服務後，使用者必須先輸入認證資料才能執行下列任何功能：
+
+* 重新命名儲存陣列
+* 升級控制器韌體
+* 載入儲存陣列組態
+* 執行指令碼
+* 嘗試在未使用的工作階段逾時時執行作用中作業
+

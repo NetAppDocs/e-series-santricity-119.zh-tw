@@ -1,0 +1,27 @@
+---
+permalink: sm-storage/delete-snapshot-schedule.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, delete, snapshot, schedule 
+summary: 如果您不再想收集快照映像，可以刪除現有的快照排程。 
+---
+= 在 SANtricity System Manager 中刪除快照排程
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再想收集快照映像，可以刪除現有的快照排程。
+
+.關於此任務
+刪除快照排程時，相關的快照映像不會隨之刪除。如果您認為快照映像的收集可能會在某個時間點恢復，則應暫停快照排程而非刪除。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 點選 *Schedules* 標籤。
+. 選擇要刪除的快照排程，然後確認操作。
+
+
+.結果
+系統從基本磁碟區或 Snapshot 一致性群組中移除所有排程屬性。

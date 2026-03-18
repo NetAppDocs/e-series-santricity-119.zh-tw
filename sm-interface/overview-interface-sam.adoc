@@ -1,0 +1,97 @@
+---
+permalink: sm-interface/overview-interface-sam.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, 
+summary: 您可以瀏覽主介面以存取 System Manager 功能和工作。 
+---
+= 了解 SANtricity System Manager 介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity System Manager 是一個基於 Web 的介面，可讓您在單一視圖中管理儲存陣列。
+
+
+
+== 首頁
+
+主頁提供了一個儀錶板視圖，用於日常管理您的儲存陣列。登入 System Manager 後，主頁是顯示的第一個畫面。
+
+儀表板視圖包含四個摘要區域，其中包含有關儲存陣列狀態和運作狀況的關鍵資訊。您可以從摘要區域找到更多資訊。
+
+[cols="25h,~"]
+|===
+| 區域 | 說明 
+
+
+ a| 
+通知
+ a| 
+「通知」區域會顯示問題通知，指示儲存陣列及其元件的狀態。此外，此 portlet 還會顯示自動警報，幫助您在問題影響儲存環境的其他區域之前進行故障排除。
+
+
+
+ a| 
+效能
+ a| 
+效能區域可讓您比較和對比一段時間內的資源使用情況。您可以查看儲存陣列的回應時間（IOPS）、傳輸速率（MiB/s）以及正在使用的處理能力（CPU）等效能指標。
+
+
+
+ a| 
+容量
+ a| 
+容量區域以圖表形式顯示儲存陣列中已分配容量、可用儲存容量和未分配儲存容量。
+
+
+
+ a| 
+儲存階層
+ a| 
+儲存層次結構區域以清晰有序的方式展示了儲存陣列管理的各種硬體元件和儲存物件。按一下下拉箭頭可對該硬體元件或儲存物件執行特定操作。
+
+|===
+
+
+== 介面設定
+
+您可以從主介面變更顯示偏好設定和其他設定。
+
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+顯示偏好設定
+ a| 
+從介面右上角的 Preferences 下拉式選單變更容量值和時間範圍。
+
+
+
+ a| 
+工作階段逾時
+ a| 
+設定逾時，以便在指定時間後中斷使用者的非作用中工作階段。
+
+
+
+ a| 
+說明
+ a| 
+從介面右上角的下拉式選單中存取 Help 文件和其他資源。
+
+|===
+
+
+== 使用者登入和密碼
+
+目前登入系統的使用者顯示在介面右上角。
+
+如需使用者和密碼的詳細資訊、請參閱：
+
+* link:administrator-password-protection.html["設定管理員密碼保護"]
+* link:../sm-settings/change-passwords.html["更改密碼"]
+

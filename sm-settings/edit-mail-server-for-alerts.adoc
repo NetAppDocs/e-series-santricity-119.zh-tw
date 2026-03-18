@@ -1,0 +1,46 @@
+---
+permalink: sm-settings/edit-mail-server-for-alerts.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, mail, server, alerts, 
+summary: 您可以變更用於電子郵件提醒的郵件伺服器位址和電子郵件寄件者位址。 
+---
+= 在 SANtricity System Manager 中編輯警示的郵件伺服器
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更用於電子郵件提醒的郵件伺服器位址和電子郵件寄件者位址。
+
+.開始之前
+您要變更的郵件伺服器位址必須可用。該位址可以是 IPv4 或 IPv6 位址，也可以是完全限定網域名稱。
+
+[NOTE]
+====
+若要使用完全限定網域名稱，您必須在兩個控制器上設定 DNS 伺服器。您可以從「硬體」頁面設定 DNS 伺服器。
+
+====
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *Email* 標籤。
+. 選擇 *Configure Mail Server* 。
++
+Configure Mail Server 對話方塊隨即開啟。
+
+. 編輯郵件伺服器位址、寄件者資訊和聯絡資訊。
++
+** *郵件伺服器位址* -- 編輯郵件伺服器的完全限定網域名稱、IPv4 位址或 IPv6 位址。
++
+[NOTE]
+====
+若要使用完全限定網域名稱，您必須在兩個控制器上設定 DNS 伺服器。您可以從「硬體」頁面設定 DNS 伺服器。
+
+====
+** *Email sender address* -- 編輯用作電子郵件寄件者的電子郵件地址。此地址將顯示在電子郵件的「寄件者」欄位中。
+** *在電子郵件中包含聯絡資訊* -- 若要編輯寄件者的聯絡資訊，請選取此選項，然後編輯姓名和電話號碼。
+
+
+. 按一下 *Save* 。
+

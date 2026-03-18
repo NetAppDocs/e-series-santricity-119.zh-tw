@@ -1,0 +1,66 @@
+---
+permalink: sm-settings/faq-certificates.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。 
+---
+= SANtricity System Manager 的 CA 簽署憑證和自我簽署憑證常見問題集
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。
+
+
+
+== 為什麼會出現「無法存取其他控制器」對話方塊？
+
+當您執行與 CA 憑證相關的某些操作（例如匯入憑證）時，您可能會看到一個對話方塊，提示您接受第二個控制器的自簽名憑證。
+
+在具有兩個控制器（雙工配置）的儲存陣列中，如果 SANtricity System Manager 無法與第二個控制器通訊，或者您的瀏覽器在操作的某個階段無法接受憑證，則有時會出現此對話方塊。
+
+如果出現此對話框，請按一下 *Accept Self-Signed Certificate* 繼續。如果出現另一個對話方塊提示您輸入密碼，請輸入您用於存取 System Manager 的 Administrator 密碼。
+
+如果再次出現此對話方塊且您無法完成憑證工作，請嘗試下列其中一項程序：
+
+* 使用其他類型的瀏覽器存取此控制器、接受憑證，然後繼續。
+* 存取第二個控制器 withSystem Manager、接受自我簽署的憑證、然後返回第一個控制器並繼續。
+
+
+
+
+== 我如何知道需要將哪些憑證上傳到 SANtricity System Manager 以進行外部金鑰管理？
+
+對於外部金鑰管理，您需要匯入兩種類型的憑證，用於儲存陣列和金鑰管理伺服器之間的驗證，以便這兩個實體可以相互信任。
+
+用戶端憑證用於驗證儲存陣列的控制器，以便金鑰管理伺服器可以信任其 Key Management Interoperability Protocol（KMIP）請求。
+
+若要取得用戶端憑證，您可以使用 System Manager 為儲存陣列完成 CSR。您也可以使用私密金鑰和公開金鑰對在外部產生 CSR。
+
+然後，您可以將 CSR 上傳到金鑰管理伺服器，並從中產生用戶端憑證。取得用戶端憑證後，將該檔案複製到您存取 System Manager 的主機上。
+
+金鑰管理伺服器憑證用於驗證金鑰管理伺服器，以便儲存陣列可以信任其 IP 位址。從金鑰管理伺服器擷取伺服器憑證檔案，然後將該檔案複製到您存取 System Manager 的主機。
+
+
+
+== 關於憑證撤銷檢查，我需要了解哪些資訊？
+
+SANtricity System Manager 可讓您使用線上憑證狀態通訊協定（OCSP）伺服器來檢查已撤銷的憑證，而不是上傳憑證撤銷清單（CRL）。
+
+已撤銷的憑證不應再被信任。憑證可能因多種原因被撤銷；例如，憑證授權單位（CA）不當頒發了憑證、私密金鑰遭到洩露，或已識別的實體未遵守政策要求。
+
+在 System Manager 中建立與 OCSP 伺服器的連線後，儲存陣列會在連接到 AutoSupport 伺服器、External Key Management Server（EKMS）、Lightweight Directory Access Protocol over SSL（LDAPS）伺服器或 Syslog 伺服器時執行撤銷檢查。儲存陣列會嘗試驗證這些伺服器的憑證，以確保它們未被撤銷。伺服器隨後會傳回該憑證的「good」、「revoked」或「unknown」值。如果憑證已被撤銷或陣列無法聯絡 OCSP 伺服器，則會拒絕連線。
+
+[NOTE]
+====
+在 System Manager 或命令列介面（CLI）中指定 OCSP 回應程序位址會覆寫憑證檔案中找到的 OCSP 位址。
+
+====
+
+
+== 將對哪些類型的伺服器啟用撤銷檢查？
+
+儲存陣列在連接到 AutoSupport 伺服器、外部金鑰管理伺服器（EKMS）、基於 SSL 的輕量級目錄存取協定（LDAPS）伺服器或 Syslog 伺服器時，都會執行撤銷檢查。

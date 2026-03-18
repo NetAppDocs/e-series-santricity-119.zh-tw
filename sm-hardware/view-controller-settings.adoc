@@ -1,0 +1,94 @@
+---
+permalink: sm-hardware/view-controller-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, controller, settings 
+summary: 您可以檢視有關控制器的資訊，例如主機介面、磁碟機介面和管理連接埠的狀態。 
+---
+= 在 SANtricity System Manager 中檢視控制器設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視有關控制器的資訊，例如主機介面、磁碟機介面和管理連接埠的狀態。
+
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 執行下列其中一項動作以顯示控制器設定：
++
+** 按一下控制器以顯示內容功能表，然後選取 *View settings* 。
+** 選擇控制器圖示（位於 *Shelf* 下拉清單旁）。對於雙工配置，請從對話方塊中選擇 *Controller A* 或 *Controller B*，然後按一下 *Next*。
++
+控制器設定對話方塊開啟。
+
+
+
+. 選擇索引標籤可在屬性設定之間切換。
++
+某些標籤頁的右上角有 *Show more settings* 的連結。
+
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 標籤頁 | 說明 
+
+
+ a| 
+基礎
+ a| 
+顯示控制器狀態、型號名稱、替換零件號碼、目前韌體版本和非揮發性靜態隨機存取記憶體（NVSRAM）版本。
+
+
+
+ a| 
+快取
+ a| 
+顯示控制器的快取設定，包括資料快取、處理器快取和快取備份裝置。快取備份裝置用於在控制器斷電時備份快取中的資料。狀態可能為最佳、失敗、已移除、未知、寫入保護或不相容。
+
+
+
+ a| 
+主機介面
+ a| 
+顯示主機介面資訊和各連接埠的連結狀態。主機介面是指控制器與主機之間的連接，例如 Fibre Channel 或 iSCSI。
+
+
+NOTE: 主機介面卡（HIC）的位置可以位於底板或插槽（托架）內。「底板」表示 HIC 連接埠整合在控制器中。「插槽」連接埠則位於選購的 HIC 上。
+
+
+
+ a| 
+磁碟機介面
+ a| 
+顯示磁碟機介面資訊和各連接埠的連結狀態。磁碟機介面是控制器與磁碟機之間的連接，例如 SAS。
+
+
+
+ a| 
+管理連接埠
+ a| 
+顯示管理連接埠詳細資訊，例如用於存取控制器的主機名稱以及是否已啟用遠端登入。管理連接埠連接控制器和管理用戶端，管理用戶端上安裝了瀏覽器，用於存取 System Manager。
+
+
+
+ a| 
+DNS / NTP
+ a| 
+顯示 DNS 伺服器和 NTP 伺服器的尋址方法和 IP 位址（如果這些伺服器已在 System Manager 中設定）。
+
+網域名稱系統（Domain Name System，DNS）是連接到網際網路或專用網路的裝置所提供的命名系統。DNS 伺服器維護一個網域名稱目錄，並將網域名稱轉換為網際網路通訊協定（Internet Protocol，IP）位址。
+
+網路時間協定 (NTP) 是一種用於資料網路中電腦系統之間時脈同步的網路協定。
+
+|===
+====
+. 按一下 *Close* 。
+

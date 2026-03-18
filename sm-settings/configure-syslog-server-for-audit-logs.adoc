@@ -1,0 +1,53 @@
+---
+permalink: sm-settings/configure-syslog-server-for-audit-logs.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, syslog, server, audit, logs, 
+summary: 如果要將稽核日誌歸檔到外部 syslog 伺服器，可以設定該伺服器與儲存陣列之間的通訊。連線建立後，稽核日誌將自動儲存到 syslog 伺服器。 
+---
+= 在 SANtricity System Manager 中設定用於稽核日誌的 syslog 伺服器
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果要將稽核日誌歸檔到外部 syslog 伺服器，可以設定該伺服器與儲存陣列之間的通訊。連線建立後，稽核日誌將自動儲存到 syslog 伺服器。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* 必須提供 syslog 伺服器位址、協定和連接埠號碼。伺服器位址可以是完全限定網域名稱、IPv4 位址或 IPv6 位址。
+* 如果您的伺服器使用安全性協定（例如 TLS），則您的本機系統上必須安裝憑證授權單位 (CA) 憑證。CA 憑證用於識別網站擁有者，以確保伺服器和用戶端之間的安全連線。
+
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 從「稽核記錄」索引標籤中，選取 *Configure Syslog Servers* 。
++
+「設定 Syslog 伺服器」對話方塊隨即開啟。
+
+. 點擊 *Add* 。
++
+Add Syslog Server 對話方塊隨即開啟。
+
+. 輸入伺服器的資訊，然後按一下 *Add* 。
++
+** *伺服器位址* -- 輸入完整網域名稱、IPv4 位址或 IPv6 位址。
+** *Protocol* -- 從下拉清單中選擇協定（例如 TLS、UDP 或 TCP）。
+** *上傳證書（選用）* -- 如果您選擇了 TLS 協定但尚未上傳已簽署的 CA 證書，請按一下 *Browse* 上傳證書檔案。如果沒有受信任的證書，審計日誌將不會存檔到 syslog 伺服器。
++
+[NOTE]
+====
+如果憑證之後失效，TLS 握手將會失敗。因此，稽核記錄中會發佈錯誤訊息，且訊息將不再傳送至 syslog 伺服器。若要解決此問題，您必須修正 syslog 伺服器上的憑證，然後前往功能表：Settings（設定）[Audit Log（稽核記錄）> Configure Syslog Servers（設定 Syslog 伺服器）> Test All（全部測試）]。
+
+====
+** *連接埠* -- 輸入 syslog 接收器的連接埠號碼。點擊*新增*後，將開啟「設定 Syslog 伺服器」對話框，並在頁面上顯示您設定的 syslog 伺服器。
+
+
+. 若要測試伺服器與儲存陣列的連線，請選取 *全部測試* 。
+
+
+.結果
+配置完成後，所有新的審計日誌都會傳送到 syslog 伺服器。之前的日誌不會被傳輸。若要進一步配置警示的 syslog 設定，請參閱 https://docs.netapp.com/us-en/e-series-santricity/sm-settings/configure-syslog-server-for-alerts.html["設定 syslog 伺服器以接收警示"]。
+
+ NOTE: If multiple syslog servers are configured, all configured syslog servers will receive an audit log.

@@ -1,0 +1,45 @@
+---
+permalink: um-manage/overview-mirroring-um.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, mirroring 
+summary: 使用鏡像功能在本機儲存陣列和遠端儲存陣列之間複製資料，可以非同步複製，也可以同步複製。 
+---
+= 了解 SANtricity Unified Manager 中的鏡像功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用鏡像功能在本機儲存陣列和遠端儲存陣列之間複製資料，可以非同步複製，也可以同步複製。
+
+[NOTE]
+====
+EF600/EF600C 或 EF300/EF300C 儲存系統不提供同步鏡像。
+
+====
+
+
+== 什麼是鏡像？
+
+SANtricity 應用程式包含兩種鏡像類型──非同步鏡像和同步鏡像。非同步鏡像可按需或按排程複製資料磁碟區，從而最大限度地減少或避免因資料毀損或遺失而導致的停機時間。同步鏡像即時複寫資料磁碟區，以確保持續可用性。
+
+深入瞭解：
+
+* link:mirroring-overview.html["鏡像的運作方式"]
+* link:mirroring-terminology.html["鏡像術語"]
+
+
+
+
+== 如何配置鏡像？
+
+您可以在 Unified Manager 中設定非同步或同步鏡射，然後使用 System Manager 管理同步。
+
+深入瞭解：
+
+* link:mirroring-configuration-workflow.html["鏡像組態工作流程"]
+* link:requirements-for-using-mirroring.html["使用鏡像的要求"]
+* link:create-asynchronous-mirrored-pair-um.html["建立非同步鏡像配對"]
+* link:create-synchronous-mirrored-pair-um.html["建立同步鏡射配對"]
+

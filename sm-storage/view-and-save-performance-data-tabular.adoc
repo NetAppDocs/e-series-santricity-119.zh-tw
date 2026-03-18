@@ -1,0 +1,37 @@
+---
+permalink: sm-storage/view-and-save-performance-data-tabular.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, save, tabular, performance, 
+summary: 您可以以表格格式檢視和儲存效能圖表資料。這樣可讓您篩選想要顯示的資料。 
+---
+= 在 SANtricity System Manager 中檢視並儲存表格化的效能數據
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以以表格格式檢視和儲存效能圖表資料。這樣可讓您篩選想要顯示的資料。
+
+.步驟
+. 在任何效能資料圖表中，按一下 *Launch table view* 。
++
+畫面上會顯示一個表格，其中列出所選物件的所有效能資料。
+
+. 根據需要使用物件選取下拉式選單和篩選器。
+. 點擊 *Show/Hide Columns* 按鈕，選擇要在表格中包含的列。
++
+您可以點擊每個核取方塊來選擇或取消選擇項目。
+
+. 選擇螢幕底部的 *Export* 、將表格視圖儲存為逗號分隔值（CSV）檔案。
++
+此時會顯示「匯出表格」對話框，指示要匯出的列數和匯出的檔案格式（逗號分隔值或 CSV 格式）。
+
+. 按一下 *Export* 繼續下載，或按一下 *Cancel* 。
++
+根據您的瀏覽器設定，檔案會直接儲存，或提示您選擇檔案名稱和儲存位置。
+
++
+預設檔名格式為  `performanceStatistics-yyyy-mm-dd_hh-mm-ss.csv`，其中包含檔案匯出時的日期和時間。
+
+

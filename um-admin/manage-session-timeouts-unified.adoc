@@ -1,0 +1,39 @@
+---
+permalink: um-admin/manage-session-timeouts-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, manage, session, timeouts 
+summary: 您可以為 SANtricity Unified Manager 設定逾時、以便在指定時間後中斷使用者的非作用中工作階段。 
+---
+= 在 SANtricity Unified Manager 中管理工作階段逾時
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為 SANtricity Unified Manager 設定逾時，以便在指定時間後中斷使用者非作用中工作階段的連線。
+
+.關於此任務
+根據預設、Unified Manager 的工作階段逾時為 30 分鐘。您可以調整該時間、也可以完全停用工作階段逾時。
+
+
+NOTE: 如果 Access Management 是使用陣列中嵌入的 Security Assertion Markup Language (SAML) 功能進行設定，則當使用者的 SSO 工作階段達到其上限時，可能會發生工作階段逾時。這種情況可能會在 System Manager 工作階段逾時之前發生。
+
+.步驟
+. 從功能表列中，選取使用者登入名稱旁邊的下拉式箭頭。
+. 選擇 *Enable/Disable session timeout* 。
++
+「啟用/停用工作階段逾時」對話方塊隨即開啟。
+
+. 使用微調旋鈕增加或減少時間（以分鐘為單位）。
++
+您可以設定的最小逾時時間為 15 分鐘。
+
++
+[NOTE]
+====
+若要停用工作階段逾時，請清除 *Set the length of time...* 核取方塊。
+
+====
+. 按一下 *Save* 。
+

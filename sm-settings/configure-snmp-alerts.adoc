@@ -1,0 +1,80 @@
+---
+permalink: sm-settings/configure-snmp-alerts.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, snmp, alerts, 
+summary: '若要設定 Simple Network Management Protocol (SNMP) 警報，您必須指定至少一台伺服器，儲存陣列的事件監視器可以向該伺服器傳送 SNMP 陷阱。配置需要提供團體名稱或使用者名稱以及伺服器的 IP 位址。' 
+---
+= 在 SANtricity System Manager 中設定 SNMP 警示
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定簡單網路管理協定 (SNMP) 警報，您必須指定至少一台伺服器，儲存陣列的事件監視器可以向該伺服器傳送 SNMP 陷阱。配置需要提供團體名稱或使用者名稱以及伺服器的 IP 位址。
+
+.開始之前
+* 必須使用 SNMP 服務應用程式設定網路伺服器。您需要此伺服器的網路位址（IPv4 或 IPv6 位址），以便事件監視器可以將陷阱訊息傳送至該位址。您可以使用多台伺服器（最多允許 10 台伺服器）。
+* 管理資訊庫（MIB）檔案已複製並編譯到安裝了 SNMP 服務應用程式的伺服器上。該 MIB 檔案定義了正在監控和管理的資料。
++
+如果您沒有 MIB 文件，可以從 NetApp 支援網站取得：
+
++
+** 前往  https://mysupport.netapp.com/site/global/dashboard["NetApp 支援"^]。
+** 按一下 *Downloads* 索引標籤，然後選取 *Downloads* 。
+** 按一下 *E-Series SANtricity OS Controller Software*。
+** 選擇 *Download Latest Release* 。
+** 登入。
+** 接受警告聲明和授權合約。
+** 向下捲動直到看到您的控制器類型的 MIB 檔案，然後按一下連結下載該檔案。
+
+
+
+
+.關於此任務
+本任務說明如何識別陷阱目的地的 SNMP 伺服器，然後測試您的組態。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *SNMP* 選項卡。
++
+首次設定時，SNMP 標籤會顯示「設定社群 / 使用者」。
+
+. 選擇 *Configure Communities/Users*。
++
+「選擇 SNMP 版本」對話方塊開啟。
+
+. 選擇警示的 SNMP 版本，可以是 *SNMPv2c* 或 *SNMPv3* 。
++
+根據您的選擇，將開啟「設定社群」對話方塊或「設定 SNMPv3 使用者」對話方塊。
+
+. 請按照 SNMPv2c （社群）或 SNMPv3 （使用者）的相應說明進行操作：
++
+** *SNMPv2c（團體）* -- 在「設定團體」對話方塊中，輸入一個或多個網路伺服器的團體字串。團體名稱是一個字串，用於識別一組已知的管理站，通常由網路管理員建立。它僅包含可列印的 ASCII 字元。最多可以新增 256 個團體。完成後，按一下 *Save*。
+** *SNMPv3（使用者）* -- 在「設定 SNMPv3 使用者」對話方塊中、按一下 *「新增」*、然後輸入下列資訊：
++
+*** *使用者名稱* -- 輸入用於識別使用者的名稱，最多可包含 31 個字元。
+*** *Engine ID* -- 選擇 Engine ID，該 ID 用於產生訊息的身份驗證和加密金鑰，並且在管理網域中必須是唯一的。在大多數情況下，您應該選擇 *Local*。如果您使用的是非標準組態，請選擇 *Custom*；此時會顯示另一個欄位，您必須在其中輸入權威引擎 ID（十六進位字串），字元數為 10 到 32 個偶數字元。
+*** *Authentication credentials* -- 選擇一種身份驗證協議，用於驗證使用者身份。接下來，輸入身份驗證密碼。設定或變更身份驗證協定時需要輸入此密碼。密碼長度必須介於 8 到 128 個字元之間。
+*** *Privacy credentials* -- 選擇一種隱私協議，該協議用於加密郵件內容。接下來，輸入隱私密碼，設定或更改隱私協議時需要輸入此密碼。密碼長度必須介於 8 到 128 個字元之間。完成後，按一下 *Add*，然後按一下 *Close*。
+
+
+
+
+. 在「警報」頁面中選擇 SNMP 選項卡，然後按一下 *新增陷阱目標*。
++
+Add Trap Destinations 對話方塊開啟。
+
+. 輸入一個或多個設陷目的地、選取其相關的社群名稱或使用者名稱，然後按一下 *Add* 。
++
+** *Trap Destination* -- 輸入執行 SNMP 服務的伺服器的 IPv4 或 IPv6 位址。
+** *Community name 或 User name* -- 從下拉清單中選擇此陷阱目標的 community name（SNMPv2c）或 user name（SNMPv3）。（如果您只定義了一個，則該名稱已顯示在此欄位中。）
+** *傳送驗證失敗陷阱* -- 如果您希望在因無法識別的團體名稱或使用者名稱而導致 SNMP 請求被拒絕時，向陷阱目標發送警報，請選取此選項（核取方塊）。按一下 *Add* 後，陷阱目標及其關聯名稱將顯示在 *Alerts* 頁面的 *SNMP* 標籤中。
+
+
+. 若要確保設陷有效、請從表格中選取設陷目的地、然後按一下 *Test Trap Destination* 、將測試設陷傳送至設定的位址。
+
+
+.結果
+事件監視器會在發生可發出警報的事件時向伺服器發送 SNMP 陷阱。

@@ -1,0 +1,82 @@
+---
+permalink: um-certificates/access-management-terminology-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, access management, terminology 
+summary: 了解存取管理術語如何應用於 SANtricity Unified Manager。 
+---
+= 了解 SANtricity Unified Manager 存取管理術語
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解存取管理術語如何應用於 SANtricity Unified Manager。
+
+[cols="25h,~"]
+|===
+| 期限 | 說明 
+
+
+ a| 
+Active Directory
+ a| 
+Active Directory (AD) 是 Microsoft 的目錄服務，使用 LDAP 來管理 Windows 網域網路。
+
+
+
+ a| 
+繫結
+ a| 
+綁定操作用於對目錄伺服器的客戶端進行身份驗證。綁定通常需要帳戶和密碼憑證，但有些伺服器允許匿名綁定操作。
+
+
+
+ a| 
+加州
+ a| 
+憑證授權單位（CA）是一個受信任的實體，它頒發用於網際網路安全的電子文件，稱為數位憑證。這些憑證用於識別網站擁有者，從而實現用戶端和伺服器之間的安全連線。
+
+
+
+ a| 
+證書
+ a| 
+證書用於識別網站所有者，以確保網站安全，防止攻擊者冒充網站。證書包含網站所有者的資訊以及對這些資訊進行認證（簽署）的可信任實體的身份資訊。
+
+
+
+ a| 
+LDAP
+ a| 
+輕量級目錄存取協定（LDAP）是一種用於存取和維護分散式目錄資訊服務的應用層協定。該協定允許多種不同的應用程式和服務連接到 LDAP 伺服器以驗證使用者身份。
+
+
+
+ a| 
+RBAC
+ a| 
+基於角色的存取控制 (RBAC) 是一種根據使用者角色來管理對電腦或網路資源存取的方法。Unified Manager 包含預先定義的角色。
+
+
+
+ a| 
+SAML
+ a| 
+Security Assertion Markup Language (SAML) 是一種基於 XML 的標準，用於兩個實體之間的身份驗證和授權。SAML 支援多因素身份驗證，使用者必須提供兩項或多項資訊來證明其身分（例如密碼和指紋）。儲存陣列內建的 SAML 功能符合 SAML2.0 標準，可用於身分斷言、身分驗證和授權。
+
+
+
+ a| 
+單一登入（SSO）
+ a| 
+單一登入（SSO）是一種驗證服務，允許使用一組登入憑證存取多個應用程式。
+
+
+
+ a| 
+Web Services Proxy
+ a| 
+Web Services Proxy 透過標準 HTTPS 機制提供存取，允許管理員為儲存陣列設定管理服務。此 Proxy 可安裝在 Windows 或 Linux 主機上。Unified Manager 介面可與 Web Services Proxy 搭配使用。
+
+|===

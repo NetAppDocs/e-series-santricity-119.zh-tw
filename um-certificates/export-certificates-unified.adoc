@@ -1,0 +1,30 @@
+---
+permalink: um-certificates/export-certificates-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, export, certificates 
+summary: 您可以匯出憑證以檢視其完整詳細資訊。 
+---
+= 在 SANtricity Unified Manager 中匯出憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以匯出憑證以檢視其完整詳細資訊。
+
+.開始之前
+若要開啟匯出的檔案，您必須擁有憑證檢視器應用程式。
+
+.步驟
+. 選擇 *Certificate Management* 。
+. 選擇下列其中一個標籤：
++
+** *管理* -- 顯示託管 Web Services Proxy 的系統憑證。管理憑證可以是自我簽署或由憑證授權單位（CA）核准。它允許安全存取 Unified Manager。
+** *受信任* -- 顯示 Unified Manager 可以存取的儲存陣列和其他遠端伺服器（例如 LDAP 伺服器）的憑證。這些憑證可以由憑證授權單位（CA）頒發，也可以是自簽名憑證。
+
+
+. 從頁面上選擇一份憑證，然後按一下該列末尾的省略符號。
+. 按一下 *Export* 、然後儲存憑證檔案。
+. 在證書檢視器應用程式中開啟該檔案。
+

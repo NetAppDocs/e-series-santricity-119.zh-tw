@@ -1,0 +1,158 @@
+---
+permalink: san-getstarted/santricity-overview.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, 
+summary: E 系列系統包含用於儲存配置和其他任務的 SANtricity 軟體。 
+---
+= 了解 SANtricity 軟體
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+E 系列系統包含用於儲存配置和其他任務的 SANtricity 軟體。
+
+本網站介紹如何使用以下 SANtricity 管理介面：
+
+* System Manager - 一個基於 Web 的介面，用於管理網路中的單一儲存陣列。
+* Unified Manager — 一個基於 Web 的介面，用於檢視和管理網路中的所有儲存陣列。
+
+
+
+NOTE: EF600/EF600C 和 EF300/EF300C 儲存陣列不支援同步鏡像或精簡磁碟區。
+
+
+
+== SANtricity System Manager
+
+System Manager 是嵌入在每個控制器上的基於 Web 的管理軟體。若要存取使用者介面，請在瀏覽器中輸入控制器的 IP 位址。設定精靈可協助您開始系統設定。
+
+System Manager 提供多種管理功能，包括：
+
+|===
+
+
+ a| 
+image:../media/sam1130_icon_performance.gif["效能"] *效能*
+ a| 
+檢視長達 30 天的效能資料，包括 I/O 延遲、IOPS、CPU 使用率和處理量。
+
+
+
+ a| 
+image:../media/sam1130_icon_volumes.gif["儲存"] *儲存*
+ a| 
+使用儲存資源池或磁碟區群組來配置儲存設備，並建立應用程式工作負載。
+
+
+
+ a| 
+image:../media/sam1130_icon_async_mirroring.gif["資料保護"] *資料保護*
+ a| 
+使用快照、磁碟區複本和遠端鏡射執行備份和災難恢復。
+
+
+
+ a| 
+image:../media/sam1130_icon_controllers.gif["硬體"] *硬體*
+ a| 
+檢查元件狀態並執行與這些元件相關的一些功能，例如指派熱備援磁碟機。
+
+
+
+ a| 
+image:../media/sam1130_icon_alerts.gif["警示"] * 警示 *
+ a| 
+向管理員通知儲存陣列上發生的重要事件。警示可透過電子郵件、SNMP 設陷和 syslog 傳送。
+
+
+
+ a| 
+image:../media/sam1140_icon_active_directory.gif["存取管理"] *存取管理*
+ a| 
+設定使用者驗證，要求使用者使用指派的認證登入系統。
+
+
+
+ a| 
+image:../media/sam1130_icon_settings.gif["系統設定"] *系統設定*
+ a| 
+配置其他系統效能功能，例如 SSD 快取和 autoload balancing。
+
+
+
+ a| 
+image:../media/sam1130_icon_support.gif["支援"] *支援*
+ a| 
+查看診斷資料、管理升級和配置 AutoSupport，該功能可監控儲存陣列的運作狀況並自動向技術支援發送調度資訊。
+
+|===
+
+
+== SANtricity Unified Manager
+
+Unified Manager 是一款以 Web 為基礎的軟體，用於管理您的整個網域。透過集中式視圖，您可以查看所有新型 E 系列和 EF 系列陣列的狀態，例如 E4000、E2800、EF280、EF300、E5700、EF570、EF600、EF300C 和 EF600C。您也可以對選定的儲存陣列執行批次操作。
+
+Unified Manager 與 Web Services Proxy 一起安裝在管理伺服器上。若要存取 Unified Manager，請開啟瀏覽器並輸入指向安裝 Web Services Proxy 的伺服器的 URL。
+
+Unified Manager 提供多種管理功能、包括：
+
+|===
+
+
+ a| 
+image:../media/artboard_9.png["探索儲存陣列"] *探索儲存陣列*
+ a| 
+尋找並新增您要在組織網路中管理的儲存陣列。然後，您可以從單一頁面檢視所有儲存陣列的狀態。
+
+
+
+ a| 
+image:../media/artboard_11.png["啟動"] *啟動*
+ a| 
+開啟 System Manager 實例，對特定儲存陣列執行個別管理作業。
+
+
+
+ a| 
+image:../media/sam1130_icon_system.gif["匯入設定"] *匯入設定*
+ a| 
+從一個儲存陣列批次匯入到多個陣列，包括警示、AutoSupport 和目錄服務的設定。
+
+
+
+ a| 
+image:../media/sam1130_icon_async_mirroring.gif["鏡像"] *鏡像*
+ a| 
+在兩個儲存陣列之間配置非同步或同步鏡像配對。
+
+
+
+ a| 
+image:../media/artboard_10.png["管理群組"] *管理群組*
+ a| 
+將儲存陣列組織成群組，以便於管理。
+
+
+
+ a| 
+image:../media/sam1130_icon_upgrade_center.gif["升級中心"] *升級中心*
+ a| 
+升級多個儲存陣列上的 SANtricity OS 軟體。
+
+
+
+ a| 
+image:../media/sam1140_icon_certs.gif["憑證"] *憑證*
+ a| 
+建立憑證簽署要求（CSR）、匯入憑證以及管理多個儲存陣列的現有憑證。
+
+
+
+ a| 
+image:../media/sam1140_icon_active_directory.gif["存取管理"] *存取管理*
+ a| 
+設定使用者驗證，要求使用者使用指派的認證登入 Unified Manager。
+
+|===

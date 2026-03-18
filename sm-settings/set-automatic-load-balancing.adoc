@@ -1,0 +1,49 @@
+---
+permalink: sm-settings/set-automatic-load-balancing.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, set, automatic, load, balancing, 
+summary: 自動負載平衡功能可確保來自主機的傳入 I/O 流量在兩個控制器之間進行動態管理和平衡分配。此功能預設為啟用，但您可以在 System Manager 中將其停用。 
+---
+= 在 SANtricity System Manager 中設定自動負載平衡
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動負載平衡功能可確保來自主機的傳入 I/O 流量在兩個控制器之間進行動態管理和平衡。此功能預設為啟用，但您可以在 SANtricity System Manager 中將其停用。
+
+.關於此任務
+啟用自動負載平衡後，它將執行以下功能：
+
+* 自動監控並平衡控制器資源使用率。
+* 根據需要自動調整磁碟區控制器所有權，從而優化主機和儲存陣列之間的 I/O 頻寬。
+
+
+您可能會因為以下原因想要停用儲存陣列上的自動負載平衡：
+
+* 您不希望為了平衡工作負載而自動變更特定磁碟區的控制器所有權。
+* 您目前在一個高度最佳化的環境中運行，負載分配經過精心設置，以實現控制器之間的特定分配。
+
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *其他設定*，然後按一下 *啟用 / 停用自動負載平衡*。
++
+此選項下方的文字指示該功能目前是啟用還是停用。
+
++
+確認對話框隨即開啟。
+
+. 按一下 *Yes* 確認以繼續。
++
+選取此選項，即可在啟用 / 停用之間切換功能。
+
++
+[NOTE]
+====
+如果將此功能從停用狀態變更為啟用狀態，則 Host Connectivity Reporting 功能也會自動啟用。
+
+====
+

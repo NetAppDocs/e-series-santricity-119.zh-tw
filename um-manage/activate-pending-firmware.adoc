@@ -1,0 +1,45 @@
+---
+permalink: um-manage/activate-pending-firmware.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, activate, staged, os, software 
+summary: 您可以選擇立即啟動軟體檔案，也可以等到更方便的時候再啟動。本程序假設您選擇稍後啟動軟體檔案。 
+---
+= 在 SANtricity Unified Manager 中啟動已部署的作業系統軟體
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇立即啟動軟體檔案，也可以等到更方便的時候再啟動。本程序假設您選擇稍後啟動軟體檔案。
+
+.關於此任務
+您可以傳輸韌體檔案而不啟動它們。您可能會因為以下原因選擇稍後啟動：
+
+* *時間因素* -- 啟動軟體可能需要較長時間，因此建議您等到 I/O 負載較低時再進行操作。啟動過程中控制器會重新啟動並進行故障轉移，因此在升級完成之前，效能可能會低於正常水準。
+* *套件類型* -- 您可能需要在升級其他儲存陣列上的檔案之前，先在一個儲存陣列上測試新的軟體和韌體。
+
+
+[NOTE]
+====
+啟動過程一旦開始，就無法停止。
+
+====
+.步驟
+. 從主視圖中選擇 *Manage* 。如有必要，請按一下 Status 欄，在頁面頂部對所有狀態為 "OS Upgrade (awaiting activation)" 的儲存陣列進行排序。
+. 選擇要啟動軟體的一個或多個儲存陣列，然後選擇功能表：Upgrade Center [Activate Staged OS Software]。
++
+升級作業期間會發生下列動作：
+
++
+** 升級前健康檢查是啟動過程的一部分。升級前健康檢查會評估所有儲存陣列組件，以確保啟動過程可以順利進行。
+** 如果儲存陣列的任何健全狀況檢查失敗、啟動就會停止。您可以按一下省略符號 （...） 並選取 *Save Log* 來檢閱錯誤。您也可以選擇置換健全狀況檢查錯誤、然後按一下 *Continue* 繼續啟動。
+** 您可以在升級前健全狀況檢查之後取消啟動作業。升級前健全狀況檢查成功完成後，就會進行啟動。啟動所需的時間取決於您的儲存陣列組態以及您要啟動的元件。
+
+
+. *可選：* 啟動完成後，您可以點擊省略號（...）並選擇 *Save Log* 來查看特定儲存陣列已啟動內容的清單。
++
+該檔案以名稱  `activate_log-<date>.json` 儲存在瀏覽器的 Downloads 資料夾中。
+
+

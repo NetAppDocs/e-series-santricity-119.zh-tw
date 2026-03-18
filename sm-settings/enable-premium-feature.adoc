@@ -1,0 +1,41 @@
+---
+permalink: sm-settings/enable-premium-feature.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, premium, feature, 
+summary: 進階功能是需要金鑰才能啟用的額外選項。 
+---
+= 在 SANtricity System Manager 中啟用進階功能
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+進階功能是需要金鑰才能啟用的額外選項。
+
+.開始之前
+* 您已取得功能金鑰。如有需要，請聯絡技術支援以取得金鑰。
+* 您已將金鑰檔案載入到管理用戶端（具有用於存取 System Manager 的瀏覽器的系統）上。
+
+
+.關於此任務
+本任務說明如何使用 System Manager 啟用進階功能。
+
+[NOTE]
+====
+如果要停用進階功能，必須使用命令列介面（CLI）中的 Disable Storage Array Feature 命令(`disable storageArray) (featurePack | feature=featureAttributeList`。
+
+====
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Add-ons* 下、選取 *Enable Premium Feature* 。
++
+Enable a Premium Feature 對話方塊隨即開啟。
+
+. 點擊 *Browse* ，然後選擇金鑰檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 按一下 *Enable* 。
+

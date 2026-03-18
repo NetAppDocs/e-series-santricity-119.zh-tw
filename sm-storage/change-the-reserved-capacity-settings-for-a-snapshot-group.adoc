@@ -1,0 +1,114 @@
+---
+permalink: sm-storage/change-the-reserved-capacity-settings-for-a-snapshot-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, reserved capacity, settings, snapshot, group 
+summary: 您可以變更快照群組的設定，以修改其名稱、自動刪除設定、允許的最大快照映像數量、System Manager 發送保留容量警示通知的百分比點，或當保留容量達到其最大定義百分比時所使用的政策。 
+---
+= 在 SANtricity System Manager 中變更快照群組的保留容量設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更快照群組的設定，以變更其名稱、自動刪除設定、允許的最大快照映像數、 SANtricity System Manager 傳送預留容量警示通知的百分比點，或預留容量達到其定義的最大百分比時要使用的原則。
+
+建立快照群組時，會建立保留容量來儲存該群組中所有快照映像的資料。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 按一下 *Reserved Capacity* 標籤。
+. 選擇要編輯的快照群組，然後按一下 *View/Edit Settings* 。
++
+Snapshot Group Settings 對話方塊隨即出現。
+
+. 根據需要變更快照群組的設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+*Snapshot 群組設定*
+
+
+
+ a| 
+Name
+ a| 
+快照群組的名稱。必須指定快照群組的名稱。
+
+
+
+ a| 
+自動刪除
+ a| 
+此設定可將群組中的快照影像總數保持在使用者定義的最大值或以下。啟用此選項後，System Manager 會在每次建立新快照時自動刪除群組中最舊的快照影像，以符合群組允許的最大快照影像數量限制。
+
+
+
+ a| 
+Snapshot 影像限制
+ a| 
+一個可配置的值，用於指定快照群組允許的最大快照映像數量。
+
+
+
+ a| 
+快照排程
+ a| 
+如果選擇「是」，則會設定自動建立快照的排程。
+
+
+
+ a| 
+*保留容量設定*
+
+
+
+ a| 
+有以下情況請通知我⋯
+ a| 
+使用微調框調整 System Manager 在快照群組的預留容量即將用完時發送警報通知的百分比。
+
+當快照群組的保留容量超過指定的臨界值時，System Manager 會發送警示，讓您有時間增加保留容量或刪除不必要的物件。
+
+
+
+ a| 
+完全保留容量的原則
+ a| 
+您可以選擇下列其中一項原則：
+
+** *清除最舊的快照映像* -- System Manager 會自動清除快照群組中最舊的快照映像，從而釋放快照映像預留容量，以便在群組內重複使用。
+** *拒絕對基礎磁碟區的寫入* —— 當保留容量達到其最大定義百分比時，System Manager 會拒絕任何對觸發保留容量存取的基礎磁碟區的 I/O 寫入請求。
+
+
+
+
+ a| 
+*關聯物件*
+
+
+
+ a| 
+基礎磁碟區
+ a| 
+用於該群組的基本磁碟區名稱。基本磁碟區是建立快照映像的來源。它可以是完整磁碟區或精簡磁碟區，通常會指派給主機。基本磁碟區可以位於磁碟區群組或磁碟集區中。
+
+
+
+ a| 
+快照映像
+ a| 
+從此群組建立的映像數量。快照映像是磁碟區資料的邏輯複本，在特定時間點擷取。與還原點類似，快照映像可讓您回復到已知良好的資料集。雖然主機可以存取快照映像，但無法直接讀取或寫入。
+
+|===
+====
+. 按一下 *Save* ，將變更套用至快照群組設定。
+

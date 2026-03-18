@@ -1,0 +1,28 @@
+---
+permalink: sm-storage/view-snapshot-image-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, snapshot, image, settings 
+summary: 您可以查看指派給每個快照映像的內容、狀態、保留容量和相關物件。 
+---
+= 在 SANtricity System Manager 中檢視快照映像設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看指派給每個快照映像的內容、狀態、保留容量和相關物件。
+
+.關於此任務
+快照映像的關聯物件包括：作為還原點的基礎磁碟區或快照一致性群組、關聯的快照群組以及從該快照映像建立的任何快照磁碟區。使用快照設定來決定是要複製還是轉換快照映像。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 點選 *Snapshot Images* 標籤。
+. 選擇要檢視的快照映像，然後按一下 *View Settings* 。
++
+Snapshot Image Settings 對話方塊隨即出現。
+
+. 查看快照映像的設定。
+

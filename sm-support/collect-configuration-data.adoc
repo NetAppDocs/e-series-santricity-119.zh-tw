@@ -1,0 +1,35 @@
+---
+permalink: sm-support/collect-configuration-data.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, collect, configuration data 
+summary: 您可以從控制器儲存 RAID 組態資料，其中包括磁碟區群組和磁碟集區的所有資料。之後，您可以聯絡技術支援以取得資料還原方面的協助。 
+---
+= 在 SANtricity System Manager 中收集組態資料
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從控制器儲存 RAID 組態資料，其中包括磁碟區群組和磁碟集區的所有資料。之後，您可以聯絡技術支援以取得資料還原方面的協助。
+
+.關於此任務
+本任務說明如何儲存 RAID 組態資料庫的目前狀態。此資料是從控制器的 RPA 記憶體位置擷取。
+
+[NOTE]
+====
+「收集組態資料」功能可儲存與 CLI 命令相同的資訊 `save storageArray dbmDatabase`。
+
+====
+只有在 Recovery Guru 作業或技術支援人員的指示下，您才能執行此任務。
+
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *Collect Configuration Data* 。
+. 在對話方塊中、按一下 *Collect* 。
++
+該文件  `configurationData-<arrayName>-<dateTime>.7z` 已保存在瀏覽器的下載資料夾中。
+
+. 如需瞭解更多關於向技術支援傳送檔案以及如何將資料載入回系統的資訊，請聯絡技術支援。
+

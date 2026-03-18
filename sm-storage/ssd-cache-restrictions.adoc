@@ -1,0 +1,35 @@
+---
+permalink: sm-storage/ssd-cache-restrictions.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, ssd, cache, restrictions 
+summary: 了解在儲存陣列上使用 SSD Cache 時的限制。 
+---
+= 了解 SANtricity 軟體中的 SSD 快取限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解在儲存陣列上使用 SSD Cache 時的限制。
+
+
+
+== 限制
+
+* 任何被指派使用控制器 SSD Cache 的磁碟區都不符合自動負載平衡傳輸的條件。
+* 目前，每個儲存陣列僅支援一個 SSD 快取。
+* 儲存陣列上可用的 SSD Cache 最大容量為 10 TB。
+* 快照映像不支援 SSD 快取。
+* 如果匯入或匯出啟用或停用 SSD Cache 的磁碟區，則不會匯入或匯出快取的資料。
+* 必須先刪除 SSD Cache，才能移除 SSD Cache 中的最後一個磁碟機。
+
+
+
+
+== 磁碟機安全限制
+
+* 只能在建立 SSD 快取時啟用 SSD 快取的安全功能。無法像在磁碟區上那樣稍後啟用安全功能。
+* 如果在 SSD Cache 中將具有安全功能的磁碟機與不具備安全功能的磁碟機混合使用，則無法為這些磁碟機啟用 Drive Security。
+* 啟用安全功能的磁碟區必須具有啟用安全的 SSD Cache。
+

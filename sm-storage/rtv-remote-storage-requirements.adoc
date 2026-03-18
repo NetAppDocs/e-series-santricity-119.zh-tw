@@ -1,0 +1,61 @@
+---
+permalink: sm-storage/rtv-remote-storage-requirements.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remote, storage, requirements 
+summary: 使用遠端儲存功能之前、請檢閱下列需求與限制。 
+---
+= 了解 SANtricity 軟體中的遠端儲存功能要求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用遠端儲存功能之前、請檢閱下列需求與限制。
+
+
+
+== 支援的通訊協定
+
+支援下列通訊協定：
+
+* iSCSI
+* IPv4
+
+
+有關最新的 E 系列支援和組態資訊，請參閱  https://imt.netapp.com/matrix/#welcome["NetApp 互通性矩陣工具"^]。
+
+
+
+== 硬體需求
+
+E 系列儲存系統必須包含：
+
+* 兩個控制器（雙工模式）
+* iSCSI 連線可讓兩個 E 系列控制器透過一個或多個 iSCSI 連線與遠端儲存系統通訊
+* SANtricity OS 11.71 或更高版本
+* 子模型 ID （SMID） 中已啟用遠端儲存功能
+
+
+遠端系統可以是 E 系列儲存系統，也可以是其他廠商的系統。它必須包含：
+
+* 支援 iSCSI 的介面
+
+
+
+
+== 限制
+
+遠端儲存功能存在以下限制：
+
+* 必須停用鏡像功能。
+* E 系列系統上的目標磁碟區不能有快照。
+* 在開始匯入之前，E 系列系統上的目標磁碟區不得對應至任何主機。
+* E 系列系統上的目標磁碟區必須停用資源配置。
+* 不支援將遠端儲存磁碟區直接對應到一台或多台主機。
+* 不支援 Web Services Proxy。
+* 不支援 iSCSI CHAP 密碼。
+* 不支援 SMcli。
+* 不支援 VMware Datastore。
+* 當存在匯入配對時，關係/匯入配對中一次只能升級一個儲存系統。
+

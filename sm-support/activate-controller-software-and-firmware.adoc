@@ -1,0 +1,53 @@
+---
+permalink: sm-support/activate-controller-software-and-firmware.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, activate, controller, software, firmware 
+summary: 您可以選擇立即啟動升級檔案，也可以等到更方便的時候再啟動。 
+---
+= 在 SANtricity System Manager 中啟動控制器軟體和韌體
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇立即啟動升級檔案，也可以等到更方便的時候再啟動。
+
+.關於此任務
+您可以下載並傳輸檔案而無需啟動。您之後可能會出於以下原因選擇啟動：
+
+* *時間因素* -- 啟動軟體和韌體可能需要很長時間，因此建議您等到 I/O 負載較低時再進行操作。啟動期間控制器會進行故障轉移，因此在升級完成之前，效能可能會低於正常水準。
+* *套件類型* -- 您可能需要在升級其他儲存陣列上的檔案之前，先在一個儲存陣列上測試新的軟體和韌體。
+
+
+當您有已傳輸但尚未啟動的軟體或韌體時，您會在 System Manager 首頁的「通知」區域以及「Upgrade Center」頁面上看到通知。
+
+[CAUTION]
+====
+啟動過程一旦開始，就無法停止。
+
+====
+.步驟
+. 選擇功能表：Support [Upgrade Center]。
+. 在標示為 SANtricity OS 控制器軟體升級的區域中，按一下 *啟動*，並確認要執行此操作。
++
+您可以在升級前的健康檢查期間取消操作，但無法在啟動期間取消操作。
+
++
+升級前健康狀況檢查開始。如果升級前健康狀況檢查通過，升級程序會繼續啟動檔案。如果升級前健康狀況檢查失敗，請使用 Recovery Guru 或聯絡技術支援以解決問題。對於某些類型的狀況，技術支援可能會建議您選取 *Allow Upgrade* 核取方塊以繼續升級，即使出現錯誤也一樣。
+
++
+升級前健全狀況檢查成功完成後，即可進行啟動。啟動所需時間取決於您的儲存陣列組態以及您要啟動的元件。
+
+. *選用：* 若要查看已升級內容的清單，請按一下 *Save Log* 。
++
+該檔案以名稱  `drive_upgrade_log-timestamp.txt` 儲存在瀏覽器的 Downloads 資料夾中。
+
+
+
+.完成後
+* 請確認所有元件都顯示在 Hardware 頁面上。
+* 透過檢查「軟體和韌體清單」對話方塊來驗證新的軟體和韌體版本（前往功能表：Support[Upgrade Center]，然後按一下 *Software and Firmware Inventory* 連結）。
+* 如果您升級了控制器 NVSRAM，則在啟動過程中，您先前套用於現有 NVSRAM 的所有自訂設定都會遺失。啟動過程完成後，您需要重新將這些自訂設定套用到 NVSRAM。
+

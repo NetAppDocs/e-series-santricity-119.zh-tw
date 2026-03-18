@@ -1,0 +1,39 @@
+---
+permalink: sm-settings/import-trusted-certificates-for-controllers-acting-as-client.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, import, certificates, 
+summary: 如果控制器因為無法驗證網路伺服器的信任鏈而拒絕連線，您可以從「受信任」標籤匯入憑證，允許控制器（作為用戶端）接受來自該伺服器的通訊。 
+---
+= 在 SANtricity System Manager 中作為用戶端時匯入控制器的憑證
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果控制器因為無法驗證網路伺服器的信任鏈而拒絕連線，您可以從「受信任」標籤匯入憑證，允許控制器（作為用戶端）接受來自該伺服器的通訊。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+* 憑證檔案已安裝在您的本機系統上。
+
+
+.關於此任務
+如果您想要允許其他伺服器聯絡控制器（例如，使用 TLS 的 LDAP 伺服器或 syslog 伺服器），則可能需要從「受信任」標籤匯入憑證。
+
+.步驟
+. 選擇功能表：Settings [ Certificates ]。
+. 從「受信任」標籤中，選取 *匯入* 。
++
+此時會開啟一個對話方塊，用於匯入受信任的憑證檔案。
+
+. 按一下 *Browse* 以選取控制器的憑證檔案。
++
+檔案名稱會顯示在對話方塊中。
+
+. 點選 *Import* 。
+
+
+.結果
+檔案已上傳並通過驗證。

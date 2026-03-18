@@ -1,0 +1,41 @@
+---
+permalink: sm-mirroring/delete-mirror-consistency-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, delete, mirror, consistency, group, 
+summary: 您可以刪除本機儲存陣列和遠端儲存陣列上不再需要的鏡像一致性群組。 
+---
+= 在 SANtricity System Manager 中刪除鏡像一致性群組
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除本機儲存陣列和遠端儲存陣列上不再需要的鏡像一致性群組。
+
+.開始之前
+必須從鏡像一致性群組中移除所有鏡像配對。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+鏡像一致性群組表隨即出現，並顯示與儲存陣列關聯的所有鏡像一致性群組。
+
+. 選擇要刪除的鏡像一致性群組，然後選擇功能表：非常規工作 [刪除]。
++
+系統會顯示確認訊息。
+
+. 選擇 *Yes* 以刪除鏡像一致性群組。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 首先刪除本機儲存陣列上的鏡像一致性群組，然後刪除遠端儲存陣列上的鏡像一致性群組。
+* 從鏡像一致性群組表中移除鏡像一致性群組。
+
+
+.完成後
+有時，鏡像一致性群組可能已成功從本機儲存陣列中刪除，但由於通訊錯誤，無法從遠端儲存陣列中刪除該鏡像一致性群組。在這種情況下，您必須存取遠端儲存陣列來刪除對應的鏡像一致性群組。

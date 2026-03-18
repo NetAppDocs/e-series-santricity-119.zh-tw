@@ -1,0 +1,14 @@
+---
+permalink: um-certificates/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= SANtricity Unified Manager 7
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+憑證管理功能可讓您建立憑證簽署要求（CSR）、匯入憑證以及管理現有憑證。

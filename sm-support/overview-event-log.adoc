@@ -1,0 +1,41 @@
+---
+permalink: sm-support/overview-event-log.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, event, log 
+summary: 使用事件記錄檢視儲存陣列上發生的變更和事件的歷史記錄。 
+---
+= 了解 SANtricity 軟體中的事件日誌
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+事件記錄提供儲存陣列上發生事件的歷史記錄，有助於技術支援人員疑難排解導致故障的事件。
+
+您可以將事件日誌用作 Recovery Guru 的補充診斷工具，用於追蹤儲存陣列事件。嘗試從儲存陣列中的元件故障復原時，請務必先參考 Recovery Guru。
+
+
+
+== 事件類別
+
+事件日誌中的事件依不同狀態分類。需要您採取行動的事件具有以下狀態：
+
+* 關鍵
+* 警告
+
+
+以下事件僅供參考，無需立即採取任何行動：
+
+* 資訊
+
+
+
+
+== 關鍵事件
+
+嚴重事件表示儲存陣列存在問題。如果立即解決嚴重事件，則可以防止資料存取遺失。
+
+當發生關鍵事件時，該事件會被記錄在事件日誌中。所有關鍵事件都會傳送至 SNMP 管理主控台或您設定的用於接收警示通知的電子郵件收件者。如果在事件發生時機櫃 ID 未知，則機櫃 ID 將顯示為「機櫃未知」。
+
+當您收到嚴重事件時，請參閱 Recovery Guru 程序以取得嚴重事件的詳細說明。完成 Recovery Guru 程序以修正嚴重事件。若要修正某些嚴重事件,您可能需要聯絡技術支援。

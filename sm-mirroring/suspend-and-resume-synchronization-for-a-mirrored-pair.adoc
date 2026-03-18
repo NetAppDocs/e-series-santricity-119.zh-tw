@@ -1,0 +1,40 @@
+---
+permalink: sm-mirroring/suspend-and-resume-synchronization-for-a-mirrored-pair.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, suspend, resume, synchronization, mirrored, pair, 
+summary: 您可以使用「暫停」選項和「繼續」選項來控制何時同步鏡像配對中主要磁碟區和次要磁碟區上的資料。 
+---
+= 在 SANtricity System Manager 中暫停和恢復鏡像配對的同步
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「暫停」選項和「繼續」選項來控制何時同步鏡像配對中主要磁碟區和次要磁碟區上的資料。
+
+.關於此任務
+如果手動暫停鏡像配對，則該鏡像配對將不會同步，直到手動恢復為止。
+
+.步驟
+. 選擇功能表：Storage [ Synchronous Mirroring ]。
+. 選擇要暫停或恢復的鏡像配對，然後選擇 menu:More[Suspend] 或 menu:More[Resume]。
++
+系統會顯示確認訊息。
+
+. 選擇 *Yes* 進行確認。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 暫停或恢復鏡像配對之間的資料傳輸，而不移除鏡像關係。
+* 對於_已暫停_的鏡像對：
++
+** 在鏡像配對表中顯示 *Suspended*。
+** 記錄同步暫停期間寫入鏡像配對主磁碟區的任何資料。
+
+
+* 對於 _resumed_ 鏡像對，當同步恢復時，資料會自動寫入鏡像對的輔助磁碟區。無需進行完全同步。
+

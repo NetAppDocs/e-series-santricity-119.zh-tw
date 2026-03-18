@@ -1,0 +1,37 @@
+---
+permalink: sm-hardware/initialize-format-drive.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, initialize, format, drive, 
+summary: 如果將已指派的磁碟機從一個儲存陣列移至另一個儲存陣列，則必須先初始化（格式化）這些磁碟機，然後才能在新儲存陣列中使用它們。 
+---
+= 在 SANtricity System Manager 中初始化（格式化）磁碟機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果將已指派的磁碟機從一個儲存陣列移至另一個儲存陣列，則必須先初始化（格式化）這些磁碟機，然後才能在新儲存陣列中使用它們。
+
+.關於此任務
+初始化操作會從磁碟機移除先前的配置資訊，並將其還原為「未指派」狀態。之後，此磁碟機即可新增至新儲存陣列中的新資源池或磁碟區群組。
+
+移動單一磁碟機時，請使用初始化磁碟機操作。如果將整個磁碟區群組從一個儲存陣列移至另一個儲存陣列，則無需初始化磁碟機。
+
+[CAUTION]
+====
+* 資料可能遺失 * -- 初始化磁碟機時，磁碟機上的所有資料都會遺失。僅在技術支援人員指示時執行此操作。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了控制器，請按一下 *Drives* 標籤。
++
+圖形變更為顯示磁碟機而非控制器。
+
+. 按一下要初始化的磁碟機。
++
+驅動器的內容功能表隨即出現。
+
+. 選擇 *Initialize* ，並確認要執行此操作。
+

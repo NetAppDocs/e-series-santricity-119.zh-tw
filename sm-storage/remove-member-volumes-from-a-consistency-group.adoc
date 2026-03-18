@@ -1,0 +1,34 @@
+---
+permalink: sm-storage/remove-member-volumes-from-a-consistency-group.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remove, member volume, snapshot, consistency group 
+summary: 您可以從現有的快照一致性群組中移除成員磁碟區。 
+---
+= 在 SANtricity System Manager 中從快照一致性群組中移除成員磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從現有的快照一致性群組中移除成員磁碟區。
+
+.關於此任務
+從快照一致性群組中移除成員磁碟區時，System Manager 會自動刪除與該成員磁碟區關聯的快照物件。
+
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 按一下 *Snapshot Consistency Groups* 標籤。
+. 選擇要修改的快照一致性群組旁邊的加號 (+) 展開此群組。
+. 選擇要移除的成員磁碟區，然後按一下 *Remove* 。
+. 確認要執行此操作，然後按一下 *Remove* 。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 刪除與成員磁碟區相關的所有 Snapshot 映像和 Snapshot 磁碟區。
+* 刪除與成員磁碟區相關聯的快照群組。
+* 成員磁碟區不會以其他方式變更或刪除。
+

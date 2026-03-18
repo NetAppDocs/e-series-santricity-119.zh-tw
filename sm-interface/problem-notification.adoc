@@ -1,0 +1,71 @@
+---
+permalink: sm-interface/problem-notification.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, notifications 
+summary: System Manager 使用圖示和其他幾種方法來通知您儲存陣列存在問題。 
+---
+= 了解 SANtricity System Manager 問題通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity System Manager 使用圖示和其他幾種方法來通知您儲存陣列有問題。
+
+
+
+== 圖示
+
+System Manager 使用這些圖示來指示儲存陣列及其元件的狀態。
+
+[cols="1a,1a"]
+|===
+| 圖示 | 說明 
+
+
+ a| 
+image:../media/sam1130-ss-icon-status-success.gif["最佳"]
+ a| 
+最佳
+
+
+
+ a| 
+image:../media/sam1130-ss-icon-status-failure.gif["非最佳或失敗"]
+ a| 
+非最佳或失敗
+
+
+
+ a| 
+image:../media/sam1130-ss-icon-status-service.gif["需要注意或修復"]
+ a| 
+需要注意或修復
+
+
+
+ a| 
+image:../media/sam1130-ss-icon-status-caution.gif["注意"]
+ a| 
+注意
+
+|===
+System Manager 會在不同的位置顯示這些圖示。
+
+* 首頁的通知區域會顯示失敗圖示和訊息。
+* 導覽區域中的首頁圖示顯示為失敗圖示。
+* 在「元件」頁面上，磁碟機和控制器的圖形會顯示故障圖示。
+
+
+
+
+== 警示和 LED
+
+此外， System Manager 也會透過其他方式通知您出現的問題。
+
+* System Manager 會傳送 SNMP 通知或電子郵件錯誤訊息。
+* 硬體上的 Service Action Required LED 亮起。
+
+
+收到問題通知後，請使用 Recovery Guru 來協助您解決問題。必要時，請參考硬體文件中的復原步驟來更換故障組件。

@@ -1,0 +1,16 @@
+---
+permalink: sm-storage/workflow-for-creating-volumes.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, workflow, create, volumes 
+summary: 在 SANtricity System Manager 中、您可以依照下列步驟建立磁碟區。 
+---
+= 在 SANtricity System Manager 中建立磁碟區的運作方式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 SANtricity System Manager 中、您可以依照下列步驟建立磁碟區。
+
+image::../media/sam1130-flw-volumes-create.gif[建立磁碟區工作流程]

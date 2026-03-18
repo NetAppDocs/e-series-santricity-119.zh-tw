@@ -1,0 +1,129 @@
+---
+permalink: sm-settings/faq-nvme-protocol.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。 
+---
+= SANtricity System Manager 的 NVMe 協定常見問題解答
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。
+
+
+
+== 如何解讀 NVMe over Fabrics 的統計資料？
+
+「檢視 NVMe over Fabrics 統計資料」對話方塊會顯示 NVMe 子系統和 RDMA 介面的統計資料。所有統計資料均為唯讀，無法設定。
+
+* *NVMe 子系統統計資料* -- 顯示 NVMe 控制器及其佇列的統計資料。NVMe 控制器提供主機與儲存陣列中命名空間之間的存取路徑。您可以查看 NVMe 子系統統計資料，例如連線故障、重設和關機等項目。如需這些統計資料的詳細資訊，請按一下*檢視表格標題圖例*。
+* *RDMA 介面統計資訊* -- 提供 RDMA 介面上所有 NVMe over Fabrics 連接埠的統計資訊，包括效能統計資訊和與每個交換器連接埠相關的連結錯誤資訊。只有當 NVMe over Fabrics 連接埠可用時，此標籤才會顯示。如需統計資訊的詳細資訊，請按一下 *View legend for table headings* 。
+
+
+您可以將每項統計資料檢視為原始統計資料或基準統計資料。原始統計資料是指自控制器啟動以來收集的所有統計資料。基準統計資料是指自您設定基準時間以來收集的特定時間點統計資料。
+
+
+
+== 我還需要做些什麼來設定或診斷 NVMe over InfiniBand？
+
+下表列出了可用於設定和管理 NVMe over InfiniBand 會話的 SANtricity System Manager 功能。
+
+[NOTE]
+====
+只有當儲存陣列的控制器包含 NVMe over InfiniBand 連接埠時，NVMe over InfiniBand 設定才可用。
+
+====
+[cols="35h,~"]
+|===
+| 行動 | 地點 
+
+
+ a| 
+配置 NVMe over InfiniBand 連接埠
+ a| 
+. 選擇 *Hardware* 。
+. 選擇 *Controllers & Components* 標籤。
+. 選擇控制器。
+. 選擇 *Configure NVMe over InfiniBand ports* 。
+
+
+或
+
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *NVMe over InfiniBand 設定*，然後選擇 *設定 NVMe over InfiniBand 連接埠*。
+
+
+
+
+ a| 
+檢視 NVMe over InfiniBand 統計資料
+ a| 
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *NVMe over InfiniBand 設定*，然後選擇 *查看 NVMe over Fabrics 統計資料*。
+
+
+|===
+
+
+== 我還需要做些什麼來設定或診斷 NVMe over RoCE？
+
+您可以從「硬體」和「設定」頁面設定和管理 NVMe over RoCE。
+
+[NOTE]
+====
+只有當儲存陣列的控制器包含 NVMe over RoCE 連接埠時、NVMe over RoCE 設定才可用。
+
+====
+[cols="35h,~"]
+|===
+| 行動 | 地點 
+
+
+ a| 
+設定 NVMe over RoCE 連接埠
+ a| 
+. 選擇 *Hardware* 。
+. 選擇 *Controllers & Components* 標籤。
+. 選擇控制器。
+. 選擇 *Configure NVMe over RoCE ports* 。
+
+
+或
+
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *NVMe over RoCE 設定*，然後選擇 *設定 NVMe over RoCE 連接埠*。
+
+
+
+
+ a| 
+檢視 NVMe over Fabrics 統計資料
+ a| 
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *NVMe over RoCE 設定*，然後選擇 *查看 NVMe over Fabrics 統計資料*。
+
+
+|===
+
+
+== 為什麼一個實體連接埠會有兩個 IP 位址？
+
+EF600 儲存陣列可以包含兩個 HIC ——一個外部 HIC 和一個內部 HIC 。
+
+在此配置中，外部 HIC 連接到內部輔助 HIC。您可以從外部 HIC 存取的每個實體連接埠都與內部 HIC 上的一個虛擬連接埠相關聯。
+
+要實現 200Gb 的最大效能，您必須為實體連接埠和虛擬連接埠分別指派唯一的 IP 位址，以便主機能夠與它們建立連線。如果您未為虛擬連接埠指派 IP 位址，HIC 的運作速度將約為其額定速度的一半。
+
+
+
+== 為什麼一個實體連接埠會有兩組參數？
+
+EF600 儲存陣列可以包含兩個 HIC ——一個外部 HIC 和一個內部 HIC 。
+
+在此配置中，外部 HIC 連接到內部輔助 HIC。您可以從外部 HIC 存取的每個實體連接埠都與內部 HIC 上的一個虛擬連接埠相關聯。
+
+要達到 200Gb 的最大效能，您必須為實體連接埠和虛擬連接埠都指派參數，以便主機能夠與它們建立連線。如果您不為虛擬連接埠指派參數，HIC 將以大約一半的速度運行。

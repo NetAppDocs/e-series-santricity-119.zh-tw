@@ -1,0 +1,62 @@
+---
+permalink: sm-settings/enable-iscsi-discovery-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, iscsi, discovery, settings, 
+summary: 您可以啟用與 iSCSI 網路中儲存裝置探索相關的設定。 
+---
+= 在 SANtricity System Manager 中啟用 iSCSI 探索設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以啟用與 iSCSI 網路中儲存裝置探索相關的設定。
+
+目標發現設定可讓您使用 Internet Storage Name Service（iSNS）協定註冊儲存陣列的 iSCSI 資訊，並確定是否允許未命名的探索工作階段。
+
+.開始之前
+如果 iSNS 伺服器使用靜態 IP 位址，則該位址必須可用於 iSNS 註冊。IPv4 和 IPv6 均支援。
+
+.關於此任務
+您可以啟用以下與 iSCSI 探索相關的設定：
+
+* *啟用 iSNS 伺服器註冊目標* -- 啟用後，儲存陣列會向 iSNS 伺服器註冊其 iSCSI 限定名稱（IQN）和連接埠資訊。此設定允許 iSNS 探索，以便啟動器可以從 iSNS 伺服器擷取 IQN 和連接埠資訊。
+* *啟用未命名發現會話* -- 啟用未命名發現會話後，發起方（iSCSI 主機）在建立發現型連線時，無需在登入序列中提供目標（控制器）的 IQN。停用此功能後，主機需要提供 IQN 才能與控制器建立發現會話。但是，對於正常的（I/O 承載）會話，始終需要目標 IQN。停用此設定可防止未經授權的 iSCSI 主機僅使用其 IP 位址連接到控制器。
+
+
+[NOTE]
+====
+只有當您的儲存陣列支援 iSCSI 時，iSCSI 設定和功能才會顯示在「設定」頁面上。
+
+====
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *iSCSI 設定* 下，按一下 *檢視 / 編輯目標探索設定*。
++
+「目標探索設定」對話方塊隨即出現。在 *Enable iSNS server* 欄位下方，對話方塊會指示控制器是否已註冊。
+
+. 若要註冊控制器、請選取 * 啟用 iSNS 伺服器以註冊我的目標 * 、然後選取下列其中一項：
++
+** *自動從 DHCP 伺服器取得組態* -- 如果您想要使用動態主機組態傳輸協定（DHCP）伺服器來設定 iSNS 伺服器，請選取此選項。請注意，如果您使用此選項，控制器上的所有 iSCSI 連接埠也必須設定為使用 DHCP。如有必要，請更新控制器 iSCSI 連接埠設定以啟用此選項。
++
+[NOTE]
+====
+若要讓 DHCP 伺服器提供 iSNS 伺服器位址，您必須將 DHCP 伺服器設定為使用選項 43 -- "`Vendor Specific Information`"。此選項需要包含 iSNS 伺服器 IPv4 位址，資料位元組為 0xa-0xd （10-13）。
+
+====
+** *手動指定靜態組態* -- 如果您想為 iSNS 伺服器輸入靜態 IP 位址，請選取此選項。（如有需要，您可以將位址剪下並貼到欄位中。）在欄位中，輸入 IPv4 位址或 IPv6 位址。如果您同時設定兩者，則預設為 IPv4。此外，請輸入 TCP 接聽連接埠（使用預設值 3205 或輸入介於 49152 到 65535 之間的值）。
+
+
+. 若要允許儲存陣列參與未命名的探索工作階段、請選取 * 啟用未命名的探索工作階段 * 。
++
+** 啟用後、iSCSI 啟動器不需要指定目標 IQN 即可擷取控制器資訊。
+** 停用此功能後，除非啟動器提供目標 IQN，否則將阻止探索工作階段。停用未命名的探索工作階段可提高安全性。
+
+
+. 按一下 *Save* 。
+
+
+.結果
+當 System Manager 嘗試向 iSNS 伺服器註冊控制器時，會出現進度列。此程序最多可能需要五分鐘。

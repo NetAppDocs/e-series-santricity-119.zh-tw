@@ -1,0 +1,110 @@
+---
+permalink: um-manage/overview-upgrade-center-um.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, upgrade, center 
+summary: 透過升級中心，您可以管理多個儲存陣列的 SANtricity OS 軟體和 NVSRAM 升級。 
+---
+= 了解 SANtricity Unified Manager 中的升級中心
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過升級中心，您可以管理多個儲存陣列的 SANtricity OS 軟體和 NVSRAM 升級。
+
+
+
+== 升級如何運作？
+
+您下載最新的 OS 軟體，然後升級一個或多個陣列。
+
+
+
+=== 升級工作流程
+
+以下步驟提供執行軟體升級的高階工作流程。
+
+. 您可以從支援網站下載最新的 SANtricity OS 軟體檔案（支援頁面上的 Unified Manager 提供了連結）。將檔案儲存到管理主機系統（即您在瀏覽器中存取 Unified Manager 的主機）上，然後解壓縮該檔案。
+. 在 Unified Manager 中、您可以將 SANtricity OS 軟體檔案和 NVSRAM 檔案載入到儲存庫（Web Services Proxy 伺服器上儲存檔案的區域）。您可以從功能表：Upgrade Center[Upgrade SANtricity OS Software 或從 Upgrade Center > Manage Software Repository] 新增檔案。
+. 文件載入到儲存庫後,即可選擇要用於升級的檔案。在「升級 SANtricity OS 軟體」頁面（選單:升級中心[升級 SANtricity OS 軟體]）中,選擇 SANtricity OS 軟體檔案和 NVSRAM 檔案。選擇軟體檔案後,此頁面將顯示相容的儲存陣列清單。然後,選擇要使用新軟體升級的儲存陣列。（不能選擇不相容的陣列。）
+. 然後，您可以立即開始軟體傳輸和啟動，也可以選擇將檔案暫存以供稍後啟動。在升級過程中、Unified Manager 會執行下列工作：
++
+.. 對儲存陣列執行健全狀況檢查，以判斷是否存在任何可能導致升級無法完成的狀況。如果有任何陣列未通過健全狀況檢查，您可以跳過該特定陣列並繼續升級其他陣列，或者您可以停止整個程序並疑難排解未通過檢查的陣列。
+.. 將升級檔案傳輸到每個控制器。
+.. 重新啟動控制器並逐一啟動新的 SANtricity OS 軟體。啟動過程中，現有的 SANtricity OS 檔案將被新檔案取代。
++
+[NOTE]
+====
+您也可以指定軟體在稍後時間啟動。
+
+====
+
+
+
+
+
+
+=== 立即升級或分階段升級
+
+您可以立即啟動升級，也可以稍後再啟動。您可能會因為以下原因選擇稍後啟動：
+
+* *時間因素* -- 啟動軟體可能需要較長時間，因此建議您等到 I/O 負載較低時再進行操作。根據 I/O 負載和快取大小，控制器升級通常需要 15 到 25 分鐘才能完成。啟動期間控制器會重新啟動並進行故障轉移，因此在升級完成之前，效能可能會低於正常水準。
+* *套件類型* -- 您可能需要在升級其他儲存陣列上的檔案之前，先在一個儲存陣列上測試新的軟體和韌體。
+
+
+若要啟動分階段軟體，請前往功能表：Support [Upgrade Center]，然後在標記為 SANtricity OS Controller Software upgrade 的區域中按一下 *Activate*。
+
+
+
+=== 健康檢查
+
+健康檢查是升級過程的一部分，但您也可以在開始之前單獨執行健康檢查（前往選單：Upgrade Center [Pre-Upgrade Health Check]）。
+
+健康檢查會評估所有儲存系統元件，以確保升級可以順利進行。以下情況可能會阻止升級：
+
+* 指派失敗的磁碟機
+* 使用中的熱備援
+* 不完整的磁碟區群組
+* 執行獨佔作業
+* 遺失的磁碟區
+* 控制器處於非最佳狀態
+* 事件記錄事件數量過多
+* 組態資料庫驗證失敗
+* 使用舊版 DACstore 的磁碟機
+
+
+
+
+== 升級前我需要了解哪些資訊？
+
+在升級多個儲存陣列之前，請在規劃過程中檢閱關鍵考量事項。
+
+
+
+=== 目前版本
+
+您可以在 Unified Manager 的「管理」頁面中查看每個已發現儲存陣列的目前 SANtricity OS 軟體版本。版本資訊顯示在「SANtricity OS 軟體」欄位中。按一下每行中的 SANtricity OS 版本，即可在彈出對話方塊中查看控制器韌體和 NVSRAM 資訊。
+
+
+
+=== 其他需要升級的元件
+
+作為升級過程的一部分，您可能還需要升級主機的多路徑 / 故障轉移驅動程式或 HBA 驅動程式，以便主機能夠與控制器正確互動。
+
+如需相容性資訊，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 相容性矩陣"^]。此外，請參閱適用於您作業系統的 Express Guides 中的程序。Express Guides 可從 https://docs.netapp.com/us-en/e-series/index.html["E 系列和 SANtricity 文件"^]取得。
+
+
+
+=== 雙控制器
+
+如果儲存陣列包含兩個控制器，並且您已安裝多路徑驅動程式，則儲存陣列可以在升級過程中繼續處理 I/O。升級過程中，將執行以下程序：
+
+. 控制器 A 將其所有 LUN 容錯移轉至控制器 B。
+. 升級在控制器 A 上進行。
+. 控制器 A 會收回其 LUN 以及控制器 B 的所有 LUN。
+. 升級在控制器 B 上進行。
+
+
+升級完成後、您可能需要在控制器之間手動重新分配磁碟區、以確保磁碟區返回正確的擁有控制器。

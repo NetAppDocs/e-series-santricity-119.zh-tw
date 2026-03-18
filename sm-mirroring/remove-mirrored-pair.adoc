@@ -1,0 +1,41 @@
+---
+permalink: sm-mirroring/remove-mirrored-pair.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remove, asynchronous, mirror, relationship, 
+summary: 您可以移除鏡像配對，以移除本機儲存陣列上主要磁碟區與遠端儲存陣列上次要磁碟區之間的鏡像關係。 
+---
+= 在 SANtricity System Manager 中移除非同步鏡像關係
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以移除鏡像配對，以移除本機儲存陣列上主要磁碟區與遠端儲存陣列上次要磁碟區之間的鏡像關係。
+
+.關於此任務
+請查看以下關於孤立鏡像配對的資訊：
+
+* 當一致性鏡像群組中的成員磁碟區在一側（本地儲存陣列側或遠端儲存陣列側）被移除，但在另一側未被移除時，就會出現孤立的鏡像配對。
+* 當陣列間通訊恢復且鏡像組態的兩側協調鏡像參數時，即可偵測到孤立的鏡像配對。
+* 您可以刪除鏡像配對來修正孤立鏡像配對狀態。
+
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirrored Pair* 選項卡。
++
+鏡像配對表隨即出現，並顯示與儲存陣列相關聯的所有鏡像配對。
+
+. 選擇要刪除的鏡像配對，然後按一下 *Remove* 。
+. 確認要刪除鏡像配對，然後按一下 *Remove* 。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 從本機儲存陣列和遠端儲存陣列上的鏡像一致性群組中移除鏡像關係，並刪除保留的容量。
+* 將主要磁碟區和次要磁碟區還原為主機可存取的非鏡像磁碟區。
+* 更新非同步鏡像磚，移除非同步鏡像配對。
+

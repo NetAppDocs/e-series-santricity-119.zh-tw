@@ -1,0 +1,42 @@
+---
+permalink: sm-support/view-iscsi-statistics-packages-support.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, iscsi, statistics, packages 
+summary: 您可以查看有關儲存陣列的 iSCSI 連線的資料。 
+---
+= 在 SANtricity System Manager 中檢視 iSCSI 統計資料套件
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看有關儲存陣列的 iSCSI 連線的資料。
+
+.關於此任務
+System Manager 會顯示這些類型的 iSCSI 統計資料。所有統計資訊均為唯讀，無法設定。
+
+
+NOTE: System Manager 中顯示的統計資訊類型取決於您的儲存陣列可用的統計資料。
+
+* *乙太網路 MAC 統計資料* -- 提供媒體存取控制（MAC）的統計資料。MAC 也提供了一種尋址機制，稱為實體位址或 MAC 位址。MAC 位址是分配給每個網路介面卡的唯一位址。MAC 位址有助於將資料封包傳遞到子網路內的目的地。
+* *乙太網路 TCP/IP 統計資訊* -- 提供 iSCSI 設備的 TCP/IP 統計訊息,TCP/IP 是傳輸控制協定 (TCP) 和網際網路協定 (IP) 的結合體。透過 TCP,聯網主機上的應用程式可以相互建立連接,並透過這些連接以封包的形式交換資料。IP 是一種以資料為導向的協定,用於在封包交換的網際網路上傳輸資料。IPv4 統計資訊和 IPv6 統計資訊分別顯示。
+* *乙太網路核心統計資料* -- 提供 iSCSI 裝置平台核心驅動程式的統計資料。核心統計資料顯示的網路資料與 TCP/IP 統計資料選項類似。但是，核心統計資料是從平台核心驅動程式收集的，而不是直接從 iSCSI 硬體收集的。
+* *本地目標 / 啟動器（通訊協定）統計資料* -- 顯示 iSCSI 目標的統計資料，該目標提供對其儲存媒體的區塊層級存取，並顯示儲存陣列在非同步鏡射作業中作為啟動器使用時的 iSCSI 統計資料。
+* *DCBX 運作狀態統計資料* -- 顯示各種 Data Center Bridging Exchange (DCBX) 功能的運作狀態。
+* *LLDP TLV 統計資料* -- 顯示連結層發現協定（LLDP）類型長度值（TLV）統計資料。
+* *DCBX TLV 統計資料* -- 顯示在 Data Center Bridging (DCB) 環境中識別儲存陣列主機連接埠的資訊。此資訊會與網路對等方共用，以供識別和功能用途。
+
+
+您可以將每項統計資料檢視為原始統計資料或基準統計資料。原始統計資料是指自控制器啟動以來收集的所有統計資料。基準統計資料是指自您設定基準時間以來收集的特定時間點統計資料。
+
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *View iSCSI Statistics Packages*。
+. 點擊標籤頁即可檢視不同的統計資料集。
+. 若要設定基線，請按一下 *Set new baseline* 。
++
+設定基線為統計資訊的收集設定了一個新的起點。所有 iSCSI 統計資訊都使用相同的基線。
+
+

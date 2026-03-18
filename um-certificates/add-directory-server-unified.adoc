@@ -1,0 +1,168 @@
+---
+permalink: um-certificates/add-directory-server-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, add, directory, server 
+summary: 若要設定存取管理的驗證，您需要在 LDAP 伺服器和執行 Web Services Proxy for SANtricity Unified Manager 的主機之間建立通訊。然後，您需要將 LDAP 使用者群組對應到本機使用者角色。 
+---
+= 在 SANtricity Unified Manager 中新增目錄伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定存取管理的驗證，您需要在 LDAP 伺服器和執行 Web Services Proxy for SANtricity Unified Manager 的主機之間建立通訊。然後，您需要將 LDAP 使用者群組對應到本機使用者角色。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* 使用者群組必須在您的目錄服務中定義。
+* LDAP 伺服器認證資料必須可用，包括網域名稱、伺服器 URL，以及選擇性的繫結帳戶使用者名稱和密碼。
+* 對於使用安全協定的 LDAPS 伺服器，必須將 LDAP 伺服器的憑證鏈安裝在本機電腦上。
+
+
+.關於此任務
+新增目錄伺服器需要兩個步驟。首先，您需要輸入網域名稱和 URL。如果您的伺服器使用安全性協議,且憑證是由非標準簽署機構簽發的,則您還必須上傳 CA 憑證以進行身分驗證。如果您擁有綁定帳戶的憑證,也可以輸入您的使用者帳戶名稱和密碼。接下來,您需要將 LDAP 伺服器的使用者群組對應到本機使用者角色。
+
+.步驟
+. 選擇 *Access Management* 。
+. 從 *Directory Services* 標籤中，選取 *Add Directory Server*。
++
+「新增目錄伺服器」對話方塊開啟。
+
+. 在 *Server Settings* 標籤中、輸入 LDAP 伺服器的認證資料。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+* 組態設定 *
+
+
+
+ a| 
+網域
+ a| 
+輸入 LDAP 伺服器的網域名稱。對於多個網域，請以逗號分隔清單輸入網域。網域名稱用於登入（_username_@_domain_）中，以指定要進行驗證的目錄伺服器。
+
+
+
+ a| 
+伺服器 URL
+ a| 
+請以下列格式輸入存取 LDAP 伺服器的 URL `ldap[s]://*host*:*port*`。
+
+
+
+ a| 
+上傳憑證 （選用）
+ a| 
+
+NOTE: 只有當上面的伺服器 URL 欄位中指定了 LDAPS 通訊協定時，才會顯示此欄位。
+
+點擊 *Browse* 並選擇要上傳的 CA 憑證。這是用於驗證 LDAP 伺服器的受信任憑證或憑證鏈。
+
+
+
+ a| 
+綁定帳戶 （選用）
+ a| 
+輸入一個唯讀使用者帳戶，用於對 LDAP 伺服器進行搜尋查詢以及在群組內進行搜尋。以 LDAP 類型格式輸入帳戶名稱。例如，如果綁定使用者名為 "bindacct"，則可以輸入類似這樣的值 `CN=bindacct,CN=Users,DC=cpoc,DC=local`。
+
+
+
+ a| 
+綁定密碼（選用）
+ a| 
+
+NOTE: 當您輸入繫結帳戶時，會顯示此欄位。
+
+輸入綁定帳戶的密碼。
+
+
+
+ a| 
+新增前測試伺服器連線
+ a| 
+如果您想確保系統能夠與您輸入的 LDAP 伺服器組態通訊，請選取此核取方塊。測試會在您按一下對話方塊底部的 *Add* 後進行。
+
+如果選取此核取方塊且測試失敗，則不會新增組態。您必須解決錯誤或取消選取核取方塊以跳過測試並新增組態。
+
+
+
+ a| 
+*權限設定*
+
+
+
+ a| 
+搜尋基準 DN
+ a| 
+輸入 LDAP 上下文以搜尋用戶，通常採用以下格式 `CN=Users, DC=cpoc, DC=local`。
+
+
+
+ a| 
+使用者名稱屬性
+ a| 
+輸入與使用者 ID 綁定的用於身份驗證的屬性。例如： `sAMAccountName`。
+
+
+
+ a| 
+群組屬性
+ a| 
+輸入使用者的群組屬性列表，用於群組到角色的對應。例如： `memberOf, managedObjects`。
+
+|===
+====
+. 點選 *Role Mapping* 標籤。
+. 將 LDAP 群組指派給預先定義的角色。一個群組可以指派多個角色。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+*對應*
+
+
+
+ a| 
+群組 DN
+ a| 
+指定要對應的 LDAP 使用者群組的群組專有名稱（DN）。支援正規表達式。如果下列特殊正規表示式字元不是正規表示式模式的一部分，則必須使用反斜線（\）進行轉義：\.[]{}()<>*+-=!?^$|
+
+
+
+ a| 
+角色
+ a| 
+按一下該欄位，然後選擇要對應到群組 DN 的本機使用者角色之一。您必須單獨選擇要包含在此群組中的每個角色。Monitor 角色必須與其他角色一起使用才能登入 SANtricity Unified Manager。對應的角色包含以下權限：
+
+** *Storage admin* -- 對陣列上的儲存物件具有完全讀取 / 寫入權限，但無權存取安全性配置。
+** *Security admin* -- 存取 Access Management 和 Certificate Management 中的安全性組態。
+** *Support admin* -- 可存取儲存陣列上的所有硬體資源、故障資料和 MEL 事件。無權存取儲存物件或安全性組態。
+** *Monitor* -- 對所有儲存物件具有唯讀存取權限，但無權存取安全性組態。
+
+
+|===
+====
++
+
+NOTE: 所有使用者（包括管理員）都必須擁有 Monitor 角色。
+
+. 如果需要，請按一下 *Add another mapping* 以輸入更多群組到角色的對應。
+. 完成映射後，點選 *Add*。
++
+系統會執行驗證，確保儲存陣列和 LDAP 伺服器可以通訊。如果出現錯誤訊息，請檢查對話方塊中輸入的認證資料，必要時重新輸入資訊。
+
+

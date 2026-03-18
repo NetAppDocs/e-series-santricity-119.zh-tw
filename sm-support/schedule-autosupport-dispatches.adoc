@@ -1,0 +1,33 @@
+---
+permalink: sm-support/schedule-autosupport-dispatches.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, schedule, autosupport, dispatches 
+summary: System Manager 會自動為 AutoSupport 派送建立預設排程。如果您偏好，可以指定自己的排程。 
+---
+= 在 SANtricity System Manager 中排程 AutoSupport 派送
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity System Manager 會自動建立 AutoSupport 派送的預設排程。如果您偏好，可以指定自己的排程。
+
+.開始之前
+AutoSupport 功能必須啟用。您可以在 AutoSupport 頁面上查看其是否已啟用。
+
+.關於此任務
+* *每日時間* -- 系統會在您指定的時間範圍內每天收集並傳送每日排程資料。System Manager 會在該範圍內隨機選擇一個時間。所有時間均為協調世界時 (UTC)，可能與儲存陣列的本地時間不同。您必須將儲存陣列的本地時間轉換為 UTC。
+* *每週日期* -- 每週排程任務每週收集並發送一次。System Manager 會從您指定的日期中隨機選擇一天。取消選擇您不希望進行每週排程的日期。System Manager 會從您允許的日期中隨機選擇一天。
+* *每週時間* -- 系統會在您指定的時間範圍內每週收集並發送每週調度資料。System Manager 會在該範圍內隨機選擇一個時間。所有時間均為協調世界時（UTC），可能與儲存陣列的本地時間不同。您必須將儲存陣列的本地時間轉換為 UTC。
+
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Schedule AutoSupport Dispatches* 。
++
+Schedule AutoSupport Dispatches 精靈隨即出現。
+
+. 請依照精靈中的步驟操作。
+

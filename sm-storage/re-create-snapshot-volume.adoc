@@ -1,0 +1,61 @@
+---
+permalink: sm-storage/re-create-snapshot-volume.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, re-create, snapshot, volume 
+summary: 您可以重新建立先前停用的快照磁碟區或快照一致性群組快照磁碟區。重新建立快照磁碟區比建立新快照磁碟區耗時更短。 
+---
+= 在 SANtricity System Manager 中重新建立快照磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以重新建立先前停用的快照磁碟區或快照一致性群組快照磁碟區。重新建立快照磁碟區比建立新快照磁碟區耗時更短。
+
+.開始之前
+* 快照磁碟區必須處於 Optimal 或 Disabled 狀態。
+* 在重新建立快照一致性群組快照磁碟區之前，所有成員快照磁碟區必須處於「已停用」狀態。
+
+
+.關於此任務
+您無法重新建立個別成員 Snapshot 磁碟區；您只能重新建立整體 Snapshot 一致性群組 Snapshot 磁碟區。
+
+[NOTE]
+====
+如果快照磁碟區或快照一致性群組快照磁碟區是線上複製關係的一部分，則無法對該磁碟區執行重新建立選項。
+
+====
+.步驟
+. 選擇選單：Storage [ Snapshots ]。
+. 選擇 *Snapshot Volumes* 選項卡。
++
+Snapshot Volumes 表隨即顯示，並顯示與儲存陣列關聯的所有快照磁碟區。
+
+. 選擇要重新建立的快照磁碟區，然後選擇功能表：非常規工作 [重新建立]。
++
+出現「重新建立快照磁碟區」對話方塊。
+
+. 請選擇以下選項之一：
++
+** *從磁碟區 <name> 建立的現有快照映像*
++
+選擇此選項可指定要從中重新建立快照磁碟區的現有快照映像。
+
+** *磁碟區 <name> 的新（即時）快照映像*
++
+選擇此選項可建立新的快照映像，並從中重新建立快照磁碟區。
+
+
+
+. 按一下 *Recreate* 。
+
+
+.結果
+System Manager 執行下列動作：
+
+* 刪除關聯快照儲存庫磁碟區上的所有 `write`資料。
+* 快照磁碟區或快照一致性群組快照磁碟區參數與先前停用的磁碟區參數保持一致。
+* 保留 Snapshot 磁碟區或 Snapshot 一致性群組 Snapshot 磁碟區的原始名稱。
+

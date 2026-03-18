@@ -1,0 +1,89 @@
+---
+permalink: sm-storage/change-ssd-cache-settings.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, ssd, cache, settings 
+summary: 您可以編輯 SSD Cache 的名稱，並查看其狀態、最大容量和當前容量、Drive Security 和 Data Assurance 狀態，以及與其關聯的磁碟區和磁碟機。 
+---
+= 在 SANtricity System Manager 中變更 SSD 快取設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯 SSD Cache 的名稱，並查看其狀態、最大容量和當前容量、Drive Security 和 Data Assurance 狀態，以及與其關聯的磁碟區和磁碟機。
+
+.步驟
+. 選擇選單：Storage [ Pools & Volume Groups ]。
+. 選擇要編輯的 SSD Cache，然後點擊 *View/Edit Settings*。
++
+SSD Cache Settings 對話方塊隨即出現。
+
+. 視需要檢閱或編輯 SSD 快取設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 設定 | 說明 
+
+
+ a| 
+Name
+ a| 
+顯示 SSD Cache 的名稱，您可以變更該名稱。SSD Cache 的名稱為必填項。
+
+
+
+ a| 
+特性
+ a| 
+顯示 SSD Cache 的狀態。可能的狀態包括：
+
+** 最佳
+** 未知
+** 降級
+** 失敗 ( 失敗狀態會導致嚴重的 MEL 事件。)
+** 已暫停
+
+
+
+
+ a| 
+容量
+ a| 
+顯示 SSD 快取的目前容量和允許的最大容量。
+
+SSD Cache 允許的最大容量取決於控制器的主快取大小：
+
+** 最多 1 GiB
+** 1 GiB 至 2 GiB
+** 2 GiB 至 4 GiB
+** 超過 4 GiB
+
+
+
+
+ a| 
+安全性與 DA
+ a| 
+顯示 SSD Cache 的磁碟機安全性與 Data Assurance 狀態。
+
+** *具備安全功能* -- 指示 SSD Cache 是否完全由具備安全功能的磁碟機組成。具備安全功能的磁碟機是一種自加密磁碟機，可保護其資料免受未經授權的存取。
+** *已啟用安全功能* -- 指示 SSD Cache 是否已啟用安全功能。
+** *支援 DA* -- 表示 SSD Cache 是否完全由支援 DA 的磁碟機組成。支援 DA 的磁碟機可以檢查並修正主機和儲存陣列之間資料傳輸過程中可能出現的錯誤。
+
+
+
+
+ a| 
+關聯物件
+ a| 
+顯示與 SSD 快取關聯的磁碟區和磁碟機。
+
+|===
+====
+. 按一下 *Save* 。
+

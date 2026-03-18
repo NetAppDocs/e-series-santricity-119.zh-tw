@@ -1,0 +1,39 @@
+---
+permalink: sm-settings/edit-user-names-for-snmp-traps.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, user, settings, snmpv3, traps, 
+summary: 您可以編輯 SNMPv3 陷阱的使用者定義。 
+---
+= 在 SANtricity System Manager 中編輯 SNMPv3 陷阱的使用者設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯 SNMPv3 陷阱的使用者定義。
+
+.開始之前
+必須為 SNMPv3 設陷建立使用者。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *SNMP* 選項卡。
++
+設陷目的地和使用者名稱會顯示在表格中。
+
+. 若要編輯使用者定義、請在表格中選取使用者、然後按一下 *Configure Users* 。
+. 在對話方塊中、按一下 *View/Edit Settings* 。
+. 編輯下列資訊：
++
+** *使用者名稱* -- 變更用於識別使用者的名稱，最多可包含 31 個字元。
+** *Engine ID* -- 選擇 Engine ID，該 ID 用於產生訊息的身份驗證和加密金鑰，並且在管理網域中必須是唯一的。在大多數情況下，您應該選擇 *Local*。如果您使用的是非標準組態，請選擇 *Custom*；此時會顯示另一個欄位，您必須在其中輸入權威引擎 ID（十六進位字串），字元數為 10 到 32 個偶數字元。
+** *Authentication credentials* -- 選擇一種身份驗證協議，用於驗證使用者身份。接下來，輸入身份驗證密碼。設定或變更身份驗證協定時需要輸入此密碼。密碼長度必須介於 8 到 128 個字元之間。
+** *隱私憑證* -- 選擇一種隱私協議，該協議用於加密訊息內容。接下來，輸入隱私密碼，在設定或更改隱私協議時需要輸入此密碼。密碼長度必須介於 8 到 128 個字元之間。
+
+
+
+
+.結果
+Alerts 頁面的 SNMP 標籤會顯示更新的設定。

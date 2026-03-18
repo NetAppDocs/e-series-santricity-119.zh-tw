@@ -1,0 +1,35 @@
+---
+permalink: sm-mirroring/re-synchronize-mirror-consistency-group-manually.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, re-synchronize, mirror, consistency, group, manually, 
+summary: 您可以手動啟動鏡像一致性群組內所有鏡像配對的重新同步。 
+---
+= 在 SANtricity System Manager 中手動重新同步鏡像一致性群組
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以手動啟動鏡像一致性群組內所有鏡像配對的重新同步。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+鏡像一致性群組表隨即出現，並顯示與儲存陣列關聯的所有鏡像一致性群組。
+
+. 選擇要重新同步的鏡像一致性群組，然後選擇功能表：更多 [手動重新同步]。
++
+系統會顯示確認訊息。
+
+. 選擇 *Yes* 進行確認。
+
+
+.結果
+系統執行以下操作：
+
+* 啟動所選鏡像一致性群組內所有鏡像配對的資料重新同步。
+* 將本機儲存陣列中的已修改資料更新至遠端儲存陣列。
+

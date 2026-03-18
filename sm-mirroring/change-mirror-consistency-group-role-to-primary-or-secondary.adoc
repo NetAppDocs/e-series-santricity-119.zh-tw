@@ -1,0 +1,44 @@
+---
+permalink: sm-mirroring/change-mirror-consistency-group-role-to-primary-or-secondary.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, mirror, consistency group, primary, secondary 
+summary: 您可以出於管理目的或在本機儲存陣列發生災難時變更鏡像一致性群組之間的角色。 
+---
+= 在 SANtricity System Manager 中，將鏡像一致性群組角色變更為主角色或輔助角色
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以出於管理目的或在本機儲存陣列發生災難時變更鏡像一致性群組之間的角色。
+
+.關於此任務
+在本機儲存陣列上建立的鏡像一致性群組具有主要角色。在遠端儲存陣列上建立的鏡像一致性群組具有次要角色。您可以將本機鏡像一致性群組降級為次要角色，也可以將遠端鏡像一致性群組提升為主要角色。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇 *Mirror Consistency Groups* 標籤。
++
+鏡像一致性群組表隨即出現，並顯示與儲存陣列關聯的所有鏡像一致性群組。
+
+. 選擇要變更角色的鏡像一致性群組，然後選擇選單：更多 [變更角色為 <Primary | Secondary>]*>*。
++
+系統會顯示確認訊息。
+
+. 確認您要變更鏡像一致性群組的角色，然後按一下 *Change Role* 。
++
+[NOTE]
+====
+當請求角色變更但無法聯繫到遠端儲存陣列時，系統會顯示「無法聯繫儲存陣列」對話方塊。點選 *Yes* 強制執行角色變更。
+
+====
+
+
+.結果
+System Manager 執行下列動作：
+
+* 鏡像一致性群組表格會在正在進行角色變更的鏡像一致性群組旁顯示「待處理」或「進行中」的狀態。您可以點擊表格儲存格中的 *Cancel* 連結來取消待處理的角色變更操作。
+* 如果可以聯繫到關聯的鏡像一致性群組，則鏡像一致性群組之間的角色將會變更。System Manager 會將次要鏡像一致性群組提升為主要角色，或將主要鏡像一致性群組降級為次要角色（取決於您的選擇）。角色變更會影響所選鏡像一致性群組內的所有鏡像配對。
+

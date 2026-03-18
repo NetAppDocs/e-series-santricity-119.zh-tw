@@ -1,0 +1,24 @@
+---
+permalink: um-manage/delete-storage-array-group.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, delete, storage, array, group 
+summary: 您可以刪除一個或多個不再需要的儲存陣列群組。 
+---
+= 在 SANtricity Unified Manager 中刪除儲存陣列群組
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除一個或多個不再需要的儲存陣列群組。
+
+.關於此任務
+此操作僅刪除儲存陣列群組。與已刪除群組關聯的儲存陣列仍可透過「管理全部」檢視或其關聯的任何其他群組進行存取。
+
+.步驟
+. 從「管理」頁面，選取功能表：管理群組 [刪除儲存陣列群組]。
+. 選擇要刪除的一個或多個儲存陣列群組。
+. 按一下 *Delete* 。
+

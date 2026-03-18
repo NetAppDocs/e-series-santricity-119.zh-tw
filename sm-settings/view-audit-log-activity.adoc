@@ -1,0 +1,120 @@
+---
+permalink: sm-settings/view-audit-log-activity.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, audit, log, activity, 
+summary: 透過檢視稽核記錄，具有 Security Admin 權限的使用者可以監控使用者動作、驗證失敗、無效登入嘗試以及使用者工作階段生命週期。 
+---
+= 在 SANtricity System Manager 中檢視稽核記錄活動
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+透過檢視稽核記錄，具有 Security Admin 權限的使用者可以監控使用者動作、驗證失敗、無效登入嘗試以及使用者工作階段生命週期。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 **Audit Log** 標籤。
++
+稽核日誌活動以表格形式顯示，其中包括以下欄位資訊：
+
++
+** *日期 / 時間* -- 儲存陣列偵測到事件的時間戳記（GMT）。
+** *使用者名稱* -- 與事件相關聯的使用者名稱。對於儲存陣列上的任何未經驗證的動作，使用者名稱會顯示為「N/A」。未經驗證的動作可能由內部 Proxy 或其他機制觸發。
+** *狀態碼* -- 操作的 HTTP 狀態碼（200、400 等）以及與該事件相關的描述性文字。
+** *已造訪的 URL* -- 完整 URL （包括主機） 和查詢字串。
+** *Client IP Address* -- 與事件關聯的客戶端的 IP 位址。
+** *來源* -- 與事件關聯的日誌來源，可以是 System Manager、CLI、Web Services 或 Support Shell。
+** *描述* -- 有關事件的其他資訊（如適用）。
+
+
+. 使用「稽核記錄」頁面上的選項來檢視和管理事件。
++
+.選擇詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 選取 | 說明 
+
+
+ a| 
+顯示來自…的事件
+ a| 
+依日期範圍限制顯示的事件（最近 24 小時、最近 7 天、最近 30 天或自訂日期範圍）。
+
+
+
+ a| 
+篩選
+ a| 
+限制顯示的事件數量，以欄位中輸入的字元為準。使用引號（""）進行精確的單字匹配，輸入 `OR`返回一個或多個單字，或輸入破折號（--）省略單字。
+
+
+
+ a| 
+重新整理
+ a| 
+選擇 *Refresh* 以將頁面更新至最新事件。
+
+
+
+ a| 
+檢視 / 編輯設定
+ a| 
+選擇 *View/Edit Settings* 以開啟對話方塊，您可以在其中指定完整的日誌原則和要記錄的動作層級。
+
+
+
+ a| 
+刪除事件
+ a| 
+選擇 *Delete* 以開啟一個對話框，允許您從頁面中刪除舊事件。
+
+
+
+ a| 
+顯示 / 隱藏欄
+ a| 
+點擊 *Show/Hide* 欄圖示 image:../media/sam-1140-ss-access-columns.gif["顯示 / 隱藏欄"] 以選擇要在表格中顯示的其他欄。其他欄包括：
+
+** *Method* -- HTTP 方法（例如 POST、GET、DELETE 等）。
+** *CLI Command Executed* -- 為安全 CLI 請求執行的 CLI 指令（語法）。
+** *CLI 傳回狀態* -- CLI 狀態代碼或來自客戶端的輸入檔案請求。
+** *SYMbol Procedure* -- 已執行 SYMbol 程序。
+** *SSH Event Type* -- Secure Shell （ SSH ）事件類型，例如 login 、 logout 和 login_fail 。
+** *SSH Session PID* -- SSH 會話的 Process ID 號碼。
+** *SSH Session Duration(s)* -- 使用者登入的秒數。
+** *Authentication Type* -- 類型可以包含 Local user、LDAP、SAML 和 Access token。
+** *Authentication ID* -- 已認證工作階段的 ID。
+
+
+
+
+ a| 
+切換欄篩選器
+ a| 
+點選 *Toggle* 圖示 image:../media/sam-1140-ss-access-toggle.gif["切換"] 可開啟每欄的篩選欄位。在欄位中輸入字元，即可篩選出符合這些字元的事件。再次點選該圖示可關閉篩選欄位。
+
+
+
+ a| 
+撤銷變更
+ a| 
+點擊 *Undo* 圖示 image:../media/sam-1140-ss-access-undo.gif["復原"] 將表格恢復為預設配置。
+
+
+
+ a| 
+匯出
+ a| 
+點選 *Export* 將表格資料儲存到逗號分隔值（CSV）檔案中。
+
+|===
+====
+

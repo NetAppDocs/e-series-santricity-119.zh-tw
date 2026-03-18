@@ -1,0 +1,48 @@
+---
+permalink: sm-settings/configure-syslog-server-for-alerts.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, syslog, server, alerts, 
+summary: 若要設定 syslog 警報，您必須輸入 syslog 伺服器位址和 UDP 連接埠。最多允許五個 syslog 伺服器。 
+---
+= 在 SANtricity System Manager 中設定 syslog 伺服器以接收警報
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要設定 syslog 警報，您必須輸入 syslog 伺服器位址和 UDP 連接埠。最多允許五個 syslog 伺服器。
+
+.開始之前
+* 系統日誌伺服器位址必須可用。該位址可以是完全限定網域名稱、IPv4 位址或 IPv6 位址。
+* 系統日誌伺服器的 UDP 連接埠號碼必須可用。該連接埠通常為 514。
+
+
+.關於此任務
+本任務描述如何輸入 syslog 伺服器的位址和連接埠，然後測試您輸入的位址。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *Syslog* 標籤。
++
+如果尚未定義 syslog 伺服器，則「警報」頁面會顯示「新增 Syslog 伺服器」。
+
+. 按一下 *Add Syslog Servers* 。
++
+Add Syslog Server 對話方塊隨即開啟。
+
+. 輸入一或多個 syslog 伺服器（最多五個）的資訊，然後按一下 *Add* 。
++
+** *伺服器位址* -- 輸入完全限定網域名稱、IPv4 位址或 IPv6 位址。
+** *UDP 連接埠* -- 通常情況下，syslog 的 UDP 連接埠為 514。該表顯示已設定的 syslog 伺服器。
+
+
+. 若要向伺服器位址發送測試警報，請選擇 *Test All Syslog Servers*。
+
+
+.結果
+事件監視器會在發生可發出警報的事件時向 syslog 伺服器發送警報。若要進一步設定稽核日誌的 syslog 設定，請參閱 https://docs.netapp.com/us-en/e-series-santricity/sm-settings/configure-syslog-server-for-audit-logs.html["設定 syslog 伺服器以進行稽核記錄"]。
+
+
+NOTE: 如果設定了多個 syslog 伺服器、則所有已設定的 syslog 伺服器都會收到稽核記錄。

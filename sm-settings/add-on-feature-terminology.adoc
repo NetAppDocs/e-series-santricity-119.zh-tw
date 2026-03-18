@@ -1,0 +1,47 @@
+---
+permalink: sm-settings/add-on-feature-terminology.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, add-on, feature, terms 
+summary: 了解附加功能條款如何適用於您的儲存陣列。 
+---
+= 了解 SANtricity 軟體中的附加功能術語
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解附加功能條款如何適用於您的儲存陣列。
+
+[cols="25h,~"]
+|===
+| 期限 | 說明 
+
+
+ a| 
+功能啟用識別碼
+ a| 
+功能啟用識別碼是一個唯一字串，用於識別特定的儲存陣列。此識別碼可確保您取得進階功能時，此功能僅與該特定儲存陣列關聯。此字串顯示在「系統」頁面的「附加元件」下。
+
+
+
+ a| 
+功能金鑰檔案
+ a| 
+功能金鑰檔案是您收到的用於解鎖和啟用進階功能或功能套件的檔案。
+
+
+
+ a| 
+功能套件
+ a| 
+功能包是用於變更儲存陣列屬性的套裝軟體（例如，將傳輸協定從 Fibre Channel 變更為 iSCSI）。功能包需要特殊金鑰才能啟用。
+
+
+
+ a| 
+進階功能
+ a| 
+進階功能是指需要金鑰才能啟用的額外選項。它不包含在 System Manager 的標準配置中。
+
+|===

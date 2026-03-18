@@ -1,0 +1,25 @@
+---
+permalink: sm-storage/how-volumes-are-assigned-to-hosts-and-host-clusters.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, volumes, assigned, hosts, clusters 
+summary: 若要讓主機或主機叢集向磁碟區傳送 I/O、必須將磁碟區指派給主機或主機叢集。 
+---
+= SANtricity 軟體中如何將磁碟區指派給主機和主機叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要讓主機或主機叢集向磁碟區傳送 I/O、必須將磁碟區指派給主機或主機叢集。
+
+建立磁碟區時，您可以選擇主機或主機叢集；也可以稍後將磁碟區指派給主機或主機叢集。主機叢集是一組主機。建立主機叢集可以方便地將相同的磁碟區指派給多個主機。
+
+將磁碟區指派給主機非常靈活，可讓您滿足特定的儲存需求。
+
+* *獨立主機，非主機叢集的一部分* -- 您可以將磁碟區指派給單一主機。該磁碟區只能由該主機存取。
+* *Host cluster* -- 您可以將磁碟區指派給 host cluster。host cluster 中的所有主機都可以存取該磁碟區。
+* *主機叢集中的主機* -- 您可以將磁碟區指派給主機叢集中的單一主機。即使該主機屬於主機叢集，該磁碟區也只能由該單一主機存取，而主機叢集中的任何其他主機都無法存取。
+
+
+建立磁碟區時，系統會自動指派邏輯單元號碼（LUN）。在 I/O 操作期間，LUN 充當主機和控制器之間的「位址」。您可以在建立磁碟區後變更 LUN。

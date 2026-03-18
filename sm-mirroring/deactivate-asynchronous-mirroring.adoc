@@ -1,0 +1,37 @@
+---
+permalink: sm-mirroring/deactivate-asynchronous-mirroring.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, deactivate, asynchronous, mirroring, remote, 
+summary: 您可以停用本機和遠端儲存陣列上的非同步鏡像，以恢復儲存陣列上專用連接埠的正常使用。 
+---
+= 在 SANtricity System Manager 中停用非同步鏡像
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以停用本機和遠端儲存陣列上的非同步鏡像，以恢復儲存陣列上專用連接埠的正常使用。
+
+.開始之前
+* 您必須已刪除所有鏡像關係。請確認所有鏡像一致性群組和鏡像配對均已從本機和遠端儲存陣列中刪除。
+* 本機儲存陣列和遠端儲存陣列必須透過 Fibre Channel 架構或 iSCSI 介面連接。
+
+
+.關於此任務
+停用非同步鏡像後，本機和遠端儲存陣列上將無法進行任何鏡像活動。
+
+.步驟
+. 選擇功能表：Storage[Asynchronous Mirroring]。
+. 選擇選單：Uncommon Tasks [ Deactivate ]。
++
+系統會顯示確認訊息。
+
+. 選擇 *Yes* 進行確認。
+
+
+.結果
+* 控制器的 HBA 主機通道（專用於非同步鏡像通訊）現在可以接受主機讀取和寫入要求。
+* 此儲存陣列中的任何磁碟區都不能作為主磁碟區或次要磁碟區參與鏡像關係。
+

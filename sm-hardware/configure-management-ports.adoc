@@ -1,0 +1,98 @@
+---
+permalink: sm-hardware/configure-management-ports.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, management, port, 
+summary: 控制器包含一個用於系統管理的乙太網路連接埠。如有必要，您可以變更其傳輸參數和 IP 位址。 
+---
+= 在 SANtricity System Manager 中設定管理連接埠
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+控制器包含一個用於系統管理的乙太網路連接埠。如有必要，您可以變更其傳輸參數和 IP 位址。
+
+.關於此任務
+在此過程中，您需要選擇連接埠 1，然後確定速度和連接埠尋址方式。連接埠 1 連接到網路，管理用戶端可以透過此網路存取控制器和 System Manager。
+
+[NOTE]
+====
+請勿使用任何控制器上的連接埠 2 。連接埠 2 保留供技術支援使用。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 按一下具有您要設定之管理連接埠的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Configure management ports* 。
++
+Configure Management Ports 對話方塊開啟。
+
+. 確保顯示連接埠 1、然後按一下 *Next* 。
+. 選擇組態連接埠設定，然後按一下 *Next* 。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+速度和雙工模式
+ a| 
+如果您希望 System Manager 自動確定儲存陣列和網路之間的傳輸參數，請保留「自動協商」設定；或者，如果您知道網路的速度和模式，請從下拉清單中選擇對應的參數。清單中僅顯示有效的速度和雙工模式組合。
+
+
+
+ a| 
+啟用 IPv4 / 啟用 IPv6
+ a| 
+選擇其中一個或兩個選項以啟用對 IPv4 和 IPv6 網路的支援。
+
+|===
+====
++
+如果選擇 *Enable IPv4*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv4 設定。如果選擇 *Enable IPv6*，按一下 *Next* 後將開啟一個對話框，供您選擇 IPv6 設定。如果同時選擇這兩個選項，則先開啟 IPv4 設定對話框，按一下 *Next* 後，再開啟 IPv6 設定對話框。
+
+. 設定 IPv4 和 / 或 IPv6 設定，可自動或手動設定。
++
+.欄位詳細資料
+[%collapsible]
+====
+[cols="25h,~"]
+|===
+| 欄位 | 說明 
+
+
+ a| 
+自動從 DHCP 伺服器取得組態
+ a| 
+選擇此選項可自動取得組態。
+
+
+
+ a| 
+手動指定靜態組態
+ a| 
+選擇此選項，然後輸入控制器的 IP 位址。（如有需要，您可以複製貼上位址到對應欄位中。）對於 IPv4，請包含網路子網路遮罩和閘道。對於 IPv6，請包含可路由 IP 位址和路由器 IP 位址。
+
+
+NOTE: 如果您變更 IP 位址配置，則會失去儲存陣列的管理路徑。如果您使用 SANtricity Unified Manager 全域管理網路中的陣列，請開啟使用者介面並前往選單：Manage[Discover]。如果您使用 SANtricity Storage Manager，則必須先從 Enterprise Management Window（EMW）移除設備，然後透過選擇選單：Edit[Add Storage Array] 將其重新新增至 EMW，最後輸入新的 IP 位址。
+
+|===
+====
+. 點選 *Finish* 。
+
+
+.結果
+管理連接埠組態會顯示在控制器設定的「Management Ports」（管理連接埠）標籤中。

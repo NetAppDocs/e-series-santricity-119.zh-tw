@@ -1,0 +1,52 @@
+---
+permalink: sm-hardware/considerations-for-assigning-ip-addresses.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, considerations, assigning, ip, addresses 
+summary: 預設情況下，控制器在兩個網路連接埠上都啟用了 DHCP。您可以指派靜態 IP 位址、使用預設靜態 IP 位址或使用 DHCP 指派的 IP 位址。您也可以使用 IPv6 無狀態自動設定。 
+---
+= 了解 E 系列控制器的 IP 位址分配
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+預設情況下，控制器在兩個網路連接埠上都啟用了 DHCP。您可以指派靜態 IP 位址、使用預設靜態 IP 位址或使用 DHCP 指派的 IP 位址。您也可以使用 IPv6 無狀態自動設定。
+
+[NOTE]
+====
+新控制器預設會停用 IPv6，但您可以使用其他方法設定管理連接埠 IP 位址，然後使用 System Manager 在管理連接埠上啟用 IPv6。
+
+====
+當網路連接埠處於「link down」狀態（即與 LAN 中斷連線）時，系統會將其組態報告為靜態（早期版本顯示 IP 位址為 0.0.0.0）、或已啟用 DHCP 但不報告 IP 位址（後期版本）。當網路連接埠處於「link up」狀態（即連線至 LAN）後，系統會嘗試透過 DHCP 取得 IP 位址。
+
+如果控制器無法在給定的網路連接埠上取得 DHCP 位址，它將回退到預設 IP 位址，這可能需要長達 3 分鐘的時間。預設 IP 位址如下：
+
+[listing]
+----
+Controller 1 (port 1): IP Address: 192.168.128.101
+----
+[listing]
+----
+Controller 1 (port 2): IP Address: 192.168.129.101
+----
+[listing]
+----
+Controller 2 (port 1): IP Address: 192.168.128.102
+----
+[listing]
+----
+Controller 2 (port 2): IP Address: 192.168.129.102
+----
+分配 IP 位址時：
+
+* 在控制器上保留連接埠 2 供客戶支援使用。請勿變更預設網路設定（已啟用 DHCP）。
+* 若要為 E4000、E2800 和 E5700 控制器設定靜態 IP 位址，請使用 SANtricity System Manager。若要為 E2700 和 E5600 控制器設定靜態 IP 位址，請使用 SANtricity Storage Manager。靜態 IP 位址配置完成後，無論連結中斷或恢復，該位址都將保持不變。
+* 若要使用 DHCP 為控制器指派 IP 位址，請將控制器連接到可以處理 DHCP 請求的網路。使用永久 DHCP 租約。
++
+[NOTE]
+====
+預設位址不會在連結中斷事件中保留。當控制器上的網路連接埠設定為使用 DHCP 時，控制器會在每次連結恢復事件（包括插入纜線、重新開機和電源循環）時嘗試取得 DHCP 位址。每當 DHCP 嘗試失敗時，就會使用該連接埠的預設靜態 IP 位址。
+
+====
+

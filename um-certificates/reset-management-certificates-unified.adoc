@@ -1,0 +1,35 @@
+---
+permalink: um-certificates/reset-management-certificates-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, reset, management, certificates 
+summary: 您可以將管理憑證還原為原始的出廠自我簽署狀態。 
+---
+= 重設管理憑證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將管理憑證還原為原始的出廠自我簽署狀態。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+
+.關於此任務
+此任務會從安裝了 Web Services Proxy 和 Unified Manager 的主機系統中刪除目前的管理憑證。憑證重設後，主機系統將恢復使用自我簽署憑證。
+
+.步驟
+. 選擇 *Settings > Certificates*。
+. 選擇 *Array Management* 選項卡，然後選擇 *Reset*。
++
+「確認重設管理證書」對話方塊隨即開啟。
+
+. 在欄位中輸入 `reset`，然後按一下 *Reset*。
++
+瀏覽器重新整理後，瀏覽器可能會封鎖對目的地網站的存取，並回報該網站正在使用 HTTP Strict Transport Security。當您切換回自我簽署的憑證時，就會發生這種情況。若要清除封鎖存取目的地的情況，您必須從瀏覽器清除瀏覽資料。
+
+
+
+.結果
+系統將恢復使用伺服器上的自簽名憑證。因此，系統會提示使用者手動接受其工作階段的自簽名憑證。

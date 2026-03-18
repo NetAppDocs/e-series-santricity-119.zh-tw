@@ -1,0 +1,34 @@
+---
+permalink: sm-storage/rtv-remove-remote-storage.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, remove, remote, storage, 
+summary: 匯入完成後，如果您不再希望在本機裝置和遠端裝置之間複製資料，則可以移除遠端儲存物件。 
+---
+= 在 SANtricity System Manager 中移除遠端儲存物件
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+匯入完成後，如果您不再希望在本機裝置和遠端裝置之間複製資料，則可以移除遠端儲存物件。
+
+.開始之前
+請確保您計劃刪除的遠端儲存物件沒有關聯任何匯入。
+
+.關於此任務
+刪除遠端儲存物件時，本機設備和遠端設備之間的連線也會中斷。
+
+.步驟
+. 選擇選單：Storage [ Remote storage ]。
+. 從清單中選取要移除的遠端儲存物件。
+. 按一下 *Remove* 。
++
+顯示「確認移除遠端儲存連線」對話方塊。
+
+. 輸入 `remove`，然後按一下 *Remove* 來確認操作。
++
+已移除選定的遠端儲存物件。
+
+

@@ -1,0 +1,38 @@
+---
+permalink: um-certificates/view-local-user-roles-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, view, local, user, roles 
+summary: 在本機使用者角色標籤中，您可以查看使用者與預設角色的對應關係。這些對應關係是 SANtricity Unified Manager 的 Web Services Proxy 所實施的 RBAC（角色型存取控制）的一部分。 
+---
+= 檢視本機使用者角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在本機使用者角色標籤中，您可以查看使用者與預設角色的對應關係。這些對應關係是 SANtricity Unified Manager 的 Web Services Proxy 所實施的 RBAC（角色型存取控制）的一部分。
+
+.開始之前
+您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+
+.關於此任務
+使用者和映射關係無法更改。只能修改密碼。
+
+.步驟
+. 選擇 *Access Management* 。
+. 選擇 *Local User Roles* 標籤。
++
+使用者顯示在表格中：
+
++
+** *admin* -- 超級管理員，擁有系統所有功能的存取權限。此使用者包含所有角色。
+** *storage* -- 負責所有儲存配置的管理員。此使用者包含以下角色：Storage Admin、Support Admin 和 Monitor。
+** *安全* -- 負責安全配置的使用者，包括 Access Management 和 Certificate Management。此使用者包含以下角色：Security Admin 和 Monitor。
+** *support* -- 負責硬體資源、故障資料和韌體升級的使用者。此使用者包含下列角色：Support Admin 和 Monitor。
+** *monitor* -- 具有系統唯讀權限的使用者。此使用者僅包含 Monitor 角色。
+** *rw* （讀取/寫入）－此使用者包含以下角色：Storage Admin、Support Admin 和 Monitor。
+** *ro* (read only) -- 此使用者僅包含 Monitor 角色。
+
+
+

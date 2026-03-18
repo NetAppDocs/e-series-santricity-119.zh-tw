@@ -1,0 +1,45 @@
+---
+permalink: um-certificates/export-saml-service-provider-files.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, export, saml, Service Provider, files, 
+summary: 如有必要、您可以匯出儲存陣列的 Service Provider 中繼資料、並將檔案重新匯入 Identity Provider （ IdP ）系統。 
+---
+= 在 SANtricity Unified Manager 中匯出 SAML 服務提供者檔案
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如有必要、您可以匯出儲存陣列的 Service Provider 中繼資料、並將檔案重新匯入 Identity Provider （ IdP ）系統。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* SAML 已設定並啟用。
+
+
+.關於此任務
+在此工作中，您會從控制器匯出中繼資料。IdP 需要此中繼資料才能與控制器建立信任關係並處理驗證要求。此檔案包含控制器網域名稱或 IP 位址等資訊，IdP 可使用這些資訊來傳送要求。
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 選擇 *SAML* 選項卡。
+. 選擇 *Export* 。
++
+Export Service Provider Files 對話方塊開啟。
+
+. 點擊 *Export* 將中繼資料檔案儲存至本機系統。
++
+[NOTE]
+====
+網域名稱欄位為唯讀。
+
+====
++
+記下檔案的儲存位置。
+
+. 從本機系統中找到您匯出的 XML 格式服務提供者中繼資料檔案。
+. 從 IdP 伺服器匯入 Service Provider 中繼資料檔案。您可以直接匯入檔案，也可以手動輸入控制器資訊。
+. 按一下 *Close* 。
+

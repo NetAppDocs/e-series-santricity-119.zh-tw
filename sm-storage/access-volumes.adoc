@@ -1,0 +1,29 @@
+---
+permalink: sm-storage/access-volumes.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, access volumes 
+summary: 存取磁碟區是儲存陣列上原廠配置的磁碟區，用於透過主機 I/O 連線與儲存陣列和主機進行通訊。存取磁碟區需要邏輯單元編號（LUN）。 
+---
+= 在 SANtricity System Manager 中存取磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+存取磁碟區是儲存陣列上原廠配置的磁碟區，用於透過主機 I/O 連線與儲存陣列和主機進行通訊。存取磁碟區需要邏輯單元編號（LUN）。
+
+存取磁碟區用於以下執行個體：
+
+* *帶內管理* -- 存取磁碟區用於透過帶內連線管理儲存陣列。只有在您使用命令列介面（CLI）管理儲存陣列時，才能執行此操作。
++
+[NOTE]
+====
+使用 Access 磁碟區的頻內管理不適用於 E4000、EF600/EF600C 或 EF300/EF300C 儲存系統。
+
+====
+
+
+首次將磁碟區指派給主機時，系統會自動建立一個存取磁碟區。例如，如果您將 Volume_1 和 Volume_2 指派給主機，則在查看指派結果時，您會看到三個磁碟區（Volume_1、Volume_2 和 Access）。
+
+如果您未使用 CLI 自動建立主機或透過內建方式管理儲存陣列，則不需要存取磁碟區，可以透過刪除存取磁碟區來釋放 LUN。此操作會移除磁碟區到 LUN 的分配關係以及與主機的所有內建管理連線。

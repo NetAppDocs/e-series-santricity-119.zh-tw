@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: early-versions.html 
+keywords: early versions, e-series, hardware, santricity, os 
+summary: 早期版本的文件 
+---
+= 舊版
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+請點選下方連結以存取早期版本 E-Series 硬體和 SANtricity 軟體的文件。這些連結會將您引導至另一個文件網站。
+
+
+
+== 早期版本的硬體文件
+
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2484026["安裝 E2712、E2724、E5612、E5624 控制器磁碟機匣和 DE1600 和 DE5600 擴充磁碟機匣"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2484072["安裝 E2760 和 E5660 控制器磁碟機匣以及 DE6600 擴充磁碟機匣"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2484108["安裝 EF560 快閃記憶體陣列和 DE5600 快閃記憶體擴充匣"^]
+* https://mysupport.netapp.com/info/web/ECMP11392380.html["安裝舊系統"^]
+* https://mysupport.netapp.com/info/web/ECMP11751516.html["維護舊系統"^]
+* https://mysupport.netapp.com/ecm/ecm_download_file/ECMP1394872["為 E2600 和 E2700 新增第二個控制器"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2353447["變更或新增主機傳輸協定"^]
+* https://mysupport.netapp.com/ecm/ecm_download_file/ECMP1656638["從 AC 轉換為 DC 電源"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2589397["控制器升級指南 - 舊版控制器機型"^]
+
+
+
+
+== 早期版本的軟體文件
+
+
+
+=== SANtricity 版本 11.8
+
+* https://docs.netapp.com/us-en/e-series-santricity-118/index.html["System Manager 說明"^]
+* https://docs.netapp.com/us-en/e-series-santricity-118/index.html["Unified Manager 說明"^]
+
+
+
+
+=== SANtricity 版本 11.7
+
+* https://docs.netapp.com/us-en/e-series-santricity-117/index.html["System Manager 說明"^]
+* https://docs.netapp.com/us-en/e-series-santricity-117/index.html["Unified Manager 說明"^]
+
+
+
+
+=== SANtricity 版本 11.6
+
+* https://docs.netapp.com/us-en/e-series-santricity-116/index.html["System Manager 說明"^]
+* https://docs.netapp.com/us-en/e-series-santricity-116/index.html["Unified Manager 說明"^]
+
+
+
+
+=== SANtricity 版本 11.5
+
+* https://docs.netapp.com/us-en/e-series-santricity-115/index.html["System Manager 說明"^]
+
+
+
+
+=== SANtricity 版本 11.4
+
+* https://mysupport.netapp.com/ecm/ecm_get_file/ECMLP2862590["AMW （ E2700 、 E5600/EF560 ）說明"^]
+* https://mysupport.netapp.com/ecm/ecm_get_file/ECMLP2862588["EMW （ E2700 、 E5600/EF560 ）說明"^]
+

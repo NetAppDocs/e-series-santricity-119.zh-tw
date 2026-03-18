@@ -1,0 +1,89 @@
+---
+permalink: sm-settings/alerts-terminology.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, alerts, terms, 
+summary: 了解警示條款如何套用至您的儲存陣列。 
+---
+= 了解 SANtricity 軟體中的警示術語
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解警示條款如何套用至您的儲存陣列。
+
+[cols="25h,~"]
+|===
+| 元件 | 說明 
+
+
+ a| 
+事件監控器
+ a| 
+事件監視器駐留在儲存陣列上，並作為背景任務運作。當事件監視器偵測到儲存陣列上的異常情況時，它會將問題訊息寫入事件日誌。問題可能包括電池故障、元件從 Optimal 狀態變為 Offline 狀態，或控制器中的冗餘錯誤等事件。如果事件監視器判定事件為「可警報」，則會使用已設定的警報方法（電子郵件、SNMP 和/或 syslog）發送通知。所有 Critical 事件以及部分 Warning 和 Informational 事件均被視為「可警報」。
+
+
+
+ a| 
+郵件伺服器
+ a| 
+郵件伺服器用於傳送和接收電子郵件提醒。此伺服器使用簡單郵件傳輸協定（SMTP）。
+
+
+
+ a| 
+SNMP
+ a| 
+Simple Network Management Protocol（SNMP）是一種網際網路標準協議，用於管理和共享 IP 網路上設備之間的資訊。
+
+
+
+ a| 
+SNMP 陷阱
+ a| 
+SNMP 陷阱是傳送到 SNMP 伺服器的通知。此陷阱包含有關儲存陣列重大問題的資訊。
+
+
+
+ a| 
+SNMP 陷阱目的地
+ a| 
+SNMP 陷阱目的地是執行 SNMP 服務之伺服器的 IPv4 或 IPv6 位址。
+
+
+
+ a| 
+社群名稱
+ a| 
+在 SNMP 環境中，團體名稱是一個字串，其作用類似於網路伺服器的密碼。
+
+
+
+ a| 
+MIB 檔案
+ a| 
+管理資訊庫（MIB）檔案定義了儲存陣列中正在監控和管理的資料。必須將其複製並編譯到安裝了 SNMP 服務應用程式的伺服器上。此 MIB 檔案可從支援站點上的 System Manager 軟體中找到。
+
+
+
+ a| 
+MIB 變數
+ a| 
+管理資訊庫（MIB）變數可以回應 SNMP GetRequests 傳回儲存陣列名稱、陣列位置和聯絡人等值。
+
+
+
+ a| 
+Syslog
+ a| 
+Syslog 是網路裝置用來傳送事件訊息至記錄伺服器的通訊協定。
+
+
+
+ a| 
+UDP
+ a| 
+User Datagram Protocol（UDP）是一種傳輸層協定，可在封包標頭中指定來源和目的地連接埠號碼。
+
+|===

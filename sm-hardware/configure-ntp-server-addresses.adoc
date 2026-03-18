@@ -1,0 +1,69 @@
+---
+permalink: sm-hardware/configure-ntp-server-addresses.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, ntp, server, addresses, network, time, protocol, 
+summary: 您可以設定與 Network Time Protocol（NTP）伺服器的連線，以便控制器定期查詢 NTP 伺服器以更新其內部時脈。 
+---
+= 在 SANtricity System Manager 中設定 NTP 伺服器位址
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定與 Network Time Protocol（NTP）伺服器的連線，以便控制器定期查詢 NTP 伺服器以更新其內部時脈。
+
+.開始之前
+* 您的網路中必須安裝並設定 NTP 伺服器。
+* 您必須知道主要 NTP 伺服器的位址以及選用的備份 NTP 伺服器位址。這些位址可以是完整網域名稱、IPv4 位址或 IPv6 位址。
+
+
+[NOTE]
+====
+如果您為 NTP 伺服器輸入了一個或多個網域名稱，則還必須設定 DNS 伺服器來解析 NTP 伺服器位址。您只需在設定了 NTP 並提供網域名稱的控制器上設定 DNS 伺服器。
+
+====
+.關於此任務
+NTP 讓儲存陣列能夠使用簡單網路時間協定（SNTP）自動將控制器的時鐘與外部主機同步。控制器會定期查詢已設定的 NTP 伺服器，然後使用查詢結果更新其內部時脈。如果只有一個控制器啟用了 NTP，則備用控制器會定期將其時脈與啟用了 NTP 的控制器同步。如果兩個控制器均未啟用 NTP，則它們會定期相互同步時脈。
+
+[NOTE]
+====
+您無需在兩個控制器上設定 NTP；但是，這樣做可以提高儲存陣列在硬體或通訊故障期間保持同步的能力。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 按一下您要設定的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Configure NTP server* 。
++
+「設定網路時間協定 (NTP) 伺服器」對話方塊隨即開啟。
+
+. 選擇 *I want to enable NTP on Controller*（*A* 或 *B*）。
++
+對話方塊中會顯示其他選項。
+
+. 請選擇以下選項之一：
++
+** *從 DHCP 伺服器自動取得 NTP 伺服器位址* -- 顯示偵測到的 NTP 伺服器位址。
++
+[NOTE]
+====
+如果儲存陣列設定為使用靜態 NTP 位址，則不會顯示 NTP 伺服器。
+
+====
+** *手動指定 NTP 伺服器位址* -- 輸入主 NTP 伺服器位址和備用 NTP 伺服器位址。備用伺服器為可選。（選取單選按鈕後，這些位址欄位才會顯示。）伺服器位址可以是完全限定網域名稱、IPv4 位址或 IPv6 位址。
+
+
+. *選用：* 輸入備用 NTP 伺服器的伺服器資訊和驗證認證。
+. 按一下 *Save* 。
+
+
+.結果
+NTP 伺服器組態會顯示在控制器設定的 *DNS / NTP* 索引標籤中。

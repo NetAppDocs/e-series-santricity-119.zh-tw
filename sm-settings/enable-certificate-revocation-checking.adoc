@@ -1,0 +1,45 @@
+---
+permalink: sm-settings/enable-certificate-revocation-checking.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, certificate, revocation checking, 
+summary: '您可以啟用已撤銷憑證的自動檢查，以便 Online Certificate Status Protocol (OCSP) 伺服器阻止使用者建立不安全的連線。' 
+---
+= 在 SANtricity System Manager 中啟用憑證撤銷檢查
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以啟用已撤銷憑證的自動檢查，以便 Online Certificate Status Protocol (OCSP) 伺服器阻止使用者建立不安全的連線。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+* 兩個控制器上都配置了 DNS 伺服器，這使得 OCSP 伺服器可以使用完全限定網域名稱。此工作可從「硬體」頁面取得。
+* 如果要指定自己的 OCSP 伺服器，則必須知道該伺服器的 URL。
+
+
+.關於此任務
+自動撤銷檢查有助於解決 CA 錯誤頒發憑證或私密金鑰遭到入侵的情況。
+
+在此任務中，您可以設定 OCSP 伺服器，也可以使用憑證檔案中指定的伺服器。OCSP 伺服器會檢查 CA 是否在憑證的預定到期日之前撤銷了任何憑證，如果憑證已被撤銷，則會阻止使用者存取網站。
+
+.步驟
+. 選擇功能表：Settings [ Certificates ]。
+. 選擇 *Trusted* 選項卡。
++
+[NOTE]
+====
+您也可以從 *Key Management* 標籤啟用撤銷檢查。
+
+====
+. 按一下 *Uncommon Tasks*，然後從下拉式選單中選取 *Enable Revocation Checking*。
+. 選擇 *I want to enable revocation checking*，複選框中將顯示一個勾選標記，對話方塊中將顯示其他欄位。
+. 在 *OCSP 回應程式位址* 欄位中，您可以選擇性地輸入 OCSP 回應程式伺服器的 URL。如果您未輸入位址，系統將使用憑證檔案中 OCSP 伺服器的 URL。
+. 點擊 *Test Address* 以確保系統可以連線到指定的 URL。
+. 按一下 *Save* 。
+
+
+.結果
+如果儲存陣列嘗試連線到具有已撤銷憑證的伺服器，則連線將被拒絕，並且會記錄事件。

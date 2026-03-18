@@ -1,0 +1,35 @@
+---
+permalink: um-manage/perform-pre-upgrade-health-check.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, perform, pre-upgrade, health, check 
+summary: 升級過程中會自動執行健全狀況檢查，但您也可以在開始升級前單獨執行健全狀況檢查。健全狀況檢查會評估儲存陣列的各個元件，以確保升級可以順利進行。 
+---
+= 在 SANtricity Unified Manager 中執行升級前健全狀況檢查
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+升級過程中會自動執行健全狀況檢查，但您也可以在開始升級前單獨執行健全狀況檢查。健全狀況檢查會評估儲存陣列的各個元件，以確保升級可以順利進行。
+
+.步驟
+. 從主視圖中選擇 *Manage* ，然後選擇 menu:Upgrade Center[Pre-Upgrade Health Check] 。
++
+升級前健康檢查對話方塊開啟，並列出所有已發現的儲存系統。
+
+. 如有需要，可對清單中的儲存系統進行篩選或排序，以便查看所有目前未處於 Optimal 狀態的系統。
+. 選取要執行健全狀況檢查的儲存系統核取方塊。
+. 按一下 *Start* 。
++
+執行健康檢查時，進度會顯示在對話方塊中。
+
+. 健康檢查完成後，您可以點擊每行右側的省略號 (...) 查看更多資訊並執行其他任務。
++
+[NOTE]
+====
+如果任何陣列未能通過健全狀況檢查，您可以跳過該特定陣列並繼續升級其他陣列，或者您可以停止整個程序並對未通過檢查的陣列進行疑難排解。
+
+====
+

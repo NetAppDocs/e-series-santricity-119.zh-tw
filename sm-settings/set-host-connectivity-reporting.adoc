@@ -1,0 +1,38 @@
+---
+permalink: sm-settings/set-host-connectivity-reporting.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, set, host, connectivity, reporting, 
+summary: 您可以啟用主機連線報告功能，以便儲存陣列持續監控控制器與已設定主機之間的連線，並在連線中斷時發出警示。此功能預設為啟用。 
+---
+= 在 SANtricity System Manager 中設定主機連線報告
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以啟用主機連線報告功能，以便儲存陣列持續監控控制器與已設定主機之間的連線，並在連線中斷時發出警示。此功能預設為啟用。
+
+.關於此任務
+如果停用主機連線報告，系統將不再監控與儲存陣列連接的主機的連線或多路徑驅動程式問題。
+
+[NOTE]
+====
+停用主機連線報告也會停用自動負載平衡，自動負載平衡用於監控和平衡控制器資源使用率。
+
+====
+.步驟
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *Additional Settings* ，然後按一下 *Enable/Disable Host Connectivity Reporting* 。
++
+此選項下方的文字指示其目前是啟用還是停用。
+
++
+確認對話框隨即開啟。
+
+. 按一下 *Yes* 繼續。
++
+選取此選項，即可在啟用 / 停用之間切換功能。
+
+

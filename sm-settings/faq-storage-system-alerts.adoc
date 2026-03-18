@@ -1,0 +1,39 @@
+---
+permalink: sm-settings/faq-storage-system-alerts.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。 
+---
+= SANtricity System Manager 的儲存系統警示常見問題集
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您只是想快速找到某個問題的答案，此常見問題解答可能會有所幫助。
+
+
+
+== 如果警示功能被停用會怎樣？
+
+如果您希望管理員收到有關儲存陣列中發生的重要事件的通知、則必須設定警示方法。
+
+對於使用 SANtricity System Manager 管理的儲存陣列，您可以在「警報」頁面設定警報。警報通知可以透過電子郵件、SNMP 陷阱或 syslog 訊息傳送。此外，還可以透過初始設定精靈設定電子郵件警報。
+
+
+
+== 如何設定 SNMP 或 syslog 告警？
+
+除了電子郵件警示外、您還可以設定透過簡易網路管理傳輸協定（Simple Network Management Protocol、SNMP）設陷或 syslog 訊息來傳送警示。
+
+若要設定 SNMP 或 syslog 警示，請前往功能表：設定 [警示]。
+
+
+
+== 為什麼陣列和警示之間的時間戳記不一致？
+
+當儲存陣列傳送警示時，不會針對接收警示的目標伺服器或主機時區進行校正。儲存陣列會使用本地時間（GMT）來建立用於警示記錄的時間戳記。因此，您可能會看到儲存陣列與接收警示的伺服器或主機之間的時間戳記不一致。
+
+由於儲存陣列在傳送警示時不會校正時區、因此警示上的時間戳記是相對於 GMT 的、其時區偏移為零。若要計算適合您本地時區的時間戳記、您應該先確定您所在時區與 GMT 的小時偏移量、然後將該值加到時間戳記或從時間戳記中減去該值。

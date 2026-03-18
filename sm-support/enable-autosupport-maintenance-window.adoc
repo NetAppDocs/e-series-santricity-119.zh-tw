@@ -1,0 +1,35 @@
+---
+permalink: sm-support/enable-autosupport-maintenance-window.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, autosupport, ASUP, maintenance window 
+summary: 啟用 AutoSupport 維護視窗可禁止在發生錯誤事件時自動建立工單。在正常運作模式下，如果發生問題，儲存陣列會使用 AutoSupport 向技術支援提交工單。 
+---
+= 在 SANtricity System Manager 中啟用 AutoSupport 維護視窗
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用 AutoSupport 維護視窗可禁止在發生錯誤事件時自動建立工單。在正常運作模式下，如果發生問題，儲存陣列會使用 AutoSupport 向技術支援提交工單。
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Enable AutoSupport Maintenance window* 。
+. 輸入電子郵件地址，以接收維護時段要求已處理的確認。
++
+根據您的配置，您最多可以輸入五個電子郵件地址。如果您想要新增多個位址，請選取 *Add another email* 以開啟另一個欄位。
+
+. 指定啟用維護視窗的持續時間 （以小時為單位）。
++
+最長支援時長為 72 小時。
+
+. 點選 *Yes* 。
++
+在指定的時間段內，AutoSupport 錯誤事件自動建立票證功能將暫時停用。
+
+
+
+.完成後
+維護視窗只有在 AutoSupport 伺服器處理完儲存陣列的維護請求後才會開始。在對儲存陣列執行任何維護作業之前，請等待收到確認郵件。

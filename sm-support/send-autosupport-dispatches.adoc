@@ -1,0 +1,30 @@
+---
+permalink: sm-support/send-autosupport-dispatches.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, send, autosupport, dispatches 
+summary: 系統管理員可讓您向技術支援發送 AutoSupport 調度請求，而無需等待預定的調度。 
+---
+= 在 SANtricity System Manager 中傳送 AutoSupport 調度
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SANtricity System Manager 可讓您將 AutoSupport 調度傳送給技術支援，而無需等待排程的調度。
+
+.開始之前
+AutoSupport 功能必須啟用。您可以在 AutoSupport 頁面上查看其是否已啟用。
+
+.關於此任務
+此作業會收集支援資料並自動傳送給技術支援人員，以便進行疑難排解。
+
+.步驟
+. 選擇功能表：Support[Support Center > AutoSupport] 索引標籤。
+. 選擇 *Send AutoSupport Dispatch* 。
++
+Send AutoSupport Dispatch 對話方塊隨即出現。
+
+. 選擇 *Send* 以確認操作。
+

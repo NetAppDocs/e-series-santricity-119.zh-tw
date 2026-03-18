@@ -1,0 +1,31 @@
+---
+permalink: sm-settings/delete-trap-destinations.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, delete, trap, destinations, 
+summary: 您可以刪除陷阱目標位址，以便儲存陣列的事件監視器不再向該位址傳送 SNMP 陷阱。 
+---
+= 在 SANtricity System Manager 中刪除設陷目的地
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除陷阱目標位址，以便儲存陣列的事件監視器不再向該位址傳送 SNMP 陷阱。
+
+.步驟
+. 選擇選單：Settings [ Alerts ]。
+. 選擇 *SNMP* 選項卡。
++
+陷阱目的地位址會顯示在表格中。
+
+. 選擇陷阱目標位置，然後按一下頁面右上角的 *Delete* 。
+. 確認操作，然後按一下 *Delete* 。
++
+目的地位址不再顯示在 Alerts 頁面上。
+
+
+
+.結果
+已刪除的陷阱目標不再接收來自儲存陣列事件監視器的 SNMP 陷阱。

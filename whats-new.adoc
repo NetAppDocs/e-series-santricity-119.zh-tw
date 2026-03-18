@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: whats new, new features, SANtricity 11.90 
+summary: SANtricity 作業系統的新功能。 
+---
+= SANtricity OS 11.90 的新特性
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+下表描述了 SANtricity System Manager 11.9 中的新功能。
+
+
+
+== Version 11.90R5 版本新增功能
+
+此版本僅包含缺陷修復，不包含任何新功能。如需此版本變更的詳細資訊，請參閱 E-Series SANtricity OS 11.90R5 README。
+
+
+
+== Version 11.90R4 版本新增功能
+
+此版本僅包含少量變更，沒有新功能。如需此版本變更的詳細資訊，請參閱 E-Series SANtricity OS 11.90R4 README。
+
+
+
+== Version 11.90R3 版本新增功能
+
+[cols="35h,~"]
+|===
+| 新功能 | 說明 
+
+
+ a| 
+SANtricity OS 支援 IOM12C 和 DCM3
+ a| 
+控制器韌體版本 11.90R3 及更高版本現已支援 IOM12C 和 DCM3 SAS-3 機架。IOM12C 和 DCM3 機架是 IOM12B 和 DCM2 機架的替代產品。
+
+|===
+
+
+== Version 11.90R2 版本新增功能
+
+此版本僅包含少量變更，沒有新功能。如需此版本變更的詳細資訊，請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP3334464["E 系列 11.90 版本說明"^]。
+
+
+
+== Version 11.90R1 版本新增功能
+
+[cols="35h,~"]
+|===
+| 新功能 | 說明 
+
+
+ a| 
+新型儲存系統型號 – EF300C 和 EF600C
+ a| 
+本次發布推出了 EF300C 和 EF600C 全快閃 NVMe 儲存系統。EF300C 和 EF600C 是現有 EF300 和 EF600 儲存系統的高容量快閃記憶體版本。EF300C 和 EF600C 支援 30TB 或 60TB 的大容量 NVMe SSD 固態硬碟。EF300C/EF600C 僅相容於動態磁碟池，不支援傳統 RAID。
+
+
+
+ a| 
+EF4000 支援 12Gb SAS 介面
+ a| 
+E4000 控制器現在支援 12Gb SAS 主機介面卡。
+
+|===
+
+
+== 11.90 版的新功能
+
+[cols="35h,~"]
+|===
+| 新功能 | 說明 
+
+
+ a| 
+新型儲存系統型號 – E4000
+ a| 
+此版本推出了 E4000 低成本儲存系統。E4000 支援 12 個或 60 個硬碟，每個控制器配備一張主機介面卡（HIC）。初始版本支援的主機介面卡包括 iSCSI 和光纖通道。E4000 儲存系統和其他 E 系列儲存系統均可在 Unified Manager 中檢視和管理。
+
+
+
+ a| 
+動態磁碟集區容量增加
+ a| 
+當資源池中每個獨立磁碟機的容量大於 23 TB 時，Dynamic Disk Pools （DDP） 的容量已增加到 12 PB。如果個別磁碟機容量小於 23 TB，則 DDP 容量為 6 PB。
+
+
+
+ a| 
+預設媒體掃描設定已增加
+ a| 
+預設媒體掃描速率已增加至 120 天。
+
+
+
+ a| 
+現在接受用於外部金鑰管理的私密金鑰
+ a| 
+現在可以透過 System Manager 匯入透過私鑰和公鑰對在外部產生的憑證簽署請求（CSR）檔案。
+
+
+
+ a| 
+Web Services 現已提供登入鎖定功能
+ a| 
+現在，嵌入式和代理 Web Services 新增了僅可透過 REST API 進行設定的登入鎖定設定。
+
+|===

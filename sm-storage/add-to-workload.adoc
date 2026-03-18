@@ -1,0 +1,46 @@
+---
+permalink: sm-storage/add-to-workload.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, add workload, volume 
+summary: 您可以為現有或新的工作負載新增一個或多個磁碟區，這些磁碟區目前尚未與任何工作負載關聯。 
+---
+= 在 SANtricity System Manager 中為工作負載新增磁碟區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為現有或新的工作負載新增一個或多個磁碟區，這些磁碟區目前尚未與任何工作負載關聯。
+
+.關於此任務
+如果磁碟區是使用命令列介面（CLI）建立的，或是從不同的儲存陣列遷移（匯入/匯出）的，則這些磁碟區與工作負載無關。
+
+.步驟
+. 選擇選單：Storage [ Volumes ]。
+. 選擇 *Applications & Workloads* 標籤。
++
+顯示 Applications & Workloads 視圖。
+
+. 選擇 *Add to Workload* 。
++
+此時將顯示「選擇工作負載」對話方塊。
+
+. 執行下列其中一項動作：
++
+** *為現有工作負載新增磁碟區* -- 選取此選項可將磁碟區新增至現有工作負載。
++
+使用下拉式清單選擇工作負載。與工作負載相關聯的應用程式類型會指派給您新增至此工作負載的磁碟區。
+
+** *為新工作負載新增磁碟區* -- 選擇此選項可為應用程式類型定義新工作負載，並將磁碟區新增至新工作負載。
+
+
+. 選擇 *Next* 繼續執行新增到工作負載的操作。
++
+Select Volumes 對話方塊隨即出現。
+
+. 選擇要新增至工作負載的磁碟區。
+. 檢閱要新增至所選工作負載的磁碟區。
+. 當您對工作負載組態滿意後，請按一下 *Finish* 。
+

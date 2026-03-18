@@ -1,0 +1,38 @@
+---
+permalink: sm-support/retrieve-health-image.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, retrieve, health, image 
+summary: 您可以查看控制器的健全狀況映像。健全狀況映像是控制器處理器記憶體的原始資料傾印，技術支援人員可以使用它來診斷控制器問題。 
+---
+= 在 SANtricity System Manager 中擷取健全狀況映像
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以查看控制器的健全狀況映像。健全狀況映像是控制器處理器記憶體的原始資料傾印，技術支援人員可以使用它來診斷控制器問題。
+
+.關於此任務
+韌體在偵測到特定錯誤時會自動產生健全狀況映像。產生健全狀況映像後，發生錯誤的控制器會重新開機，並在事件記錄中記錄事件。
+
+如果您已啟用 AutoSupport，系統會自動將健康影像傳送給技術支援。如果您尚未啟用 AutoSupport，則需要聯絡技術支援，以取得有關如何擷取健康影像並將其傳送給他們進行分析的說明。
+
+[NOTE]
+====
+僅在技術支援人員指示時才執行此操作。
+
+====
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *Retrieve Health Image* 。
++
+您可以在下載檔案之前查看詳細資訊部分，以了解健全狀況映像的大小。
+
+. 點擊 *Collect* 。
++
+該檔案以名稱  `health-image.7z` 儲存在瀏覽器的 Downloads 資料夾中。
+
+. 請按照技術支援人員提供的說明將檔案傳送給他們。
+

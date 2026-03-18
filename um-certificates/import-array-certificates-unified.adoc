@@ -1,0 +1,36 @@
+---
+permalink: um-certificates/import-array-certificates-unified.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, import, certificates, arrays 
+summary: 如有必要，您可以為儲存陣列匯入憑證，以便它們能夠向託管 SANtricity Unified Manager 的系統進行驗證。憑證可以由憑證授權單位（CA）簽名，也可以是自簽名憑證。 
+---
+= 在 SANtricity Unified Manager 中匯入陣列憑證
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如有必要，您可以為儲存陣列匯入憑證，以便它們能夠向託管 SANtricity Unified Manager 的系統進行驗證。憑證可以由憑證授權單位（CA）簽名，也可以是自簽名憑證。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則、憑證功能將不會顯示。
+* 如果要匯入受信任的憑證，則必須使用 System Manager 將憑證匯入儲存陣列控制器。
+
+
+.步驟
+. 選擇 *Certificate Management* 。
+. 選擇 *Trusted* 選項卡。
++
+此頁面顯示儲存陣列報告的所有憑證。
+
+. 選擇選單：匯入 [憑證] 以匯入 CA 憑證，或選擇選單：匯入 [自我簽署的儲存陣列憑證] 以匯入自我簽署的憑證。
++
+若要限制檢視，您可以使用 *Show certificates that are...* 篩選欄位，或者您可以透過按一下其中一個欄標題來對憑證列進行排序。
+
+. 在對話方塊中、選取憑證、然後按一下 *匯入* 。
++
+憑證已上傳並驗證。
+
+

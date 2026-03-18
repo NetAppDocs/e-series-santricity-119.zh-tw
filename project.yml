@@ -1,0 +1,1112 @@
+---
+settings:
+  name: SANtricity software
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  versions:
+  - version-number: '11.9'
+    url: "/e-series-santricity-119"
+  - version-number: '12.0'
+    url: "/e-series-santricity"
+  - version-number: '11.8'
+    url: "/e-series-santricity-118"
+  langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
+sidebar:
+  entries:
+  - title: SANtricity 軟體 11.9 文件
+    url: "/index.html"
+  - title: 版本資訊
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+    - title: 版本資訊
+      url: "/known-issues.html"
+  - title: 開始使用
+    entries:
+    - title: 概況
+      url: "/san-getstarted/santricity-overview.html"
+    - title: 支援的瀏覽器和作業系統
+      url: "/san-getstarted/supported-browsers-os.html"
+    - title: SANtricity System Manager 設定
+      entries:
+      - title: 存取 SANtricity System Manager
+        url: "/san-getstarted/access-sam.html"
+      - title: 設定精靈概述
+        url: "/sm-interface/setup-wizard-overview.html"
+      - title: 儲存系統設定常見問題解答
+        url: "/sm-interface/faq-storage-system-setup.html"
+    - title: SANtricity Unified Manager 設定
+      entries:
+      - title: 安裝 SANtricity Unified Manager
+        url: "/san-getstarted/install-um.html"
+      - title: 存取 SANtricity Unified Manager
+        url: "/san-getstarted/login-um.html"
+  - title: SANtricity System Manager
+    url: "/system-manager/index.html"
+    entries:
+    - title: 主介面
+      entries:
+      - title: SANtricity System Manager 介面概述
+        url: "/sm-interface/overview-interface-sam.html"
+      - title: 檢視效能資料
+        entries:
+        - title: 概況
+          url: "/sm-storage/overview-performance.html"
+        - title: 效能圖表和指南
+          url: "/sm-storage/performance-graphs-guidelines.html"
+        - title: 效能術語
+          url: "/sm-storage/performance-terminology.html"
+        - title: 檢視圖形化效能資料
+          url: "/sm-storage/view-performance-data-graphical.html"
+        - title: 檢視並儲存表格效能資料
+          url: "/sm-storage/view-and-save-performance-data-tabular.html"
+        - title: 解讀效能資料
+          url: "/sm-storage/interpret-performance-data.html"
+      - title: 檢視儲存階層
+        url: "/sm-interface/view-storage-hierarchy.html"
+      - title: 管理介面設定
+        entries:
+        - title: 管理密碼保護
+          url: "/sm-interface/administrator-password-protection.html"
+        - title: 設定預設容量值
+          url: "/sm-interface/set-default-units-for-capacity-values.html"
+        - title: 設定效能圖表的預設值
+          url: "/sm-interface/set-default-time-frame-for-performance-graphs.html"
+        - title: 設定登入橫幅
+          url: "/sm-settings/configure-login-banner.html"
+        - title: 管理工作階段逾時
+          url: "/sm-settings/manage-session-timeouts-sam.html"
+      - title: 管理通知
+        entries:
+        - title: 問題通知概述
+          url: "/sm-interface/problem-notification.html"
+        - title: 檢視並處理進行中的作業
+          url: "/sm-interface/view-and-act-on-operations-in-progress.html"
+        - title: 使用 Recovery Guru 從問題中恢復
+          url: "/sm-interface/recover-from-problems-using-recovery-guru.html"
+      - title: 管理介面常見問題
+        url: "/sm-interface/faq-management-interface.html"
+    - title: 資源池和磁碟區群組
+      entries:
+      - title: 概況
+        url: "/sm-storage/overview-pools-volume-groups.html"
+      - title: 概念
+        entries:
+        - title: 資源池和磁碟區群組的運作方式
+          url: "/sm-storage/how-pools-and-volume-groups-work.html"
+        - title: 條款
+          url: "/sm-storage/capacity-terminology.html"
+        - title: 選擇資源池或磁碟區群組
+          url: "/sm-storage/decide-to-use-a-pool-or-volume-group.html"
+        - title: 自動建立池與手動建立池
+          url: "/sm-storage/automatic-versus-manual-pool-creation.html"
+      - title: 設定儲存設備
+        entries:
+        - title: 自動建立集區
+          url: "/sm-storage/create-pool-automatically.html"
+        - title: 手動建立資源池
+          url: "/sm-storage/create-pool-manually.html"
+        - title: 建立磁碟區群組
+          url: "/sm-storage/create-volume-group.html"
+        - title: 將容量新增至資源池或磁碟區群組
+          url: "/sm-storage/add-capacity-to-a-pool-or-volume-group.html"
+      - title: 管理儲存設備
+        entries:
+        - title: 檢查磁碟區備援
+          url: "/sm-storage/check-volume-redundancy.html"
+        - title: 刪除資源池或磁碟區群組
+          url: "/sm-storage/delete-pool-or-volume-group.html"
+        - title: 整合磁碟區群組的可用容量
+          url: "/sm-storage/consolidate-volume-group-free-capacity.html"
+        - title: 匯出 / 匯入磁碟區群組
+          url: "/sm-storage/export-import-volume-groups.html"
+        - title: 找到用於儲存的磁碟機
+          url: "/sm-storage/turn-on-locator-lights-in-a-pool-volume-group-or-ssd-cache.html"
+        - title: 移除容量
+          url: "/sm-storage/remove-capacity-from-a-pool-or-ssd-cache.html"
+      - title: 修改資源池和群組設定
+        entries:
+        - title: 變更資源池的組態設定
+          url: "/sm-storage/change-configuration-settings-for-a-pool.html"
+        - title: 變更磁碟區群組的組態設定
+          url: "/sm-storage/change-configuration-settings-for-a-volume-group.html"
+        - title: 啟用或停用資源配置 （現有磁碟區）
+          url: "/sm-storage/disable-resource-provisioning-on-existing-volumes.html"
+        - title: 啟用或停用資源配置 （新磁碟區）
+          url: "/sm-settings/enable-or-disable-resource-provisioning-for-new-volumes.html"
+        - title: 啟用安全功能
+          url: "/sm-storage/enable-security.html"
+      - title: 管理 SSD 快取
+        entries:
+        - title: SSD 快取的工作原理
+          url: "/sm-storage/how-ssd-cache-works.html"
+        - title: SSD 快取限制
+          url: "/sm-storage/ssd-cache-restrictions.html"
+        - title: 建立 SSD 快取
+          url: "/sm-storage/create-ssd-cache.html"
+        - title: 變更 SSD 快取設定
+          url: "/sm-storage/change-ssd-cache-settings.html"
+        - title: 檢視 SSD 快取統計資料
+          url: "/sm-storage/view-ssd-cache-statistics.html"
+      - title: 管理保留容量
+        entries:
+        - title: 預留容量的運作方式
+          url: "/sm-storage/how-reserved-capacity-works.html"
+        - title: 增加容量
+          url: "/sm-storage/increase-reserved-capacity.html"
+        - title: 降低容量
+          url: "/sm-storage/decrease-reserved-capacity.html"
+        - title: 變更快照群組的容量
+          url: "/sm-storage/change-the-reserved-capacity-settings-for-a-snapshot-group.html"
+        - title: 變更 Snapshot 磁碟區的容量
+          url: "/sm-storage/change-the-reserved-capacity-settings-for-a-snapshot-volume.html"
+        - title: 變更容量一致性群組成員磁碟區
+          url: "/sm-storage/change-the-reserved-capacity-settings-for-a-consistency-group-member-volume.html"
+        - title: 變更鏡射配對磁碟區的容量設定
+          url: "/sm-storage/change-the-reserved-capacity-settings-for-a-mirrored-pair-volume.html"
+        - title: 取消待處理的 Snapshot 映像
+          url: "/sm-storage/cancel-pending-snapshot-image.html"
+        - title: 刪除 Snapshot 群組
+          url: "/sm-storage/delete-snapshot-group.html"
+      - title: 資源池和磁碟區群組常見問題集
+        url: "/sm-storage/faq-pools-volume-groups.html"
+    - title: 磁碟區和工作負載
+      entries:
+      - title: 概況
+        url: "/sm-storage/overview-volumes.html"
+      - title: 概念
+        entries:
+        - title: 磁碟區的運作方式
+          url: "/sm-storage/how-volumes-work.html"
+        - title: 工作負載如何運作
+          url: "/sm-storage/how-workloads-work.html"
+        - title: 條款
+          url: "/sm-storage/volume-terminology.html"
+        - title: 建立磁碟區的工作流程
+          url: "/sm-storage/workflow-for-creating-volumes.html"
+        - title: 資料完整性和資料安全性
+          url: "/sm-storage/data-integrity-and-data-security-for-volumes.html"
+        - title: SSD 快取和磁碟區
+          url: "/sm-storage/ssd-cache-and-volumes.html"
+        - title: 您可以對磁碟區執行的動作
+          url: "/sm-storage/actions-you-can-perform-on-volumes.html"
+        - title: 磁碟區容量
+          url: "/sm-storage/capacity-for-volumes.html"
+        - title: 精簡磁碟區監控
+          url: "/sm-storage/thin-volume-monitoring.html"
+        - title: 厚磁碟區與精簡磁碟區
+          url: "/sm-storage/comparison-between-thick-volumes-and-thin-volumes.html"
+      - title: 設定儲存設備
+        entries:
+        - title: 建立工作負載
+          url: "/sm-storage/create-workloads.html"
+        - title: 建立磁碟區
+          url: "/sm-storage/create-volumes.html"
+        - title: 新增至工作負載
+          url: "/sm-storage/add-to-workload.html"
+      - title: 管理磁碟區
+        entries:
+        - title: 增加容量
+          url: "/sm-storage/increase-capacity-of-a-volume.html"
+        - title: 初始化磁碟區
+          url: "/sm-storage/initialize-volumes.html"
+        - title: 重新分配磁碟區
+          url: "/sm-storage/redistribute-volumes.html"
+        - title: 變更控制器所有權
+          url: "/sm-storage/change-controller-ownership-of-a-volume.html"
+        - title: 刪除磁碟區
+          url: "/sm-storage/delete-volume.html"
+        - title: 變更精簡磁碟區的已分配容量
+          url: "/sm-storage/change-allocated-capacity-limit-for-a-thin-volume.html"
+      - title: 管理設定
+        entries:
+        - title: 變更音量設定
+          url: "/sm-storage/change-settings-for-a-volume.html"
+        - title: 變更工作負載設定
+          url: "/sm-storage/change-workload-settings.html"
+        - title: 更改快取設定
+          url: "/sm-storage/change-cache-settings.html"
+        - title: 變更媒體掃描設定
+          url: "/sm-storage/change-media-scan-settings.html"
+      - title: 使用複製服務
+        entries:
+        - title: 複製磁碟區功能
+          url: "/sm-storage/copy-volume-function.html"
+        - title: 操作類型
+          url: "/sm-storage/types-of-copy-volume-operations.html"
+        - title: 複製磁碟區
+          url: "/sm-storage/copy-volume.html"
+        - title: 管理營運
+          url: "/sm-storage/take-action-on-a-copy-volume-operation.html"
+      - title: 磁碟區和工作負載常見問題解答
+        url: "/sm-storage/faq-volumes-workloads.html"
+    - title: 主機和主機叢集
+      entries:
+      - title: 概況
+        url: "/sm-storage/overview-hosts.html"
+      - title: 概念
+        entries:
+        - title: 條款
+          url: "/sm-storage/host-terminology.html"
+        - title: 主機建立和磁碟區指派的工作流程
+          url: "/sm-storage/workflow-for-creating-hosts-and-assigning-volumes.html"
+        - title: 手動建立主機
+          url: "/sm-storage/manual-host-creation.html"
+        - title: 如何指派磁碟區
+          url: "/sm-storage/how-volumes-are-assigned-to-hosts-and-host-clusters.html"
+        - title: 存取磁碟區
+          url: "/sm-storage/access-volumes.html"
+        - title: LUN 的最大數量
+          url: "/sm-storage/maximum-number-of-luns.html"
+        - title: 預設主機作業系統類型
+          url: "/sm-settings/default-host-operating-system-type.html"
+      - title: 設定主機存取
+        entries:
+        - title: 手動建立主機
+          url: "/sm-storage/create-host-manually.html"
+        - title: 建立主機叢集
+          url: "/sm-storage/create-host-cluster.html"
+        - title: 將磁碟區指派給主機
+          url: "/sm-storage/assign-volumes.html"
+      - title: 管理主機和叢集
+        entries:
+        - title: 更改預設主機類型
+          url: "/sm-settings/change-default-host-type.html"
+        - title: 取消指派磁碟區
+          url: "/sm-storage/unassign-volumes.html"
+        - title: 刪除主機或主機叢集
+          url: "/sm-storage/delete-host-or-host-cluster.html"
+        - title: 設定主機連線報告
+          url: "/sm-settings/set-host-connectivity-reporting.html"
+      - title: 管理設定
+        entries:
+        - title: 變更主機設定
+          url: "/sm-storage/change-the-settings-for-a-host.html"
+        - title: 變更主機叢集的設定
+          url: "/sm-storage/change-the-settings-for-a-host-cluster.html"
+        - title: 變更主機的主機連接埠識別碼
+          url: "/sm-storage/change-host-port-identifiers-for-a-host.html"
+      - title: 主機系統和主機叢集常見問題
+        url: "/sm-storage/faq-systems-clusters.html"
+    - title: 快照
+      entries:
+      - title: 概況
+        url: "/sm-storage/overview-snapshots.html"
+      - title: 概念
+        entries:
+        - title: 快照儲存的運作方式
+          url: "/sm-storage/how-snapshot-storage-works.html"
+        - title: 條款
+          url: "/sm-storage/snapshot-terminology.html"
+        - title: 建立快照映像和磁碟區的工作流程
+          url: "/sm-storage/workflow-for-creating-snapshot-images-and-snapshot-volumes.html"
+        - title: 需求
+          url: "/sm-storage/requirements-and-guidelines-for-snapshots.html"
+        - title: 基礎磁碟區、保留容量和快照群組
+          url: "/sm-storage/base-volumes-reserved-capacity-and-snapshot-groups.html"
+        - title: 快照排程和快照一致性群組
+          url: "/sm-storage/snapshot-schedules-and-snapshot-consistency-groups.html"
+        - title: 快照磁碟區
+          url: "/sm-storage/snapshot-volumes.html"
+        - title: 快照復原
+          url: "/sm-storage/snapshot-rollback.html"
+      - title: 建立快照和快照物件
+        entries:
+        - title: 建立快照映像
+          url: "/sm-storage/create-snapshot-image.html"
+        - title: 排程快照映像
+          url: "/sm-storage/schedule-snapshot-images.html"
+        - title: 建立 Snapshot 一致性群組
+          url: "/sm-storage/create-snapshot-consistency-group.html"
+        - title: 建立快照磁碟區
+          url: "/sm-storage/create-snapshot-volume.html"
+      - title: 管理快照排程
+        entries:
+        - title: 更改設定
+          url: "/sm-storage/change-the-settings-for-a-snapshot-schedule.html"
+        - title: 啟用和暫停
+          url: "/sm-storage/activate-or-suspend-snapshot-schedule.html"
+        - title: 刪除快照排程
+          url: "/sm-storage/delete-snapshot-schedule.html"
+      - title: 管理快照映像
+        entries:
+        - title: 檢視快照映像設定
+          url: "/sm-storage/view-snapshot-image-settings.html"
+        - title: 開始對基礎磁碟區進行 Snapshot 映像回滾
+          url: "/sm-storage/start-snapshot-image-rollback-for-base-volume.html"
+        - title: 開始快照一致性群組成員磁碟區的快照映像復原
+          url: "/sm-storage/start-snapshot-image-rollback-for-consistency-group-member-volumes.html"
+        - title: 繼續快照映像復原
+          url: "/sm-storage/resume-snapshot-image-rollback.html"
+        - title: 取消快照映像復原
+          url: "/sm-storage/cancel-snapshot-image-rollback.html"
+        - title: 刪除快照影像
+          url: "/sm-storage/delete-snapshot-image.html"
+      - title: 管理快照一致性群組
+        entries:
+        - title: 新增成員磁碟區
+          url: "/sm-storage/add-member-volumes-to-a-snapshot-consistency-group.html"
+        - title: 移除成員磁碟區
+          url: "/sm-storage/remove-member-volumes-from-a-consistency-group.html"
+        - title: 更改設定
+          url: "/sm-storage/change-the-settings-for-a-snapshot-consistency-group.html"
+        - title: 刪除 Snapshot 一致性群組
+          url: "/sm-storage/delete-snapshot-consistency-group.html"
+      - title: 管理快照磁碟區
+        entries:
+        - title: 將快照磁碟區轉換為讀寫模式
+          url: "/sm-storage/convert-a-snapshot-volume-to-read-write-mode.html"
+        - title: 變更快照磁碟區的磁碟區設定
+          url: "/sm-storage/change-the-settings-for-a-snapshot-volume.html"
+        - title: 複製快照磁碟區
+          url: "/sm-storage/copy-snapshot-volume.html"
+        - title: 重新建立快照磁碟區
+          url: "/sm-storage/re-create-snapshot-volume.html"
+        - title: 停用快照磁碟區
+          url: "/sm-storage/disable-snapshot-volume.html"
+        - title: 刪除快照磁碟區
+          url: "/sm-storage/delete-snapshot-volume.html"
+      - title: 快照常見問題解答
+        url: "/sm-storage/faq-snapshots.html"
+    - title: 鏡像
+      entries:
+      - title: 概況
+        entries:
+        - title: 非同步鏡像
+          url: "/sm-mirroring/overview-mirroring-async.html"
+        - title: 同步鏡射
+          url: "/sm-mirroring/overview-mirroring-sync.html"
+      - title: 非同步概念
+        entries:
+        - title: 非同步鏡像的運作方式
+          url: "/sm-mirroring/how-asynchronous-mirroring-works.html"
+        - title: 條款
+          url: "/sm-mirroring/asynchronous-terminology.html"
+        - title: 工作流程
+          url: "/sm-mirroring/workflow-for-mirroring-a-volume-asynchronously.html"
+        - title: 需求
+          url: "/sm-mirroring/requirements-for-using-asynchronous-mirroring.html"
+        - title: 非同步鏡像狀態
+          url: "/sm-mirroring/asynchronous-mirror-status.html"
+        - title: 磁碟區所有權
+          url: "/sm-mirroring/volume-ownership-async.html"
+        - title: 鏡像一致性群組的角色變更
+          url: "/sm-mirroring/role-change-of-a-mirror-consistency-group.html"
+      - title: 同步概念
+        entries:
+        - title: 同步鏡像的運作方式
+          url: "/sm-mirroring/how-synchronous-mirroring-works.html"
+        - title: 條款
+          url: "/sm-mirroring/synchronous-mirroring-terminology.html"
+        - title: 工作流程
+          url: "/sm-mirroring/workflow-for-mirroring-a-volume-synchronously.html"
+        - title: 需求
+          url: "/sm-mirroring/requirements-for-using-synchronous-mirroring.html"
+        - title: 同步鏡射狀態
+          url: "/sm-mirroring/synchronous-mirroring-status.html"
+        - title: 磁碟區所有權
+          url: "/sm-mirroring/volume-ownership-sync.html"
+        - title: 鏡像配對中磁碟區之間的角色變更
+          url: "/sm-mirroring/role-change-of-volumes-in-a-mirrored-pair.html"
+      - title: 管理非同步鏡像一致性群組
+        entries:
+        - title: 測試通訊
+          url: "/sm-mirroring/test-communication-for-mirror-consistency-groups.html"
+        - title: 暫停或恢復同步
+          url: "/sm-mirroring/suspend-or-resume-mirror-consistency-group.html"
+        - title: 變更同步設定
+          url: "/sm-mirroring/change-synchronization-settings-for-a-mirror-consistency-group.html"
+        - title: 重新同步鏡像一致性群組
+          url: "/sm-mirroring/re-synchronize-mirror-consistency-group-manually.html"
+        - title: 檢視未同步資料量
+          url: "/sm-mirroring/view-unsynchronized-data-amount-between-mirror-consistency-groups.html"
+        - title: 更新遠端 IP 位址
+          url: "/sm-mirroring/update-remote-ip-address.html"
+        - title: 變更鏡像一致性群組角色
+          url: "/sm-mirroring/change-mirror-consistency-group-role-to-primary-or-secondary.html"
+        - title: 刪除鏡像一致性群組
+          url: "/sm-mirroring/delete-mirror-consistency-group.html"
+      - title: 管理非同步鏡像配對
+        entries:
+        - title: 移除非同步鏡像關係
+          url: "/sm-mirroring/remove-mirrored-pair.html"
+        - title: 增加預留容量
+          url: "/sm-mirroring/increase-reserved-capacity.html"
+        - title: 變更鏡像配對磁碟區的保留容量
+          url: "/sm-mirroring/change-the-reserved-capacity-settings-for-a-mirrored-pair-volume.html"
+        - title: 在舊系統上建立的主磁碟區完整鏡像配對
+          url: "/sm-mirroring/complete-mirrored-pair-for-primary-volumes-created-on-legacy-system.html"
+      - title: 管理同步鏡像配對
+        entries:
+        - title: 測試通訊
+          url: "/sm-mirroring/test-communication-for-synchronous-mirroring.html"
+        - title: 暫停和恢復同步
+          url: "/sm-mirroring/suspend-and-resume-synchronization-for-a-mirrored-pair.html"
+        - title: 變更磁碟區之間的角色
+          url: "/sm-mirroring/change-role-between-volumes-in-a-mirrored-pair.html"
+        - title: 變更同步設定
+          url: "/sm-mirroring/change-synchronization-settings-for-a-mirrored-pair.html"
+        - title: 移除鏡像關係
+          url: "/sm-mirroring/remove-synchronous-mirror-relationship.html"
+      - title: 停用鏡像
+        entries:
+        - title: 停用非同步鏡像
+          url: "/sm-mirroring/deactivate-asynchronous-mirroring.html"
+        - title: 停用同步鏡像
+          url: "/sm-mirroring/deactivate-synchronous-mirroring.html"
+      - title: 非同步鏡像常見問題解答
+        url: "/sm-mirroring/faq-async-mirroring.html"
+      - title: 同步鏡像常見問題集
+        url: "/sm-mirroring/faq-sync-mirroring.html"
+    - title: 遠端儲存設備
+      entries:
+      - title: 概況
+        url: "/sm-storage/overview-remote-storage.html"
+      - title: 概念
+        entries:
+        - title: 遠端儲存的運作方式
+          url: "/sm-storage/rtv-how-remote-storage-works.html"
+        - title: 條款
+          url: "/sm-storage/rtv-terminology.html"
+        - title: 功能需求
+          url: "/sm-storage/rtv-remote-storage-requirements.html"
+        - title: 容量需求
+          url: "/sm-storage/rtv-remote-storage-volume-requirements.html"
+      - title: 管理遠端儲存
+        entries:
+        - title: 匯入遠端儲存設備
+          url: "/sm-storage/rtv-import-remote-storage.html"
+        - title: 管理遠端儲存匯入進度
+          url: "/sm-storage/rtv-manage-progress-of-remote-volume-import.html"
+        - title: 修改遠端儲存的連線設定
+          url: "/sm-storage/rtv-modify-connection-settings-for-remote-storage.html"
+        - title: 刪除遠端儲存物件
+          url: "/sm-storage/rtv-remove-remote-storage.html"
+      - title: 遠端儲存常見問題解答
+        url: "/sm-storage/faq-remote-storage.html"
+    - title: 硬體元件
+      entries:
+      - title: 概況
+        url: "/sm-hardware/overview-hardware.html"
+      - title: 概念
+        entries:
+        - title: 硬體頁面
+          url: "/sm-hardware/hardware-page-overview.html"
+        - title: 條款
+          url: "/sm-hardware/hardware-terminology.html"
+      - title: 管理機櫃元件
+        entries:
+        - title: 檢視硬體元件
+          url: "/sm-hardware/view-hardware-components.html"
+        - title: 顯示或隱藏元件狀態
+          url: "/sm-hardware/show-or-hide-component-status.html"
+        - title: 在前視圖和後視圖之間切換
+          url: "/sm-hardware/switch-between-front-and-back-views.html"
+        - title: 變更貨架的檢視順序
+          url: "/sm-hardware/change-view-order-of-shelves.html"
+        - title: 開啟貨架定位燈
+          url: "/sm-hardware/turn-on-shelf-locator-light.html"
+        - title: 變更機櫃 ID
+          url: "/sm-hardware/change-shelf-ids.html"
+        - title: 檢視機櫃元件狀態和設定
+          url: "/sm-hardware/view-shelf-component-status-and-settings.html"
+        - title: 更新電池學習週期
+          url: "/sm-hardware/update-battery-learn-cycles.html"
+      - title: 管理控制器
+        entries:
+        - title: 控制器狀態
+          url: "/sm-hardware/controller-states.html"
+        - title: 分配 IP 位址的注意事項
+          url: "/sm-hardware/considerations-for-assigning-ip-addresses.html"
+        - title: 配置管理連接埠
+          url: "/sm-hardware/configure-management-ports.html"
+        - title: 配置 NTP 伺服器位址
+          url: "/sm-hardware/configure-ntp-server-addresses.html"
+        - title: 配置 DNS 伺服器位址
+          url: "/sm-hardware/configure-dns-server-addresses.html"
+        - title: 檢視控制器設定
+          url: "/sm-hardware/view-controller-settings.html"
+        - title: 配置遠端登入 (SSH)
+          url: "/sm-hardware/allow-remote-login.html"
+        - title: 將控制器置於線上
+          url: "/sm-hardware/place-controller-online.html"
+        - title: 將控制器置於離線狀態
+          url: "/sm-hardware/place-controller-offline.html"
+        - title: 將控制器置於維修模式
+          url: "/sm-hardware/place-controller-in-service-mode.html"
+        - title: 重設（重新開機）控制器
+          url: "/sm-hardware/reset-reboot-controller.html"
+      - title: 管理 iSCSI 連接埠
+        entries:
+        - title: 配置 iSCSI 連接埠
+          url: "/sm-hardware/configure-iscsi-ports-hardware.html"
+        - title: 配置 iSCSI 驗證
+          url: "/sm-settings/configure-iscsi-authentication.html"
+        - title: 啟用 iSCSI 探索設定
+          url: "/sm-settings/enable-iscsi-discovery-settings.html"
+        - title: 檢視 iSCSI 統計資料套件
+          url: "/sm-support/view-iscsi-statistics-packages-support.html"
+        - title: 檢視 iSCSI 工作階段
+          url: "/sm-settings/view-iscsi-sessions-system.html"
+        - title: 結束 iSCSI 工作階段
+          url: "/sm-settings/end-iscsi-session-system.html"
+        - title: 透過 InfiniBand 連接埠配置 iSER
+          url: "/sm-hardware/configure-iser-over-infiniband-ports-hardware.html"
+        - title: 檢視 iSER over InfiniBand 統計資料
+          url: "/sm-settings/view-iser-over-infiniband-statistics-system.html"
+      - title: 管理 NVMe 連接埠
+        entries:
+        - title: NVMe 概述
+          url: "/sm-settings/nvme-overview.html"
+        - title: 配置 NVMe over InfiniBand 連接埠
+          url: "/sm-hardware/configure-nvme-over-infiniband-ports-hardware.html"
+        - title: 設定 NVMe over RoCE 連接埠
+          url: "/sm-hardware/configure-nvme-over-roce-ports-hardware.html"
+        - title: 檢視 NVMe over Fabrics 統計資料
+          url: "/sm-settings/view-nvme-over-fabrics-statistics-system.html"
+      - title: 管理磁碟機
+        entries:
+        - title: 磁碟機狀態
+          url: "/sm-hardware/drive-states.html"
+        - title: 固態硬碟 （SSD）
+          url: "/sm-hardware/solid-state-disks-ssds.html"
+        - title: 限制磁碟機檢視
+          url: "/sm-hardware/limit-the-drive-view.html"
+        - title: 開啟磁碟機定位燈
+          url: "/sm-hardware/turn-on-drive-locator-light.html"
+        - title: 檢視磁碟機狀態和設定
+          url: "/sm-hardware/view-drive-status-and-settings.html"
+        - title: 邏輯上更換磁碟機
+          url: "/sm-hardware/replace-drive-logically-hardware.html"
+        - title: 手動重建磁碟機
+          url: "/sm-hardware/reconstruct-drive-manually.html"
+        - title: 初始化 (格式化) 磁碟機
+          url: "/sm-hardware/initialize-format-drive.html"
+        - title: 故障磁碟機
+          url: "/sm-hardware/fail-drive.html"
+        - title: 擦除磁碟機
+          url: "/sm-hardware/erase-drive.html"
+        - title: 解鎖或重設鎖定的 NVMe 或 FIPS 磁碟機
+          url: "/sm-hardware/unlock-or-reset-a-locked-nvme-drive.html"
+      - title: 管理熱備援
+        entries:
+        - title: 熱備用磁碟機概述
+          url: "/sm-hardware/hot-spare-drives.html"
+        - title: 分配熱備援
+          url: "/sm-hardware/assign-hot-spares-hardware.html"
+        - title: 取消指派熱備援
+          url: "/sm-hardware/unassign-hot-spares.html"
+      - title: 儲存櫃常見問題解答
+        url: "/sm-hardware/faq-storage-shelf.html"
+      - title: 儲存控制器常見問題解答
+        url: "/sm-hardware/faq-storage-controller.html"
+      - title: iSCSI 協定常見問題解答
+        url: "/sm-settings/faq-iscsi-protocol.html"
+      - title: NVMe 協定常見問題解答
+        url: "/sm-settings/faq-nvme-protocol.html"
+      - title: 儲存磁碟機常見問題解答
+        url: "/sm-storage/faq-storage-drives.html"
+    - title: 警示
+      entries:
+      - title: 概況
+        url: "/sm-settings/overview-alerts.html"
+      - title: 概念
+        entries:
+        - title: 警示的運作方式
+          url: "/sm-settings/how-alerts-work.html"
+        - title: 條款
+          url: "/sm-settings/alerts-terminology.html"
+      - title: 管理電子郵件提醒
+        entries:
+        - title: 設定郵件伺服器和收件者
+          url: "/sm-settings/configure-mail-server-and-recipients-for-alerts.html"
+        - title: 編輯電子郵件地址
+          url: "/sm-settings/edit-alert-email-addresses.html"
+        - title: 新增電子郵件地址
+          url: "/sm-settings/add-alert-email-addresses.html"
+        - title: 刪除郵件伺服器或電子郵件地址
+          url: "/sm-settings/delete-alert-email-addresses.html"
+        - title: 編輯郵件伺服器
+          url: "/sm-settings/edit-mail-server-for-alerts.html"
+      - title: 管理 SNMP 告警
+        entries:
+        - title: 設定 SNMP 警示
+          url: "/sm-settings/configure-snmp-alerts.html"
+        - title: 新增設陷目的地
+          url: "/sm-settings/add-trap-destinations-for-snmp-alerts.html"
+        - title: 設定 SNMP MIB 變數
+          url: "/sm-settings/configure-snmp-mib-variables.html"
+        - title: 編輯社群
+          url: "/sm-settings/edit-community-names-for-snmp-traps.html"
+        - title: 編輯使用者設定
+          url: "/sm-settings/edit-user-names-for-snmp-traps.html"
+        - title: 新增社群
+          url: "/sm-settings/add-community-names-for-snmp-traps.html"
+        - title: 新增使用者
+          url: "/sm-settings/add-user-names-for-snmp-traps.html"
+        - title: 移除社群
+          url: "/sm-settings/remove-community-name-for-snmp-traps.html"
+        - title: 移除使用者
+          url: "/sm-settings/remove-user-for-snmp-traps.html"
+        - title: 刪除陷阱目的地
+          url: "/sm-settings/delete-trap-destinations.html"
+      - title: 管理 syslog 警報
+        entries:
+        - title: 設定 syslog 伺服器
+          url: "/sm-settings/configure-syslog-server-for-alerts.html"
+        - title: 編輯 syslog 伺服器
+          url: "/sm-settings/edit-syslog-servers-for-alerts.html"
+        - title: 新增 syslog 伺服器
+          url: "/sm-settings/add-syslog-servers-for-alerts.html"
+        - title: 刪除 syslog 伺服器
+          url: "/sm-settings/delete-syslog-servers-for-alerts.html"
+      - title: 儲存系統警示常見問題
+        url: "/sm-settings/faq-storage-system-alerts.html"
+    - title: 陣列設定
+      entries:
+      - title: 設定概述
+        url: "/sm-settings/overview-settings.html"
+      - title: 概念
+        entries:
+        - title: 快取設定和效能
+          url: "/sm-settings/cache-settings-and-performance.html"
+        - title: 自動負載平衡概述
+          url: "/sm-settings/automatic-load-balancing-overview.html"
+      - title: 配置陣列設定
+        entries:
+        - title: 編輯儲存陣列名稱
+          url: "/sm-settings/edit-storage-array-name.html"
+        - title: 開啟儲存陣列定位燈
+          url: "/sm-settings/turn-on-storage-array-locator-lights.html"
+        - title: 同步儲存陣列時鐘
+          url: "/sm-settings/synchronize-storage-array-clocks.html"
+        - title: 儲存儲存陣列組態
+          url: "/sm-settings/save-storage-array-configuration.html"
+        - title: 清除儲存陣列組態
+          url: "/sm-settings/clear-storage-array-configuration.html"
+        - title: 更改快取設定
+          url: "/sm-settings/change-cache-settings-for-storage-array.html"
+        - title: 設定自動負載平衡
+          url: "/sm-settings/set-automatic-load-balancing.html"
+        - title: 啟用或停用舊版管理介面
+          url: "/sm-settings/enable-or-disable-legacy-management-interface.html"
+      - title: 配置附加功能
+        entries:
+        - title: 附加功能如何運作
+          url: "/sm-settings/how-add-on-features-work.html"
+        - title: 附加條款
+          url: "/sm-settings/add-on-feature-terminology.html"
+        - title: 取得功能金鑰檔案
+          url: "/sm-settings/obtain-a-feature-key-file.html"
+        - title: 啟用進階功能
+          url: "/sm-settings/enable-premium-feature.html"
+        - title: 啟用功能包
+          url: "/sm-settings/enable-feature-pack.html"
+      - title: 下載 CLI
+        url: "/sm-settings/download-cli.html"
+      - title: 儲存陣列設定常見問題解答
+        url: "/sm-storage/faq-storage-array-settings.html"
+    - title: 磁碟機安全性
+      entries:
+      - title: 概況
+        url: "/sm-settings/overview-drive-security.html"
+      - title: 概念
+        entries:
+        - title: 磁碟機安全功能的運作方式
+          url: "/sm-settings/how-the-drive-security-feature-works.html"
+        - title: 安全金鑰管理的運作方式
+          url: "/sm-settings/how-security-key-management-works.html"
+        - title: 條款
+          url: "/sm-settings/drive-security-terminology.html"
+      - title: 配置安全金鑰
+        entries:
+        - title: 建立內部安全金鑰
+          url: "/sm-settings/create-internal-security-key.html"
+        - title: 建立外部安全金鑰
+          url: "/sm-settings/create-external-security-key.html"
+      - title: 管理安全金鑰
+        entries:
+        - title: 更改安全金鑰
+          url: "/sm-settings/change-security-key.html"
+        - title: 從外部金鑰管理切換到內部金鑰管理
+          url: "/sm-settings/switch-from-external-to-internal-key-management.html"
+        - title: 編輯金鑰管理伺服器設定
+          url: "/sm-settings/edit-key-management-server-settings.html"
+        - title: 備份安全金鑰
+          url: "/sm-settings/back-up-security-key.html"
+        - title: 驗證安全金鑰
+          url: "/sm-settings/validate-security-key.html"
+        - title: 使用內部金鑰管理時解鎖磁碟機
+          url: "/sm-settings/unlock-drives-using-an-internal-security-key.html"
+        - title: 使用外部金鑰管理時解鎖磁碟機
+          url: "/sm-settings/unlock-drives-using-an-external-security-key.html"
+      - title: 儲存磁碟機安全常見問題解答
+        url: "/sm-settings/faq-storage-drive-security.html"
+    - title: 存取管理
+      entries:
+      - title: 概況
+        url: "/sm-settings/overview-access-management.html"
+      - title: 概念
+        entries:
+        - title: 存取管理的運作方式
+          url: "/sm-settings/how-access-management-works.html"
+        - title: 條款
+          url: "/sm-settings/access-management-terminology.html"
+        - title: 映射角色的權限
+          url: "/sm-settings/permissions-for-mapped-roles.html"
+        - title: 本機使用者角色
+          url: "/sm-settings/access-management-with-local-user-roles.html"
+        - title: 目錄服務
+          url: "/sm-settings/access-management-with-directory-services.html"
+        - title: SAML
+          url: "/sm-settings/access-management-with-saml.html"
+        - title: 存取權杖
+          url: "/sm-settings/access-management-tokens.html"
+      - title: 使用本機使用者角色
+        entries:
+        - title: 檢視本機使用者角色
+          url: "/sm-settings/view-local-user-roles.html"
+        - title: 更改密碼
+          url: "/sm-settings/change-passwords.html"
+        - title: 變更本機使用者密碼設定
+          url: "/sm-settings/change-local-user-passwords-settings.html"
+      - title: 使用目錄服務
+        entries:
+        - title: 新增目錄伺服器
+          url: "/sm-settings/add-directory-server.html"
+        - title: 編輯目錄伺服器設定和角色對應
+          url: "/sm-settings/edit-directory-server-settings.html"
+        - title: 移除目錄伺服器
+          url: "/sm-settings/remove-directory-server.html"
+      - title: 使用 SAML
+        entries:
+        - title: 設定 SAML
+          url: "/sm-settings/configure-saml.html"
+        - title: 更改 SAML 角色對應
+          url: "/sm-settings/change-saml-role-mappings.html"
+        - title: 匯出 SAML Service Provider 檔案
+          url: "/sm-settings/export-saml-service-provider-files.html"
+      - title: 使用存取權杖
+        entries:
+        - title: 建立存取權杖
+          url: "/sm-settings/access-management-tokens-create.html"
+        - title: 編輯存取權杖設定
+          url: "/sm-settings/access-management-tokens-edit.html"
+        - title: 撤銷存取權杖
+          url: "/sm-settings/access-management-tokens-revoke.html"
+      - title: 管理 syslog
+        entries:
+        - title: 檢視稽核記錄活動
+          url: "/sm-settings/view-audit-log-activity.html"
+        - title: 定義稽核記錄原則
+          url: "/sm-settings/define-log-policies.html"
+        - title: 從稽核記錄中刪除事件
+          url: "/sm-settings/delete-events-from-the-audit-log.html"
+        - title: 設定 syslog 伺服器以進行稽核記錄
+          url: "/sm-settings/configure-syslog-server-for-audit-logs.html"
+        - title: 編輯 syslog 伺服器設定以進行稽核日誌記錄
+          url: "/sm-settings/edit-syslog-server-settings-for-audit-log-records.html"
+      - title: 使用者存取管理常見問題集
+        url: "/sm-settings/faq-user-access-mgmt-sm.html"
+    - title: 憑證
+      entries:
+      - title: 概況
+        url: "/sm-settings/overview-certificates.html"
+      - title: 概念
+        entries:
+        - title: 憑證的運作方式
+          url: "/sm-settings/how-certificates-work-sam.html"
+        - title: 條款
+          url: "/sm-settings/certificate-terminology.html"
+      - title: 使用憑證
+        entries:
+        - title: 控制器應使用 CA 簽署的憑證
+          url: "/sm-settings/use-ca-signed-certificates-for-controllers.html"
+        - title: 重設管理憑證
+          url: "/sm-settings/reset-management-certificates.html"
+        - title: 查看匯入的憑證資訊
+          url: "/sm-settings/view-imported-certificates.html"
+        - title: 當控制器作為用戶端運行時，導入其證書
+          url: "/sm-settings/import-trusted-certificates-for-controllers-acting-as-client.html"
+        - title: 啟用憑證撤銷檢查
+          url: "/sm-settings/enable-certificate-revocation-checking.html"
+        - title: 刪除受信任的憑證
+          url: "/sm-settings/delete-trusted-certificates.html"
+        - title: 使用 CA 簽署的憑證進行驗證伺服器
+          url: "/sm-settings/use-ca-signed-certificates-for-authentication-with-a-key-management-server.html"
+        - title: 匯出金鑰管理伺服器憑證
+          url: "/sm-settings/export-key-management-certificates.html"
+      - title: 憑證常見問題
+        url: "/sm-settings/faq-certificates.html"
+    - title: 支援
+      entries:
+      - title: 概況
+        url: "/sm-support/overview-support.html"
+      - title: 檢視資訊和診斷結果
+        entries:
+        - title: 檢視儲存陣列設定檔
+          url: "/sm-support/view-storage-array-profile.html"
+        - title: 檢視軟體和韌體詳細目錄
+          url: "/sm-support/view-software-and-firmware-inventory.html"
+      - title: 收集診斷資料
+        entries:
+        - title: 手動收集支援資料
+          url: "/sm-support/collect-support-data-manually.html"
+        - title: 收集組態資料
+          url: "/sm-support/collect-configuration-data.html"
+        - title: 擷取還原支援檔案
+          url: "/sm-support/retrieve-recovery-support-files.html"
+        - title: 擷取追蹤緩衝區
+          url: "/sm-support/retrieve-trace-buffers.html"
+        - title: 收集 I/O 路徑統計資料
+          url: "/sm-support/collect-i-o-path-statistics.html"
+        - title: 擷取健全狀況映像
+          url: "/sm-support/retrieve-health-image.html"
+      - title: 採取恢復行動
+        entries:
+        - title: 檢視無法讀取的磁區記錄
+          url: "/sm-support/view-unreadable-sectors-log.html"
+        - title: 重新啟用磁碟機連接埠
+          url: "/sm-support/re-enable-drive-ports.html"
+        - title: 清除復原模式
+          url: "/sm-support/clear-recovery-mode.html"
+      - title: 管理 AutoSupport
+        entries:
+        - title: AutoSupport 功能概述
+          url: "/sm-support/autosupport-feature-overview.html"
+        - title: AutoSupport 功能的工作流程
+          url: "/sm-support/workflow-for-autosupport.html"
+        - title: 啟用或停用 AutoSupport 功能
+          url: "/sm-support/enable-or-disable-autosupport-features.html"
+        - title: 設定 AutoSupport 傳送方法
+          url: "/sm-support/configure-autosupport-delivery-method.html"
+        - title: 排程 AutoSupport 派送
+          url: "/sm-support/schedule-autosupport-dispatches.html"
+        - title: 傳送 AutoSupport 郵件
+          url: "/sm-support/send-autosupport-dispatches.html"
+        - title: 查看 AutoSupport 狀態
+          url: "/sm-support/view-autosupport-status.html"
+        - title: 查看 AutoSupport 日誌
+          url: "/sm-support/view-autosupport-log.html"
+        - title: 啟用 AutoSupport 維護視窗
+          url: "/sm-support/enable-autosupport-maintenance-window.html"
+        - title: 停用 AutoSupport 維護視窗
+          url: "/sm-support/disable-autosupport-maintenance-window.html"
+      - title: 檢視事件
+        entries:
+        - title: 事件記錄概觀
+          url: "/sm-support/overview-event-log.html"
+        - title: 檢視事件記錄
+          url: "/sm-support/view-events-using-the-event-log.html"
+      - title: 管理升級
+        entries:
+        - title: 概況
+          url: "/sm-support/overview-upgrade-center.html"
+        - title: 升級軟體和韌體
+          url: "/sm-support/upgrade-controller-software-and-firmware.html"
+        - title: 啟動控制器軟體和韌體
+          url: "/sm-support/activate-controller-software-and-firmware.html"
+        - title: 升級磁碟機韌體
+          url: "/sm-support/upgrade-drive-firmware.html"
+        - title: 檢閱可能的軟體和韌體升級錯誤
+          url: "/sm-support/review-the-possible-software-and-firmware-upgrade-errors.html"
+      - title: AutoSupport 常見問題
+        url: "/sm-support/faq-autosupport.html"
+  - title: SANtricity Unified Manager
+    url: "/unified-manager/index.html"
+    entries:
+    - title: 主介面
+      entries:
+      - title: SANtricity Unified Manager 介面概述
+        url: "/um-admin/overview-interface-unified.html"
+      - title: 支援的瀏覽器
+        url: "/um-admin/supported-browsers-unified.html"
+      - title: 設定管理員密碼保護
+        url: "/um-admin/administrator-password-protection-unified.html"
+      - title: 更改管理員密碼
+        url: "/um-admin/change-admin-password-unified.html"
+      - title: 管理工作階段逾時
+        url: "/um-admin/manage-session-timeouts-unified.html"
+    - title: 儲存陣列
+      entries:
+      - title: 概況
+        url: "/um-manage/overview-storage-arrays.html"
+      - title: 概念
+        entries:
+        - title: 探索陣列的考量事項
+          url: "/um-manage/considerations-for-discovering-arrays.html"
+        - title: 存取 SANtricity System Manager 的考量事項
+          url: "/um-manage/launch-considerations.html"
+      - title: 探索陣列
+        entries:
+        - title: 探索多個儲存陣列
+          url: "/um-manage/discover-multiple-arrays.html"
+        - title: 探索單一陣列
+          url: "/um-manage/discover-single-array.html"
+      - title: 管理陣列
+        entries:
+        - title: 檢視陣列狀態
+          url: "/um-manage/storage-array-status.html"
+        - title: 管理單一儲存陣列
+          url: "/um-manage/launch-system-manager.html"
+        - title: 變更陣列密碼
+          url: "/um-admin/change-storage-array-passwords.html"
+        - title: 從檢視中移除陣列
+          url: "/um-manage/remove-storage-array.html"
+    - title: 設定匯入
+      entries:
+      - title: 概況
+        url: "/um-manage/overview-import-settings.html"
+      - title: 概念
+        entries:
+        - title: 匯入設定的運作方式
+          url: "/um-manage/how-import-settings-works.html"
+        - title: 複寫儲存組態的需求
+          url: "/um-manage/requirements-for-replicating-storage-configurations.html"
+      - title: 使用批次匯入
+        entries:
+        - title: 匯入警示設定
+          url: "/um-manage/import-alert-settings.html"
+        - title: 匯入 AutoSupport 設定
+          url: "/um-manage/import-autosupport-settings.html"
+        - title: 匯入目錄服務設定
+          url: "/um-manage/import-directory-services-settings.html"
+        - title: 匯入系統設定
+          url: "/um-manage/import-system-settings.html"
+        - title: 匯入儲存組態設定
+          url: "/um-manage/import-storage-configuration-settings.html"
+      - title: 匯入設定常見問題
+        url: "/um-manage/faq-import-settings.html"
+    - title: 陣列群組
+      entries:
+      - title: 概況
+        url: "/um-manage/overview-manage-groups.html"
+      - title: 設定群組
+        url: "/um-manage/create-storage-array-group.html"
+      - title: 從群組中移除陣列
+        url: "/um-manage/remove-storage-arrays-from-group.html"
+      - title: 刪除群組
+        url: "/um-manage/delete-storage-array-group.html"
+      - title: 重新命名群組
+        url: "/um-manage/rename-storage-array-group.html"
+    - title: 升級
+      entries:
+      - title: 概況
+        url: "/um-manage/overview-upgrade-center-um.html"
+      - title: 升級軟體和韌體
+        entries:
+        - title: 執行升級前健全狀況檢查
+          url: "/um-manage/perform-pre-upgrade-health-check.html"
+        - title: 升級 SANtricity OS
+          url: "/um-manage/upgrade-controller-firmware.html"
+        - title: 啟動已分階段的 OS 軟體
+          url: "/um-manage/activate-pending-firmware.html"
+        - title: 管理軟體儲存庫
+          url: "/um-manage/manage-repository.html"
+        - title: 清除暫存的 OS 軟體
+          url: "/um-manage/clear-staged-os-software.html"
+    - title: 鏡像
+      entries:
+      - title: 概況
+        url: "/um-manage/overview-mirroring-um.html"
+      - title: 概念
+        entries:
+        - title: 鏡像的運作方式
+          url: "/um-manage/mirroring-overview.html"
+        - title: 組態工作流程
+          url: "/um-manage/mirroring-configuration-workflow.html"
+        - title: 條款
+          url: "/um-manage/mirroring-terminology.html"
+        - title: 需求
+          url: "/um-manage/requirements-for-using-mirroring.html"
+      - title: 設定鏡像
+        entries:
+        - title: 建立非同步鏡像配對
+          url: "/um-manage/create-asynchronous-mirrored-pair-um.html"
+        - title: 建立同步鏡射配對
+          url: "/um-manage/create-synchronous-mirrored-pair-um.html"
+      - title: 儲存鏡像常見問題集
+        url: "/um-manage/faq-storage-mirroring.html"
+    - title: 憑證
+      entries:
+      - title: 概況
+        url: "/um-certificates/overview-certificates-um.html"
+      - title: 概念
+        entries:
+        - title: 憑證的運作方式
+          url: "/um-certificates/how-certificates-work-unified.html"
+        - title: 條款
+          url: "/um-certificates/certificate-terminology-unified.html"
+      - title: 使用管理主機憑證
+        url: "/um-certificates/use-ca-signed-certificate-um.html"
+      - title: 重設管理憑證
+        url: "/um-certificates/reset-management-certificates-unified.html"
+      - title: 使用陣列憑證
+        entries:
+        - title: 匯入陣列憑證
+          url: "/um-certificates/import-array-certificates-unified.html"
+        - title: 刪除受信任的憑證
+          url: "/um-certificates/delete-trusted-certificates-unified.html"
+        - title: 解決不受信任的憑證問題
+          url: "/um-certificates/resolve-untrusted-certificates-certificate-page.html"
+      - title: 管理憑證
+        entries:
+        - title: 檢視憑證
+          url: "/um-certificates/view-certificates-unified.html"
+        - title: 匯出憑證
+          url: "/um-certificates/export-certificates-unified.html"
+    - title: 存取管理
+      entries:
+      - title: 概況
+        url: "/um-certificates/overview-access-management-um.html"
+      - title: 概念
+        entries:
+        - title: 存取管理的運作方式
+          url: "/um-certificates/how-access-management-works-unified.html"
+        - title: 條款
+          url: "/um-certificates/access-management-terminology-unified.html"
+        - title: 映射角色的權限
+          url: "/um-certificates/permissions-for-mapped-roles-unified.html"
+        - title: 本機使用者角色
+          url: "/um-certificates/access-management-with-local-user-roles-unified.html"
+        - title: 目錄服務
+          url: "/um-certificates/access-management-with-directory-services-unified.html"
+        - title: SAML
+          url: "/um-certificates/access-management-with-saml.html"
+      - title: 使用本機使用者角色
+        entries:
+        - title: 檢視本機使用者角色
+          url: "/um-certificates/view-local-user-roles-unified.html"
+        - title: 更改密碼
+          url: "/um-certificates/change-passwords-unified.html"
+        - title: 變更本機使用者密碼設定
+          url: "/um-certificates/change-local-user-passwords-settings-unified.html"
+      - title: 使用目錄服務
+        entries:
+        - title: 新增目錄伺服器
+          url: "/um-certificates/add-directory-server-unified.html"
+        - title: 編輯目錄伺服器設定和角色對應
+          url: "/um-certificates/edit-directory-server-settings-unified.html"
+        - title: 移除目錄伺服器
+          url: "/um-certificates/remove-directory-server-unified.html"
+      - title: 使用 SAML
+        entries:
+        - title: 設定 SAML
+          url: "/um-certificates/configure-saml.html"
+        - title: 更改 SAML 角色對應
+          url: "/um-certificates/change-saml-role-mappings.html"
+        - title: 匯出 SAML Service Provider 檔案
+          url: "/um-certificates/export-saml-service-provider-files.html"
+      - title: 使用者存取管理常見問題集
+        url: "/um-certificates/faq-user-access-mgmt-um.html"
+  - title: 舊版
+    url: "/early-versions.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"
+product-family:
+  name: E-Series
+  repo: e-series-family

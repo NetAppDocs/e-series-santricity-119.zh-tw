@@ -1,0 +1,30 @@
+---
+permalink: sm-hardware/switch-between-front-and-back-views.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, switch, front, back, views, shelves 
+summary: 硬體頁面可以顯示機櫃的正面視圖或背面視圖。 
+---
+= 在 SANtricity System Manager 中顯示正面和背面視圖
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+硬體頁面可以顯示機櫃的正面視圖或背面視圖。
+
+.關於此任務
+背面視圖顯示了控制器 / IOM 和電源風扇罩。正面視圖顯示了磁碟機。
+
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 如果圖形顯示了控制器，請按一下 *Drives* 標籤。
++
+圖形變更為顯示磁碟機而非控制器。
+
+. 您也可以選擇頁面底部的 *Show all front* 或 *Show all back*。
+

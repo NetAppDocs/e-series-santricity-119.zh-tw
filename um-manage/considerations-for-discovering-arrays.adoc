@@ -1,0 +1,59 @@
+---
+permalink: um-manage/considerations-for-discovering-arrays.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, considerations, discovering, arrays 
+summary: 在 Unified Manager 能夠顯示和管理儲存資源之前，它必須先發現您組織網路中要管理的儲存陣列。您可以發現多個陣列，也可以發現單一陣列。 
+---
+= 了解如何在 SANtricity Unified Manager 中發現儲存陣列
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在 SANtricity Unified Manager 能夠顯示和管理儲存資源之前，它必須先發現您組織網路中要管理的儲存陣列。您可以發現多個陣列，也可以發現單一陣列。
+
+
+
+== 探索多個儲存陣列
+
+如果您選擇發現多個陣列，則需要輸入網路 IP 位址範圍，然後 Unified Manager 會嘗試分別連線到該範圍內的每個 IP 位址。成功連接的任何儲存陣列都會顯示在「發現」頁面上，您可以將其新增至您的管理網域。
+
+
+
+== 探索單一儲存陣列
+
+如果選擇探索單一陣列，則輸入儲存陣列中某個控制器的單一 IP 位址，然後新增該單一儲存陣列。
+
+[NOTE]
+====
+Unified Manager 只會發現並顯示指派給控制器的單一 IP 位址或指定範圍內的 IP 位址。如果存在其他控制器或指派給這些控制器的 IP 位址超出此單一 IP 位址或 IP 位址範圍，則 Unified Manager 將不會發現或顯示它們。但是，在新增儲存陣列後，所有關聯的 IP 位址都會被發現並顯示在「管理」視圖中。
+
+====
+
+
+== 使用者憑證
+
+作為探索程序的一部分，您必須提供要新增的每個儲存陣列的管理員密碼。
+
+
+
+== Web 服務憑證
+
+作為發現過程的一部分，Unified Manager 會驗證已發現的儲存陣列是否使用來自可信任來源的憑證。Unified Manager 對其與瀏覽器建立的所有連線使用兩種基於憑證的驗證方式：
+
+* *受信任的憑證*
++
+對於 Unified Manager 發現的陣列，您可能需要安裝憑證授權單位提供的其他受信任憑證。
+
++
+使用 *Import* 按鈕匯入這些憑證。如果您之前曾連接到此陣列，則一個或兩個控制器憑證可能已過期、已被撤銷，或者其憑證鏈中缺少根憑證或中間憑證。您必須先替換已過期或已被撤銷的憑證，或新增缺少的根憑證或中間憑證，然後才能管理儲存陣列。
+
+* * 自簽名憑證 *
++
+也可以使用自簽名憑證。如果管理員嘗試在未匯入已簽署憑證的情況下發現陣列，Unified Manager 將顯示錯誤對話框，允許管理員接受自簽名憑證。儲存陣列的自簽名憑證將被標記為受信任，並且該儲存陣列將被新增至 Unified Manager 中。
+
++
+如果您不信任與儲存陣列的連線、請選取 *Cancel* 並在將儲存陣列新增至 Unified Manager 之前驗證儲存陣列的安全性憑證策略。
+
+

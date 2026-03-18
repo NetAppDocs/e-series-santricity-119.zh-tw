@@ -1,0 +1,36 @@
+---
+permalink: sm-settings/validate-security-key.html 
+sidebar: sidebar 
+keywords: SANtricity,System Manager, E-Series, validate, security, key, 
+summary: 您可以驗證安全金鑰，以確保其未損毀，並驗證您擁有正確的通關密語。 
+---
+= 在 SANtricity System Manager 中驗證安全性金鑰
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以驗證安全金鑰，以確保其未損毀，並驗證您擁有正確的通關密語。
+
+.關於此任務
+本任務介紹如何驗證您先前建立的安全金鑰。這是確保金鑰檔案未損壞且密碼短語正確的重要步驟，從而確保您在將啟用安全功能的磁碟機從一個儲存陣列移至另一個儲存陣列時，能夠存取磁碟機資料。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 在 *Security key management* 下，選擇 *Validate Key* 。
++
+Validate Security Key 對話方塊開啟。
+
+. 點擊 *Browse*，然後選擇金鑰檔案（例如， `drivesecurity.slk`）。
+. 輸入與您所選金鑰相關聯的密碼。
++
+當您選擇有效的金鑰檔案和密碼短語後，*Validate* 按鈕將變為可用狀態。
+
+. 點選 *Validate* 。
++
+驗證結果會顯示在對話方塊中。
+
+. 如果結果顯示「安全性金鑰驗證成功」，請按一下 *Close*。如果出現錯誤訊息，請按照對話方塊中顯示的建議指示進行操作。
+

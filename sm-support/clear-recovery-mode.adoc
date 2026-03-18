@@ -1,0 +1,43 @@
+---
+permalink: sm-support/clear-recovery-mode.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, clear, recovery, mode 
+summary: 恢復儲存陣列組態後，請使用 Clear Recovery Mode 作業來恢復儲存陣列上的 I/O，並使其恢復正常運作。 
+---
+= 清除 SANtricity 軟體中的復原模式
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+恢復儲存陣列組態後，請使用 Clear Recovery Mode 作業來恢復儲存陣列上的 I/O，並使其恢復正常運作。
+
+.開始之前
+* 如果要將儲存陣列還原到先前的組態、必須先從備份還原組態、然後再清除還原模式。
+* 您必須執行驗證檢查或聯絡技術支援，以確保還原成功。確認還原成功後，即可清除恢復模式。
+
+
+.關於此任務
+儲存陣列包含一個組態資料庫，其中包含其邏輯組態（儲存池、Volume 群組、Volume 等）的記錄。如果您有意清除儲存陣列組態或組態資料庫損毀，儲存陣列將進入還原模式。還原模式會停止 I/O 並凍結組態資料庫，讓您有時間執行下列其中一項作業：
+
+* 從儲存在控制器快閃裝置中的自動備份還原組態。您必須聯絡技術支援才能執行此操作。
+* 從先前的「儲存組態資料庫」作業還原組態。「儲存組態資料庫」作業透過命令列介面（CLI）執行。
+* 從頭開始重新配置儲存陣列。
+
+
+儲存陣列組態還原或重新定義完畢，並確認一切正常後，您必須手動清除還原模式。
+
+[NOTE]
+====
+清除 Recovery Mode 作業一旦開始便無法取消。清除 Recovery Mode 可能需要很長時間。請僅在技術支援人員指示的情況下執行此作業。
+
+====
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *Clear Recovery Mode* ，並確認要執行此操作。
++
+僅當儲存陣列處於復原模式時，才會顯示此選項。
+
+

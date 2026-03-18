@@ -1,0 +1,41 @@
+---
+permalink: sm-settings/edit-syslog-server-settings-for-audit-log-records.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, edit, syslog, server, settings, audit, log, records, 
+summary: 您可以變更用於歸檔稽核日誌的 syslog 伺服器設定，也可以為伺服器上傳新的憑證授權單位（CA）憑證。 
+---
+= 在 SANtricity System Manager 中編輯稽核日誌記錄的 syslog 伺服器設定
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更用於歸檔稽核日誌的 syslog 伺服器設定，也可以為伺服器上傳新的憑證授權單位（CA）憑證。
+
+.開始之前
+* 您必須使用具有 Security admin 權限的使用者設定檔登入。否則，Access Management 功能將不會顯示。
+* 必須提供 syslog 伺服器位址、協定和連接埠號碼。伺服器位址可以是完全限定網域名稱、IPv4 位址或 IPv6 位址。
+* 如果您要上傳新的 CA 憑證，則該憑證必須存在於您的本機系統中。
+
+
+.步驟
+. 選擇選單：Settings[ 存取管理 ]。
+. 從「稽核記錄」索引標籤中，選取 *Configure Syslog Servers* 。
++
+頁面上會顯示已設定的 syslog 伺服器。
+
+. 若要編輯伺服器資訊，請選取伺服器名稱右側的 *Edit* （鉛筆）圖示，然後在下列欄位中進行所需的變更：
++
+** *伺服器位址* -- 輸入完全限定網域名稱、IPv4 位址或 IPv6 位址。
+** *Protocol* -- 從下拉清單中選擇協定（例如 TLS、UDP 或 TCP）。
+** *Port* -- 輸入 syslog 接收器的連接埠號碼。
+
+
+. 如果您將協定變更為安全的 TLS 協定（從 UDP 或 TCP），請按一下 *Import Trusted Certificate* 上傳 CA 憑證。
+. 若要測試與儲存陣列的新連線，請選取 *Test All* 。
+
+
+.結果
+配置完成後，所有新的稽核記錄都會傳送到 syslog 伺服器。先前的記錄不會傳輸。

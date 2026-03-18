@@ -1,0 +1,44 @@
+---
+permalink: sm-settings/enable-or-disable-resource-provisioning-for-new-volumes.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, enable, disable, resource, provisioning, 
+summary: 如果您先前停用了資源配置的預設功能，您可以前往「設定」並重新啟用該功能，以便對您建立的任何新 SSD 磁碟區群組或集區生效。您也可以再次停用此設定。 
+---
+= 在 SANtricity System Manager 中啟用或停用新磁碟區群組或集區的資源配置
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您先前停用了資源配置的預設功能，您可以為建立的任何新 SSD 磁碟區群組或集區重新啟用此功能。您也可以再次停用此設定。
+
+資源配置是 EF300 和 EF600 儲存陣列的功能，它允許磁碟區立即投入使用，無需背景初始化程序。分配給該磁碟區的所有磁碟機區塊都將被取消配置（取消對應），這可以延長 SSD 的使用壽命並提高最大寫入效能。
+
+
+NOTE: 預設情況下，在磁碟機支援 DULBE 的系統上會啟用資源配置。
+
+.開始之前
+* 您必須擁有 EF300 或 EF600 儲存陣列。
+* 您必須擁有 SSD 磁碟區群組或集區，其中所有磁碟機都支援 NVMe Deallocated or Unwritten Logical Block Error Enable（DULBE）錯誤復原功能。
++
+
+NOTE: 目前 EF300C 或 EF600C 儲存陣列不支援 DULBE 。
+
+
+
+.關於此任務
+重新啟用新磁碟區群組或集區的資源配置時，只會影響新建立的磁碟區群組和集區。任何已啟用資源配置的現有磁碟區群組和集區將保持不變。
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *其他設定*，然後按一下 *啟用 / 停用資源配置磁碟區*。
++
+設定說明指示資源配置目前是啟用還是停用。
+
+. 在對話方塊中確認操作。
+
+
+.結果
+啟用或停用資源配置只會影響您建立的新 SSD 集區或磁碟區群組。現有集區或磁碟區群組保持不變。

@@ -1,0 +1,16 @@
+---
+permalink: sm-storage/export-import-volume-groups.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, export, import, volume group 
+summary: 磁碟區群組移轉可讓您匯出磁碟區群組，以便將磁碟區群組匯入至不同的儲存陣列。 
+---
+= 在 SANtricity CLI 中匯出/匯入磁碟區群組
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+磁碟區群組移轉可讓您匯出磁碟區群組，以便將磁碟區群組匯入至不同的儲存陣列。
+
+SANtricity System Manager 使用者介面不支援匯出/匯入功能。您必須使用 Command Line Interface（CLI）將磁碟區群組匯出/匯入至不同的儲存陣列。

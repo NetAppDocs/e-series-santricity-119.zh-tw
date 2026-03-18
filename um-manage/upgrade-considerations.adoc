@@ -1,0 +1,42 @@
+---
+permalink: um-manage/upgrade-considerations.html 
+sidebar: sidebar 
+keywords: SANtricity, Unified Manager, E-Series, upgrade, considerations 
+summary: 在使用 Unified Manager 升級多個儲存陣列之前，請在規劃過程中檢閱關鍵考量事項。 
+---
+= 了解如何使用 SANtricity Unified Manager 升級多個儲存陣列
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用 SANtricity Unified Manager 升級多個儲存陣列之前，請在規劃過程中考慮以下關鍵因素。
+
+
+
+== 目前版本
+
+您可以在 Unified Manager 的「管理」頁面中查看每個已發現儲存陣列的目前 SANtricity OS 軟體版本。版本資訊顯示在「SANtricity OS 軟體」欄位中。按一下每行中的 SANtricity OS 版本，即可在彈出對話方塊中查看控制器韌體和 NVSRAM 資訊。
+
+
+
+== 其他需要升級的元件
+
+作為升級過程的一部分，您可能還需要升級主機的多路徑 / 故障轉移驅動程式或 HBA 驅動程式，以便主機能夠與控制器正確互動。
+
+如需相容性資訊，請參閱 https://imt.netapp.com/matrix/#welcome["NetApp 相容性矩陣"^]。此外，請參閱適用於您作業系統的 Express Guides 中的程序。Express Guides 可從 https://docs.netapp.com/us-en/e-series/index.html["E 系列和 SANtricity 文件"^]取得。
+
+
+
+== 雙控制器
+
+如果儲存陣列包含兩個控制器，並且您已安裝多路徑驅動程式，則儲存陣列可以在升級過程中繼續處理 I/O。升級過程中，將執行以下程序：
+
+. 控制器 A 將其所有 LUN 容錯移轉至控制器 B。
+. 升級在控制器 A 上進行。
+. 控制器 A 會收回其 LUN 以及控制器 B 的所有 LUN。
+. 升級在控制器 B 上進行。
+
+
+升級完成後、您可能需要在控制器之間手動重新分配磁碟區、以確保磁碟區返回正確的擁有控制器。

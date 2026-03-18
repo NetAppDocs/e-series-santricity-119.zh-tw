@@ -1,0 +1,60 @@
+---
+permalink: sm-hardware/configure-dns-server-addresses.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, configure, dns, server, addresses, 
+summary: Domain Name System（DNS）用於解析控制器和 Network Time Protocol（NTP）伺服器的完全限定網域名稱。儲存陣列上的管理連接埠可以同時支援 IPv4 或 IPv6 協定。 
+---
+= 在 SANtricity System Manager 中設定 DNS 伺服器位址
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Domain Name System（DNS）用於解析控制器和 Network Time Protocol（NTP）伺服器的完全限定網域名稱。儲存陣列上的管理連接埠可以同時支援 IPv4 或 IPv6 協定。
+
+.開始之前
+* 您的網路中必須安裝並設定 DNS 伺服器。
+* 您知道主 DNS 伺服器的位址以及一個可選的備用 DNS 伺服器的位址。這些位址可以是 IPv4 位址或 IPv6 位址。
+
+
+.關於此任務
+本程序說明如何指定主要和備份 DNS 伺服器位址。備份 DNS 伺服器可選擇性地設定為在主要 DNS 伺服器故障時使用。
+
+[NOTE]
+====
+如果您已使用動態主機設定協定（DHCP）設定了儲存陣列的管理連接埠，並且您的 DHCP 設定關聯了一個或多個 DNS 或 NTP 伺服器，則無需手動設定 DNS 或 NTP。在這種情況下，儲存陣列應該已經自動取得了 DNS/NTP 伺服器位址。但是，您仍然需要按照以下說明開啟對話方塊，並確保偵測到正確的位址。
+
+====
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了磁碟機，請按一下 *Controllers & Components* 標籤。
++
+圖形變更為顯示控制器，而非磁碟機。
+
+. 選擇要配置的控制器。
++
+控制器的內容功能表隨即出現。
+
+. 選擇 *Configure DNS server* 。
++
+Configure Domain Name System (DNS) Server 對話方塊開啟。
+
+. 請選擇以下選項之一：
++
+** *自動從 DHCP 伺服器取得 DNS 伺服器位址* -- 顯示偵測到的 DNS 伺服器位址。
++
+[NOTE]
+====
+如果儲存陣列設定為使用靜態 DNS 位址，則不會顯示任何 DNS 伺服器。
+
+====
+** *手動指定 DNS 伺服器位址* -- 輸入主 DNS 伺服器位址和備用 DNS 伺服器位址。備用伺服器位址為可選。（選取單選按鈕後，這些位址欄位才會顯示。）這些位址可以是 IPv4 位址，也可以是 IPv6 位址。
+
+
+. 按一下 *Save* 。
+. 對另一個控制器重複這些步驟。
+
+
+.結果
+DNS 組態會顯示在控制器設定的 *DNS / NTP* 索引標籤中。

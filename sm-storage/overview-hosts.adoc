@@ -1,0 +1,55 @@
+---
+permalink: sm-storage/overview-hosts.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, hosts 
+summary: 您可以設定主機和主機叢集，它們定義了儲存陣列和資料伺服器之間的連線。 
+---
+= 了解 SANtricity 軟體中的主機和主機叢集
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定主機和主機叢集，它們定義了儲存陣列和資料伺服器之間的連線。
+
+
+
+== 什麼是主機和主機叢集？
+
+_主機_ 是指向儲存陣列上的磁碟區發送 I/O 請求的伺服器。_主機叢集_ 是指一組主機，您可以建立主機叢集，以便將相同的磁碟區指派給多個主機。
+
+深入瞭解：
+
+* link:host-terminology.html["主機術語"]
+* link:access-volumes.html["存取磁碟區"]
+* link:maximum-number-of-luns.html["LUN 的最大數量"]
+
+
+
+
+== 如何配置主機和主機叢集？
+
+若要定義主機連線，您可以前往功能表：Storage[Hosts] 手動設定主機。如果您希望兩個或多個主機共享對同一組磁碟區的存取權限，則可以定義叢集並將磁碟區指派給該叢集。
+
+深入瞭解：
+
+* link:manual-host-creation.html["手動建立主機"]
+* link:how-volumes-are-assigned-to-hosts-and-host-clusters.html["磁碟區如何指派給主機和主機叢集"]
+* link:workflow-for-creating-hosts-and-assigning-volumes.html["主機建立和磁碟區指派的工作流程"]
+* link:create-host-manually.html["手動建立主機"]
+* link:create-host-cluster.html["建立主機叢集"]
+* link:assign-volumes.html["將磁碟區指派給主機"]
+
+
+
+
+== 相關資訊
+
+深入瞭解與主機相關的工作：
+
+* link:../sm-settings/set-automatic-load-balancing.html["設定自動負載平衡"]
+* link:../sm-settings/set-host-connectivity-reporting.html["設定主機連線報告"]
+* link:../sm-settings/change-default-host-type.html["更改預設主機類型"]
+

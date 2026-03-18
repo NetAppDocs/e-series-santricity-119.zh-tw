@@ -1,0 +1,34 @@
+---
+permalink: sm-support/view-iser-over-infiniband-statistics-support.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, view, iser, over, infiniband, statistics 
+summary: 如果您的儲存陣列控制器包含 iSER over InfiniBand 連接埠，則可以檢視有關主機連線的資料。 
+---
+= 在 SANtricity System Manager 中檢視 iSER over InfiniBand 統計資料
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的儲存陣列控制器包含 iSER over InfiniBand 連接埠，則可以檢視有關主機連線的資料。
+
+.關於此任務
+系統管理員顯示以下類型的 iSER over InfiniBand 統計資料。所有統計資訊均為唯讀，無法設定。
+
+* *本地目標（協定）統計資料* -- 提供 iSER over InfiniBand target 的統計資訊，顯示對其儲存媒體的區塊層級存取。
+* *iSER over InfiniBand Interface statistics* -- 提供 InfiniBand 介面上所有 iSER 連接埠的統計訊息，包括效能統計資訊和與每個交換器連接埠關聯的連結錯誤訊息。
+
+
+您可以將每項統計資料檢視為原始統計資料或基準統計資料。原始統計資料是指自控制器啟動以來收集的所有統計資料。基準統計資料是指自您設定基準時間以來收集的特定時間點統計資料。
+
+.步驟
+. 選擇功能表：Support [ Support Center > Diagnostics ] 標籤。
+. 選擇 *View iSER over InfiniBand Statistics* 。
+. 點擊標籤頁即可檢視不同的統計資料集。
+. 若要設定基線，請按一下 *Set new baseline* 。
++
+設定基線為統計資料的收集設定了一個新的起點。所有 iSER over InfiniBand 統計數據均使用相同的基線。
+
+

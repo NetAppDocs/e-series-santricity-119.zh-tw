@@ -1,0 +1,36 @@
+---
+permalink: sm-settings/change-default-host-type.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, default, host, type, 
+summary: 使用「變更預設主機作業系統」設定可以變更儲存陣列層級的預設主機類型。通常，您會在將主機連接到儲存陣列之前或連接其他主機時變更預設主機類型。 
+---
+= 在 SANtricity System Manager 中變更預設主機類型
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用「變更預設主機作業系統」設定可以變更儲存陣列層級的預設主機類型。通常，您會在將主機連接到儲存陣列之前或連接其他主機時變更預設主機類型。
+
+.關於此任務
+請牢記以下準則：
+
+* 如果您打算連接到儲存陣列的所有主機都具有相同的作業系統（同構主機環境）、請變更主機類型以符合作業系統。
+* 如果計劃將具有不同作業系統的多個主機連接到儲存陣列（異質主機環境）、請變更主機類型以符合大多數主機的作業系統。
++
+例如，如果您將八台不同的主機連接到儲存陣列，而其中六台主機運行的是 Windows 作業系統，則必須選擇 Windows 作為預設主機作業系統類型。
+
+* 如果連接的主機大多混合使用了不同的作業系統，請將主機類型變更為 Factory Default。
++
+例如，如果您將八台不同的主機連接到儲存陣列，其中兩台主機運行 Windows 作業系統，三台主機運行 VMware 作業系統，另外三台主機運行 Linux 作業系統，則必須選擇 Factory Default 作為預設主機作業系統類型。
+
+
+
+.步驟
+. 選擇功能表：Settings[System]。
+. 向下捲動至 *其他設定*，然後按一下 *變更預設主機作業系統類型*。
+. 選擇要用作預設的主機作業系統類型。
+. 按一下 *Change* 。
+

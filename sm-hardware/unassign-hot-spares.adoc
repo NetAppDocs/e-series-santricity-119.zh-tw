@@ -1,0 +1,43 @@
+---
+permalink: sm-hardware/unassign-hot-spares.html 
+sidebar: sidebar 
+keywords: SANtricity, System Manager, E-Series, change, hot, spare, unassign, 
+summary: 您可以將熱備用磁碟機改回未指派的磁碟機。 
+---
+= 在 SANtricity System Manager 中取消指派熱備援磁碟
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將熱備用磁碟機改回未指派的磁碟機。
+
+.開始之前
+熱備件必須處於 Optimal、Standby 狀態。
+
+.關於此任務
+您無法取消指派目前正在接管故障磁碟機的熱備援磁碟機。如果熱備援磁碟機未處於最佳狀態，請先按照 Recovery Guru 程序修正任何問題，然後再嘗試取消指派該磁碟機。
+
+.步驟
+. 選擇 *Hardware* 。
+. 如果圖形顯示了控制器，請按一下 *Drives* 標籤。
++
+圖形變更為顯示磁碟機而非控制器。
+
+. 選擇要取消指派的熱備用磁碟機 （以粉紅色顯示）。
++
+如果粉紅色磁碟機托架上有斜線，表示熱備盤目前正在使用中，無法取消指派。
+
++
+磁碟機的內容功能表隨即開啟。
+
+. 從磁碟機的下拉清單中，選取 *Unassign hot spare*。
++
+對話方塊會顯示移除此熱備援磁碟後受影響的所有磁碟區群組，以及是否有其他熱備援磁碟正在保護它們。
+
+. 確認取消指派操作。
+
+
+.結果
+磁碟機已恢復為「未指派」（以灰色顯示）。
