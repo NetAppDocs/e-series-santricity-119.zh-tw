@@ -3578,7 +3578,6 @@
   <block id="329b059dca9192ebf68525b6d3e3be44" category="inline-link-macro">快取設定和效能</block>
   <block id="9f6081850e27326c653ce13711fd1f40" category="list-text"><block ref="9f6081850e27326c653ce13711fd1f40" category="inline-link-macro-rx"></block></block>
   <block id="590d98531a06e067582f8f395c25ea9d" category="inline-link-macro">自動負載平衡</block>
-  <block id="3d92225d2ee8c33ffe2c15361da54d2f" category="list-text"><block ref="3d92225d2ee8c33ffe2c15361da54d2f" category="inline-link-macro-rx"></block></block>
   <block id="b07d4a5fc9bdc2d9e09fffa5409bbab4" category="inline-link-macro">附加功能</block>
   <block id="d9c3b504b15a55277f52a60d4aa86148" category="list-text"><block ref="d9c3b504b15a55277f52a60d4aa86148" category="inline-link-macro-rx"></block></block>
   <block id="919e659946b3b7994ecf9004d9cea4f8" category="inline-link-macro">磁碟機安全性</block>
@@ -9041,4 +9040,5 @@
   <block id="0e695c0c9242624f235546e43dde2e16" category="sidebar">使用陣列憑證</block>
   <block id="951d3fc54a28f9f46798897467d96a5b" category="sidebar">管理憑證</block>
   <block id="9390da525ac985d85948002cf506c7cf" category="sidebar">匯出憑證</block>
+  <block id="bc7dec44af17b73eb800d426c3a75c9f" category="list-text"><block ref="bc7dec44af17b73eb800d426c3a75c9f" category="inline-link-macro-rx"></block></block>
 </blocks>
